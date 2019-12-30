@@ -15,7 +15,7 @@ export default class Normalizer {
         }
 
         if (Array.isArray(elements)) {
-            return elements.every(this.checkIdExistsInElement);
+            return elements.every(element => this.checkIdExistsInElement(element));
         }
 
         return this.checkIdExistsInElement(elements);
@@ -63,6 +63,26 @@ export default class Normalizer {
         return this.normalize(state, elements, true);
     }
 
-    // TODO
-    // delete() {}
+    delete(state, elementIds = []) {
+        const ids = [...state[this.idListIndex]];
+        const entities = { ...state[this.entityObjectIndex] };
+
+        elementIds.forEach(id => {
+            const index = ids.indexOf(id);
+
+            if (index > -1) {
+                ids.splice(index, 1);
+            }
+
+            if (id in entities) {
+                delete entities[id];
+            }
+        });
+
+        return {
+            ...state,
+            [this.idListIndex]: ids,
+            [this.entityObjectIndex]: entities,
+        };
+    }
 }

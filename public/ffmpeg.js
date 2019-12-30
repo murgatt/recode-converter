@@ -22,6 +22,7 @@ const convert = ({ input }) => {
                 resolve({ convertedFilePath: OUTPUT });
             })
             .on('progress', progress => console.log(`PROGRESS: ${progress.percent}`))
+            .outputOptions('-map', '0', '-c', 'copy', '-c:a', 'ac3')
             .saveToFile(OUTPUT);
     });
 };

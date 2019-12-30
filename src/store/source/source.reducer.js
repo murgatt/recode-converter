@@ -1,23 +1,17 @@
-import { ADD_SOURCE, ADD_SOURCES, CLEAR_SOURCES } from './source.actions';
+import { CLEAR_SOURCES, SET_SOURCES } from './source.actions';
+import Normalizer from '../normalizer';
 
 const initialState = {
     sourceIds: [],
     sourcesById: {},
 };
 
+const sourceNormalizer = new Normalizer('sourceIds', 'sourcesById', 'name');
+
 export default (state = initialState, action) => {
     switch (action.type) {
-        case ADD_SOURCE:
-            return {
-                ...initialState,
-                sourceIds: [...state.sourceIds, action.source.id],
-                sourcesById: {
-                    ...state.sourcesById,
-                    [action.source.id]: action.source,
-                },
-            };
-        case ADD_SOURCES:
-            return {};
+        case SET_SOURCES:
+            return sourceNormalizer.set(state, action.sources);
         case CLEAR_SOURCES:
             return initialState;
         default:
