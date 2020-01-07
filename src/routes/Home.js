@@ -1,7 +1,9 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core';
 import FileSelector from '../components/FileSelector';
+import { setSources } from '../store/source/source.actions';
 
 const useStyles = makeStyles({
     root: {
@@ -14,10 +16,11 @@ const useStyles = makeStyles({
 
 export default () => {
     const classes = useStyles();
+    const dispatch = useDispatch();
     const history = useHistory();
 
     const handleFilesSelected = selectedFiles => {
-        console.log('selected files:', selectedFiles);
+        dispatch(setSources(Object.values(selectedFiles)));
         history.push('/converter');
     };
 
