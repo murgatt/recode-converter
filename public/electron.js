@@ -18,11 +18,11 @@ function createWindow() {
         width: 900,
         height: 680,
         webPreferences: {
-            nodeIntegration: true
-        }
+            nodeIntegration: true,
+        },
     });
     mainWindow.loadURL(isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../build/index.html')}`);
-    mainWindow.on('closed', () => mainWindow = null);
+    mainWindow.on('closed', () => (mainWindow = null));
 }
 
 app.on('ready', createWindow);
@@ -39,9 +39,10 @@ app.on('activate', () => {
     }
 });
 
-ipcMain.on('test', function (event, arg) {
+ipcMain.on('test', function(event, arg) {
     console.log(arg);
-    ffmpeg.convert({ input: 'test/input/file.test' });
+    // ffmpeg.convert({ input: 'test/input/file.test' });
+    ffmpeg.convert({});
     // const test = exec('pwd');
     event.returnValue = 'test';
 });

@@ -5,8 +5,7 @@ import Router from './Router';
 import store from './store';
 import theme from './theme';
 
-const electron = window.require('electron');
-const ipcRenderer = electron.ipcRenderer;
+const { ipcRenderer } = window.require('electron');
 
 function App() {
     const handleElectronTest = () => {

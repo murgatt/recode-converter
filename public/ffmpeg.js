@@ -2,10 +2,10 @@ const ffmpeg = require('fluent-ffmpeg');
 const fs = require('fs');
 const path = require('path');
 
-const SAMPLE = '/Users/tmurgat/Downloads/sample.mkv';
-const OUTPUT = '/Users/tmurgat/Downloads/sample-output.mkv';
+const SAMPLE = '/Users/theomurgat/Downloads/sample.mkv';
+const OUTPUT = '/Users/theomurgat/Downloads/sample-output.mkv';
 
-const convert = ({ input }) => {
+const convert = ({ input = SAMPLE }) => {
     console.log('RUN CMD', input);
 
     return new Promise((resolve, reject) => {

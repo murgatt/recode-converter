@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { makeStyles } from '@material-ui/core';
-import FileSelector from '../components/FileSelector';
+import { useTranslation } from 'react-i18next';
+import { Button, makeStyles } from '@material-ui/core';
+import FileInput from '../components/FileInput';
 import { setSources } from '../store/source/source.actions';
 
 const useStyles = makeStyles({
@@ -18,15 +19,20 @@ export default () => {
     const classes = useStyles();
     const dispatch = useDispatch();
     const history = useHistory();
+    const { t } = useTranslation();
 
-    const handleFilesSelected = selectedFiles => {
-        dispatch(setSources(Object.values(selectedFiles)));
+    const handleFilesSelected = useCallback(files => {
+        console.log(files);
+        dispatch(setSources(Object.values(files)));
         history.push('/converter');
-    };
+    }, []);
 
     return (
         <div className={classes.root}>
-            <FileSelector onFilesSelected={handleFilesSelected} />
+            <Button color="primary" component="label" variant="outlined">
+                {t('selectFiles')}
+                <FileInput onChange={handleFilesSelected} />
+            </Button>
         </div>
     );
 };
