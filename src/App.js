@@ -5,19 +5,10 @@ import Router from './Router';
 import store from './store';
 import theme from './theme';
 
-const { ipcRenderer } = window.require('electron');
-
 function App() {
-    const handleElectronTest = () => {
-        const reponse = ipcRenderer.sendSync('test', 'This is a test');
-    };
-
     return (
         <Provider store={store}>
             <ThemeProvider theme={theme}>
-                <button onClick={handleElectronTest} type="button">
-                    FFMPEG Test
-                </button>
                 <CssBaseline />
                 <div className="App">
                     <Router />

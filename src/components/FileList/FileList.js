@@ -29,13 +29,15 @@ const FileList = () => {
         dispatch(addSources(Object.values(selectedFiles)));
     }, []);
 
+    const getFile = sourceId => {
+        const file = sourcesById[sourceId];
+
+        return <File file={file} key={file.path} />;
+    };
+
     return (
         <div className={classes.root}>
-            <List>
-                {sourceIds.map(sourceId => (
-                    <File file={sourcesById[sourceId]} />
-                ))}
-            </List>
+            <List>{sourceIds.map(getFile)}</List>
             <Fab className={classes.fab} component="label" color="primary" aria-label="add">
                 <AddIcon />
                 <FileInput onChange={handleFilesSelected} />

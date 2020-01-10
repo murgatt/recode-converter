@@ -39,10 +39,7 @@ app.on('activate', () => {
     }
 });
 
-ipcMain.on('test', function(event, arg) {
-    console.log(arg);
-    // ffmpeg.convert({ input: 'test/input/file.test' });
-    ffmpeg.convert({});
-    // const test = exec('pwd');
+ipcMain.on('ffmpeg-convert', function(event, input) {
+    ffmpeg.convert({ input });
     event.returnValue = 'test';
 });

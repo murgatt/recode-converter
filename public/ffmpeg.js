@@ -1,12 +1,15 @@
 const ffmpeg = require('fluent-ffmpeg');
-const fs = require('fs');
 const path = require('path');
 
-const SAMPLE = '/Users/theomurgat/Downloads/sample.mkv';
-const OUTPUT = '/Users/theomurgat/Downloads/sample-output.mkv';
+const getOutputPath = input => {
+    const { dir, ext, name } = path.parse(input);
+    const filename = `${name} (1)${ext}`;
 
-const convert = ({ input = SAMPLE }) => {
-    console.log('RUN CMD', input);
+    return path.resolve(dir, filename);
+};
+
+const convert = ({ input }) => {
+    const output = getOutputPath(input);
 
     return new Promise((resolve, reject) => {
         ffmpeg(input)
@@ -19,11 +22,11 @@ const convert = ({ input = SAMPLE }) => {
             })
             .on('end', (stdout, stderr) => {
                 console.log(stdout, stderr);
-                resolve({ convertedFilePath: OUTPUT });
+                resolve({ convertedFilePath: output });
             })
             .on('progress', progress => console.log(`PROGRESS: ${progress.percent}`))
-            // .outputOptions('-map', '0', '-c', 'copy', '-c:a', 'ac3')
-            .saveToFile(OUTPUT);
+            .outputOptions('-map', '0', '-c', 'copy', '-c:a', 'ac3')
+            .saveToFile(output);
     });
 };
 
