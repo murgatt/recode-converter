@@ -1,16 +1,26 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { CssBaseline, ThemeProvider } from '@material-ui/core';
+import classNames from 'classnames';
+import { CssBaseline, ThemeProvider, makeStyles } from '@material-ui/core';
 import Router from './Router';
 import store from './store';
 import theme from './theme';
 
+const useStyles = makeStyles({
+    root: {
+        height: '100vh',
+    },
+});
+
 function App() {
+    const classes = useStyles();
+    const className = classNames('App', classes.root);
+
     return (
         <Provider store={store}>
             <ThemeProvider theme={theme}>
                 <CssBaseline />
-                <div className="App">
+                <div className={className}>
                     <Router />
                 </div>
             </ThemeProvider>

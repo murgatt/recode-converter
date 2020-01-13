@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Fab, List, makeStyles } from '@material-ui/core';
+import { Fab, makeStyles } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
 import File from '../File';
 import FileInput from '../FileInput';
@@ -13,9 +13,14 @@ const useStyles = makeStyles(theme => ({
         position: 'absolute',
         right: theme.spacing(2),
     },
-    root: {
-        height: '100vh',
+    fileList: {
+        height: '100%',
         position: 'relative',
+    },
+    filesWrapper: {
+        height: '100%',
+        overflow: 'auto',
+        padding: theme.spacing(2),
     },
 }));
 
@@ -36,8 +41,8 @@ const FileList = () => {
     };
 
     return (
-        <div className={classes.root}>
-            <List>{sourceIds.map(getFile)}</List>
+        <div className={classes.fileList}>
+            <div className={classes.filesWrapper}>{sourceIds.map(getFile)}</div>
             <Fab className={classes.fab} component="label" color="primary" aria-label="add">
                 <AddIcon />
                 <FileInput onChange={handleFilesSelected} />

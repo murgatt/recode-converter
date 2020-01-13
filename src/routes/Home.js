@@ -7,10 +7,10 @@ import FileInput from '../components/FileInput';
 import { setSources } from '../store/source/source.actions';
 
 const useStyles = makeStyles({
-    root: {
+    home: {
         alignItems: 'center',
         display: 'flex',
-        height: '100vh',
+        height: '100%',
         justifyContent: 'center',
     },
 });
@@ -22,13 +22,12 @@ export default () => {
     const { t } = useTranslation();
 
     const handleFilesSelected = useCallback(files => {
-        console.log(files);
         dispatch(setSources(Object.values(files)));
         history.push('/converter');
     }, []);
 
     return (
-        <div className={classes.root}>
+        <div className={classes.home}>
             <Button color="primary" component="label" variant="outlined">
                 {t('selectFiles')}
                 <FileInput onChange={handleFilesSelected} />

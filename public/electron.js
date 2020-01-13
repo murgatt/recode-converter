@@ -39,7 +39,7 @@ app.on('activate', () => {
     }
 });
 
-ipcMain.on('ffmpeg-convert', function(event, input) {
-    ffmpeg.convert({ input });
-    event.returnValue = 'test';
+ipcMain.on('ffmpeg-convert', async function(event, input) {
+    const res = await ffmpeg.convert({ input });
+    event.returnValue = res;
 });
