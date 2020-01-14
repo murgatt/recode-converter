@@ -1,5 +1,7 @@
 {
     "translation": {
-
+        "destination": "Destination",
+        "selectFiles": "Select Files",
+        "startConversion": "Start Conversion"
     }
 }

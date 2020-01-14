@@ -1,10 +1,26 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { getSourceIds } from '../store/source/source.selectors';
+import { makeStyles } from '@material-ui/core';
+import FileList from '../components/FileList';
+import BottomBar from '../components/BottomBar';
+
+const useStyles = makeStyles({
+    converter: {
+        height: '100%',
+    },
+    fileListWrapper: {
+        height: 'calc(100% - 48px)',
+    },
+});
 
 export default () => {
-    const sourceIds = useSelector(getSourceIds);
-    console.warn('sourceIds', sourceIds);
+    const classes = useStyles();
 
-    return <div>TODO: converter page</div>;
+    return (
+        <div className={classes.converter}>
+            <div className={classes.fileListWrapper}>
+                <FileList />
+            </div>
+            <BottomBar />
+        </div>
+    );
 };

@@ -1,15 +1,18 @@
 const ffmpeg = require('fluent-ffmpeg');
-const fs = require('fs');
 const path = require('path');
 
-const SAMPLE = '/Users/tmurgat/Downloads/sample.mkv';
-const OUTPUT = '/Users/tmurgat/Downloads/sample-output.mkv';
+const getOutputPath = input => {
+    const { dir, ext, name } = path.parse(input);
+    const filename = `${name} (1)${ext}`;
+
+    return path.resolve(dir, filename);
+};
 
 const convert = ({ input }) => {
-    console.log('RUN CMD', input);
+    const output = getOutputPath(input);
 
     return new Promise((resolve, reject) => {
-        ffmpeg(SAMPLE)
+        ffmpeg(input)
             .on('start', commandLine => {
                 console.log(`Spawned Ffmpeg with command: ${commandLine}`);
             })
@@ -19,27 +22,11 @@ const convert = ({ input }) => {
             })
             .on('end', (stdout, stderr) => {
                 console.log(stdout, stderr);
-                resolve({ convertedFilePath: OUTPUT });
+                resolve({ convertedFilePath: output });
             })
             .on('progress', progress => console.log(`PROGRESS: ${progress.percent}`))
             .outputOptions('-map', '0', '-c', 'copy', '-c:a', 'ac3')
-            .saveToFile(OUTPUT);
-    });
-};
-
-const listFiles = () => {
-    const directoryPath = path.resolve(SAMPLE);
-    //passsing directoryPath and callback function
-    fs.readdir(directoryPath, function (err, files) {
-        //handling error
-        if (err) {
-            return console.log('Unable to scan directory: ' + err);
-        }
-        //listing all files using forEach
-        files.forEach(function (file) {
-            // Do whatever you want to do with the file
-            console.log(file);
-        });
+            .saveToFile(output);
     });
 };
 
