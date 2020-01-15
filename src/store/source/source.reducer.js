@@ -6,7 +6,7 @@ const initialState = {
     sourcesById: {},
 };
 
-const sourceNormalizer = new Normalizer('sourceIds', 'sourcesById', 'name');
+const sourceNormalizer = new Normalizer('sourceIds', 'sourcesById', 'path');
 
 export default (state = initialState, action) => {
     switch (action.type) {

@@ -46,7 +46,7 @@ export default class Normalizer {
 
         return {
             ...state,
-            [this.idListIndex]: [...ids, newIds],
+            [this.idListIndex]: [...ids, ...newIds],
             [this.entityObjectIndex]: { ...entities, ...newEntities },
         };
     }

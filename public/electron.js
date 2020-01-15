@@ -43,3 +43,7 @@ ipcMain.on('ffmpeg-convert', async function(event, input) {
     const res = await ffmpeg.convert({ input });
     event.returnValue = res;
 });
+
+ipcMain.on('ffmpeg-run-conversion', async function(event, inputList) {
+    event.returnValue = await ffmpeg.runFilesConversion(inputList);
+});
