@@ -8,13 +8,6 @@ const getOutputPath = input => {
     return path.resolve(dir, filename);
 };
 
-const runFilesConversion = async inputList => {
-    for (let i = 0; i < inputList.length; i++) {
-        const input = inputList[i];
-        await convert({ input });
-    }
-};
-
 const convert = ({ input }) => {
     const output = getOutputPath(input);
 
@@ -37,5 +30,4 @@ const convert = ({ input }) => {
     });
 };
 
-exports.runFilesConversion = runFilesConversion;
 exports.convert = convert;

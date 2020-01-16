@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { makeStyles } from '@material-ui/core';
 import FileList from '../components/FileList';
@@ -17,17 +17,23 @@ const useStyles = makeStyles({
 });
 
 export default () => {
+    const [test, setTest] = useState('');
     const classes = useStyles();
     const sourcesById = useSelector(getSourcesById);
 
     const handleStartConversion = () => {
         const pathList = Object.values(sourcesById).map(source => source.path);
-        ipcRenderer.sendSync('ffmpeg-run-conversion', pathList);
+        ipcRenderer.send('ffmpeg-run-conversion', pathList);
     };
+
+    ipcRenderer.on('conversion-end', () => {
+        setTest('ceonversion end');
+    });
 
     return (
         <div className={classes.converter}>
             <div className={classes.fileListWrapper}>
+                Test: {test}
                 <FileList />
             </div>
             <BottomBar onStartConversion={handleStartConversion} />
