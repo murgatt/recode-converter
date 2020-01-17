@@ -1,15 +1,15 @@
-import Home from './Home';
-import Converter from './Converter';
+import HomePage from './HomePage';
+import ConverterPage from './ConverterPage';
 
 export default [
     {
-        component: Home,
+        component: HomePage,
         exact: true,
         name: 'home',
         path: '/',
     },
     {
-        component: Converter,
+        component: ConverterPage,
         name: 'converter',
         path: '/converter',
     },
