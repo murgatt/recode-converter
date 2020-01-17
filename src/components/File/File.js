@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
-import Card from '@material-ui/core/Card';
-import { CardHeader, IconButton, makeStyles } from '@material-ui/core';
+import { Card, CardHeader, LinearProgress, makeStyles } from '@material-ui/core';
+import CheckIcon from '@material-ui/icons/CheckCircle';
+import ErrorIcon from '@material-ui/icons/Error';
+import LoadIcon from '@material-ui/icons/Loop';
 import VideoIcon from '@material-ui/icons/Movie';
-import StartIcon from '@material-ui/icons/PlayArrow';
-
-const { ipcRenderer } = window.require('electron');
 
 const useStyles = makeStyles(theme => ({
     file: {
@@ -14,29 +13,34 @@ const useStyles = makeStyles(theme => ({
         },
         marginBottom: theme.spacing(),
     },
+    progressWrapper: {
+        height: 4,
+    },
 }));
 
 const File = ({ file }) => {
-    const { name, path } = file;
+    const { name, path, progress, status } = file;
     const classes = useStyles();
 
-    const handleElectronTest = () => {
-        const res = ipcRenderer.sendSync('ffmpeg-convert', path);
-        console.log(res);
-    };
+    const icon = useMemo(() => {
+        switch (status) {
+            case 'complete':
+                return <CheckIcon />;
+            case 'conversion':
+                return <LoadIcon />;
+            case 'error':
+                return <ErrorIcon color="error" />;
+            default:
+                return <VideoIcon color="action" />;
+        }
+    }, [status]);
 
     return (
         <Card className={classes.file} variant="outlined">
-            <CardHeader
-                action={
-                    <IconButton onClick={handleElectronTest}>
-                        <StartIcon />
-                    </IconButton>
-                }
-                avatar={<VideoIcon color="action" />}
-                title={name}
-                subheader={path}
-            />
+            <CardHeader avatar={icon} title={name} subheader={path} />
+            <div className={classes.progressWrapper}>
+                {status === 'conversion' && <LinearProgress value={progress} variant="determinate" />}
+            </div>
         </Card>
     );
 };

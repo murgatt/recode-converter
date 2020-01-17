@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Button, makeStyles } from '@material-ui/core';
 import FileInput from '../components/FileInput';
-import { setSources } from '../store/source/source.actions';
+import { setFiles } from '../store/file/file.actions';
 
 const useStyles = makeStyles({
     home: {
@@ -22,7 +22,7 @@ export default () => {
     const { t } = useTranslation();
 
     const handleFilesSelected = useCallback(files => {
-        dispatch(setSources(Object.values(files)));
+        dispatch(setFiles(Object.values(files)));
         history.push('/converter');
     }, []);
 

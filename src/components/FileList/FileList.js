@@ -4,8 +4,8 @@ import { Fab, makeStyles } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
 import File from '../File';
 import FileInput from '../FileInput';
-import { getSourceIds, getSourcesById } from '../../store/source/source.selectors';
-import { addSources } from '../../store/source/source.actions';
+import { getFileIds, getFilesById } from '../../store/file/file.selectors';
+import { addFiles } from '../../store/file/file.actions';
 
 const useStyles = makeStyles(theme => ({
     fab: {
@@ -27,22 +27,22 @@ const useStyles = makeStyles(theme => ({
 const FileList = () => {
     const dispatch = useDispatch();
     const classes = useStyles();
-    const sourceIds = useSelector(getSourceIds);
-    const sourcesById = useSelector(getSourcesById);
+    const fileIds = useSelector(getFileIds);
+    const filesById = useSelector(getFilesById);
 
     const handleFilesSelected = useCallback(selectedFiles => {
-        dispatch(addSources(Object.values(selectedFiles)));
+        dispatch(addFiles(Object.values(selectedFiles)));
     }, []);
 
-    const getFile = sourceId => {
-        const file = sourcesById[sourceId];
+    const getFile = fileId => {
+        const file = filesById[fileId];
 
         return <File file={file} key={file.path} />;
     };
 
     return (
         <div className={classes.fileList}>
-            <div className={classes.filesWrapper}>{sourceIds.map(getFile)}</div>
+            <div className={classes.filesWrapper}>{fileIds.map(getFile)}</div>
             <Fab className={classes.fab} component="label" color="primary" aria-label="add">
                 <AddIcon />
                 <FileInput onChange={handleFilesSelected} />
