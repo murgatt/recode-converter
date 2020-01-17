@@ -5,7 +5,7 @@ const BrowserWindow = electron.BrowserWindow;
 const path = require('path');
 const isDev = require('electron-is-dev');
 
-const Conversion = require('./conversion');
+const ConversionManager = require('./conversionManager');
 
 let mainWindow;
 let conversion;
@@ -18,7 +18,7 @@ function createWindow() {
             nodeIntegration: true,
         },
     });
-    conversion = new Conversion(mainWindow);
+    conversion = new ConversionManager(mainWindow);
     mainWindow.loadURL(isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../build/index.html')}`);
     mainWindow.on('closed', () => {
         mainWindow = null;

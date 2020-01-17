@@ -5,6 +5,7 @@ import { CssBaseline, ThemeProvider, makeStyles } from '@material-ui/core';
 import Router from './Router';
 import store from './store';
 import theme from './theme';
+import './registerElectronEvents';
 
 const useStyles = makeStyles({
     root: {

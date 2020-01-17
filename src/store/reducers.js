@@ -1,5 +1,5 @@
-import source from './source/source.reducer';
+import file from './file/file.reducer';
 
 export default {
-    source,
+    file,
 };
