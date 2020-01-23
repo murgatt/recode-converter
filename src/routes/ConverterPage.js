@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { makeStyles } from '@material-ui/core';
 import FileList from '../components/FileList';
 import BottomBar from '../components/BottomBar';
+import ConversionDrawer from '../components/ConversionDrawer';
 import { getFilesById } from '../store/file/file.selectors';
 
 const { ipcRenderer } = window.require('electron');
@@ -12,6 +13,7 @@ const useStyles = makeStyles({
         height: '100%',
     },
     fileListWrapper: {
+        display: 'flex',
         height: 'calc(100% - 48px)',
     },
 });
@@ -29,6 +31,7 @@ export default () => {
         <div className={classes.converter}>
             <div className={classes.fileListWrapper}>
                 <FileList />
+                <ConversionDrawer />
             </div>
             <BottomBar onStartConversion={handleStartConversion} />
         </div>

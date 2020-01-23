@@ -2,6 +2,7 @@
     "translation": {
         "destination": "Destination",
         "selectFiles": "Select Files",
-        "startConversion": "Start Conversion"
+        "startConversion": "Start Conversion",
+        "conversionSettings": "Conversion Settings"
     }
 }
