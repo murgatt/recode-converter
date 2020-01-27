@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { DialogContent, Drawer, MenuItem, Select, Toolbar, Typography, makeStyles } from '@material-ui/core';
+import { DialogContent, Drawer, Toolbar, Typography, makeStyles } from '@material-ui/core';
+import ConversionSettingsForm from '../ConversionSettingsForm';
 
 const useStyles = makeStyles({
     conversionDrawer: {
@@ -24,13 +25,10 @@ const ConversionDrawer = () => {
             variant="persistent"
         >
             <Toolbar>
-                <Typography variant="subtitle1">{t('conversionSettings')}</Typography>
+                <Typography variant="subtitle1">{t('conversionSettings.title')}</Typography>
             </Toolbar>
             <DialogContent>
-                <Select value="ac3" variant="outlined">
-                    <MenuItem value="ac3">AC3</MenuItem>
-                    <MenuItem value="dts">DTS</MenuItem>
-                </Select>
+                <ConversionSettingsForm />
             </DialogContent>
         </Drawer>
     );

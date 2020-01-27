@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { FormControl, FormHelperText, InputLabel, MenuItem, Select as MUISelect } from '@material-ui/core';
 
@@ -73,6 +73,8 @@ const Select = props => {
         );
     }, [native, placeholder, placeholderDisabled]);
 
+    const handleChange = useCallback(event => onChange(event.target.value, event), []);
+
     return (
         <FormControl
             color={color}
@@ -90,7 +92,7 @@ const Select = props => {
                 labelWidth={labelWidth}
                 multiple={multiple}
                 native={native}
-                onChange={onChange}
+                onChange={handleChange}
                 renderValue={renderValue}
                 value={value}
             >

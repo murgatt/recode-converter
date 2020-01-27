@@ -6,8 +6,9 @@
         "node": true
     },
     "rules": {
-        "prettier/prettier": ["error"],
         "indent": ["error", 4, { "SwitchCase": 1 }],
+        "newline-before-return": "error",
+        "prettier/prettier": ["error"],
         "react/forbid-prop-types": "off",
         "react/jsx-indent": ["error", 4],
         "react/jsx-indent-props": ["error", 4],
