@@ -10,7 +10,7 @@ const BitrateSelect = ({ codec, disabled }) => {
     const dispatch = useDispatch();
     const bitrate = useSelector(getConversionSettings(CONVERSION_SETTINGS.audioBitrate));
     const { label } = bitrateSetting;
-    const options = codec === 'passthru' ? [] : bitrateSetting[codec].options;
+    const options = disabled ? [] : bitrateSetting[codec].options;
 
     const handleChange = useCallback(
         value => dispatch(setConversionSetting(CONVERSION_SETTINGS.audioBitrate, value)),

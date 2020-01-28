@@ -37,7 +37,7 @@ class ConversionManager {
     async runFilesConversion(inputList) {
         for (let i = 0; i < inputList.length; i++) {
             const input = inputList[i];
-            await ffmpeg.convert({ input }, this.callbacks);
+            await ffmpeg.convert({ input, callbacks: this.callbacks });
         }
     }
 }

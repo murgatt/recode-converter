@@ -7,7 +7,7 @@ import { CONVERSION_SETTINGS } from '../../store/conversionSettings/conversionSe
 
 const ConversionSettingsForm = () => {
     const codec = useSelector(getConversionSettings(CONVERSION_SETTINGS.audioCodec));
-    const audioSettingsDisabled = codec === 'passthru';
+    const audioSettingsDisabled = codec === 'passthru' || codec === 'none';
 
     return (
         <div>
