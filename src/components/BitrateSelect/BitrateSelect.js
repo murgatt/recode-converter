@@ -4,12 +4,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { get } from 'lodash-es';
 import Select from '../Select';
 import { bitrate as bitrateSetting } from '../../config/conversion/audioSettings';
-import { getConversionSettings } from '../../store/conversionSettings/conversionSettings.selectors';
+import { getSingleConversionSetting } from '../../store/conversionSettings/conversionSettings.selectors';
 import { CONVERSION_SETTINGS, setConversionSetting } from '../../store/conversionSettings/conversionSettings.actions';
 
 const BitrateSelect = ({ codec, disabled }) => {
     const dispatch = useDispatch();
-    const bitrate = useSelector(getConversionSettings(CONVERSION_SETTINGS.audioBitrate));
+    const bitrate = useSelector(getSingleConversionSetting(CONVERSION_SETTINGS.audioBitrate));
     const { label } = bitrateSetting;
     const options = disabled ? [] : get(bitrateSetting, [codec, 'options'], []);
 

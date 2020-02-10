@@ -1,20 +1,12 @@
 const ffmpeg = require('fluent-ffmpeg');
 const path = require('path');
+const ffmpegOptions = require('./ffmpegOptions');
 
-const optionsMap = {
-    audioBitrate: {
-        default: {
-            flag: '-c:a',
-        },
-        none: {
-            flag: '-na',
-            value: '',
-        },
-        passthru: {
-            flag: '',
-            value: '',
-        }
-    }
+const BASE_OUTPUT_OPTIONS = ['-map 0', '-c copy'];
+
+const getOutputOptionsMap = {
+    audioBitrate: ffmpegOptions.getBitrateOutputOption,
+    audioCodec: ffmpegOptions.getCodecOutputOption,
 };
 
 const getOutputPath = input => {
@@ -24,25 +16,19 @@ const getOutputPath = input => {
     return path.resolve(dir, filename);
 };
 
-const getSingleOutputOption = (key, value) => {
-    const option = optionsMap[key];
-    if (!option) {
-        return ['', ''];
-    }
-
-    const currentOptionMap = option[value] || option.default;
-    const outputFlag = currentOptionMap.flag;
-    const outputValue = currentOptionMap.hasOwnProperty('value') ? currentOptionMap.value : value;
-
-    return [outputFlag, outputValue];
-};
-
 const getOutputOptions = options => {
-    const outputOptions = [];
+    const outputOptions = [...BASE_OUTPUT_OPTIONS];
     Object.keys(options).forEach(optionKey => {
         const optionValue = options[optionKey];
-        outputOptions.concat(getSingleOutputOption(optionKey, optionValue));
+        const getOutputOption = getOutputOptionsMap[optionKey];
+        const outputOption = getOutputOption ? getOutputOption(optionValue) : null;
+
+        if (outputOption) {
+            outputOptions.push(outputOption);
+        }
     });
+
+    return outputOptions;
 };
 
 const convert = ({ input, options = {}, callbacks = {} }) => {
@@ -55,7 +41,6 @@ const convert = ({ input, options = {}, callbacks = {} }) => {
 
     const output = getOutputPath(input);
     const outputOptions = getOutputOptions(options);
-    console.log('outputOptions', outputOptions);
 
     return new Promise((resolve, reject) => {
         ffmpeg(input)
@@ -77,7 +62,7 @@ const convert = ({ input, options = {}, callbacks = {} }) => {
                 console.log(`PROGRESS: ${progress.percent}`);
                 onConversionProgress(input, progress);
             })
-            .outputOptions('-map', '0', '-c', 'copy')
+            .outputOptions(outputOptions)
             .saveToFile(output);
     });
 };
