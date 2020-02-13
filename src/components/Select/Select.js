@@ -44,14 +44,12 @@ const Select = props => {
     } = props;
 
     const [labelWidth, setLabelWidth] = useState(0);
-    const displayLabel = useMemo(() => !(placeholder && displayEmpty), [placeholder, displayEmpty]);
+    const shrinkLabel = useMemo(() => value || (placeholder && displayEmpty), [value, placeholder, displayEmpty]);
 
     const inputLabelRef = useRef(null);
     useEffect(() => {
-        if (displayLabel) {
-            setLabelWidth(inputLabelRef.current.offsetWidth);
-        }
-    }, [displayLabel, inputLabelRef]);
+        setLabelWidth(inputLabelRef.current.offsetWidth);
+    }, [inputLabelRef]);
 
     const renderPlaceholder = useMemo(() => {
         if (!placeholder) {
@@ -85,7 +83,9 @@ const Select = props => {
             required={required}
             variant={variant}
         >
-            {displayLabel && <InputLabel ref={inputLabelRef}>{label}</InputLabel>}
+            <InputLabel shrink={shrinkLabel} ref={inputLabelRef}>
+                {label}
+            </InputLabel>
             <MUISelect
                 autoWidth={autoWidth}
                 displayEmpty={displayEmpty}

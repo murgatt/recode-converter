@@ -1,5 +1,9 @@
-const getBitrateOutputOption = () => {
+const getBitrateOutputOption = value => {
+    if (value) {
+        return `-b:a ${value}`;
+    }
 
+    return '';
 };
 
 const getCodecOutputOption = value => {

@@ -40,31 +40,31 @@ export const bitrate = {
         options: [
             {
                 label: i18n.t('conversionSettings.bitrateValue', { value: 4 }),
-                value: '4',
+                value: '4k',
             },
             {
                 label: i18n.t('conversionSettings.bitrateValue', { value: 32 }),
-                value: '32',
+                value: '32k',
             },
             {
                 label: i18n.t('conversionSettings.bitrateValue', { value: 64 }),
-                value: '64',
+                value: '64k',
             },
             {
                 label: i18n.t('conversionSettings.bitrateValue', { value: 128 }),
-                value: '128',
+                value: '128k',
             },
             {
                 label: i18n.t('conversionSettings.bitrateValue', { value: 160 }),
-                value: '160',
+                value: '160k',
             },
             {
                 label: i18n.t('conversionSettings.bitrateValue', { value: 224 }),
-                value: '224',
+                value: '224k',
             },
             {
                 label: i18n.t('conversionSettings.bitrateValue', { value: 264 }),
-                value: '264',
+                value: '264k',
             },
         ],
     },
@@ -72,31 +72,31 @@ export const bitrate = {
         options: [
             {
                 label: i18n.t('conversionSettings.bitrateValue', { value: 32 }),
-                value: '32',
+                value: '32k',
             },
             {
                 label: i18n.t('conversionSettings.bitrateValue', { value: 64 }),
-                value: '64',
+                value: '64k',
             },
             {
                 label: i18n.t('conversionSettings.bitrateValue', { value: 112 }),
-                value: '112',
+                value: '112k',
             },
             {
                 label: i18n.t('conversionSettings.bitrateValue', { value: 192 }),
-                value: '192',
+                value: '192k',
             },
             {
                 label: i18n.t('conversionSettings.bitrateValue', { value: 320 }),
-                value: '320',
+                value: '320k',
             },
             {
                 label: i18n.t('conversionSettings.bitrateValue', { value: 448 }),
-                value: '448',
+                value: '448k',
             },
             {
                 label: i18n.t('conversionSettings.bitrateValue', { value: 640 }),
-                value: '640',
+                value: '640k',
             },
         ],
     },
