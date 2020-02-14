@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { FormControl, FormHelperText, InputLabel, MenuItem, Select as MUISelect } from '@material-ui/core';
 
@@ -44,14 +44,12 @@ const Select = props => {
     } = props;
 
     const [labelWidth, setLabelWidth] = useState(0);
-    const displayLabel = useMemo(() => !(placeholder && displayEmpty), [placeholder, displayEmpty]);
+    const shrinkLabel = useMemo(() => value || (placeholder && displayEmpty), [value, placeholder, displayEmpty]);
 
     const inputLabelRef = useRef(null);
     useEffect(() => {
-        if (displayLabel) {
-            setLabelWidth(inputLabelRef.current.offsetWidth);
-        }
-    }, [displayLabel, inputLabelRef]);
+        setLabelWidth(inputLabelRef.current.offsetWidth);
+    }, [inputLabelRef]);
 
     const renderPlaceholder = useMemo(() => {
         if (!placeholder) {
@@ -73,6 +71,8 @@ const Select = props => {
         );
     }, [native, placeholder, placeholderDisabled]);
 
+    const handleChange = useCallback(event => onChange(event.target.value, event), []);
+
     return (
         <FormControl
             color={color}
@@ -83,14 +83,16 @@ const Select = props => {
             required={required}
             variant={variant}
         >
-            {displayLabel && <InputLabel ref={inputLabelRef}>{label}</InputLabel>}
+            <InputLabel shrink={shrinkLabel} ref={inputLabelRef}>
+                {label}
+            </InputLabel>
             <MUISelect
                 autoWidth={autoWidth}
                 displayEmpty={displayEmpty}
                 labelWidth={labelWidth}
                 multiple={multiple}
                 native={native}
-                onChange={onChange}
+                onChange={handleChange}
                 renderValue={renderValue}
                 value={value}
             >

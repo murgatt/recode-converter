@@ -14,6 +14,7 @@ const useStyles = makeStyles(theme => ({
         right: theme.spacing(2),
     },
     fileList: {
+        flex: 1,
         height: '100%',
         position: 'relative',
     },

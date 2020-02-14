@@ -1,6 +1,20 @@
 const ffmpeg = require('fluent-ffmpeg');
 const path = require('path');
 
+const BASE_OUTPUT_OPTIONS = ['-map 0', '-c copy'];
+
+const OPTION_FLAGS = {
+    audioBitrate: {
+        default: '',
+        defaultFlag: '-b:a',
+    },
+    audioCodec: {
+        defaultFlag: '-c:a',
+        none: '-na',
+        passthru: '',
+    },
+};
+
 const getOutputPath = input => {
     const { dir, ext, name } = path.parse(input);
     const filename = `${name} (1)${ext}`;
@@ -8,8 +22,30 @@ const getOutputPath = input => {
     return path.resolve(dir, filename);
 };
 
-const convert = (options, callbacks = {}) => {
-    const { input } = options;
+const getSingleOutputOption = (option, value) => {
+    const optionFlag = OPTION_FLAGS[option];
+    if (optionFlag) {
+        return value in optionFlag ? optionFlag[value] : `${optionFlag.defaultFlag} ${value}`;
+    }
+
+    return '';
+};
+
+const getOutputOptions = options => {
+    const outputOptions = [...BASE_OUTPUT_OPTIONS];
+    Object.keys(options).forEach(optionKey => {
+        const optionValue = options[optionKey];
+        const outputOption = getSingleOutputOption(optionKey, optionValue);
+
+        if (outputOption) {
+            outputOptions.push(outputOption);
+        }
+    });
+
+    return outputOptions;
+};
+
+const convert = ({ input, options = {}, callbacks = {} }) => {
     const {
         onConversionEnd = () => {},
         onConversionStart = () => {},
@@ -18,6 +54,7 @@ const convert = (options, callbacks = {}) => {
     } = callbacks;
 
     const output = getOutputPath(input);
+    const outputOptions = getOutputOptions(options);
 
     return new Promise((resolve, reject) => {
         ffmpeg(input)
@@ -39,7 +76,7 @@ const convert = (options, callbacks = {}) => {
                 console.log(`PROGRESS: ${progress.percent}`);
                 onConversionProgress(input, progress);
             })
-            .outputOptions('-map', '0', '-c', 'copy', '-c:a', 'ac3')
+            .outputOptions(outputOptions)
             .saveToFile(output);
     });
 };

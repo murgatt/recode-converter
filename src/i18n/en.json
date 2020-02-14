@@ -1,7 +1,20 @@
 {
     "translation": {
+        "default": "Default",
         "destination": "Destination",
         "selectFiles": "Select Files",
-        "startConversion": "Start Conversion"
+        "startConversion": "Start Conversion",
+        "conversionSettings": {
+            "aac": "AAC",
+            "ac3": "AC3",
+            "bitrate": "Bitrate",
+            "bitrateValue": "{{ value }} kbps",
+            "codec": "Codec",
+            "dts": "DTS",
+            "eac3": "EAC3",
+            "noAudioCodec": "None - Remove Audio",
+            "title": "Conversion Settings",
+            "withoutAudioReencoding": "Without Reencoding - Copy Audio"
+        }
     }
 }

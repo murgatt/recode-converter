@@ -13,8 +13,8 @@ class ConversionManager {
             onConversionStart: file => this.fileConversionStart(file),
         };
 
-        ipcMain.on('ffmpeg-run-conversion', async (event, inputList) => {
-            await this.runFilesConversion(inputList);
+        ipcMain.on('ffmpeg-run-conversion', async (event, { inputList, options }) => {
+            await this.runFilesConversion(inputList, options);
         });
     }
 
@@ -34,10 +34,10 @@ class ConversionManager {
         this.window.send('file-conversion-started', { file });
     }
 
-    async runFilesConversion(inputList) {
+    async runFilesConversion(inputList, options) {
         for (let i = 0; i < inputList.length; i++) {
             const input = inputList[i];
-            await ffmpeg.convert({ input }, this.callbacks);
+            await ffmpeg.convert({ input, callbacks: this.callbacks, options });
         }
     }
 }
