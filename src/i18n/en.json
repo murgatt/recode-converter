@@ -2,6 +2,7 @@
     "translation": {
         "default": "Default",
         "destination": "Destination",
+        "removeFile": "Remove File",
         "selectFiles": "Select Files",
         "startConversion": "Start Conversion",
         "conversionSettings": {

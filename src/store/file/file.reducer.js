@@ -1,4 +1,4 @@
-import { ADD_FILES, CLEAR_FILES, SET_FILES, UPDATE_FILES } from './file.actions';
+import { ADD_FILES, CLEAR_FILES, SET_FILES, UPDATE_FILES, DELETE_FILES } from './file.actions';
 import Normalizer from '../normalizer';
 
 const initialState = {
@@ -18,6 +18,8 @@ export default (state = initialState, action) => {
             return initialState;
         case UPDATE_FILES:
             return fileNormalizer.update(state, action.files);
+        case DELETE_FILES:
+            return fileNormalizer.delete(state, action.filesIds);
         default:
             return state;
     }
