@@ -1,8 +1,9 @@
 import { CONVERSION_SETTINGS, SET_CONVERSION_SETTING } from './conversionSettings.actions';
+import { bitrate, codec } from '../../config/conversion/audioSettings';
 
 const initialState = {
-    [CONVERSION_SETTINGS.audioBitrate]: '',
-    [CONVERSION_SETTINGS.audioCodec]: 'passthru',
+    [CONVERSION_SETTINGS.audioBitrate]: bitrate.defaultValue,
+    [CONVERSION_SETTINGS.audioCodec]: codec.defaultValue,
 };
 
 export default (state = initialState, action) => {

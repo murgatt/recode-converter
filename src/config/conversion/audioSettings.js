@@ -34,10 +34,15 @@ export const codec = {
 };
 
 export const bitrate = {
+    defaultValue: 'default',
     id: 'bitrate',
     label: i18n.t('conversionSettings.bitrate'),
     aac: {
         options: [
+            {
+                label: i18n.t('default'),
+                value: 'default',
+            },
             {
                 label: i18n.t('conversionSettings.bitrateValue', { value: 4 }),
                 value: '4k',
@@ -70,6 +75,10 @@ export const bitrate = {
     },
     ac3: {
         options: [
+            {
+                label: i18n.t('default'),
+                value: 'default',
+            },
             {
                 label: i18n.t('conversionSettings.bitrateValue', { value: 32 }),
                 value: '32k',

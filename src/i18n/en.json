@@ -1,5 +1,6 @@
 {
     "translation": {
+        "default": "Default",
         "destination": "Destination",
         "selectFiles": "Select Files",
         "startConversion": "Start Conversion",

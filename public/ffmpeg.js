@@ -1,12 +1,18 @@
 const ffmpeg = require('fluent-ffmpeg');
 const path = require('path');
-const ffmpegOptions = require('./ffmpegOptions');
 
 const BASE_OUTPUT_OPTIONS = ['-map 0', '-c copy'];
 
-const getOutputOptionsMap = {
-    audioBitrate: ffmpegOptions.getBitrateOutputOption,
-    audioCodec: ffmpegOptions.getCodecOutputOption,
+const OPTION_FLAGS = {
+    audioBitrate: {
+        default: '',
+        defaultFlag: '-b:a',
+    },
+    audioCodec: {
+        defaultFlag: '-c:a',
+        none: '-na',
+        passthru: '',
+    },
 };
 
 const getOutputPath = input => {
@@ -16,12 +22,20 @@ const getOutputPath = input => {
     return path.resolve(dir, filename);
 };
 
+const getSingleOutputOption = (option, value) => {
+    const optionFlag = OPTION_FLAGS[option];
+    if (optionFlag) {
+        return value in optionFlag ? optionFlag[value] : `${optionFlag.defaultFlag} ${value}`;
+    }
+
+    return '';
+};
+
 const getOutputOptions = options => {
     const outputOptions = [...BASE_OUTPUT_OPTIONS];
     Object.keys(options).forEach(optionKey => {
         const optionValue = options[optionKey];
-        const getOutputOption = getOutputOptionsMap[optionKey];
-        const outputOption = getOutputOption ? getOutputOption(optionValue) : null;
+        const outputOption = getSingleOutputOption(optionKey, optionValue);
 
         if (outputOption) {
             outputOptions.push(outputOption);
