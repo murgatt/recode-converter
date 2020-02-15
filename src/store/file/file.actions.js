@@ -3,6 +3,7 @@ export const CLEAR_FILES = 'file/CLEAR_FILES';
 export const SET_FILES = 'file/SET_FILES';
 export const UPDATE_FILES = 'file/UPDATE_FILES';
 export const DELETE_FILES = 'file/DELETE_FILES';
+export const SET_DESTINATION = 'file/SET_DESTINATION';
 
 const fileToObject = file => ({
     lastModified: file.lastModified,
@@ -22,6 +23,7 @@ export const addFiles = files => dispatch => dispatch({ files: normalizeFiles(fi
 export const clearFiles = dispatch => dispatch({ type: CLEAR_FILES });
 export const setFiles = files => dispatch => dispatch({ files: normalizeFiles(files), type: SET_FILES });
 export const deleteFiles = filesIds => dispatch => dispatch({ filesIds, type: DELETE_FILES });
+export const setDestination = destination => dispatch => dispatch({ destination, type: SET_DESTINATION });
 
 export const setFileConversionEnd = fileId => (dispatch, getState) => {
     const { filesById } = getState().file;

@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
-import { AppBar, TextField, Toolbar, makeStyles } from '@material-ui/core';
+import { AppBar, Toolbar, makeStyles } from '@material-ui/core';
 import StartIcon from '@material-ui/icons/PlayArrowOutlined';
 import IconButton from '../IconButton';
+import DestinationInput from '../DestinationInput';
 
 const useStyles = makeStyles({
     bottomBar: {
@@ -22,7 +23,7 @@ const BottomBar = ({ onStartConversion }) => {
     return (
         <AppBar className={classes.bottomBar}>
             <Toolbar className={classes.toolbar} variant="dense">
-                <TextField label={t('destination')} size="small" variant="outlined" />
+                <DestinationInput />
                 <IconButton label={t('startConversion')} onClick={onStartConversion} size="small">
                     <StartIcon />
                 </IconButton>
