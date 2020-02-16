@@ -3,6 +3,7 @@
         "default": "Default",
         "destination": "Destination",
         "removeFile": "Remove File",
+        "sameAsSource": "Same as source",
         "selectDestination": "Select Destination",
         "selectFiles": "Select Files",
         "startConversion": "Start Conversion",

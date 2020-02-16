@@ -5,6 +5,7 @@ const initialState = {
     destination: '',
     fileIds: [],
     filesById: {},
+    isDestinationManuallySet: false,
 };
 
 const fileNormalizer = new Normalizer('fileIds', 'filesById', 'path');
@@ -25,6 +26,7 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 destination: action.destination,
+                isDestinationManuallySet: action.isDestinationManuallySet,
             };
         default:
             return state;

@@ -15,11 +15,12 @@ const OPTION_FLAGS = {
     },
 };
 
-const getOutputPath = input => {
+const getOutputPath = (input, destination) => {
     const { dir, ext, name } = path.parse(input);
     const filename = `${name} (1)${ext}`;
+    const outputDirectory = destination || dir;
 
-    return path.resolve(dir, filename);
+    return path.resolve(outputDirectory, filename);
 };
 
 const getSingleOutputOption = (option, value) => {
@@ -45,7 +46,7 @@ const getOutputOptions = options => {
     return outputOptions;
 };
 
-const convert = ({ input, options = {}, callbacks = {} }) => {
+const convert = ({ input, options = {}, callbacks = {}, destination }) => {
     const {
         onConversionEnd = () => {},
         onConversionStart = () => {},
@@ -53,7 +54,7 @@ const convert = ({ input, options = {}, callbacks = {} }) => {
         onConversionError = () => {},
     } = callbacks;
 
-    const output = getOutputPath(input);
+    const output = getOutputPath(input, destination);
     const outputOptions = getOutputOptions(options);
 
     return new Promise((resolve, reject) => {

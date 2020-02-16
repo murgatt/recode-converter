@@ -6,6 +6,7 @@ import FolderIcon from '@material-ui/icons/FolderOutlined';
 import IconButton from '../IconButton';
 import { setDestination } from '../../store/file/file.actions';
 import { getDestination } from '../../store/file/file.selectors';
+import { getDirPathFromFilePath } from '../../store/file/utils';
 
 const useStyles = makeStyles({
     destinationInput: {
@@ -22,10 +23,8 @@ const DestinationInput = () => {
     const handleDestinationChange = useCallback(event => {
         const file = event.target.files[0];
         if (file) {
-            const filePathArray = file.path.split('/');
-            filePathArray.pop();
-            const path = filePathArray.join('/');
-            dispatch(setDestination(path));
+            const path = getDirPathFromFilePath(file.path);
+            dispatch(setDestination(path, true));
         }
     }, []);
 

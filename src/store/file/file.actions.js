@@ -1,3 +1,6 @@
+import { areFilesFromSameDirectory, getDirPathFromFilePath } from './utils';
+import i18n from '../../i18n';
+
 export const ADD_FILES = 'file/ADD_FILES';
 export const CLEAR_FILES = 'file/CLEAR_FILES';
 export const SET_FILES = 'file/SET_FILES';
@@ -19,11 +22,39 @@ const fileToObject = file => ({
 
 const normalizeFiles = files => files.map(fileToObject);
 
-export const addFiles = files => dispatch => dispatch({ files: normalizeFiles(files), type: ADD_FILES });
-export const clearFiles = dispatch => dispatch({ type: CLEAR_FILES });
-export const setFiles = files => dispatch => dispatch({ files: normalizeFiles(files), type: SET_FILES });
-export const deleteFiles = filesIds => dispatch => dispatch({ filesIds, type: DELETE_FILES });
-export const setDestination = destination => dispatch => dispatch({ destination, type: SET_DESTINATION });
+export const setDestination = (destination, isDestinationManuallySet = false) => dispatch =>
+    dispatch({ destination, isDestinationManuallySet, type: SET_DESTINATION });
+export const setDestinationFromFiles = (dispatch, getState) => {
+    const { isDestinationManuallySet, filesById } = getState().file;
+    const files = Object.values(filesById);
+    if (isDestinationManuallySet) return;
+
+    if (!files.length) {
+        dispatch(setDestination(''));
+    } else if (areFilesFromSameDirectory(files)) {
+        const path = getDirPathFromFilePath(files[0].path);
+        dispatch(setDestination(path));
+    } else {
+        dispatch(setDestination(i18n.t('sameAsSource')));
+    }
+};
+
+export const addFiles = files => dispatch => {
+    dispatch({ files: normalizeFiles(files), type: ADD_FILES });
+    dispatch(setDestinationFromFiles);
+};
+export const setFiles = files => dispatch => {
+    dispatch({ files: normalizeFiles(files), type: SET_FILES });
+    dispatch(setDestinationFromFiles);
+};
+export const deleteFiles = filesIds => dispatch => {
+    dispatch({ filesIds, type: DELETE_FILES });
+    dispatch(setDestinationFromFiles);
+};
+export const clearFiles = dispatch => {
+    dispatch({ type: CLEAR_FILES });
+    dispatch(setDestination(''));
+};
 
 export const setFileConversionEnd = fileId => (dispatch, getState) => {
     const { filesById } = getState().file;
