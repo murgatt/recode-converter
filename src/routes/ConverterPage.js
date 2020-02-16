@@ -15,7 +15,7 @@ const useStyles = makeStyles({
     },
     fileListWrapper: {
         display: 'flex',
-        height: 'calc(100% - 48px)',
+        height: 'calc(100% - 64px)',
     },
 });
 

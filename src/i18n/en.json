@@ -1,5 +1,6 @@
 {
     "translation": {
+        "addFiles": "Add Files",
         "default": "Default",
         "destination": "Destination",
         "removeFile": "Remove File",

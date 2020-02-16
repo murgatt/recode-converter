@@ -10,7 +10,7 @@ import { getDirPathFromFilePath } from '../../store/file/utils';
 
 const useStyles = makeStyles({
     destinationInput: {
-        width: 400,
+        width: '40%',
     },
 });
 
@@ -50,7 +50,6 @@ const DestinationInput = () => {
             endAdornment={endAdornment}
             margin="dense"
             placeholder={t('destination')}
-            size="small"
             value={destination}
             variant="outlined"
         />
