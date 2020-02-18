@@ -54,21 +54,6 @@ const FileList = () => {
                 {fileIds.map(fileId => (
                     <File file={filesById[fileId]} key={fileId} onDeleteFile={handleDeleteFile(fileId)} />
                 ))}
-                {fileIds.map(fileId => (
-                    <File file={filesById[fileId]} key={fileId} onDeleteFile={handleDeleteFile(fileId)} />
-                ))}
-                {fileIds.map(fileId => (
-                    <File file={filesById[fileId]} key={fileId} onDeleteFile={handleDeleteFile(fileId)} />
-                ))}
-                {fileIds.map(fileId => (
-                    <File file={filesById[fileId]} key={fileId} onDeleteFile={handleDeleteFile(fileId)} />
-                ))}
-                {fileIds.map(fileId => (
-                    <File file={filesById[fileId]} key={fileId} onDeleteFile={handleDeleteFile(fileId)} />
-                ))}
-                {fileIds.map(fileId => (
-                    <File file={filesById[fileId]} key={fileId} onDeleteFile={handleDeleteFile(fileId)} />
-                ))}
             </div>
             {shouldDisplayClearButton && (
                 <IconButton className={classes.clearButton} label={t('clearFileList')} onClick={handleClearFiles}>
