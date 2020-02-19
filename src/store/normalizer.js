@@ -38,6 +38,7 @@ export default class Normalizer {
         const entities = append ? state[this.entityObjectIndex] : {};
         const newEntities = elementList.reduce((acc, element) => {
             const id = element[this.id];
+
             return {
                 ...acc,
                 [id]: element,

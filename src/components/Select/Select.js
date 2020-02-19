@@ -44,7 +44,7 @@ const Select = props => {
     } = props;
 
     const [labelWidth, setLabelWidth] = useState(0);
-    const shrinkLabel = useMemo(() => value || (placeholder && displayEmpty), [value, placeholder, displayEmpty]);
+    const shrinkLabel = useMemo(() => !!(value || (placeholder && displayEmpty)), [value, placeholder, displayEmpty]);
 
     const inputLabelRef = useRef(null);
     useEffect(() => {

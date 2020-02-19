@@ -1,9 +1,14 @@
 {
     "translation": {
+        "addFiles": "Add files",
+        "clearFileList": "Clear list",
         "default": "Default",
         "destination": "Destination",
+        "removeFile": "Remove file",
+        "sameAsSource": "Same as source",
+        "selectDestination": "Select destination",
         "selectFiles": "Select Files",
-        "startConversion": "Start Conversion",
+        "startConversion": "Start conversion",
         "conversionSettings": {
             "aac": "AAC",
             "ac3": "AC3",
