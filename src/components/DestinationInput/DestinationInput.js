@@ -6,7 +6,8 @@ import FolderIcon from '@material-ui/icons/FolderOutlined';
 import IconButton from '../IconButton';
 import { setDestination } from '../../store/file/file.actions';
 import { getDestination } from '../../store/file/file.selectors';
-import { getDirPathFromFilePath } from '../../store/file/utils';
+
+const { dialog } = window.require('electron').remote;
 
 const useStyles = makeStyles({
     destinationInput: {
@@ -20,25 +21,20 @@ const DestinationInput = () => {
     const destination = useSelector(getDestination);
     const classes = useStyles();
 
-    const handleDestinationChange = useCallback(event => {
-        const file = event.target.files[0];
-        if (file) {
-            const path = getDirPathFromFilePath(file.path);
-            dispatch(setDestination(path, true));
+    const handleDestinationChange = useCallback(async () => {
+        const path = await dialog.showOpenDialog({
+            properties: ['openDirectory'],
+        });
+
+        if (path && path.filePaths.length) {
+            dispatch(setDestination(path.filePaths[0], true));
         }
     }, []);
 
     const endAdornment = (
         <InputAdornment position="end">
-            <IconButton component="label" size="small" label={t('selectDestination')}>
+            <IconButton onClick={handleDestinationChange} component="label" size="small" label={t('selectDestination')}>
                 <FolderIcon />
-                <input
-                    id="picker"
-                    onChange={handleDestinationChange}
-                    style={{ display: 'none' }}
-                    type="file"
-                    webkitdirectory=""
-                />
             </IconButton>
         </InputAdornment>
     );
@@ -48,6 +44,7 @@ const DestinationInput = () => {
             className={classes.destinationInput}
             disabled
             endAdornment={endAdornment}
+            labelWidth={0}
             margin="dense"
             placeholder={t('destination')}
             value={destination}
