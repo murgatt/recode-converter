@@ -10,7 +10,7 @@ const OPTION_FLAGS = {
     },
     audioCodec: {
         defaultFlag: '-c:a',
-        none: '-na',
+        none: '-an',
         passthru: '',
     },
 };
