@@ -64,7 +64,7 @@
         "eslint-plugin-react-hooks": "^2.3.0",
         "nodemon": "^2.0.2",
         "prettier": "^1.19.1",
-        "wait-on": "^3.3.0"
+        "wait-on": "^4.0.1"
     },
     "build": {
         "appId": "com.murgatt.material-converter",
