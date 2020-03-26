@@ -51,7 +51,7 @@
         "typeface-roboto": "^0.0.75"
     },
     "devDependencies": {
-        "concurrently": "^5.0.1",
+        "concurrently": "^5.1.0",
         "electron": "^8.0.1",
         "electron-builder": "^22.3.2",
         "eslint": "^6.7.2",
