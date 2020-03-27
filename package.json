@@ -15,6 +15,7 @@
     },
     "scripts": {
         "build": "react-scripts build",
+        "deploy": "yarn electron-pack:all --publish always",
         "dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && yarn electron-dev\"",
         "eject": "react-scripts eject",
         "electron-dev": "nodemon --watch public --exec \"electron .\"",
@@ -24,6 +25,10 @@
         "electron-pack:mac": "yarn electron-pack --mac",
         "electron-pack:win": "yarn electron-pack --win",
         "preelectron-pack": "yarn build",
+        "release": "yarn version && git push origin master",
+        "release:major": "yarn version --major && git push origin master",
+        "release:minor": "yarn version --minor && git push origin master",
+        "release:patch": "yarn version --patch && git push origin master",
         "start": "react-scripts start",
         "test": "react-scripts test"
     },
