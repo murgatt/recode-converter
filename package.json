@@ -1,6 +1,6 @@
 {
     "name": "material-converter",
-    "version": "0.2.0",
+    "version": "0.1.0",
     "description": "An audio converter for video files",
     "main": "public/electron.js",
     "private": false,
@@ -20,7 +20,7 @@
         "eject": "react-scripts eject",
         "electron-dev": "nodemon --watch public --exec \"electron .\"",
         "electron-pack": "electron-builder -c.extraMetadata.main=build/electron.js",
-        "electron-pack:all": "yarn electron-pack -mwl",
+        "electron-pack:all": "yarn electron-pack -mw",
         "electron-pack:linux": "yarn electron-pack --linux",
         "electron-pack:mac": "yarn electron-pack --mac",
         "electron-pack:win": "yarn electron-pack --win",
