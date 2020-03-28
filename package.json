@@ -1,6 +1,6 @@
 {
     "name": "material-converter",
-    "version": "0.2.0",
+    "version": "0.1.0",
     "description": "An audio converter for video files",
     "main": "public/electron.js",
     "private": false,
@@ -25,10 +25,9 @@
         "electron-pack:mac": "yarn electron-pack --mac",
         "electron-pack:win": "yarn electron-pack --win",
         "preelectron-pack": "yarn build",
-        "release": "yarn version && git push && git push --tags",
-        "release:major": "yarn version --major && git push && git push --tags",
-        "release:minor": "yarn version --minor && git push && git push --tags",
-        "release:patch": "yarn version --patch && git push && git push --tags",
+        "release": "standard-version",
+        "release:as": "yarn release -- --release-as",
+        "release:prerelease": "yarn release -- --prerelease",
         "start": "react-scripts start",
         "test": "react-scripts test"
     },
@@ -69,6 +68,7 @@
         "eslint-plugin-react-hooks": "^2.3.0",
         "nodemon": "^2.0.2",
         "prettier": "^1.19.1",
+        "standard-version": "^7.1.0",
         "wait-on": "^4.0.1"
     },
     "build": {
