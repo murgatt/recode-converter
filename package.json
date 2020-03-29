@@ -25,7 +25,7 @@
         "electron-pack:mac": "yarn electron-pack --mac",
         "electron-pack:win": "yarn electron-pack --win",
         "preelectron-pack": "yarn build",
-        "publish-release": "git push --follow-tags && conventional-github-releaser -p angular",
+        "publish-release": "git push --follow-tags && conventional-github-releaser -p angular --draft",
         "release": "standard-version",
         "release:as": "yarn release -- --release-as",
         "release:prerelease": "yarn release -- --prerelease",
