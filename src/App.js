@@ -6,6 +6,7 @@ import Router from './Router';
 import store from './store';
 import theme from './theme';
 import './registerElectronEvents';
+import Snackbar from './components/Snackbar';
 
 const useStyles = makeStyles({
     root: {
@@ -24,6 +25,7 @@ function App() {
                 <div className={className}>
                     <Router />
                 </div>
+                <Snackbar />
             </ThemeProvider>
         </Provider>
     );

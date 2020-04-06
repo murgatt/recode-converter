@@ -2,6 +2,7 @@
     "translation": {
         "addFiles": "Add files",
         "clearFileList": "Clear list",
+        "close": "Close",
         "default": "Default",
         "destination": "Destination",
         "removeFile": "Remove file",
