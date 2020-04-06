@@ -6,6 +6,7 @@ const ipcMain = electron.ipcMain;
 class ConversionManager {
     constructor(window) {
         this.window = window;
+        this.conversionIsInterrupted = false;
         this.callbacks = {
             onConversionEnd: file => this.fileConversionEnd(file),
             onConversionError: file => this.fileConversionError(file),
@@ -14,7 +15,12 @@ class ConversionManager {
         };
 
         ipcMain.on('ffmpeg-run-conversion', async (event, { destination, inputList, options }) => {
+            this.conversionIsInterrupted = false;
             await this.runFilesConversion(inputList, options, destination);
+        });
+
+        ipcMain.on('ffmpeg-pause-conversion', () => {
+            this.conversionIsInterrupted = true;
         });
     }
 
@@ -37,6 +43,9 @@ class ConversionManager {
     async runFilesConversion(inputList, options, destination) {
         for (let i = 0; i < inputList.length; i++) {
             const input = inputList[i];
+            if (this.conversionIsInterrupted) {
+                break;
+            }
             await ffmpeg.convert({ input, callbacks: this.callbacks, options, destination });
         }
     }

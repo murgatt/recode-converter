@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import { get } from 'lodash-es';
+import _ from 'lodash-es';
 import Select from '../Select';
 import { bitrate as bitrateSetting } from '../../config/conversion/audioSettings';
 import { getSingleConversionSetting } from '../../store/conversionSettings/conversionSettings.selectors';
@@ -12,7 +12,7 @@ const BitrateSelect = ({ codec, disabled }) => {
     const bitrate = useSelector(getSingleConversionSetting(CONVERSION_SETTINGS.audioBitrate));
     const { label } = bitrateSetting;
     const displayedValue = disabled ? '' : bitrate;
-    const options = disabled ? [] : get(bitrateSetting, [codec, 'options'], []);
+    const options = disabled ? [] : _.get(bitrateSetting, [codec, 'options'], []);
 
     const handleChange = useCallback(
         value => dispatch(setConversionSetting(CONVERSION_SETTINGS.audioBitrate, value)),

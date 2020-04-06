@@ -1,13 +1,13 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
-import { Card, CardHeader, LinearProgress, makeStyles } from '@material-ui/core';
+import { Card, CardHeader, CircularProgress, LinearProgress, makeStyles } from '@material-ui/core';
 import CheckIcon from '@material-ui/icons/CheckCircle';
 import ErrorIcon from '@material-ui/icons/Error';
-import LoadIcon from '@material-ui/icons/Loop';
 import VideoIcon from '@material-ui/icons/MovieOutlined';
 import DeleteIcon from '@material-ui/icons/DeleteOutline';
 import IconButton from '../IconButton';
+import { FILE_STATUS } from '../../store/file/file.constants';
 
 const useStyles = makeStyles(theme => ({
     file: {
@@ -28,14 +28,15 @@ const File = ({ file, onDeleteFile }) => {
     const { name, path, progress, status } = file;
     const classes = useStyles();
     const { t } = useTranslation();
+    const isConverting = status === FILE_STATUS.converting;
 
     const icon = useMemo(() => {
         switch (status) {
-            case 'complete':
+            case FILE_STATUS.complete:
                 return <CheckIcon className={classes.successIcon} />;
-            case 'conversion':
-                return <LoadIcon />;
-            case 'error':
+            case FILE_STATUS.converting:
+                return <CircularProgress size={24} />;
+            case FILE_STATUS.error:
                 return <ErrorIcon color="error" />;
             default:
                 return <VideoIcon color="action" />;
@@ -43,7 +44,7 @@ const File = ({ file, onDeleteFile }) => {
     }, [status]);
 
     const deleteAction = (
-        <IconButton label={t('removeFile')} onClick={onDeleteFile}>
+        <IconButton disabled={isConverting} label={t('removeFile')} onClick={onDeleteFile}>
             <DeleteIcon />
         </IconButton>
     );
@@ -52,7 +53,7 @@ const File = ({ file, onDeleteFile }) => {
         <Card className={classes.file} variant="outlined">
             <CardHeader action={deleteAction} avatar={icon} title={name} subheader={path} />
             <div className={classes.progressWrapper}>
-                {status === 'conversion' && <LinearProgress value={progress} variant="determinate" />}
+                {status === FILE_STATUS.converting && <LinearProgress value={progress} variant="determinate" />}
             </div>
         </Card>
     );
