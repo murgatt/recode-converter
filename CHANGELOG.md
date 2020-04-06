@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://github.com/murgatt/material-converter/compare/v0.1.0...v0.1.1) (2020-04-06)
+
+
+### Features
+
+* add snackbar alert system ([#24](https://github.com/murgatt/material-converter/issues/24)) ([a318bd7](https://github.com/murgatt/material-converter/commit/a318bd75614fd323d2625a516727de17c17724f3))
+* conversion pause ([#23](https://github.com/murgatt/material-converter/issues/23)) ([54a7032](https://github.com/murgatt/material-converter/commit/54a7032497c0b4af3e4a5fa67d02d46769d51e10))
+
 ## 0.1.0 (2020-03-28)
 
 
