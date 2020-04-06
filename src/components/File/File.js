@@ -57,7 +57,7 @@ const File = ({ file, onDeleteFile }) => {
         <Card className={classes.file} variant="outlined">
             <CardHeader action={deleteAction} avatar={icon} title={name} subheader={path} />
             <div className={classes.progressWrapper}>
-                {status === FILE_STATUS.converting && <LinearProgress value={progress} variant="determinate" />}
+                {isConverting && <LinearProgress value={progress} variant="determinate" />}
             </div>
         </Card>
     );
