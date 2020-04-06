@@ -21,7 +21,9 @@ const AddFileFab = () => {
     const classes = useStyles();
     const { t } = useTranslation();
 
-    const handleFilesSelected = useCallback(selectedFiles => dispatch(addFiles(Object.values(selectedFiles))), []);
+    const handleFilesSelected = useCallback(selectedFiles => dispatch(addFiles(Object.values(selectedFiles))), [
+        dispatch,
+    ]);
 
     return (
         <Fab className={classes.addFileFab} component="label" color="primary" aria-label={t('addFiles')}>

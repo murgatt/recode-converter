@@ -14,10 +14,9 @@ const BitrateSelect = ({ codec, disabled }) => {
     const displayedValue = disabled ? '' : bitrate;
     const options = disabled ? [] : _.get(bitrateSetting, [codec, 'options'], []);
 
-    const handleChange = useCallback(
-        value => dispatch(setConversionSetting(CONVERSION_SETTINGS.audioBitrate, value)),
-        [],
-    );
+    const handleChange = useCallback(value => dispatch(setConversionSetting(CONVERSION_SETTINGS.audioBitrate, value)), [
+        dispatch,
+    ]);
 
     return (
         <Select

@@ -71,7 +71,7 @@ const Select = props => {
         );
     }, [native, placeholder, placeholderDisabled]);
 
-    const handleChange = useCallback(event => onChange(event.target.value, event), []);
+    const handleChange = useCallback(event => onChange(event.target.value, event), [onChange]);
 
     return (
         <FormControl

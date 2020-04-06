@@ -29,7 +29,7 @@ const DestinationInput = () => {
         if (path && path.filePaths.length) {
             dispatch(setDestination(path.filePaths[0], true));
         }
-    }, []);
+    }, [dispatch]);
 
     const endAdornment = (
         <InputAdornment position="end">

@@ -20,8 +20,8 @@ export default () => {
     const dispatch = useDispatch();
     const classes = useStyles();
 
-    const handleStartConversion = useCallback(() => dispatch(startConversion), []);
-    const handlePauseConversion = useCallback(() => dispatch(pauseConversion), []);
+    const handleStartConversion = useCallback(() => dispatch(startConversion), [dispatch]);
+    const handlePauseConversion = useCallback(() => dispatch(pauseConversion), [dispatch]);
 
     return (
         <div className={classes.converter}>

@@ -45,7 +45,7 @@ const File = ({ file, onDeleteFile }) => {
             default:
                 return <VideoIcon color="action" />;
         }
-    }, [status]);
+    }, [classes.successIcon, status]);
 
     const deleteAction = (
         <IconButton disabled={deleteActionIsDisabled} label={t('removeFile')} onClick={onDeleteFile}>

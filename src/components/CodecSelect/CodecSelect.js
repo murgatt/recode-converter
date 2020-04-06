@@ -10,10 +10,9 @@ const CodeSelect = () => {
     const codec = useSelector(getSingleConversionSetting(CONVERSION_SETTINGS.audioCodec));
     const { label, options } = codecSetting;
 
-    const handleChange = useCallback(
-        value => dispatch(setConversionSetting(CONVERSION_SETTINGS.audioCodec, value)),
-        [],
-    );
+    const handleChange = useCallback(value => dispatch(setConversionSetting(CONVERSION_SETTINGS.audioCodec, value)), [
+        dispatch,
+    ]);
 
     return (
         <Select fullWidth label={label} onChange={handleChange} options={options} value={codec} variant="outlined" />

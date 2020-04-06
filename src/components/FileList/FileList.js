@@ -42,8 +42,8 @@ const FileList = () => {
     const [isHover, setIsHover] = useState(false);
     const shouldDisplayClearButton = fileIds.length && isHover;
 
-    const handleClearFiles = useCallback(() => dispatch(clearFiles), []);
-    const handleDeleteFile = useCallback(fileId => () => dispatch(deleteFiles([fileId])), []);
+    const handleClearFiles = useCallback(() => dispatch(clearFiles), [dispatch]);
+    const handleDeleteFile = useCallback(fileId => () => dispatch(deleteFiles([fileId])), [dispatch]);
 
     const handleMouseEnter = useCallback(() => setIsHover(true), []);
     const handleMouseLeave = useCallback(() => setIsHover(false), []);

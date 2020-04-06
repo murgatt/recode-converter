@@ -19,7 +19,7 @@ const Snackbar = () => {
     const { t } = useTranslation();
     const { message, open } = useSelector(getSnackbarState);
 
-    const handleClose = useCallback(() => dispatch(closeSnackbar), []);
+    const handleClose = useCallback(() => dispatch(closeSnackbar), [dispatch]);
 
     const action = (
         <IconButton color="inherit" label={t('close')} onClick={handleClose} size="small">

@@ -1,6 +1,6 @@
 {
     "extends": ["airbnb", "prettier"],
-    "plugins": ["prettier"],
+    "plugins": ["prettier", "react-hooks"],
     "env": {
         "browser": true,
         "node": true
@@ -14,6 +14,8 @@
         "react/jsx-indent-props": ["error", 4],
         "react/jsx-props-no-spreading": "off",
         "react/jsx-filename-extension": ["error", { "extensions": [".js"] }],
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
         "sort-keys": ["error"]
     }
 }

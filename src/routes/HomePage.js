@@ -21,10 +21,13 @@ export default () => {
     const history = useHistory();
     const { t } = useTranslation();
 
-    const handleFilesSelected = useCallback(files => {
-        dispatch(setFiles(Object.values(files)));
-        history.push('/converter');
-    }, []);
+    const handleFilesSelected = useCallback(
+        files => {
+            dispatch(setFiles(Object.values(files)));
+            history.push('/converter');
+        },
+        [dispatch, history],
+    );
 
     return (
         <div className={classes.home}>
