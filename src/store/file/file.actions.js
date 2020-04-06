@@ -1,4 +1,7 @@
-import { areFilesFromSameDirectory, getDirPathFromFilePath } from './utils';
+import _ from 'lodash-es';
+import { areFilesFromSameDirectory, getDirPathFromFilePath } from './file.utils';
+import { FILE_STATUS } from './file.constants';
+import { CONVERSION_END } from '../conversion/conversion.actions';
 import i18n from '../../i18n';
 
 export const ADD_FILES = 'file/ADD_FILES';
@@ -15,7 +18,7 @@ const fileToObject = file => ({
     path: file.path,
     progress: 0,
     size: file.size,
-    status: 'initial',
+    status: FILE_STATUS.initial,
     type: file.type,
     webkitRelativePath: file.webkitRelativePath,
 });
@@ -56,21 +59,28 @@ export const clearFiles = dispatch => {
     dispatch(setDestination(''));
 };
 
-export const setFileConversionEnd = fileId => (dispatch, getState) => {
+export const setFileConversionEnd = fileId => async (dispatch, getState) => {
     const { filesById } = getState().file;
     const file = {
         ...filesById[fileId],
         progress: 100,
-        status: 'complete',
+        status: FILE_STATUS.complete,
     };
-    dispatch({ files: file, type: UPDATE_FILES });
+    await dispatch({ files: file, type: UPDATE_FILES });
+
+    const areAllFilesComplete = _.every(filesById, (fileObject, id) => {
+        return fileObject.status === FILE_STATUS.complete || fileObject.status === FILE_STATUS.error || id === fileId;
+    });
+    if (areAllFilesComplete) {
+        dispatch({ type: CONVERSION_END });
+    }
 };
 
 export const setFileConversionError = fileId => (dispatch, getState) => {
     const { filesById } = getState().file;
     const file = {
         ...filesById[fileId],
-        status: 'error',
+        status: FILE_STATUS.error,
     };
     dispatch({ files: file, type: UPDATE_FILES });
 };
@@ -80,7 +90,7 @@ export const setFileConversionProgress = (fileId, progress) => (dispatch, getSta
     const file = {
         ...filesById[fileId],
         progress: Math.round(progress.percent),
-        status: 'conversion',
+        status: FILE_STATUS.converting,
     };
     dispatch({ files: file, type: UPDATE_FILES });
 };
@@ -90,7 +100,7 @@ export const setFileConversionStart = fileId => (dispatch, getState) => {
     const file = {
         ...filesById[fileId],
         progress: 0,
-        status: 'conversion',
+        status: FILE_STATUS.converting,
     };
     dispatch({ files: file, type: UPDATE_FILES });
 };

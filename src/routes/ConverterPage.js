@@ -1,13 +1,10 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useCallback } from 'react';
+import { useDispatch } from 'react-redux';
 import { makeStyles } from '@material-ui/core';
 import FileList from '../components/FileList';
 import BottomBar from '../components/BottomBar';
 import ConversionDrawer from '../components/ConversionDrawer';
-import { getDestination, getFilesById } from '../store/file/file.selectors';
-import { getConversionSettings } from '../store/conversionSettings/conversionSettings.selectors';
-
-const { ipcRenderer } = window.require('electron');
+import { pauseConversion, startConversion } from '../store/conversion/conversion.actions';
 
 const useStyles = makeStyles({
     converter: {
@@ -20,15 +17,11 @@ const useStyles = makeStyles({
 });
 
 export default () => {
+    const dispatch = useDispatch();
     const classes = useStyles();
-    const filesById = useSelector(getFilesById);
-    const conversionSettings = useSelector(getConversionSettings);
-    const destination = useSelector(getDestination);
 
-    const handleStartConversion = () => {
-        const inputList = Object.values(filesById).map(file => file.path);
-        ipcRenderer.send('ffmpeg-run-conversion', { destination, inputList, options: conversionSettings });
-    };
+    const handleStartConversion = useCallback(() => dispatch(startConversion), []);
+    const handlePauseConversion = useCallback(() => dispatch(pauseConversion), []);
 
     return (
         <div className={classes.converter}>
@@ -36,7 +29,7 @@ export default () => {
                 <FileList />
                 <ConversionDrawer />
             </div>
-            <BottomBar onStartConversion={handleStartConversion} />
+            <BottomBar onPauseConversion={handlePauseConversion} onStartConversion={handleStartConversion} />
         </div>
     );
 };
