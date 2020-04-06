@@ -3,13 +3,17 @@
         "addFiles": "Add files",
         "clearFileList": "Clear list",
         "close": "Close",
+        "conversion": {
+            "conversionPauseMessage": "Conversion will stop after the current file conversion end.",
+            "pauseConversion": "Pause conversion",
+            "startConversion": "Start conversion"
+        },
         "default": "Default",
         "destination": "Destination",
         "removeFile": "Remove file",
         "sameAsSource": "Same as source",
         "selectDestination": "Select destination",
         "selectFiles": "Select Files",
-        "startConversion": "Start conversion",
         "conversionSettings": {
             "aac": "AAC",
             "ac3": "AC3",

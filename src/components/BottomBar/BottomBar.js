@@ -39,7 +39,7 @@ const BottomBar = ({ onPauseConversion, onStartConversion }) => {
                     <PauseIcon />
                 </IconButton>
             ) : (
-                <IconButton label={t('startConversion')} onClick={onStartConversion}>
+                <IconButton label={t('conversion.startConversion')} onClick={onStartConversion}>
                     <StartIcon />
                 </IconButton>
             )}

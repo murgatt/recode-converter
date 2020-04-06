@@ -1,4 +1,6 @@
 import { FILE_STATUS } from '../file/file.constants';
+import { openSnackbar } from '../snackbar/snackbar.actions';
+import i18n from '../../i18n';
 
 const { ipcRenderer } = window.require('electron');
 
@@ -8,6 +10,7 @@ export const CONVERSION_END = 'conversion/CONVERSION_END';
 
 export const pauseConversion = dispatch => {
     dispatch({ type: PAUSE_CONVERSION });
+    dispatch(openSnackbar(i18n.t('conversion.conversionPauseMessage')));
     ipcRenderer.send('ffmpeg-pause-conversion');
 };
 
