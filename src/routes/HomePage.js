@@ -2,11 +2,18 @@ import React, { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Button, makeStyles } from '@material-ui/core';
+import { Button, Typography, makeStyles } from '@material-ui/core';
+import DropIcon from '@material-ui/icons/GetAppOutlined';
 import FileInput from '../components/FileInput';
+import Dropzone from '../components/Dropzone';
 import { setFiles } from '../store/file/file.actions';
 
 const useStyles = makeStyles({
+    dropIcon: {
+        fontSize: 274,
+        opacity: 0.1,
+        position: 'absolute',
+    },
     home: {
         alignItems: 'center',
         display: 'flex',
@@ -31,10 +38,19 @@ export default () => {
 
     return (
         <div className={classes.home}>
-            <Button color="primary" component="label" variant="outlined">
-                {t('selectFiles')}
-                <FileInput onChange={handleFilesSelected} />
-            </Button>
+            <Dropzone onDrop={handleFilesSelected}>
+                <DropIcon className={classes.dropIcon} color="action" fontSize="large" />
+                <Typography gutterBottom variant="subtitle1">
+                    {t('home.dropFiles')}
+                </Typography>
+                <Typography paragraph variant="subtitle2">
+                    {t('home.or')}
+                </Typography>
+                <Button color="primary" component="label" variant="outlined">
+                    {t('home.browseFiles')}
+                    <FileInput onChange={handleFilesSelected} />
+                </Button>
+            </Dropzone>
         </div>
     );
 };
