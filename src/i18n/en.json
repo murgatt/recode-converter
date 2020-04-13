@@ -10,10 +10,14 @@
         },
         "default": "Default",
         "destination": "Destination",
+        "home": {
+            "browseFiles": "Browse Files",
+            "dropFiles": "Drop files here",
+            "or": "or"
+        },
         "removeFile": "Remove file",
         "sameAsSource": "Same as source",
         "selectDestination": "Select destination",
-        "selectFiles": "Select Files",
         "conversionSettings": {
             "aac": "AAC",
             "ac3": "AC3",
