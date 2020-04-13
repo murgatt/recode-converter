@@ -14,16 +14,7 @@ const useStyles = makeStyles(theme => ({
         zIndex: theme.zIndex.drawer + 1,
     },
     dropzone: {
-        alignItems: 'center',
-        display: 'flex',
-        flexDirection: 'column',
         height: '100%',
-        justifyContent: 'center',
-        width: '100%',
-    },
-    dropzoneWrapper: {
-        height: '100%',
-        padding: theme.spacing(2),
         width: '100%',
     },
     fileIcon: {
@@ -33,20 +24,20 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-const Dropzone = ({ children, onDrop }) => {
+const Dropzone = ({ children, className, onDrop }) => {
     const { getRootProps, getInputProps, isDragActive } = useDropzone({
         accept: 'video/*,.mkv',
         noClick: true,
         onDropAccepted: onDrop,
     });
     const classes = useStyles({ isDragActive });
-    const className = classNames('dropzone', classes.dropzone);
+    const finalClassName = classNames('dropzone', classes.dropzone, className);
 
     return (
-        <div {...getRootProps({ className })}>
+        <div {...getRootProps({ className: finalClassName })}>
             <input {...getInputProps()} />
             {children}
-            <Backdrop ti className={classes.backdrop} open={isDragActive}>
+            <Backdrop className={classes.backdrop} open={isDragActive}>
                 <FileIcon className={classes.fileIcon} color="inherit" fontSize="large" />
             </Backdrop>
         </div>
@@ -55,11 +46,13 @@ const Dropzone = ({ children, onDrop }) => {
 
 Dropzone.propTypes = {
     children: PropTypes.node,
+    className: PropTypes.string,
     onDrop: PropTypes.func,
 };
 
 Dropzone.defaultProps = {
     children: null,
+    className: '',
     onDrop: () => {},
 };
 

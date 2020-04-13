@@ -5,8 +5,9 @@ import { makeStyles } from '@material-ui/core';
 import ClearIcon from '@material-ui/icons/ClearAll';
 import File from '../File';
 import { getFileIds, getFilesById } from '../../store/file/file.selectors';
-import { clearFiles, deleteFiles } from '../../store/file/file.actions';
+import { addFiles, clearFiles, deleteFiles } from '../../store/file/file.actions';
 import IconButton from '../IconButton';
+import Dropzone from '../Dropzone';
 
 const useStyles = makeStyles(theme => ({
     clearButton: {
@@ -48,12 +49,18 @@ const FileList = () => {
     const handleMouseEnter = useCallback(() => setIsHover(true), []);
     const handleMouseLeave = useCallback(() => setIsHover(false), []);
 
+    const handleFilesSelected = useCallback(selectedFiles => dispatch(addFiles(Object.values(selectedFiles))), [
+        dispatch,
+    ]);
+
     return (
         <div className={classes.fileList} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             <div className={classes.filesWrapper}>
-                {fileIds.map(fileId => (
-                    <File file={filesById[fileId]} key={fileId} onDeleteFile={handleDeleteFile(fileId)} />
-                ))}
+                <Dropzone onDrop={handleFilesSelected}>
+                    {fileIds.map(fileId => (
+                        <File file={filesById[fileId]} key={fileId} onDeleteFile={handleDeleteFile(fileId)} />
+                    ))}
+                </Dropzone>
             </div>
             {shouldDisplayClearButton && (
                 <IconButton className={classes.clearButton} label={t('clearFileList')} onClick={handleClearFiles}>
