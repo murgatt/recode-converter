@@ -11,6 +11,7 @@ const useStyles = makeStyles({
     home: {
         alignItems: 'center',
         display: 'flex',
+        flexDirection: 'column',
         height: '100%',
         justifyContent: 'center',
     },
@@ -31,19 +32,17 @@ export default () => {
     );
 
     return (
-        <div className={classes.home}>
-            <Dropzone onDrop={handleFilesSelected}>
-                <Typography gutterBottom variant="subtitle1">
-                    {t('home.dropFiles')}
-                </Typography>
-                <Typography paragraph variant="subtitle2">
-                    {t('home.or')}
-                </Typography>
-                <Button color="primary" component="label" variant="outlined">
-                    {t('home.browseFiles')}
-                    <FileInput onChange={handleFilesSelected} />
-                </Button>
-            </Dropzone>
-        </div>
+        <Dropzone className={classes.home} onDrop={handleFilesSelected}>
+            <Typography gutterBottom variant="subtitle1">
+                {t('home.dropFiles')}
+            </Typography>
+            <Typography paragraph variant="subtitle2">
+                {t('home.or')}
+            </Typography>
+            <Button color="primary" component="label" variant="outlined">
+                {t('home.browseFiles')}
+                <FileInput onChange={handleFilesSelected} />
+            </Button>
+        </Dropzone>
     );
 };
