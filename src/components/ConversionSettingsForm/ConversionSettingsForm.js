@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import CodeSelect from '../CodecSelect';
 import BitrateSelect from '../BitrateSelect';
+import FormGroup from '../FormGroup';
 import { getSingleConversionSetting } from '../../store/conversionSettings/conversionSettings.selectors';
 import { CONVERSION_SETTINGS } from '../../store/conversionSettings/conversionSettings.actions';
 
@@ -10,10 +11,10 @@ const ConversionSettingsForm = () => {
     const audioSettingsDisabled = codec === 'passthru' || codec === 'none';
 
     return (
-        <div>
+        <FormGroup>
             <CodeSelect />
             <BitrateSelect codec={codec} disabled={audioSettingsDisabled} />
-        </div>
+        </FormGroup>
     );
 };
 

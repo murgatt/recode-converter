@@ -99,7 +99,7 @@ const Select = props => {
                 {renderPlaceholder}
                 {children || options.map(option => renderSelectItem(option, native))}
             </MUISelect>
-            <FormHelperText>{helperText}</FormHelperText>
+            {helperText && <FormHelperText>{helperText}</FormHelperText>}
         </FormControl>
     );
 };
