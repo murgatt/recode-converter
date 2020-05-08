@@ -3,8 +3,8 @@ import darkTheme from './dark';
 import lightTheme from './light';
 
 export const THEME_TYPES = {
-    dark: 'dark',
-    light: 'light',
+    dark: darkTheme.type,
+    light: lightTheme.type,
 };
 
 const getTheme = (type = THEME_TYPES.light) =>
