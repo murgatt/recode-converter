@@ -1,4 +1,4 @@
-import { CONVERSION_SETTINGS, SET_CONVERSION_SETTING } from './conversionSettings.actions';
+import { CONVERSION_SETTINGS, RESET_CONVERSION_SETTINGS, SET_CONVERSION_SETTING } from './conversionSettings.actions';
 import { bitrate, channels, codec, sampleRate } from '../../config/conversion/audio';
 
 const initialState = {
@@ -10,6 +10,8 @@ const initialState = {
 
 export default (state = initialState, action) => {
     switch (action.type) {
+        case RESET_CONVERSION_SETTINGS:
+            return initialState;
         case SET_CONVERSION_SETTING:
             return {
                 ...state,
