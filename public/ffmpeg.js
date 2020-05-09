@@ -8,6 +8,10 @@ const OPTION_FLAGS = {
         default: '',
         defaultFlag: '-b:a',
     },
+    audioChannels: {
+        default: '',
+        defaultFlag: '-ac',
+    },
     audioCodec: {
         defaultFlag: '-c:a',
         none: '-an',

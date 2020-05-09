@@ -21,8 +21,19 @@
         "conversionSettings": {
             "aac": "AAC",
             "ac3": "AC3",
+            "audioChannels": {
+                "1": "Mono",
+                "2": "Stereo",
+                "3": "2.1",
+                "4": "4.0",
+                "5": "5.0",
+                "6": "5.1",
+                "7": "7.0",
+                "8": "7.1"
+            },
             "bitrate": "Bitrate",
             "bitrateValue": "{{ value }} kbps",
+            "channels": "Channels",
             "codec": "Codec",
             "dts": "DTS",
             "eac3": "EAC3",
