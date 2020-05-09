@@ -13,6 +13,10 @@ const OPTION_FLAGS = {
         none: '-an',
         passthru: '',
     },
+    audioSampleRate: {
+        default: '',
+        defaultFlag: '-ar',
+    },
 };
 
 const getOutputPath = (input, destination) => {

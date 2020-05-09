@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Select from '../Select';
-import { codec as codecSetting } from '../../config/conversion/audioSettings';
+import codecSetting from '../../config/conversion/audio/codec';
 import { getSingleConversionSetting } from '../../store/conversionSettings/conversionSettings.selectors';
 import { CONVERSION_SETTINGS, setConversionSetting } from '../../store/conversionSettings/conversionSettings.actions';
 

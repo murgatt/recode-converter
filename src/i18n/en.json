@@ -27,6 +27,8 @@
             "dts": "DTS",
             "eac3": "EAC3",
             "noAudioCodec": "None - Remove Audio",
+            "sampleRate": "Sample rate",
+            "sampleRateValue": "{{ value }} Hz",
             "title": "Conversion Settings",
             "withoutAudioReencoding": "Without Reencoding - Copy Audio"
         }
