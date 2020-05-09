@@ -59,6 +59,13 @@ export const clearFiles = dispatch => {
     dispatch(setDestination(''));
 };
 
+export const checkConversionProgress = (dispatch, getState) => {
+    const areAllFilesComplete = getAreAllFilesComplete(getState());
+    if (areAllFilesComplete) {
+        dispatch({ type: CONVERSION_END });
+    }
+};
+
 export const setFileConversionEnd = fileId => async (dispatch, getState) => {
     const { filesById } = getState().file;
     const file = {
@@ -67,10 +74,7 @@ export const setFileConversionEnd = fileId => async (dispatch, getState) => {
         status: FILE_STATUS.complete,
     };
     dispatch({ files: file, type: UPDATE_FILES });
-    const areAllFilesComplete = getAreAllFilesComplete(getState());
-    if (areAllFilesComplete) {
-        dispatch({ type: CONVERSION_END });
-    }
+    dispatch(checkConversionProgress);
 };
 
 export const setFileConversionError = fileId => (dispatch, getState) => {
@@ -80,6 +84,7 @@ export const setFileConversionError = fileId => (dispatch, getState) => {
         status: FILE_STATUS.error,
     };
     dispatch({ files: file, type: UPDATE_FILES });
+    dispatch(checkConversionProgress);
 };
 
 export const setFileConversionProgress = (fileId, progress) => (dispatch, getState) => {
