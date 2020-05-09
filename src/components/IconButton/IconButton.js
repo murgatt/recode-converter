@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { IconButton as MUIIconButton, Tooltip } from '@material-ui/core';
 
-const IconButton = ({ children, label, ...otherProps }) => {
+const IconButton = ({ children, disabled, label, ...otherProps }) => {
     const button = (
-        <MUIIconButton aria-label={label} {...otherProps}>
+        <MUIIconButton aria-label={label} disabled={disabled} {...otherProps}>
             {children}
         </MUIIconButton>
     );
 
-    if (label) {
+    if (label && !disabled) {
         return <Tooltip title={label}>{button}</Tooltip>;
     }
 

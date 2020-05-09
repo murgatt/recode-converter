@@ -9,6 +9,7 @@ import AddFileFab from '../AddFileFab';
 import IconButton from '../IconButton';
 import DestinationInput from '../DestinationInput';
 import { getIsConversionRunning } from '../../store/conversion/conversion.selectors';
+import { getHasFilesToConvert } from '../../store/file/file.selectors';
 
 const useStyles = makeStyles(theme => ({
     bottomBar: {
@@ -30,6 +31,7 @@ const BottomBar = ({ onPauseConversion, onStartConversion }) => {
     const { t } = useTranslation();
     const classes = useStyles();
     const isConversionRunning = useSelector(getIsConversionRunning);
+    const hasFiles = useSelector(getHasFilesToConvert);
 
     return (
         <Toolbar className={classes.toolbar}>
@@ -39,7 +41,7 @@ const BottomBar = ({ onPauseConversion, onStartConversion }) => {
                     <PauseIcon />
                 </IconButton>
             ) : (
-                <IconButton label={t('conversion.startConversion')} onClick={onStartConversion}>
+                <IconButton disabled={!hasFiles} label={t('conversion.startConversion')} onClick={onStartConversion}>
                     <StartIcon />
                 </IconButton>
             )}

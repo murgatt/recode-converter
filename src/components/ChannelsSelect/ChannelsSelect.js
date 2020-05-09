@@ -3,20 +3,21 @@ import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import _ from 'lodash-es';
 import Select from '../Select';
-import bitrateSetting from '../../config/conversion/audio/bitrate';
+import channelsSetting from '../../config/conversion/audio/channels';
 import { getSingleConversionSetting } from '../../store/conversionSettings/conversionSettings.selectors';
 import { CONVERSION_SETTINGS, setConversionSetting } from '../../store/conversionSettings/conversionSettings.actions';
 
-const BitrateSelect = ({ codec, disabled }) => {
+const ChannelsSelect = ({ codec, disabled }) => {
     const dispatch = useDispatch();
-    const bitrate = useSelector(getSingleConversionSetting(CONVERSION_SETTINGS.audioBitrate));
-    const { label } = bitrateSetting;
-    const displayedValue = disabled ? '' : bitrate;
-    const options = disabled ? [] : _.get(bitrateSetting, [codec, 'options'], []);
+    const channels = useSelector(getSingleConversionSetting(CONVERSION_SETTINGS.audioChannels));
+    const { label } = channelsSetting;
+    const displayedValue = disabled ? '' : channels;
+    const options = disabled ? [] : _.get(channelsSetting, [codec, 'options'], []);
 
-    const handleChange = useCallback(value => dispatch(setConversionSetting(CONVERSION_SETTINGS.audioBitrate, value)), [
-        dispatch,
-    ]);
+    const handleChange = useCallback(
+        value => dispatch(setConversionSetting(CONVERSION_SETTINGS.audioChannels, value)),
+        [dispatch],
+    );
 
     return (
         <Select
@@ -31,14 +32,14 @@ const BitrateSelect = ({ codec, disabled }) => {
     );
 };
 
-BitrateSelect.propTypes = {
+ChannelsSelect.propTypes = {
     codec: PropTypes.string,
     disabled: PropTypes.bool,
 };
 
-BitrateSelect.defaultProps = {
+ChannelsSelect.defaultProps = {
     codec: '',
     disabled: false,
 };
 
-export default BitrateSelect;
+export default ChannelsSelect;
