@@ -1,6 +1,6 @@
-import _ from 'lodash-es';
 import { areFilesFromSameDirectory, getDirPathFromFilePath } from './file.utils';
 import { FILE_STATUS } from './file.constants';
+import { getAreAllFilesComplete } from './file.selectors';
 import { CONVERSION_END } from '../conversion/conversion.actions';
 import i18n from '../../i18n';
 
@@ -66,11 +66,8 @@ export const setFileConversionEnd = fileId => async (dispatch, getState) => {
         progress: 100,
         status: FILE_STATUS.complete,
     };
-    await dispatch({ files: file, type: UPDATE_FILES });
-
-    const areAllFilesComplete = _.every(filesById, (fileObject, id) => {
-        return fileObject.status === FILE_STATUS.complete || fileObject.status === FILE_STATUS.error || id === fileId;
-    });
+    dispatch({ files: file, type: UPDATE_FILES });
+    const areAllFilesComplete = getAreAllFilesComplete(getState());
     if (areAllFilesComplete) {
         dispatch({ type: CONVERSION_END });
     }
