@@ -18,10 +18,10 @@ export default {
             label: i18n.t('conversionSettings.ac3'),
             value: 'ac3',
         },
-        {
-            label: i18n.t('conversionSettings.dts'),
-            value: 'dts',
-        },
+        // {
+        //     label: i18n.t('conversionSettings.dts'),
+        //     value: 'dts',
+        // },
         {
             label: i18n.t('conversionSettings.eac3'),
             value: 'eac3',
