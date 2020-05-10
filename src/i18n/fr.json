@@ -1,0 +1,47 @@
+{
+    "translation": {
+        "addFiles": "Ajouter des fichiers",
+        "clearFileList": "Effacer la liste",
+        "close": "Fermer",
+        "conversion": {
+            "conversionPauseMessage": "La conversion s'arrêtera à la fin de la conversion actuelle.",
+            "pauseConversion": "Arrêter la conversion",
+            "startConversion": "Démarrer la conversion"
+        },
+        "default": "Par défaut",
+        "destination": "Destination",
+        "home": {
+            "browseFiles": "Parcourir les fichiers",
+            "dropFiles": "Déposez des fichiers ici",
+            "or": "ou"
+        },
+        "removeFile": "Retirer le fichier",
+        "sameAsSource": "Identique à la source",
+        "selectDestination": "Sélectionner la destination",
+        "conversionSettings": {
+            "aac": "AAC",
+            "ac3": "AC3",
+            "audioChannels": {
+                "1": "Mono",
+                "2": "Stéréo",
+                "3": "2.1",
+                "4": "4.0",
+                "5": "5.0",
+                "6": "5.1",
+                "7": "7.0",
+                "8": "7.1"
+            },
+            "bitrate": "Débit",
+            "bitrateValue": "{{ value }} kbps",
+            "channels": "Canaux",
+            "codec": "Codec",
+            "dts": "DTS",
+            "eac3": "EAC3",
+            "noAudioCodec": "Aucun - Supprimer l'audio",
+            "sampleRate": "Fréquence d'échantillonnage",
+            "sampleRateValue": "{{ value }} Hz",
+            "title": "Paramètres de Conversion",
+            "withoutAudioReencoding": "Sans réencodage - Copier l'audio"
+        }
+    }
+}
