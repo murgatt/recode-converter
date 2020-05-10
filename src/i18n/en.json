@@ -37,11 +37,11 @@
             "codec": "Codec",
             "dts": "DTS",
             "eac3": "EAC3",
-            "noAudioCodec": "None - Remove Audio",
+            "noAudioCodec": "None - Remove audio",
             "sampleRate": "Sample rate",
             "sampleRateValue": "{{ value }} Hz",
             "title": "Conversion Settings",
-            "withoutAudioReencoding": "Without Reencoding - Copy Audio"
+            "withoutAudioReencoding": "Without reencoding - Copy audio"
         }
     }
 }
