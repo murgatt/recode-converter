@@ -1,8 +1,9 @@
 export const getDirPathFromFilePath = filePath => {
-    const filePathArray = filePath.split('/');
+    const pathSeparator = navigator.platform === 'Win32' ? '\\' : '/';
+    const filePathArray = filePath.split(pathSeparator);
     filePathArray.pop();
 
-    return filePathArray.join('/');
+    return filePathArray.join(pathSeparator);
 };
 
 export const areFilesFromSameDirectory = files =>
