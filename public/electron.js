@@ -8,7 +8,7 @@ const isDev = require('electron-is-dev');
 const ConversionManager = require('./conversionManager');
 
 let mainWindow;
-let conversion;
+let conversionManager;
 
 function createWindow() {
     mainWindow = new BrowserWindow({
@@ -20,11 +20,14 @@ function createWindow() {
             nodeIntegration: true,
         },
     });
-    conversion = new ConversionManager(mainWindow);
+    if (!conversionManager) {
+        conversionManager = new ConversionManager(mainWindow);
+    } else {
+        conversionManager.window = mainWindow;
+    }
     mainWindow.loadURL(isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../build/index.html')}`);
     mainWindow.on('closed', () => {
         mainWindow = null;
-        conversion = null;
     });
 }
 
