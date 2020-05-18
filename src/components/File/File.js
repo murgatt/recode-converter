@@ -10,6 +10,7 @@ import DeleteIcon from '@material-ui/icons/DeleteOutline';
 import IconButton from '../IconButton';
 import { FILE_STATUS } from '../../store/file/file.constants';
 import { getIsConversionRunning } from '../../store/conversion/conversion.selectors';
+import { formatFileSize } from '../../store/file/file.utils';
 
 const useStyles = makeStyles(theme => ({
     file: {
@@ -27,12 +28,13 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const File = ({ file, onDeleteFile }) => {
-    const { name, path, progress, status } = file;
+    const { name, progress, size, status } = file;
     const classes = useStyles();
     const { t } = useTranslation();
     const isConverting = status === FILE_STATUS.converting;
     const isConversionRunning = useSelector(getIsConversionRunning);
     const deleteActionIsDisabled = isConverting || isConversionRunning;
+    const fileSize = useMemo(() => formatFileSize(size), [size]);
 
     const icon = useMemo(() => {
         switch (status) {
@@ -55,7 +57,7 @@ const File = ({ file, onDeleteFile }) => {
 
     return (
         <Card className={classes.file} variant="outlined">
-            <CardHeader action={deleteAction} avatar={icon} title={name} subheader={path} />
+            <CardHeader action={deleteAction} avatar={icon} title={name} subheader={fileSize} />
             <div className={classes.progressWrapper}>
                 {isConverting && <LinearProgress value={progress} variant="determinate" />}
             </div>

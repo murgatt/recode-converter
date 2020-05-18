@@ -8,7 +8,7 @@ export default {
     aac: {
         options: [
             {
-                label: i18n.t('default'),
+                label: i18n.t('sameAsSource'),
                 value: 'default',
             },
             {
