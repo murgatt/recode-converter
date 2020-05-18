@@ -86,9 +86,11 @@
         },
         "nsis": {
             "allowToChangeInstallationDirectory": true,
+            "createDesktopShortcut": false,
+            "deleteAppDataOnUninstall": true,
+            "menuCategory": true,
             "oneClick": false,
-            "perMachine": true,
-            "createDesktopShortcut": false
+            "perMachine": true
         }
     },
     "eslintConfig": {
