@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/murgatt/material-converter/compare/v0.1.2...v0.2.0) (2020-05-18)
+
+
+### Features
+
+* add custom dark & light themes ([#27](https://github.com/murgatt/material-converter/issues/27)) ([631f030](https://github.com/murgatt/material-converter/commit/631f03017a201bb1e4bfa5a56a6ac823f5e96b1a))
+* add file drop zone on file list ([#26](https://github.com/murgatt/material-converter/issues/26)) ([a831cae](https://github.com/murgatt/material-converter/commit/a831caed6b27eab2eafc806ac10d7d85a180a1c9))
+* add file drop zone on home page ([#25](https://github.com/murgatt/material-converter/issues/25)) ([52cd62f](https://github.com/murgatt/material-converter/commit/52cd62f17923c111329f99a7cff9715e48f693f6))
+* add french language & set system language as default ([#30](https://github.com/murgatt/material-converter/issues/30)) ([79ae6cb](https://github.com/murgatt/material-converter/commit/79ae6cb7ffc0c1cc6a15c28f71635e89768c45f5))
+* add sample rate & channels audio settings ([#28](https://github.com/murgatt/material-converter/issues/28)) ([f421b08](https://github.com/murgatt/material-converter/commit/f421b08021f8bc0fd3b19639167e62ec055f1bcf))
+* display file size instead of file path ([e378a88](https://github.com/murgatt/material-converter/commit/e378a884ef08380cf9eee9d6e0fb01efddcb654c))
+
+
+### Bug Fixes
+
+* Windows installer error ([#31](https://github.com/murgatt/material-converter/issues/31)) ([923c077](https://github.com/murgatt/material-converter/commit/923c077f523295dc48c4cd7db53e9320b0b8f127))
+* **mac:** fatal conversion error after main window is closed ([#32](https://github.com/murgatt/material-converter/issues/32)) ([fdb7083](https://github.com/murgatt/material-converter/commit/fdb70837192ad07e7099ac55120b21811564ef49))
+* **windows:** default destination is not displayed in Windows ([#33](https://github.com/murgatt/material-converter/issues/33)) ([68de1bc](https://github.com/murgatt/material-converter/commit/68de1bc3779849130cad46b28f41f1d9cda86c8f))
+* end conversion when an error occurred ([09ee21c](https://github.com/murgatt/material-converter/commit/09ee21c90f532084ac2b7d1a58b346182833494a))
+* reset conversion settings on codec change ([#29](https://github.com/murgatt/material-converter/issues/29)) ([95e0ded](https://github.com/murgatt/material-converter/commit/95e0dedf1e77a79a7345bc5e74c0ceb39fa37910))
+
 ### [0.1.2](https://github.com/murgatt/material-converter/compare/v0.1.1...v0.1.2) (2020-04-06)
 
 ### [0.1.1](https://github.com/murgatt/material-converter/compare/v0.1.0...v0.1.1) (2020-04-06)
