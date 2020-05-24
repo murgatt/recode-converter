@@ -4,6 +4,8 @@ import { getAreAllFilesComplete } from './file.selectors';
 import { CONVERSION_END } from '../conversion/conversion.actions';
 import i18n from '../../i18n';
 
+const { ipcRenderer } = window.require('electron');
+
 export const ADD_FILES = 'file/ADD_FILES';
 export const CLEAR_FILES = 'file/CLEAR_FILES';
 export const SET_FILES = 'file/SET_FILES';
@@ -27,6 +29,7 @@ const normalizeFiles = files => files.map(fileToObject);
 
 export const setDestination = (destination, isDestinationManuallySet = false) => dispatch =>
     dispatch({ destination, isDestinationManuallySet, type: SET_DESTINATION });
+
 export const setDestinationFromFiles = (dispatch, getState) => {
     const { isDestinationManuallySet, filesById } = getState().file;
     const files = Object.values(filesById);
@@ -42,12 +45,21 @@ export const setDestinationFromFiles = (dispatch, getState) => {
     }
 };
 
+export const getFilesData = files => {
+    const filePaths = files.map(file => file.path);
+    ipcRenderer.send('ffprobe-get-files-data', filePaths);
+};
+
 export const addFiles = files => dispatch => {
-    dispatch({ files: normalizeFiles(files), type: ADD_FILES });
+    const normalizedFiles = normalizeFiles(files);
+    dispatch({ files: normalizedFiles, type: ADD_FILES });
+    getFilesData(normalizedFiles);
     dispatch(setDestinationFromFiles);
 };
 export const setFiles = files => dispatch => {
-    dispatch({ files: normalizeFiles(files), type: SET_FILES });
+    const normalizedFiles = normalizeFiles(files);
+    dispatch({ files: normalizedFiles, type: SET_FILES });
+    getFilesData(normalizedFiles);
     dispatch(setDestinationFromFiles);
 };
 export const deleteFiles = filesIds => dispatch => {
@@ -103,6 +115,15 @@ export const setFileConversionStart = fileId => (dispatch, getState) => {
         ...filesById[fileId],
         progress: 0,
         status: FILE_STATUS.converting,
+    };
+    dispatch({ files: file, type: UPDATE_FILES });
+};
+
+export const setFileData = (fileId, fileData) => (dispatch, getState) => {
+    const { filesById } = getState().file;
+    const file = {
+        ...filesById[fileId],
+        ...fileData,
     };
     dispatch({ files: file, type: UPDATE_FILES });
 };
