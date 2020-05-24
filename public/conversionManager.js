@@ -1,4 +1,5 @@
 const electron = require('electron');
+const ffprobe = require('node-ffprobe');
 const ffmpeg = require('./ffmpeg');
 
 const ipcMain = electron.ipcMain;
@@ -21,6 +22,15 @@ class ConversionManager {
 
         ipcMain.on('ffmpeg-pause-conversion', () => {
             this.conversionIsInterrupted = true;
+        });
+
+        ipcMain.on('ffprobe-get-files-data', (event, inputList) => {
+            for (let i = 0; i < inputList.length; i++) {
+                const file = inputList[i];
+                ffprobe(file).then(fileData => {
+                    this.window.send('get-file-data', { file, fileData });
+                });
+            }
         });
     }
 
