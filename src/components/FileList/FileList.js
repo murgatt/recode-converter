@@ -26,11 +26,13 @@ const useStyles = makeStyles(theme => ({
         flex: 1,
         height: '100%',
         position: 'relative',
+        width: 'calc(100% - 400px)',
     },
     filesWrapper: {
         height: '100%',
         overflow: 'auto',
         padding: theme.spacing(2),
+        paddingBottom: theme.spacing(8),
     },
 }));
 
@@ -55,13 +57,13 @@ const FileList = () => {
 
     return (
         <div className={classes.fileList} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-            <div className={classes.filesWrapper}>
-                <Dropzone onDrop={handleFilesSelected}>
+            <Dropzone onDrop={handleFilesSelected}>
+                <div className={classes.filesWrapper}>
                     {fileIds.map(fileId => (
                         <File file={filesById[fileId]} key={fileId} onDeleteFile={handleDeleteFile(fileId)} />
                     ))}
-                </Dropzone>
-            </div>
+                </div>
+            </Dropzone>
             {shouldDisplayClearButton && (
                 <IconButton className={classes.clearButton} label={t('clearFileList')} onClick={handleClearFiles}>
                     <ClearIcon />
