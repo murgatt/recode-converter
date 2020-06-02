@@ -1,6 +1,9 @@
 {
     "translation": {
         "addFiles": "Ajouter des fichiers",
+        "audio": "Audio",
+        "channel": "{{count}} canal",
+        "channel_plural": "{{count}} canaux",
         "clearFileList": "Effacer la liste",
         "close": "Fermer",
         "conversion": {
@@ -15,9 +18,15 @@
             "dropFiles": "Déposez des fichiers ici",
             "or": "ou"
         },
+        "language": "Langue",
+        "properties": "Propriétés",
         "removeFile": "Retirer le fichier",
         "sameAsSource": "Identique à la source",
         "selectDestination": "Sélectionner la destination",
+        "subtitles": "Sous-titres",
+        "title": "Title",
+        "type": "Type",
+        "video": "Vidéo",
         "conversionSettings": {
             "aac": "AAC",
             "ac3": "AC3",
