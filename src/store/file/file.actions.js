@@ -134,3 +134,27 @@ export const removeStreamToIgnore = (fileId, streamIndex) => (dispatch, getState
         dispatch({ files: file, type: UPDATE_FILES });
     }
 };
+
+export const setStreamMetadata = (fileId, streamIndex, metadataKey, metadataValue) => (dispatch, getState) => {
+    const filesById = getFilesById(getState());
+    const { streamsMetadata } = filesById[fileId];
+    const metadata = {
+        index: streamIndex,
+        key: metadataKey,
+        value: metadataValue,
+    };
+    const existingStreamMetadataIndex = streamsMetadata.findIndex(streamMetadata => {
+        return streamMetadata.index === streamIndex && streamMetadata.key === metadataKey;
+    });
+
+    if (existingStreamMetadataIndex !== -1) {
+        streamsMetadata[existingStreamMetadataIndex] = metadata;
+    } else {
+        streamsMetadata.push(metadata);
+    }
+    const file = {
+        ...filesById[fileId],
+        streamsMetadata,
+    };
+    dispatch({ files: file, type: UPDATE_FILES });
+};

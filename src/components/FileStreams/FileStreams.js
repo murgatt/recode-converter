@@ -10,6 +10,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import i18n from '../../i18n';
 import { addStreamToIgnore, removeStreamToIgnore } from '../../store/file/file.actions';
 import { FILE_STATUS } from '../../store/file/file.constants';
+import StreamMetadataInput from '../StreamMetadataInput';
 
 const useStyles = makeStyles({
     codec: {
@@ -53,7 +54,7 @@ const FileStreams = ({ file }) => {
     const { t } = useTranslation();
     const dispatch = useDispatch();
     const classes = useStyles();
-    const { ignoredStreams, path, status, streams } = file;
+    const { ignoredStreams, path, status, streams, streamsMetadata } = file;
     const isEditDisabled = status === FILE_STATUS.converting || status === FILE_STATUS.complete;
 
     const handleCheckChange = useCallback(
@@ -95,7 +96,14 @@ const FileStreams = ({ file }) => {
                         <TableCell className={classes.codec}>{stream.codec_name}</TableCell>
                         <TableCell>{codecTypeIcons[stream.codec_type]}</TableCell>
                         <TableCell>{stream.tags.language}</TableCell>
-                        <TableCell>{stream.tags.title}</TableCell>
+                        <TableCell>
+                            <StreamMetadataInput
+                                filePath={path}
+                                name="title"
+                                stream={stream}
+                                streamsMetadata={streamsMetadata}
+                            />
+                        </TableCell>
                         <TableCell>{getStreamProperties(stream)}</TableCell>
                     </TableRow>
                 ))}
