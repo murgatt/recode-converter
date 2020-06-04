@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
-import _ from 'lodash-es';
-import { Table, TableBody, TableCell, TableHead, TableRow, Tooltip } from '@material-ui/core';
+import { Checkbox, Table, TableBody, TableCell, TableHead, TableRow, Tooltip } from '@material-ui/core';
 import AudioIcon from '@material-ui/icons/AudiotrackOutlined';
 import SubtitlesIcon from '@material-ui/icons/SubtitlesOutlined';
 import VideoIcon from '@material-ui/icons/MovieOutlined';
 import { makeStyles } from '@material-ui/core/styles';
 import i18n from '../../i18n';
+import { addStreamToIgnore, removeStreamToIgnore } from '../../store/file/file.actions';
+import { FILE_STATUS } from '../../store/file/file.constants';
 
 const useStyles = makeStyles({
     codec: {
@@ -49,13 +51,28 @@ const getStreamProperties = stream => {
 
 const FileStreams = ({ file }) => {
     const { t } = useTranslation();
+    const dispatch = useDispatch();
     const classes = useStyles();
-    const streams = _.get(file, 'streams', []);
+    const { ignoredStreams, path, status, streams } = file;
+    const isEditDisabled = status === FILE_STATUS.converting || status === FILE_STATUS.complete;
+
+    const handleCheckChange = useCallback(
+        streamIndex => event => {
+            const { checked } = event.target;
+            if (checked) {
+                dispatch(removeStreamToIgnore(path, streamIndex));
+            } else {
+                dispatch(addStreamToIgnore(path, streamIndex));
+            }
+        },
+        [dispatch, path],
+    );
 
     return (
         <Table size="small">
             <TableHead>
                 <TableRow>
+                    <TableCell>{t('file.copyStream.title')}</TableCell>
                     <TableCell>{t('conversionSettings.codec')}</TableCell>
                     <TableCell>{t('type')}</TableCell>
                     <TableCell>{t('language')}</TableCell>
@@ -66,6 +83,15 @@ const FileStreams = ({ file }) => {
             <TableBody>
                 {streams.map(stream => (
                     <TableRow key={stream.index}>
+                        <TableCell padding="checkbox">
+                            <Tooltip title={t('file.copyStream.description')}>
+                                <Checkbox
+                                    checked={!ignoredStreams.includes(stream.index)}
+                                    disabled={isEditDisabled}
+                                    onChange={handleCheckChange(stream.index)}
+                                />
+                            </Tooltip>
+                        </TableCell>
                         <TableCell className={classes.codec}>{stream.codec_name}</TableCell>
                         <TableCell>{codecTypeIcons[stream.codec_type]}</TableCell>
                         <TableCell>{stream.tags.language}</TableCell>

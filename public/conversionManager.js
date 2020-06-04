@@ -15,48 +15,48 @@ class ConversionManager {
             onConversionStart: file => this.fileConversionStart(file),
         };
 
-        ipcMain.on('ffmpeg-run-conversion', async (event, { destination, inputList, options }) => {
+        ipcMain.on('ffmpeg-run-conversion', async (event, { destination, fileList, options }) => {
             this.conversionIsInterrupted = false;
-            await this.runFilesConversion(inputList, options, destination);
+            await this.runFilesConversion(fileList, options, destination);
         });
 
         ipcMain.on('ffmpeg-pause-conversion', () => {
             this.conversionIsInterrupted = true;
         });
 
-        ipcMain.on('ffprobe-get-files-data', (event, inputList) => {
-            for (let i = 0; i < inputList.length; i++) {
-                const file = inputList[i];
-                ffprobe(file).then(fileData => {
-                    this.window.send('get-file-data', { file, fileData });
+        ipcMain.on('ffprobe-get-files-data', (event, pathList) => {
+            for (let i = 0; i < pathList.length; i++) {
+                const filePath = pathList[i];
+                ffprobe(filePath).then(fileData => {
+                    this.window.send('get-file-data', { fileData, filePath });
                 });
             }
         });
     }
 
-    fileConversionEnd(file) {
-        this.window.send('file-conversion-end', { file });
+    fileConversionEnd(filePath) {
+        this.window.send('file-conversion-end', { filePath });
     }
 
-    fileConversionError(file) {
-        this.window.send('file-conversion-error', { file });
+    fileConversionError(filePath) {
+        this.window.send('file-conversion-error', { filePath });
     }
 
-    fileConversionProgress(file, progress) {
-        this.window.send('file-conversion-progress', { file, progress });
+    fileConversionProgress(filePath, progress) {
+        this.window.send('file-conversion-progress', { filePath, progress });
     }
 
-    fileConversionStart(file) {
-        this.window.send('file-conversion-started', { file });
+    fileConversionStart(filePath) {
+        this.window.send('file-conversion-started', { filePath });
     }
 
-    async runFilesConversion(inputList, options, destination) {
-        for (let i = 0; i < inputList.length; i++) {
-            const input = inputList[i];
+    async runFilesConversion(fileList, options, destination) {
+        for (let i = 0; i < fileList.length; i++) {
+            const file = fileList[i];
             if (this.conversionIsInterrupted) {
                 break;
             }
-            await ffmpeg.convert({ input, callbacks: this.callbacks, options, destination });
+            await ffmpeg.convert({ file, callbacks: this.callbacks, options, destination });
         }
     }
 }

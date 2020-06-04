@@ -13,6 +13,12 @@
         },
         "default": "Default",
         "destination": "Destination",
+        "file": {
+            "copyStream": {
+                "description": "Copy stream to the output file, uncheck to remove it",
+                "title": "Copy stream"
+            }
+        },
         "home": {
             "browseFiles": "Browse Files",
             "dropFiles": "Drop files here",

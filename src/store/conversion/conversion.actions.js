@@ -17,13 +17,11 @@ export const pauseConversion = dispatch => {
 export const startConversion = (dispatch, getState) => {
     const { conversionSettings, file } = getState();
     const { destination, filesById } = file;
-    const inputList = Object.values(filesById)
-        .filter(fileObject => fileObject.status === FILE_STATUS.initial)
-        .map(fileObject => fileObject.path);
+    const fileList = Object.values(filesById).filter(fileObject => fileObject.status === FILE_STATUS.initial);
 
-    if (inputList.length) {
+    if (fileList.length) {
         dispatch({ type: START_CONVERSION });
-        ipcRenderer.send('ffmpeg-run-conversion', { destination, inputList, options: conversionSettings });
+        ipcRenderer.send('ffmpeg-run-conversion', { destination, fileList, options: conversionSettings });
     }
 };
 
