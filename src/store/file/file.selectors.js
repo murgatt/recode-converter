@@ -9,5 +9,10 @@ export const getAreAllFilesComplete = ({ file: { filesById } }) =>
 export const getDestination = ({ file: { destination } }) => destination;
 export const getFileIds = ({ file: { fileIds } }) => fileIds;
 export const getFilesById = ({ file: { filesById } }) => filesById;
-export const getHasFilesToConvert = ({ file: { fileIds, filesById } }) =>
-    fileIds.length > 0 && _.some(filesById, ['status', FILE_STATUS.initial]);
+export const getFilesToConvert = ({ file: { filesById } }) => {
+    return Object.values(filesById).filter(fileObject => {
+        return fileObject.status === FILE_STATUS.initial || fileObject.status === FILE_STATUS.error;
+    });
+};
+export const getHasFilesToConvert = state => getFilesToConvert(state).length > 0;
+export const getIsDestinationManuallySet = ({ file: { isDestinationManuallySet } }) => isDestinationManuallySet;

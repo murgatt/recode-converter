@@ -5,7 +5,8 @@ import _ from 'lodash-es';
 import Select from '../Select';
 import sampleRateSetting from '../../config/conversion/audio/samplerate';
 import { getSingleConversionSetting } from '../../store/conversionSettings/conversionSettings.selectors';
-import { CONVERSION_SETTINGS, setConversionSetting } from '../../store/conversionSettings/conversionSettings.actions';
+import { setConversionSetting } from '../../store/conversionSettings/conversionSettings.actions';
+import { CONVERSION_SETTINGS } from '../../store/conversionSettings/conversionSettings.constants';
 
 const SampleRateSelect = ({ codec, disabled }) => {
     const dispatch = useDispatch();

@@ -1,5 +1,6 @@
-import { FILE_STATUS } from '../file/file.constants';
 import { openSnackbar } from '../snackbar/snackbar.actions';
+import { getConversionSettings } from '../conversionSettings/conversionSettings.selectors';
+import { getAreAllFilesComplete, getDestination, getFilesToConvert } from '../file/file.selectors';
 import i18n from '../../i18n';
 
 const { ipcRenderer } = window.require('electron');
@@ -15,9 +16,9 @@ export const pauseConversion = dispatch => {
 };
 
 export const startConversion = (dispatch, getState) => {
-    const { conversionSettings, file } = getState();
-    const { destination, filesById } = file;
-    const fileList = Object.values(filesById).filter(fileObject => fileObject.status === FILE_STATUS.initial);
+    const conversionSettings = getConversionSettings(getState());
+    const destination = getDestination(getState());
+    const fileList = getFilesToConvert(getState());
 
     if (fileList.length) {
         dispatch({ type: START_CONVERSION });
@@ -26,3 +27,10 @@ export const startConversion = (dispatch, getState) => {
 };
 
 export const endConversion = dispatch => dispatch({ type: CONVERSION_END });
+
+export const checkConversionProgress = (dispatch, getState) => {
+    const areAllFilesComplete = getAreAllFilesComplete(getState());
+    if (areAllFilesComplete) {
+        dispatch(endConversion);
+    }
+};
