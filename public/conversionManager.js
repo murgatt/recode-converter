@@ -56,7 +56,11 @@ class ConversionManager {
             if (this.conversionIsInterrupted) {
                 break;
             }
-            await ffmpeg.convert({ file, callbacks: this.callbacks, options, destination });
+            try {
+                await ffmpeg.convert({ file, callbacks: this.callbacks, options, destination });
+            } catch (e) {
+                // FAIL SILENTLY
+            }
         }
     }
 }

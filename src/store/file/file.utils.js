@@ -1,3 +1,5 @@
+import { FILE_STATUS } from './file.constants';
+
 export const getDirPathFromFilePath = filePath => {
     const pathSeparator = navigator.platform === 'Win32' ? '\\' : '/';
     const filePathArray = filePath.split(pathSeparator);
@@ -22,7 +24,24 @@ export const formatFileSize = (size, decimals = 2) => {
     return `${parsedSize} ${sizes[i]}`;
 };
 
+export const fileToObject = file => ({
+    ignoredStreams: [],
+    lastModified: file.lastModified,
+    lastModifiedDate: file.lastModifiedDate,
+    name: file.name,
+    path: file.path,
+    progress: 0,
+    size: file.size,
+    status: FILE_STATUS.initial,
+    type: file.type,
+    webkitRelativePath: file.webkitRelativePath,
+});
+
+export const normalizeFiles = files => files.map(fileToObject);
+
 export default {
     areFilesFromSameDirectory,
+    fileToObject,
     getDirPathFromFilePath,
+    normalizeFiles,
 };

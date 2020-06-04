@@ -6,7 +6,7 @@ import SampleRateSelect from '../SampleRateSelect';
 import ChannelsSelect from '../ChannelsSelect';
 import FormGroup from '../FormGroup';
 import { getSingleConversionSetting } from '../../store/conversionSettings/conversionSettings.selectors';
-import { CONVERSION_SETTINGS } from '../../store/conversionSettings/conversionSettings.actions';
+import { CONVERSION_SETTINGS } from '../../store/conversionSettings/conversionSettings.constants';
 
 const ConversionSettingsForm = () => {
     const codec = useSelector(getSingleConversionSetting(CONVERSION_SETTINGS.audioCodec));

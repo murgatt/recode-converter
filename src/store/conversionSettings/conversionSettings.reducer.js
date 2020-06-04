@@ -1,4 +1,5 @@
-import { CONVERSION_SETTINGS, RESET_CONVERSION_SETTINGS, SET_CONVERSION_SETTING } from './conversionSettings.actions';
+import { RESET_CONVERSION_SETTINGS, SET_CONVERSION_SETTING } from './conversionSettings.actions';
+import { CONVERSION_SETTINGS } from './conversionSettings.constants';
 import { bitrate, channels, codec, sampleRate } from '../../config/conversion/audio';
 
 const initialState = {

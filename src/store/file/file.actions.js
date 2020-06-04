@@ -1,7 +1,7 @@
-import { areFilesFromSameDirectory, getDirPathFromFilePath } from './file.utils';
+import { areFilesFromSameDirectory, getDirPathFromFilePath, normalizeFiles } from './file.utils';
 import { FILE_STATUS } from './file.constants';
-import { getAreAllFilesComplete, getFilesById } from './file.selectors';
-import { endConversion } from '../conversion/conversion.actions';
+import { getFilesById, getIsDestinationManuallySet } from './file.selectors';
+import { checkConversionProgress } from '../conversion/conversion.actions';
 import i18n from '../../i18n';
 
 const { ipcRenderer } = window.require('electron');
@@ -13,26 +13,12 @@ export const UPDATE_FILES = 'file/UPDATE_FILES';
 export const DELETE_FILES = 'file/DELETE_FILES';
 export const SET_DESTINATION = 'file/SET_DESTINATION';
 
-const fileToObject = file => ({
-    ignoredStreams: [],
-    lastModified: file.lastModified,
-    lastModifiedDate: file.lastModifiedDate,
-    name: file.name,
-    path: file.path,
-    progress: 0,
-    size: file.size,
-    status: FILE_STATUS.initial,
-    type: file.type,
-    webkitRelativePath: file.webkitRelativePath,
-});
-
-const normalizeFiles = files => files.map(fileToObject);
-
 export const setDestination = (destination, isDestinationManuallySet = false) => dispatch =>
     dispatch({ destination, isDestinationManuallySet, type: SET_DESTINATION });
 
 export const setDestinationFromFiles = (dispatch, getState) => {
-    const { isDestinationManuallySet, filesById } = getState().file;
+    const filesById = getFilesById(getState());
+    const isDestinationManuallySet = getIsDestinationManuallySet(getState());
     const files = Object.values(filesById);
     if (isDestinationManuallySet) return;
 
@@ -72,15 +58,8 @@ export const clearFiles = dispatch => {
     dispatch(setDestination(''));
 };
 
-export const checkConversionProgress = (dispatch, getState) => {
-    const areAllFilesComplete = getAreAllFilesComplete(getState());
-    if (areAllFilesComplete) {
-        dispatch(endConversion);
-    }
-};
-
 export const setFileConversionEnd = fileId => async (dispatch, getState) => {
-    const { filesById } = getState().file;
+    const filesById = getFilesById(getState());
     const file = {
         ...filesById[fileId],
         progress: 100,
@@ -91,7 +70,7 @@ export const setFileConversionEnd = fileId => async (dispatch, getState) => {
 };
 
 export const setFileConversionError = fileId => (dispatch, getState) => {
-    const { filesById } = getState().file;
+    const filesById = getFilesById(getState());
     const file = {
         ...filesById[fileId],
         status: FILE_STATUS.error,
@@ -101,7 +80,7 @@ export const setFileConversionError = fileId => (dispatch, getState) => {
 };
 
 export const setFileConversionProgress = (fileId, progress) => (dispatch, getState) => {
-    const { filesById } = getState().file;
+    const filesById = getFilesById(getState());
     const file = {
         ...filesById[fileId],
         progress: Math.round(progress.percent),
@@ -111,7 +90,7 @@ export const setFileConversionProgress = (fileId, progress) => (dispatch, getSta
 };
 
 export const setFileConversionStart = fileId => (dispatch, getState) => {
-    const { filesById } = getState().file;
+    const filesById = getFilesById(getState());
     const file = {
         ...filesById[fileId],
         progress: 0,
@@ -121,7 +100,7 @@ export const setFileConversionStart = fileId => (dispatch, getState) => {
 };
 
 export const setFileData = (fileId, fileData) => (dispatch, getState) => {
-    const { filesById } = getState().file;
+    const filesById = getFilesById(getState());
     const file = {
         ...filesById[fileId],
         ...fileData,

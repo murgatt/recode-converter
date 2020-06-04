@@ -5,7 +5,8 @@ import _ from 'lodash-es';
 import Select from '../Select';
 import bitrateSetting from '../../config/conversion/audio/bitrate';
 import { getSingleConversionSetting } from '../../store/conversionSettings/conversionSettings.selectors';
-import { CONVERSION_SETTINGS, setConversionSetting } from '../../store/conversionSettings/conversionSettings.actions';
+import { setConversionSetting } from '../../store/conversionSettings/conversionSettings.actions';
+import { CONVERSION_SETTINGS } from '../../store/conversionSettings/conversionSettings.constants';
 
 const BitrateSelect = ({ codec, disabled }) => {
     const dispatch = useDispatch();

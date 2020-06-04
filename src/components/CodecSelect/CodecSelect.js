@@ -4,10 +4,10 @@ import Select from '../Select';
 import codecSetting from '../../config/conversion/audio/codec';
 import { getSingleConversionSetting } from '../../store/conversionSettings/conversionSettings.selectors';
 import {
-    CONVERSION_SETTINGS,
     resetConversionSettings,
     setConversionSetting,
 } from '../../store/conversionSettings/conversionSettings.actions';
+import { CONVERSION_SETTINGS } from '../../store/conversionSettings/conversionSettings.constants';
 
 const CodeSelect = () => {
     const dispatch = useDispatch();
