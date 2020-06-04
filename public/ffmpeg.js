@@ -35,6 +35,12 @@ const getIgnoredStreamsOptions = ignoredStreams => {
     return ignoredStreams.map(ignoredStreamIndex => `-map -0:${ignoredStreamIndex}`);
 };
 
+const getStreamsMetadataOptions = streamsMetadata => {
+    return streamsMetadata.map(({ index, key, value }) => {
+        return `-metadata:s:${index} ${key}=${value}`;
+    });
+};
+
 const getSingleOutputOption = (option, value) => {
     const optionFlag = OPTION_FLAGS[option];
     if (optionFlag) {
@@ -45,9 +51,10 @@ const getSingleOutputOption = (option, value) => {
 };
 
 const getOutputOptions = (options, file) => {
-    const { ignoredStreams } = file;
+    const { ignoredStreams, streamsMetadata } = file;
     const ignoredStreamsOptions = getIgnoredStreamsOptions(ignoredStreams);
-    const outputOptions = [...BASE_OUTPUT_OPTIONS, ...ignoredStreamsOptions];
+    const streamsMetadataOptions = getStreamsMetadataOptions(streamsMetadata);
+    const outputOptions = [...BASE_OUTPUT_OPTIONS, ...ignoredStreamsOptions, ...streamsMetadataOptions];
     Object.keys(options).forEach(optionKey => {
         const optionValue = options[optionKey];
         const outputOption = getSingleOutputOption(optionKey, optionValue);

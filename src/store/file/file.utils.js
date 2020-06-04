@@ -33,6 +33,7 @@ export const fileToObject = file => ({
     progress: 0,
     size: file.size,
     status: FILE_STATUS.initial,
+    streamsMetadata: [],
     type: file.type,
     webkitRelativePath: file.webkitRelativePath,
 });
