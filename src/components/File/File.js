@@ -25,6 +25,7 @@ import FileStreams from '../FileStreams';
 const useStyles = makeStyles(theme => ({
     cardContent: {
         marginBottom: theme.spacing(2),
+        overflow: 'auto',
     },
     expandButton: {
         bottom: 4,

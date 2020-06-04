@@ -1,7 +1,7 @@
 import { areFilesFromSameDirectory, getDirPathFromFilePath } from './file.utils';
 import { FILE_STATUS } from './file.constants';
-import { getAreAllFilesComplete } from './file.selectors';
-import { CONVERSION_END } from '../conversion/conversion.actions';
+import { getAreAllFilesComplete, getFilesById } from './file.selectors';
+import { endConversion } from '../conversion/conversion.actions';
 import i18n from '../../i18n';
 
 const { ipcRenderer } = window.require('electron');
@@ -14,6 +14,7 @@ export const DELETE_FILES = 'file/DELETE_FILES';
 export const SET_DESTINATION = 'file/SET_DESTINATION';
 
 const fileToObject = file => ({
+    ignoredStreams: [],
     lastModified: file.lastModified,
     lastModifiedDate: file.lastModifiedDate,
     name: file.name,
@@ -74,7 +75,7 @@ export const clearFiles = dispatch => {
 export const checkConversionProgress = (dispatch, getState) => {
     const areAllFilesComplete = getAreAllFilesComplete(getState());
     if (areAllFilesComplete) {
-        dispatch({ type: CONVERSION_END });
+        dispatch(endConversion);
     }
 };
 
@@ -126,4 +127,31 @@ export const setFileData = (fileId, fileData) => (dispatch, getState) => {
         ...fileData,
     };
     dispatch({ files: file, type: UPDATE_FILES });
+};
+
+export const addStreamToIgnore = (fileId, streamIndex) => (dispatch, getState) => {
+    const filesById = getFilesById(getState());
+    const { ignoredStreams } = filesById[fileId];
+    if (!ignoredStreams.includes(streamIndex)) {
+        ignoredStreams.push(streamIndex);
+        const file = {
+            ...filesById[fileId],
+            ignoredStreams,
+        };
+        dispatch({ files: file, type: UPDATE_FILES });
+    }
+};
+
+export const removeStreamToIgnore = (fileId, streamIndex) => (dispatch, getState) => {
+    const filesById = getFilesById(getState());
+    const { ignoredStreams } = filesById[fileId];
+    const indexOfIgnoredStream = ignoredStreams.indexOf(streamIndex);
+    if (indexOfIgnoredStream !== -1) {
+        ignoredStreams.splice(indexOfIgnoredStream, 1);
+        const file = {
+            ...filesById[fileId],
+            ignoredStreams,
+        };
+        dispatch({ files: file, type: UPDATE_FILES });
+    }
 };

@@ -23,12 +23,16 @@ const OPTION_FLAGS = {
     },
 };
 
-const getOutputPath = (input, destination) => {
-    const { dir, ext, name } = path.parse(input);
+const getOutputPath = (inputPath, destination) => {
+    const { dir, ext, name } = path.parse(inputPath);
     const filename = `${name} (1)${ext}`;
     const outputDirectory = destination || dir;
 
     return path.resolve(outputDirectory, filename);
+};
+
+const getIgnoredStreamsOptions = ignoredStreams => {
+    return ignoredStreams.map(ignoredStreamIndex => `-map -0:${ignoredStreamIndex}`);
 };
 
 const getSingleOutputOption = (option, value) => {
@@ -40,8 +44,10 @@ const getSingleOutputOption = (option, value) => {
     return '';
 };
 
-const getOutputOptions = options => {
-    const outputOptions = [...BASE_OUTPUT_OPTIONS];
+const getOutputOptions = (options, file) => {
+    const { ignoredStreams } = file;
+    const ignoredStreamsOptions = getIgnoredStreamsOptions(ignoredStreams);
+    const outputOptions = [...BASE_OUTPUT_OPTIONS, ...ignoredStreamsOptions];
     Object.keys(options).forEach(optionKey => {
         const optionValue = options[optionKey];
         const outputOption = getSingleOutputOption(optionKey, optionValue);
@@ -54,7 +60,8 @@ const getOutputOptions = options => {
     return outputOptions;
 };
 
-const convert = ({ input, options = {}, callbacks = {}, destination }) => {
+const convert = ({ file, options = {}, callbacks = {}, destination }) => {
+    const { path: inputPath } = file;
     const {
         onConversionEnd = () => {},
         onConversionStart = () => {},
@@ -62,28 +69,28 @@ const convert = ({ input, options = {}, callbacks = {}, destination }) => {
         onConversionError = () => {},
     } = callbacks;
 
-    const output = getOutputPath(input, destination);
-    const outputOptions = getOutputOptions(options);
+    const output = getOutputPath(inputPath, destination);
+    const outputOptions = getOutputOptions(options, file);
 
     return new Promise((resolve, reject) => {
-        ffmpeg(input)
+        ffmpeg(inputPath)
             .on('start', commandLine => {
                 console.log(`Spawned Ffmpeg with command: ${commandLine}`);
-                onConversionStart(input);
+                onConversionStart(inputPath);
             })
             .on('error', (err, stdout, stderr) => {
                 console.log(err, stdout, stderr);
-                onConversionError(input);
+                onConversionError(inputPath);
                 reject(err);
             })
             .on('end', (stdout, stderr) => {
                 console.log(stdout, stderr);
                 resolve({ convertedFilePath: output });
-                onConversionEnd(input);
+                onConversionEnd(inputPath);
             })
             .on('progress', progress => {
                 console.log(`PROGRESS: ${progress.percent}`);
-                onConversionProgress(input, progress);
+                onConversionProgress(inputPath, progress);
             })
             .outputOptions(outputOptions)
             .saveToFile(output);

@@ -10,26 +10,26 @@ import {
 const { ipcRenderer } = window.require('electron');
 
 ipcRenderer.on('file-conversion-end', (event, data) => {
-    const { file } = data;
-    store.dispatch(setFileConversionEnd(file));
+    const { filePath } = data;
+    store.dispatch(setFileConversionEnd(filePath));
 });
 
 ipcRenderer.on('file-conversion-error', (event, data) => {
-    const { file } = data;
-    store.dispatch(setFileConversionError(file));
+    const { filePath } = data;
+    store.dispatch(setFileConversionError(filePath));
 });
 
 ipcRenderer.on('file-conversion-progress', (event, data) => {
-    const { file, progress } = data;
-    store.dispatch(setFileConversionProgress(file, progress));
+    const { filePath, progress } = data;
+    store.dispatch(setFileConversionProgress(filePath, progress));
 });
 
 ipcRenderer.on('file-conversion-started', (event, data) => {
-    const { file } = data;
-    store.dispatch(setFileConversionStart(file));
+    const { filePath } = data;
+    store.dispatch(setFileConversionStart(filePath));
 });
 
 ipcRenderer.on('get-file-data', (event, data) => {
-    const { file, fileData } = data;
-    store.dispatch(setFileData(file, fileData));
+    const { fileData, filePath } = data;
+    store.dispatch(setFileData(filePath, fileData));
 });

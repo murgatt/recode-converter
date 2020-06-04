@@ -13,6 +13,12 @@
         },
         "default": "Par défaut",
         "destination": "Destination",
+        "file": {
+            "copyStream": {
+                "description": "Copier le flux dans le fichier de sortie, décochez pour le supprimer",
+                "title": "Copier le flux"
+            }
+        },
         "home": {
             "browseFiles": "Parcourir les fichiers",
             "dropFiles": "Déposez des fichiers ici",
