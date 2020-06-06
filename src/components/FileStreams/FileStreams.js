@@ -12,11 +12,17 @@ import { addStreamToIgnore, removeStreamToIgnore } from '../../store/file/file.a
 import { FILE_STATUS } from '../../store/file/file.constants';
 import StreamMetadataInput from '../StreamMetadataInput';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
     codec: {
         textTransform: 'uppercase',
     },
-});
+    uncheckedRow: {
+        '& > *': {
+            color: theme.palette.action.disabled,
+        },
+        backgroundColor: theme.palette.action.disabledBackground,
+    },
+}));
 
 const codecTypeIcons = {
     audio: (
@@ -82,31 +88,37 @@ const FileStreams = ({ file }) => {
                 </TableRow>
             </TableHead>
             <TableBody>
-                {streams.map(stream => (
-                    <TableRow key={stream.index}>
-                        <TableCell padding="checkbox">
-                            <Tooltip title={t('file.copyStream.description')}>
-                                <Checkbox
-                                    checked={!ignoredStreams.includes(stream.index)}
-                                    disabled={isEditDisabled}
-                                    onChange={handleCheckChange(stream.index)}
+                {streams.map(stream => {
+                    const { codec_name: codecName, codec_type: codecType, index, tags } = stream;
+                    const isChecked = !ignoredStreams.includes(index);
+
+                    return (
+                        <TableRow className={isChecked ? null : classes.uncheckedRow} key={index}>
+                            <TableCell padding="checkbox">
+                                <Tooltip title={t('file.copyStream.description')}>
+                                    <Checkbox
+                                        checked={isChecked}
+                                        disabled={isEditDisabled}
+                                        onChange={handleCheckChange(index)}
+                                    />
+                                </Tooltip>
+                            </TableCell>
+                            <TableCell className={classes.codec}>{codecName}</TableCell>
+                            <TableCell>{codecTypeIcons[codecType]}</TableCell>
+                            <TableCell>{tags.language}</TableCell>
+                            <TableCell>
+                                <StreamMetadataInput
+                                    disabled={isEditDisabled || !isChecked}
+                                    filePath={path}
+                                    name="title"
+                                    stream={stream}
+                                    streamsMetadata={streamsMetadata}
                                 />
-                            </Tooltip>
-                        </TableCell>
-                        <TableCell className={classes.codec}>{stream.codec_name}</TableCell>
-                        <TableCell>{codecTypeIcons[stream.codec_type]}</TableCell>
-                        <TableCell>{stream.tags.language}</TableCell>
-                        <TableCell>
-                            <StreamMetadataInput
-                                filePath={path}
-                                name="title"
-                                stream={stream}
-                                streamsMetadata={streamsMetadata}
-                            />
-                        </TableCell>
-                        <TableCell>{getStreamProperties(stream)}</TableCell>
-                    </TableRow>
-                ))}
+                            </TableCell>
+                            <TableCell>{getStreamProperties(stream)}</TableCell>
+                        </TableRow>
+                    );
+                })}
             </TableBody>
         </Table>
     );
