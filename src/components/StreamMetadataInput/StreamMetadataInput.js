@@ -11,7 +11,7 @@ const useStyles = makeStyles({
     },
 });
 
-const StreamMetadataInput = ({ filePath, name, stream, streamsMetadata }) => {
+const StreamMetadataInput = ({ disabled, filePath, name, stream, streamsMetadata }) => {
     const classes = useStyles();
     const dispatch = useDispatch();
 
@@ -34,6 +34,7 @@ const StreamMetadataInput = ({ filePath, name, stream, streamsMetadata }) => {
     return (
         <TextField
             className={classes.textField}
+            disabled={disabled}
             onChange={handleMetadataChange(stream.index)}
             name={name}
             size="small"
@@ -44,10 +45,15 @@ const StreamMetadataInput = ({ filePath, name, stream, streamsMetadata }) => {
 };
 
 StreamMetadataInput.propTypes = {
+    disabled: PropTypes.bool,
     filePath: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     stream: PropTypes.object.isRequired,
     streamsMetadata: PropTypes.array.isRequired,
+};
+
+StreamMetadataInput.defaultProps = {
+    disabled: false,
 };
 
 export default StreamMetadataInput;
