@@ -36,9 +36,14 @@ const getIgnoredStreamsOptions = ignoredStreams => {
 };
 
 const getStreamsMetadataOptions = streamsMetadata => {
-    return streamsMetadata.map(({ index, key, value }) => {
-        return `-metadata:s:${index} ${key}=${value}`;
+    const streamsMetadataOptions = [];
+    streamsMetadata.forEach(({ index, key, value }) => {
+        streamsMetadataOptions.push(`-metadata:s:${index}`);
+        streamsMetadataOptions.push(`${key}=${value}`);
     });
+
+    // metadata with spaces workaround
+    return streamsMetadataOptions.length ? streamsMetadataOptions : [[]];
 };
 
 const getSingleOutputOption = (option, value) => {
@@ -50,11 +55,8 @@ const getSingleOutputOption = (option, value) => {
     return '';
 };
 
-const getOutputOptions = (options, file) => {
-    const { ignoredStreams, streamsMetadata } = file;
-    const ignoredStreamsOptions = getIgnoredStreamsOptions(ignoredStreams);
-    const streamsMetadataOptions = getStreamsMetadataOptions(streamsMetadata);
-    const outputOptions = [...BASE_OUTPUT_OPTIONS, ...ignoredStreamsOptions, ...streamsMetadataOptions];
+const getOutputOptions = options => {
+    const outputOptions = [...BASE_OUTPUT_OPTIONS];
     Object.keys(options).forEach(optionKey => {
         const optionValue = options[optionKey];
         const outputOption = getSingleOutputOption(optionKey, optionValue);
@@ -68,7 +70,7 @@ const getOutputOptions = (options, file) => {
 };
 
 const convert = ({ file, options = {}, callbacks = {}, destination }) => {
-    const { path: inputPath } = file;
+    const { ignoredStreams, path: inputPath, streamsMetadata } = file;
     const {
         onConversionEnd = () => {},
         onConversionStart = () => {},
@@ -78,6 +80,8 @@ const convert = ({ file, options = {}, callbacks = {}, destination }) => {
 
     const output = getOutputPath(inputPath, destination);
     const outputOptions = getOutputOptions(options, file);
+    const ignoredStreamsOptions = getIgnoredStreamsOptions(ignoredStreams);
+    const streamsMetadataOptions = getStreamsMetadataOptions(streamsMetadata);
 
     return new Promise((resolve, reject) => {
         ffmpeg(inputPath)
@@ -100,6 +104,9 @@ const convert = ({ file, options = {}, callbacks = {}, destination }) => {
                 onConversionProgress(inputPath, progress);
             })
             .outputOptions(outputOptions)
+            .addOutputOptions(ignoredStreamsOptions)
+            // metadata with spaces workaround
+            .addOutputOptions(...streamsMetadataOptions)
             .saveToFile(output);
     });
 };
