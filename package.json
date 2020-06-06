@@ -1,6 +1,6 @@
 {
     "name": "material-converter",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "description": "An audio converter for video files",
     "main": "public/electron.js",
     "private": false,

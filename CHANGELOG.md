@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/murgatt/material-converter/compare/v0.2.0...v0.3.0) (2020-06-06)
+
+
+### Features
+
+* improve file streams edit UI ([#40](https://github.com/murgatt/material-converter/issues/40)) ([f275c86](https://github.com/murgatt/material-converter/commit/f275c8673da3c4ea852146ab2de89d7ea97b1ec4))
+* **conversion:** add & edit stream title ([#38](https://github.com/murgatt/material-converter/issues/38)) ([9392a6b](https://github.com/murgatt/material-converter/commit/9392a6b8c75fc5217b91e4516a91956d3d0889e4))
+* **conversion:** allow to remove specific streams from the output file ([#36](https://github.com/murgatt/material-converter/issues/36)) ([bf532de](https://github.com/murgatt/material-converter/commit/bf532deb4f25c40bf9bb66bb1423d11e343810ab))
+* **files:** add file streams info in a collapse panel ([#35](https://github.com/murgatt/material-converter/issues/35)) ([aa2d30f](https://github.com/murgatt/material-converter/commit/aa2d30f34f547cfe188dc04f6354e7595b821b88))
+* add node-ffprobe to get files info ([#34](https://github.com/murgatt/material-converter/issues/34)) ([15d812d](https://github.com/murgatt/material-converter/commit/15d812d009b18728e514228199cd18dd54924d41))
+
+
+### Bug Fixes
+
+* **conversion:** conversion error when metadata with spaces ([#41](https://github.com/murgatt/material-converter/issues/41)) ([2fe8b18](https://github.com/murgatt/material-converter/commit/2fe8b187ae4238f3e19b37324e1b63ab74dbf6cb))
+* **conversion:** metadata on ignored stream ([#42](https://github.com/murgatt/material-converter/issues/42)) ([4162636](https://github.com/murgatt/material-converter/commit/41626361128e001ba5211d9f72767641179d370d))
+
 ## [0.2.0](https://github.com/murgatt/material-converter/compare/v0.1.2...v0.2.0) (2020-05-18)
 
 
