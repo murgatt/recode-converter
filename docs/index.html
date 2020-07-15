@@ -34,6 +34,7 @@
             <img src="img/icon.png" alt="Recode Converter" class="logo" />
             <h1>Recode Converter</h1>
             <h2>A modern & simple audio converter for video files</h2>
+            <p>FFMPEG needs to be installed first to use this app</p>
             <a class="button" id="download-button" href="https://github.com/murgatt/recode-converter/releases/latest">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
                     <path d="M0 0h24v24H0V0z" fill="none" />
@@ -41,6 +42,7 @@
                 </svg>
                 Download
             </a>
+            <a class="download-options" href="https://github.com/murgatt/recode-converter/releases/latest">More download options</a>
             <img src="img/app.png" alt="Recode Converter app" class="app" />
         </main>
         <section>
@@ -79,6 +81,26 @@
             <div class="accordion">
                 <input type="checkbox" class="accordion_checkbox" id="faqCodecs" />
                 <label class="accordion_label" for="faqCodecs">
+                    Does FFMPEG really need to be installed?
+                    <svg
+                        class="accordion_arrow"
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        width="24"
+                    >
+                        <path d="M0 0h24v24H0z" fill="none" />
+                        <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z" />
+                    </svg>
+                </label>
+                <p class="accordion_content">
+                    Yes. Recode Converter is using FFMPEG to convert files but it's not installed when you install
+                    Recode Converter. You have to install FFMPEG before you use the app.
+                </p>
+            </div>
+            <div class="accordion">
+                <input type="checkbox" class="accordion_checkbox" id="faqFFMPEG" />
+                <label class="accordion_label" for="faqFFMPEG">
                     What are the supported audio codecs?
                     <svg
                         class="accordion_arrow"

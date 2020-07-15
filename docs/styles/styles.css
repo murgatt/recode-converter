@@ -147,6 +147,7 @@ footer {
 .footer-socialIcon {
     width: 32px;
     fill: rgba(255, 255, 255, 0.7);
+    transition: all .5s;
 }
 
 .footer-socialLink {
@@ -155,4 +156,16 @@ footer {
 
 .footer-socialLink:hover .footer-socialIcon {
     fill: white;
+}
+
+.download-options {
+    margin-top: 8px;
+    opacity: 0.7;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: opacity .25s ease-in-out;
+}
+
+.download-options:hover {
+    opacity: 1;
 }
