@@ -22,7 +22,7 @@ main {
     background: var(--color-gradient);
     background: linear-gradient(0deg, var(--color-background) 0%, var(--color-gradient) 100%);
     min-height: 100vh;
-    padding: 25vh 16px 0;
+    padding: 20vh 16px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -96,6 +96,7 @@ a {
     width: 100%;
     max-width: 800px;
     margin: 16px 0;
+    text-align: left;
 }
 
 .accordion_checkbox {
@@ -117,7 +118,6 @@ a {
     margin: 0;
     overflow: hidden;
     transition: all .25s;
-    text-align: left;
 }
 
 .accordion_label {
@@ -134,6 +134,7 @@ a {
     fill: var(--color-text);
     transition: transform .35s ease-in-out;;
     margin-left: 8px;
+    flex-shrink: 0;
 }
 
 footer {
