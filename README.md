@@ -1,7 +1,7 @@
 <div align="center">
   <img src="docs/img/icon.png" width="120">
   <h1>Recode Converter</h1>
-  <strong>A modwern & simple audio converter for video files</strong>
+  <strong>A modern & simple audio converter for video files</strong>
   <img src="docs/img/app.png" width="100%" alt="Screenshot">
 </div>
 
@@ -19,7 +19,7 @@ The application is built with Electron and React and is using FFMPEG. Make sure 
 
 ### Installation
 
-1. Clone this repository: `git clone REPO_URL`
+1. Clone this repository: `git clone https://github.com/murgatt/recode-converter.git`
 2. Navigate into the project directory: `cd recode-converter`
 3. Install dependencies: `yarn`
 
