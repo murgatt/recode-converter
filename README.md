@@ -62,6 +62,7 @@ Please make sure to follow the code style of the project and update translations
 
 | Feature  | Status |
 | ---| --- |
+| FFMPEG installation check  | ❌  |
 | Subtitles conversion  | ❌  |
 | Conversion notification  | ❌  |
 | Application settings  | ❌  |
