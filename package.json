@@ -1,17 +1,17 @@
 {
-    "name": "material-converter",
+    "name": "recode-converter",
     "version": "0.3.0",
-    "description": "An audio converter for video files",
+    "description": "A modern & simple audio converter for video files",
     "main": "public/electron.js",
     "private": false,
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/murgatt/material-converter.git"
+        "url": "git+https://github.com/murgatt/recode-converter.git"
     },
     "author": "murgatt",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/murgatt/material-converter/issues"
+        "url": "https://github.com/murgatt/recode-converter/issues"
     },
     "scripts": {
         "build": "react-scripts build",
@@ -76,8 +76,8 @@
         "wait-on": "^4.0.1"
     },
     "build": {
-        "appId": "com.murgatt.material-converter",
-        "productName": "Material Converter",
+        "appId": "com.murgatt.recode-converter",
+        "productName": "Recode Converter",
         "files": [
             "build/**/*",
             "node_modules/**/*"

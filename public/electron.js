@@ -1,7 +1,4 @@
-const electron = require('electron');
-const app = electron.app;
-const BrowserWindow = electron.BrowserWindow;
-
+const { app, BrowserWindow } = require('electron');
 const path = require('path');
 const isDev = require('electron-is-dev');
 
@@ -9,6 +6,7 @@ const ConversionManager = require('./conversionManager');
 
 let mainWindow;
 let conversionManager;
+const iconPath = path.join(__dirname, 'icon.png');
 
 function createWindow() {
     mainWindow = new BrowserWindow({
@@ -16,6 +14,7 @@ function createWindow() {
         height: 680,
         minWidth: 830,
         minHeight: 400,
+        icon: iconPath,
         webPreferences: {
             nodeIntegration: true,
         },
