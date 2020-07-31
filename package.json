@@ -41,6 +41,7 @@
         "@testing-library/user-event": "^7.1.2",
         "classnames": "^2.2.6",
         "electron-is-dev": "^1.1.0",
+        "fix-path": "^3.0.0",
         "fluent-ffmpeg": "^2.1.2",
         "i18next": "^19.0.3",
         "lodash-es": "^4.17.15",
