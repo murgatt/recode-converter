@@ -5,12 +5,12 @@ const PLATFORMS = {
     linux: 'linux',
     mac: 'mac',
     windows: 'win',
-}
+};
 
 const EXTENSIONS = {
     mac: 'dmg',
     win: 'exe',
-}
+};
 
 const getPlatform = () => {
     const userAgent = navigator.userAgent.toLowerCase();
@@ -23,7 +23,9 @@ const getPlatform = () => {
     if (userAgent.match(/linux/)) {
         return PLATFORMS.linux;
     }
-}
+
+    return '';
+};
 
 const getAssetDownloadUrl = assets => {
     const platform = getPlatform();
@@ -39,7 +41,7 @@ const getAssetDownloadUrl = assets => {
     }
 
     return platformAsset.browser_download_url;
-}
+};
 
 const getDownloadUrl = async () => {
     const response = await fetch(GITHUB_API_URL);
