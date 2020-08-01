@@ -14,7 +14,7 @@
         "default": "Default",
         "destination": "Destination",
         "ffmpegAlert": {
-            "description": "Recode Converter need FFMPEG to be installed on your computer. Check if FFMPEG is properly installed before using this app.",
+            "description": "Recode Converter needs FFMPEG to be installed on your computer. Check if FFMPEG is properly installed before using this app.",
             "title": "FFMPEG cannot be found"
         },
         "file": {
