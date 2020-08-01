@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const isDev = require('electron-is-dev');
 const fixPath = require('fix-path');
@@ -6,6 +6,7 @@ const fixPath = require('fix-path');
 fixPath();
 
 const ConversionManager = require('./conversionManager');
+const ffmpeg = require('./ffmpeg');
 
 let mainWindow;
 let conversionManager;
@@ -29,6 +30,14 @@ function createWindow() {
     mainWindow.on('closed', () => {
         mainWindow = null;
     });
+    mainWindow.webContents.on('dom-ready', () => {
+        ffmpeg.checkFfmpegInstallation(isFfmpegInstalled => {
+            if (!isFfmpegInstalled) {
+                mainWindow.send('ffmpeg-not-found');
+            }
+        });
+
+    });
 }
 
 app.on('ready', createWindow);
@@ -43,4 +52,8 @@ app.on('activate', () => {
     if (mainWindow === null) {
         createWindow();
     }
+});
+
+ipcMain.on('quit-app', () => {
+    app.quit()
 });

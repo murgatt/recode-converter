@@ -6,6 +6,7 @@ import {
     setFileConversionStart,
     setFileData,
 } from './store/file/file.actions';
+import { openFfmpegAlert } from './store/ui/ui.actions';
 
 const { ipcRenderer } = window.require('electron');
 
@@ -32,4 +33,8 @@ ipcRenderer.on('file-conversion-started', (event, data) => {
 ipcRenderer.on('get-file-data', (event, data) => {
     const { fileData, filePath } = data;
     store.dispatch(setFileData(filePath, fileData));
+});
+
+ipcRenderer.on('ffmpeg-not-found', () => {
+    store.dispatch(openFfmpegAlert);
 });
