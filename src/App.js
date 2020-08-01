@@ -7,6 +7,7 @@ import store from './store';
 import getTheme, { THEME_TYPES } from './theme';
 import './registerElectronEvents';
 import Snackbar from './components/Snackbar';
+import FfmpegAlert from './components/FfmpegAlert';
 
 const useStyles = makeStyles({
     root: {
@@ -29,6 +30,7 @@ function App() {
                 <div className={className}>
                     <Router />
                 </div>
+                <FfmpegAlert />
                 <Snackbar />
             </ThemeProvider>
         </Provider>

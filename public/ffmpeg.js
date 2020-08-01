@@ -1,5 +1,6 @@
 const ffmpeg = require('fluent-ffmpeg');
 const path = require('path');
+const { exec } = require('child_process');
 
 const BASE_OUTPUT_OPTIONS = ['-map 0', '-c copy'];
 
@@ -111,4 +112,15 @@ const convert = ({ file, options = {}, callbacks = {}, destination }) => {
     });
 };
 
+function checkFfmpegInstallation(callback) {
+    exec('ffmpeg -version', (error) => {
+        if (error) {
+            console.error(error);
+        }
+
+        callback(!error);
+    });
+}
+
 exports.convert = convert;
+exports.checkFfmpegInstallation = checkFfmpegInstallation;

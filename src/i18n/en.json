@@ -13,6 +13,10 @@
         },
         "default": "Default",
         "destination": "Destination",
+        "ffmpegAlert": {
+            "description": "Recode Converter need FFMPEG to be installed on your computer. Check if FFMPEG is properly installed before using this app.",
+            "title": "FFMPEG cannot be found"
+        },
         "file": {
             "copyStream": {
                 "description": "Copy stream to the output file, uncheck to remove it",
@@ -25,6 +29,7 @@
             "or": "or"
         },
         "language": "Language",
+        "ok": "Ok",
         "properties": "Properties",
         "removeFile": "Remove file",
         "sameAsSource": "Same as source",

@@ -13,6 +13,10 @@
         },
         "default": "Par défaut",
         "destination": "Destination",
+        "ffmpegAlert": {
+            "description": "FFMPEG doit-être installé sur votre ordinateur pour que Recode Converter fonctionne. Véfifiez que FFMPEG est bien installé avant d'utiliser l'application.",
+            "title": "FFMPEG est introuvable"
+        },
         "file": {
             "copyStream": {
                 "description": "Copier le flux dans le fichier de sortie, décochez pour le supprimer",
@@ -25,6 +29,7 @@
             "or": "ou"
         },
         "language": "Langue",
+        "ok": "Ok",
         "properties": "Propriétés",
         "removeFile": "Retirer le fichier",
         "sameAsSource": "Identique à la source",
