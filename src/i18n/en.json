@@ -23,11 +23,6 @@
                 "title": "Copy stream"
             }
         },
-        "home": {
-            "browseFiles": "Browse Files",
-            "dropFiles": "Drop files here",
-            "or": "or"
-        },
         "language": "Language",
         "ok": "Ok",
         "properties": "Properties",

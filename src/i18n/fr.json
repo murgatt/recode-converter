@@ -23,11 +23,6 @@
                 "title": "Copier le flux"
             }
         },
-        "home": {
-            "browseFiles": "Parcourir les fichiers",
-            "dropFiles": "Déposez des fichiers ici",
-            "or": "ou"
-        },
         "language": "Langue",
         "ok": "Ok",
         "properties": "Propriétés",
