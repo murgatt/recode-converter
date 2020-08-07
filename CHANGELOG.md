@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.5.0](https://github.com/murgatt/recode-converter/compare/v0.4.0...v0.5.0) (2020-08-07)
+
+
+### Features
+
+* check if FFMPEG is installed ([#50](https://github.com/murgatt/recode-converter/issues/50)) ([1172f90](https://github.com/murgatt/recode-converter/commit/1172f90fa9185756dd3bb05150a111291c0bd788))
+* remove useless start screen ([#51](https://github.com/murgatt/recode-converter/issues/51)) ([5f35f14](https://github.com/murgatt/recode-converter/commit/5f35f14d833646748d13c2bb083952c853636eb9))
+
 ## [0.4.0](https://github.com/murgatt/recode-converter/compare/v0.3.0...v0.4.0) (2020-07-31)
 
 
