@@ -92,6 +92,20 @@ a {
     margin-top: 16px;
 }
 
+.app-dark {
+    display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    .app-dark {
+        display: block;
+    }
+
+    .app-light {
+        display: none;
+    }
+}
+
 .accordion {
     width: 100%;
     max-width: 800px;
