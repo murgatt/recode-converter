@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/murgatt/recode-converter/compare/v1.0.0...v1.1.0) (2020-08-08)
+
+
+### Features
+
+* check for available update on start ([#53](https://github.com/murgatt/recode-converter/issues/53)) ([d23b3e4](https://github.com/murgatt/recode-converter/commit/d23b3e40fa3c2acc8a2b6f5a23ebcf8c197be0f6))
+
 ## [1.0.0](https://github.com/murgatt/recode-converter/compare/v0.5.0...v1.0.0) (2020-08-08)
 
 
