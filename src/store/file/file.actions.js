@@ -1,7 +1,7 @@
 import { areFilesFromSameDirectory, getDirPathFromFilePath, normalizeFiles } from './file.utils';
 import { FILE_STATUS } from './file.constants';
 import { getFilesById, getIsDestinationManuallySet } from './file.selectors';
-import { checkConversionProgress } from '../conversion/conversion.actions';
+import { checkConversionProgress, removeFileFromConversionList } from '../conversion/conversion.actions';
 import i18n from '../../i18n';
 
 const { ipcRenderer } = window.require('electron');
@@ -65,6 +65,7 @@ export const setFileConversionEnd = fileId => async (dispatch, getState) => {
         progress: 100,
         status: FILE_STATUS.complete,
     };
+    dispatch(removeFileFromConversionList(fileId));
     dispatch({ files: file, type: UPDATE_FILES });
     dispatch(checkConversionProgress);
 };
@@ -75,6 +76,7 @@ export const setFileConversionError = fileId => (dispatch, getState) => {
         ...filesById[fileId],
         status: FILE_STATUS.error,
     };
+    dispatch(removeFileFromConversionList(fileId));
     dispatch({ files: file, type: UPDATE_FILES });
     dispatch(checkConversionProgress);
 };
