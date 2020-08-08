@@ -6,7 +6,9 @@ import {
     setFileConversionStart,
     setFileData,
 } from './store/file/file.actions';
-import { openFfmpegAlert } from './store/ui/ui.actions';
+import { openFfmpegAlert, openVersionAlert } from './store/ui/ui.actions';
+import { compareVersions } from './utils';
+import { GITHUB_API_URL } from './constants';
 
 const { ipcRenderer } = window.require('electron');
 
@@ -37,4 +39,21 @@ ipcRenderer.on('get-file-data', (event, data) => {
 
 ipcRenderer.on('ffmpeg-not-found', () => {
     store.dispatch(openFfmpegAlert);
+});
+
+ipcRenderer.on('app-version', async (event, data) => {
+    const { version } = data;
+    const response = await fetch(GITHUB_API_URL);
+
+    if (!response.ok) {
+        return;
+    }
+
+    const latestRelease = await response.json();
+    const latestReleaseVersion = latestRelease.name.replace('v', '');
+    const compare = compareVersions(latestReleaseVersion, version);
+
+    if (compare === 1) {
+        store.dispatch(openVersionAlert);
+    }
 });

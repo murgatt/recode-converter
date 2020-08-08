@@ -2,6 +2,7 @@
     "translation": {
         "addFiles": "Ajouter des fichiers",
         "audio": "Audio",
+        "cancel": "Annuler",
         "channel": "{{count}} canal",
         "channel_plural": "{{count}} canaux",
         "clearFileList": "Effacer la liste",
@@ -32,6 +33,11 @@
         "subtitles": "Sous-titres",
         "title": "Titre",
         "type": "Type",
+        "versionAlert": {
+            "description": "Une nouvelle version de Recode Converter est disponible. Souhaitez-vous mettre à jour l'application ?",
+            "button": "Mettre à jour",
+            "title": "Mise à jour disponible"
+        },
         "video": "Vidéo",
         "conversionSettings": {
             "aac": "AAC",

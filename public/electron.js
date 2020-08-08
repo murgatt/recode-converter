@@ -36,7 +36,7 @@ function createWindow() {
                 mainWindow.send('ffmpeg-not-found');
             }
         });
-
+        mainWindow.send('app-version', { version: app.getVersion() });
     });
 }
 
