@@ -8,6 +8,7 @@ import getTheme, { THEME_TYPES } from './theme';
 import './registerElectronEvents';
 import Snackbar from './components/Snackbar';
 import FfmpegAlert from './components/FfmpegAlert';
+import VersionAlert from './components/VersionAlert';
 
 const useStyles = makeStyles({
     root: {
@@ -31,6 +32,7 @@ function App() {
                     <Router />
                 </div>
                 <FfmpegAlert />
+                <VersionAlert />
                 <Snackbar />
             </ThemeProvider>
         </Provider>

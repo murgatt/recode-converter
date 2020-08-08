@@ -1,3 +1,2 @@
-/* eslint-disable import/prefer-default-export */
-
 export const getIsFfmpegAlertOpen = ({ ui: { isFfmpegAlertOpen } }) => isFfmpegAlertOpen;
+export const getIsVersionAlertOpen = ({ ui: { isVersionAlertOpen } }) => isVersionAlertOpen;
