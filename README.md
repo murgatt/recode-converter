@@ -74,6 +74,7 @@ Please make sure to follow the code style of the project and update translations
 | View detailed file info  | ❌  |
 | Video conversion  | ❌  |
 | Audio files conversion  | ❌  |
+| Video comparison slider  | ❌  |
 
 ## License
 [MIT](https://github.com/murgatt/recode-converter/blob/master/LICENSE)
