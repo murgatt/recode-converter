@@ -18,6 +18,7 @@ function createWindow() {
         minWidth: 830,
         minHeight: 400,
         webPreferences: {
+            enableRemoteModule: true,
             nodeIntegration: true,
         },
     });
@@ -55,5 +56,5 @@ app.on('activate', () => {
 });
 
 ipcMain.on('quit-app', () => {
-    app.quit()
+    app.quit();
 });
