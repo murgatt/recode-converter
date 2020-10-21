@@ -1,2 +1,4 @@
 # Ignore built files except build/index.js
 public/*
+src/App.test.js
+src/setupTests.js

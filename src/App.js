@@ -12,6 +12,8 @@ import VersionAlert from './components/VersionAlert';
 
 const useStyles = makeStyles({
     root: {
+        display: 'flex',
+        flexDirection: 'row',
         height: '100vh',
     },
 });
