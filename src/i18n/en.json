@@ -1,6 +1,7 @@
 {
     "translation": {
         "addFiles": "Add files",
+        "appSettings": "App settings",
         "audio": "Audio",
         "cancel": "Cancel",
         "channel": "{{count}} channel",
@@ -12,6 +13,7 @@
             "pauseConversion": "Pause conversion",
             "startConversion": "Start conversion"
         },
+        "converter": "Converter",
         "default": "Default",
         "destination": "Destination",
         "ffmpegAlert": {
@@ -39,6 +41,7 @@
             "title": "Update available"
         },
         "video": "Video",
+        "videoComparator": "Video comparator",
         "conversionSettings": {
             "aac": "AAC",
             "ac3": "AC3",
