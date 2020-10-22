@@ -1,6 +1,7 @@
 import HomeIcon from '@material-ui/icons/HomeOutlined';
 import CompareIcon from '@material-ui/icons/Compare';
 import ConverterPage from './ConverterPage';
+import VideoComparisonPage from './VideoComparisonPage';
 
 export default [
     {
@@ -11,7 +12,7 @@ export default [
         path: '/',
     },
     {
-        component: null,
+        component: VideoComparisonPage,
         exact: true,
         Icon: CompareIcon,
         name: 'videoComparator',

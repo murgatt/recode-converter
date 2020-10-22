@@ -26,10 +26,6 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const AppMenu = () => {
-    /* We hide the menu for now because there is no other routes */
-    return null;
-
-    /* eslint-disable-next-line */
     const classes = useStyles();
     const { t } = useTranslation();
 

@@ -16,7 +16,7 @@ const useStyles = makeStyles({
     },
 });
 
-export default () => {
+const ConverterPage = () => {
     const dispatch = useDispatch();
     const classes = useStyles();
 
@@ -33,3 +33,5 @@ export default () => {
         </div>
     );
 };
+
+export default ConverterPage;
