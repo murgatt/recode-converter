@@ -36,7 +36,7 @@ const AppMenu = () => {
                     <MenuItem key={route.name} {...route} />
                 ))}
             </nav>
-            <Tooltip title={t('appSettings')}>
+            <Tooltip title={t('appSettings')} enterDelay={500} enterNextDelay={500}>
                 <Button aria-label={t('appSettings')} className={classes.button}>
                     <SettingsIcon />
                 </Button>

@@ -24,7 +24,7 @@ const MenuItem = ({ exact, Icon, name, path }) => {
     const label = t(name);
 
     return (
-        <Tooltip key={label} title={label}>
+        <Tooltip key={label} title={label} enterDelay={500} enterNextDelay={500}>
             <Button
                 aria-label={label}
                 className={classes.button}
