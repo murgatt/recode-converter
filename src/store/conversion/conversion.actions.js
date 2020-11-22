@@ -32,7 +32,7 @@ export const removeFileFromConversionList = filePath => (dispatch, getState) => 
 export const pauseConversion = dispatch => {
     dispatch(clearConversionList);
     dispatch({ type: PAUSE_CONVERSION });
-    dispatch(openSnackbar(i18n.t('conversion.conversionPauseMessage')));
+    dispatch(openSnackbar(i18n.t('converter.conversion.conversionPauseMessage')));
     ipcRenderer.send('ffmpeg-pause-conversion');
 };
 

@@ -80,7 +80,7 @@ const File = ({ file, onDeleteFile }) => {
     const handleExpandClick = useCallback(() => setExpanded(!expanded), [expanded]);
 
     const deleteAction = (
-        <IconButton disabled={deleteActionIsDisabled} label={t('removeFile')} onClick={onDeleteFile}>
+        <IconButton disabled={deleteActionIsDisabled} label={t('converter.files.removeFile')} onClick={onDeleteFile}>
             <DeleteIcon />
         </IconButton>
     );

@@ -23,16 +23,16 @@ const VersionAlert = () => {
 
     return (
         <Dialog open={isVersionAlertOpen}>
-            <DialogTitle>{t('versionAlert.title')}</DialogTitle>
+            <DialogTitle>{t('alert.versionAlert.title')}</DialogTitle>
             <DialogContent>
-                <DialogContentText>{t('versionAlert.description')}</DialogContentText>
+                <DialogContentText>{t('alert.versionAlert.description')}</DialogContentText>
             </DialogContent>
             <DialogActions>
                 <Button color="primary" onClick={handleCancelButtonClick}>
-                    {t('cancel')}
+                    {t('global.cancel')}
                 </Button>
                 <Button color="primary" onClick={handleConfirmButtonClick}>
-                    {t('versionAlert.button')}
+                    {t('alert.versionAlert.button')}
                 </Button>
             </DialogActions>
         </Dialog>

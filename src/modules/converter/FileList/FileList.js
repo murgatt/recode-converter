@@ -65,7 +65,11 @@ const FileList = () => {
                 </div>
             </Dropzone>
             {shouldDisplayClearButton && (
-                <IconButton className={classes.clearButton} label={t('clearFileList')} onClick={handleClearFiles}>
+                <IconButton
+                    className={classes.clearButton}
+                    label={t('converter.files.clearFileList')}
+                    onClick={handleClearFiles}
+                >
                     <ClearIcon />
                 </IconButton>
             )}

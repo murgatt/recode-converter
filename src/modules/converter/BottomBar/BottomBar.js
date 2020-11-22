@@ -37,11 +37,15 @@ const BottomBar = ({ onPauseConversion, onStartConversion }) => {
         <Toolbar className={classes.toolbar}>
             <DestinationInput />
             {isConversionRunning ? (
-                <IconButton onClick={onPauseConversion}>
+                <IconButton label={t('converter.conversion.pauseConversion')} onClick={onPauseConversion}>
                     <PauseIcon />
                 </IconButton>
             ) : (
-                <IconButton disabled={!hasFiles} label={t('conversion.startConversion')} onClick={onStartConversion}>
+                <IconButton
+                    disabled={!hasFiles}
+                    label={t('converter.conversion.startConversion')}
+                    onClick={onStartConversion}
+                >
                     <StartIcon />
                 </IconButton>
             )}

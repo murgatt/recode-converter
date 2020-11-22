@@ -8,7 +8,7 @@ export default [
         component: ConverterPage,
         exact: true,
         Icon: HomeIcon,
-        name: 'converter',
+        name: 'routes.converter',
         path: '/',
     },
     {
@@ -16,7 +16,7 @@ export default [
         exact: true,
         featureFlip: 'videoComparison',
         Icon: CompareIcon,
-        name: 'videoComparator',
-        path: '/video-comparator',
+        name: 'routes.videoComparison',
+        path: '/video-comparison',
     },
 ];

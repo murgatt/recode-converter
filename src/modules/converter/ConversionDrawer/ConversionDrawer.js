@@ -25,7 +25,7 @@ const ConversionDrawer = () => {
             variant="persistent"
         >
             <Toolbar>
-                <Typography variant="subtitle1">{t('conversionSettings.title')}</Typography>
+                <Typography variant="subtitle1">{t('converter.conversionSettings.title')}</Typography>
             </Toolbar>
             <DialogContent>
                 <ConversionSettingsForm />

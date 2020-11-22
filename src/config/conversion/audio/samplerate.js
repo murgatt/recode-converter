@@ -4,35 +4,35 @@ import i18n from '../../../i18n';
 export default {
     defaultValue: 'default',
     id: 'samplerate',
-    label: i18n.t('conversionSettings.sampleRate'),
+    label: i18n.t('converter.conversionSettings.sampleRate'),
     aac: {
         options: [
             {
-                label: i18n.t('sameAsSource'),
+                label: i18n.t('global.sameAsSource'),
                 value: 'default',
             },
             {
-                label: i18n.t('conversionSettings.sampleRateValue', { value: 8000 }),
+                label: i18n.t('converter.conversionSettings.sampleRateValue', { value: 8000 }),
                 value: '8000',
             },
             {
-                label: i18n.t('conversionSettings.sampleRateValue', { value: 22050 }),
+                label: i18n.t('converter.conversionSettings.sampleRateValue', { value: 22050 }),
                 value: '22050',
             },
             {
-                label: i18n.t('conversionSettings.sampleRateValue', { value: 32000 }),
+                label: i18n.t('converter.conversionSettings.sampleRateValue', { value: 32000 }),
                 value: '32000',
             },
             {
-                label: i18n.t('conversionSettings.sampleRateValue', { value: 44100 }),
+                label: i18n.t('converter.conversionSettings.sampleRateValue', { value: 44100 }),
                 value: '44100',
             },
             {
-                label: i18n.t('conversionSettings.sampleRateValue', { value: 48000 }),
+                label: i18n.t('converter.conversionSettings.sampleRateValue', { value: 48000 }),
                 value: '48000',
             },
             {
-                label: i18n.t('conversionSettings.sampleRateValue', { value: 96000 }),
+                label: i18n.t('converter.conversionSettings.sampleRateValue', { value: 96000 }),
                 value: '96000',
             },
         ],
@@ -40,27 +40,27 @@ export default {
     ac3: {
         options: [
             {
-                label: i18n.t('default'),
+                label: i18n.t('global.default'),
                 value: 'default',
             },
             {
-                label: i18n.t('conversionSettings.sampleRateValue', { value: 8000 }),
+                label: i18n.t('converter.conversionSettings.sampleRateValue', { value: 8000 }),
                 value: '8000',
             },
             {
-                label: i18n.t('conversionSettings.sampleRateValue', { value: 22050 }),
+                label: i18n.t('converter.conversionSettings.sampleRateValue', { value: 22050 }),
                 value: '22050',
             },
             {
-                label: i18n.t('conversionSettings.sampleRateValue', { value: 32000 }),
+                label: i18n.t('converter.conversionSettings.sampleRateValue', { value: 32000 }),
                 value: '32000',
             },
             {
-                label: i18n.t('conversionSettings.sampleRateValue', { value: 44100 }),
+                label: i18n.t('converter.conversionSettings.sampleRateValue', { value: 44100 }),
                 value: '44100',
             },
             {
-                label: i18n.t('conversionSettings.sampleRateValue', { value: 48000 }),
+                label: i18n.t('converter.conversionSettings.sampleRateValue', { value: 48000 }),
                 value: '48000',
             },
         ],
@@ -68,31 +68,31 @@ export default {
     dts: {
         options: [
             {
-                label: i18n.t('default'),
+                label: i18n.t('global.default'),
                 value: 'default',
             },
             {
-                label: i18n.t('conversionSettings.sampleRateValue', { value: 8000 }),
+                label: i18n.t('converter.conversionSettings.sampleRateValue', { value: 8000 }),
                 value: '8000',
             },
             {
-                label: i18n.t('conversionSettings.sampleRateValue', { value: 22050 }),
+                label: i18n.t('converter.conversionSettings.sampleRateValue', { value: 22050 }),
                 value: '22050',
             },
             {
-                label: i18n.t('conversionSettings.sampleRateValue', { value: 32000 }),
+                label: i18n.t('converter.conversionSettings.sampleRateValue', { value: 32000 }),
                 value: '32000',
             },
             {
-                label: i18n.t('conversionSettings.sampleRateValue', { value: 44100 }),
+                label: i18n.t('converter.conversionSettings.sampleRateValue', { value: 44100 }),
                 value: '44100',
             },
             {
-                label: i18n.t('conversionSettings.sampleRateValue', { value: 48000 }),
+                label: i18n.t('converter.conversionSettings.sampleRateValue', { value: 48000 }),
                 value: '48000',
             },
             {
-                label: i18n.t('conversionSettings.sampleRateValue', { value: 96000 }),
+                label: i18n.t('converter.conversionSettings.sampleRateValue', { value: 96000 }),
                 value: '96000',
             },
         ],
@@ -100,19 +100,19 @@ export default {
     eac3: {
         options: [
             {
-                label: i18n.t('default'),
+                label: i18n.t('global.default'),
                 value: 'default',
             },
             {
-                label: i18n.t('conversionSettings.sampleRateValue', { value: 32000 }),
+                label: i18n.t('converter.conversionSettings.sampleRateValue', { value: 32000 }),
                 value: '32000',
             },
             {
-                label: i18n.t('conversionSettings.sampleRateValue', { value: 44100 }),
+                label: i18n.t('converter.conversionSettings.sampleRateValue', { value: 44100 }),
                 value: '44100',
             },
             {
-                label: i18n.t('conversionSettings.sampleRateValue', { value: 48000 }),
+                label: i18n.t('converter.conversionSettings.sampleRateValue', { value: 48000 }),
                 value: '48000',
             },
         ],
