@@ -26,17 +26,17 @@ const useStyles = makeStyles(theme => ({
 
 const codecTypeIcons = {
     audio: (
-        <Tooltip title={i18n.t('audio')}>
+        <Tooltip title={i18n.t('global.audio')}>
             <AudioIcon />
         </Tooltip>
     ),
     subtitle: (
-        <Tooltip title={i18n.t('subtitles')}>
+        <Tooltip title={i18n.t('global.subtitles')}>
             <SubtitlesIcon />
         </Tooltip>
     ),
     video: (
-        <Tooltip title={i18n.t('video')}>
+        <Tooltip title={i18n.t('global.video')}>
             <VideoIcon />
         </Tooltip>
     ),
@@ -46,7 +46,7 @@ const getStreamProperties = stream => {
     const { bit_rate: bitRate, channels, codec_type: codecType, height, sample_rate: sampleRate, width } = stream;
     switch (codecType) {
         case 'audio':
-            return `${i18n.t('channel', { count: channels })}, ${
+            return `${i18n.t('converter.fileStreams.channel', { count: channels })}, ${
                 bitRate ? `${bitRate / 1000} kbps,` : ''
             } ${sampleRate} Hz`;
         case 'video':
@@ -79,12 +79,12 @@ const FileStreams = ({ file }) => {
         <Table size="small">
             <TableHead>
                 <TableRow>
-                    <TableCell>{t('file.copyStream.title')}</TableCell>
-                    <TableCell>{t('conversionSettings.codec')}</TableCell>
-                    <TableCell>{t('type')}</TableCell>
-                    <TableCell>{t('language')}</TableCell>
-                    <TableCell>{t('title')}</TableCell>
-                    <TableCell>{t('properties')}</TableCell>
+                    <TableCell>{t('converter.fileStreams.copyStream.title')}</TableCell>
+                    <TableCell>{t('converter.conversionSettings.codec')}</TableCell>
+                    <TableCell>{t('global.type')}</TableCell>
+                    <TableCell>{t('global.language')}</TableCell>
+                    <TableCell>{t('global.title')}</TableCell>
+                    <TableCell>{t('global.properties')}</TableCell>
                 </TableRow>
             </TableHead>
             <TableBody>
@@ -95,7 +95,7 @@ const FileStreams = ({ file }) => {
                     return (
                         <TableRow className={isChecked ? null : classes.uncheckedRow} key={index}>
                             <TableCell padding="checkbox">
-                                <Tooltip title={t('file.copyStream.description')}>
+                                <Tooltip title={t('converter.fileStreams.copyStream.description')}>
                                     <Checkbox
                                         checked={isChecked}
                                         disabled={isEditDisabled}

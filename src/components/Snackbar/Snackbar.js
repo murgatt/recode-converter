@@ -22,7 +22,7 @@ const Snackbar = () => {
     const handleClose = useCallback(() => dispatch(closeSnackbar), [dispatch]);
 
     const action = (
-        <IconButton color="inherit" label={t('close')} onClick={handleClose} size="small">
+        <IconButton color="inherit" label={t('global.close')} onClick={handleClose} size="small">
             <CloseIcon fontSize="small" />
         </IconButton>
     );

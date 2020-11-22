@@ -1,77 +1,87 @@
 {
     "translation": {
-        "addFiles": "Add files",
-        "appSettings": "App settings",
-        "audio": "Audio",
-        "cancel": "Cancel",
-        "channel": "{{count}} channel",
-        "channel_plural": "{{count}} channels",
-        "clearFileList": "Clear list",
-        "close": "Close",
-        "conversion": {
-            "conversionPauseMessage": "Conversion will stop after the current file conversion end.",
-            "pauseConversion": "Pause conversion",
-            "startConversion": "Start conversion"
-        },
-        "converter": "Converter",
-        "default": "Default",
-        "destination": "Destination",
-        "ffmpegAlert": {
-            "description": "Recode Converter needs FFMPEG to be installed on your computer. Check if FFMPEG is properly installed before using this app.",
-            "title": "FFMPEG cannot be found"
-        },
-        "file": {
-            "copyStream": {
-                "description": "Copy stream to the output file, uncheck to remove it",
-                "title": "Copy stream"
+        "alert": {
+            "ffmpegAlert": {
+                "description": "Recode Converter needs FFMPEG to be installed on your computer. Check if FFMPEG is properly installed before using this app.",
+                "title": "FFMPEG cannot be found"
+            },
+            "versionAlert": {
+                "description": "A new version of Recode Converter is available. Would you like to update it now?",
+                "button": "Update",
+                "title": "Update available"
             }
         },
-        "language": "Language",
-        "ok": "Ok",
-        "properties": "Properties",
-        "removeFile": "Remove file",
-        "sameAsSource": "Same as source",
-        "selectDestination": "Select destination",
-        "subtitles": "Subtitles",
-        "title": "Title",
-        "type": "Type",
-        "versionAlert": {
-            "description": "A new version of Recode Converter is available. Would you like to update it now?",
-            "button": "Update",
-            "title": "Update available"
+        "converter": {
+            "conversion": {
+                "conversionPauseMessage": "Conversion will stop after the current file conversion end.",
+                "pauseConversion": "Pause conversion",
+                "startConversion": "Start conversion"
+            },
+            "conversionSettings": {
+                "aac": "AAC",
+                "ac3": "AC3",
+                "audioChannels": {
+                    "1": "Mono",
+                    "2": "Stereo",
+                    "3": "2.1",
+                    "4": "4.0",
+                    "5": "5.0",
+                    "6": "5.1",
+                    "7": "7.0",
+                    "8": "7.1"
+                },
+                "bitrate": "Bitrate",
+                "bitrateValue": "{{ value }} kbps",
+                "channels": "Channels",
+                "codec": "Codec",
+                "dts": "DTS",
+                "eac3": "EAC3",
+                "noAudioCodec": "None - Remove audio",
+                "sampleRate": "Sample rate",
+                "sampleRateValue": "{{ value }} Hz",
+                "title": "Conversion Settings",
+                "withoutAudioReencoding": "Without reencoding - Copy audio"
+            },
+            "files": {
+                "addFiles": "Add files",
+                "clearFileList": "Clear list",
+                "removeFile": "Remove file"
+            },
+            "fileStreams": {
+                "channel": "{{count}} channel",
+                "channel_plural": "{{count}} channels",
+                "copyStream": {
+                    "description": "Copy stream to the output file, uncheck to remove it",
+                    "title": "Copy stream"
+                }
+            }
         },
-        "video": "Video",
-        "videoComparator": "Video comparator",
+        "global": {
+            "appSettings": "App settings",
+            "audio": "Audio",
+            "cancel": "Cancel",
+            "close": "Close",
+            "default": "Default",
+            "destination": "Destination",
+            "language": "Language",
+            "ok": "Ok",
+            "properties": "Properties",
+            "sameAsSource": "Same as source",
+            "selectDestination": "Select destination",
+            "subtitles": "Subtitles",
+            "title": "Title",
+            "type": "Type",
+            "video": "Video"
+        },
+        "routes": {
+            "converter": "Converter",
+            "videoComparison": "Video comparison"
+        },
         "videoComparison": {
             "addFirstVideo": "Add first video",
             "addSecondVideo": "Add second video",
             "changeFirstVideo": "Change first video",
             "changeSecondVideo": "Change second video"
-        },
-        "conversionSettings": {
-            "aac": "AAC",
-            "ac3": "AC3",
-            "audioChannels": {
-                "1": "Mono",
-                "2": "Stereo",
-                "3": "2.1",
-                "4": "4.0",
-                "5": "5.0",
-                "6": "5.1",
-                "7": "7.0",
-                "8": "7.1"
-            },
-            "bitrate": "Bitrate",
-            "bitrateValue": "{{ value }} kbps",
-            "channels": "Channels",
-            "codec": "Codec",
-            "dts": "DTS",
-            "eac3": "EAC3",
-            "noAudioCodec": "None - Remove audio",
-            "sampleRate": "Sample rate",
-            "sampleRateValue": "{{ value }} Hz",
-            "title": "Conversion Settings",
-            "withoutAudioReencoding": "Without reencoding - Copy audio"
         }
     }
 }

@@ -26,7 +26,12 @@ const AddFileFab = () => {
     ]);
 
     return (
-        <Fab className={classes.addFileFab} component="label" color="primary" aria-label={t('addFiles')}>
+        <Fab
+            className={classes.addFileFab}
+            component="label"
+            color="primary"
+            aria-label={t('converter.files.addFiles')}
+        >
             <AddIcon />
             <FileInput onChange={handleFilesSelected} />
         </Fab>

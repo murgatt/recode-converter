@@ -28,7 +28,7 @@ export const setDestinationFromFiles = (dispatch, getState) => {
         const path = getDirPathFromFilePath(files[0].path);
         dispatch(setDestination(path));
     } else {
-        dispatch(setDestination(i18n.t('sameAsSource')));
+        dispatch(setDestination(i18n.t('global.sameAsSource')));
     }
 };
 

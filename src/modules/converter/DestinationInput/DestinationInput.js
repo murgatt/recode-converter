@@ -33,7 +33,12 @@ const DestinationInput = () => {
 
     const endAdornment = (
         <InputAdornment position="end">
-            <IconButton onClick={handleDestinationChange} component="label" size="small" label={t('selectDestination')}>
+            <IconButton
+                onClick={handleDestinationChange}
+                component="label"
+                size="small"
+                label={t('global.selectDestination')}
+            >
                 <FolderIcon />
             </IconButton>
         </InputAdornment>
@@ -46,7 +51,7 @@ const DestinationInput = () => {
             endAdornment={endAdornment}
             labelWidth={0}
             margin="dense"
-            placeholder={t('destination')}
+            placeholder={t('global.destination')}
             value={destination}
             variant="outlined"
         />

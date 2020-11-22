@@ -16,13 +16,13 @@ const FfmpegAlert = () => {
 
     return (
         <Dialog open={isFfmpegAlertOpen}>
-            <DialogTitle>{t('ffmpegAlert.title')}</DialogTitle>
+            <DialogTitle>{t('alert.ffmpegAlert.title')}</DialogTitle>
             <DialogContent>
-                <DialogContentText>{t('ffmpegAlert.description')}</DialogContentText>
+                <DialogContentText>{t('alert.ffmpegAlert.description')}</DialogContentText>
             </DialogContent>
             <DialogActions>
                 <Button color="primary" onClick={handleButtonClick}>
-                    {t('ok')}
+                    {t('global.ok')}
                 </Button>
             </DialogActions>
         </Dialog>
