@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button, makeStyles } from '@material-ui/core';
 import FileInput from '../components/FileInput';
-import Player from '../components/Player';
+import Player from '../modules/video-comparison/Player';
 
 const useStyles = makeStyles(theme => ({
     button: {

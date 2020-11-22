@@ -16,11 +16,11 @@ import ErrorIcon from '@material-ui/icons/Error';
 import VideoIcon from '@material-ui/icons/MovieOutlined';
 import DeleteIcon from '@material-ui/icons/DeleteOutline';
 import ExpandIcon from '@material-ui/icons/ExpandMore';
-import IconButton from '../IconButton';
-import { FILE_STATUS } from '../../store/file/file.constants';
-import { getIsConversionRunning } from '../../store/conversion/conversion.selectors';
-import { formatFileSize } from '../../store/file/file.utils';
-import FileStreams from '../FileStreams';
+import IconButton from '../../../components/IconButton';
+import { FILE_STATUS } from '../../../store/file/file.constants';
+import { getIsConversionRunning } from '../../../store/conversion/conversion.selectors';
+import { formatFileSize } from '../../../store/file/file.utils';
+import FileStreams from '../../../components/FileStreams';
 
 const useStyles = makeStyles(theme => ({
     cardContent: {

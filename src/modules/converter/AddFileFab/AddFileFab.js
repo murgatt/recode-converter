@@ -3,8 +3,8 @@ import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { Fab, makeStyles } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
-import FileInput from '../FileInput';
-import { addFiles } from '../../store/file/file.actions';
+import FileInput from '../../../components/FileInput';
+import { addFiles } from '../../../store/file/file.actions';
 
 const useStyles = makeStyles({
     addFileFab: {

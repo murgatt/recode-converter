@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { InputAdornment, OutlinedInput, makeStyles } from '@material-ui/core';
 import FolderIcon from '@material-ui/icons/FolderOutlined';
-import IconButton from '../IconButton';
-import { setDestination } from '../../store/file/file.actions';
-import { getDestination } from '../../store/file/file.selectors';
+import IconButton from '../../../components/IconButton';
+import { setDestination } from '../../../store/file/file.actions';
+import { getDestination } from '../../../store/file/file.selectors';
 
 const { dialog } = window.require('electron').remote;
 

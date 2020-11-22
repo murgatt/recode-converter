@@ -2,11 +2,11 @@ import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import _ from 'lodash-es';
-import Select from '../Select';
-import bitrateSetting from '../../config/conversion/audio/bitrate';
-import { getSingleConversionSetting } from '../../store/conversionSettings/conversionSettings.selectors';
-import { setConversionSetting } from '../../store/conversionSettings/conversionSettings.actions';
-import { CONVERSION_SETTINGS } from '../../store/conversionSettings/conversionSettings.constants';
+import Select from '../../../components/Select';
+import bitrateSetting from '../../../config/conversion/audio/bitrate';
+import { getSingleConversionSetting } from '../../../store/conversionSettings/conversionSettings.selectors';
+import { setConversionSetting } from '../../../store/conversionSettings/conversionSettings.actions';
+import { CONVERSION_SETTINGS } from '../../../store/conversionSettings/conversionSettings.constants';
 
 const BitrateSelect = ({ codec, disabled }) => {
     const dispatch = useDispatch();

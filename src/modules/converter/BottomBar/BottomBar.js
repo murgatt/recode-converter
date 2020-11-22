@@ -6,10 +6,10 @@ import { Toolbar, makeStyles } from '@material-ui/core';
 import StartIcon from '@material-ui/icons/PlayArrowOutlined';
 import PauseIcon from '@material-ui/icons/Pause';
 import AddFileFab from '../AddFileFab';
-import IconButton from '../IconButton';
+import IconButton from '../../../components/IconButton';
 import DestinationInput from '../DestinationInput';
-import { getIsConversionRunning } from '../../store/conversion/conversion.selectors';
-import { getHasFilesToConvert } from '../../store/file/file.selectors';
+import { getIsConversionRunning } from '../../../store/conversion/conversion.selectors';
+import { getHasFilesToConvert } from '../../../store/file/file.selectors';
 
 const useStyles = makeStyles(theme => ({
     bottomBar: {
