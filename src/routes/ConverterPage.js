@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { makeStyles } from '@material-ui/core';
-import FileList from '../components/FileList';
-import BottomBar from '../components/BottomBar';
-import ConversionDrawer from '../components/ConversionDrawer';
+import FileList from '../modules/converter/FileList';
+import BottomBar from '../modules/converter/BottomBar';
+import ConversionDrawer from '../modules/converter/ConversionDrawer';
 import { pauseConversion, startConversion } from '../store/conversion/conversion.actions';
 
 const useStyles = makeStyles({

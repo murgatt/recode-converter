@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import { Slider, makeStyles } from '@material-ui/core';
 import PlayIcon from '@material-ui/icons/PlayArrowOutlined';
 import PauseIcon from '@material-ui/icons/Pause';
-import IconButton from '../IconButton';
+import IconButton from '../../../components/IconButton';
 
 const useStyles = makeStyles(theme => ({
     controls: {

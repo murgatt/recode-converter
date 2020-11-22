@@ -4,9 +4,9 @@ import CodeSelect from '../CodecSelect';
 import BitrateSelect from '../BitrateSelect';
 import SampleRateSelect from '../SampleRateSelect';
 import ChannelsSelect from '../ChannelsSelect';
-import FormGroup from '../FormGroup';
-import { getSingleConversionSetting } from '../../store/conversionSettings/conversionSettings.selectors';
-import { CONVERSION_SETTINGS } from '../../store/conversionSettings/conversionSettings.constants';
+import FormGroup from '../../../components/FormGroup';
+import { getSingleConversionSetting } from '../../../store/conversionSettings/conversionSettings.selectors';
+import { CONVERSION_SETTINGS } from '../../../store/conversionSettings/conversionSettings.constants';
 
 const ConversionSettingsForm = () => {
     const codec = useSelector(getSingleConversionSetting(CONVERSION_SETTINGS.audioCodec));

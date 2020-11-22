@@ -4,10 +4,10 @@ import { useTranslation } from 'react-i18next';
 import { makeStyles } from '@material-ui/core';
 import ClearIcon from '@material-ui/icons/ClearAll';
 import File from '../File';
-import { getFileIds, getFilesById } from '../../store/file/file.selectors';
-import { addFiles, clearFiles, deleteFiles } from '../../store/file/file.actions';
-import IconButton from '../IconButton';
-import Dropzone from '../Dropzone';
+import { getFileIds, getFilesById } from '../../../store/file/file.selectors';
+import { addFiles, clearFiles, deleteFiles } from '../../../store/file/file.actions';
+import IconButton from '../../../components/IconButton';
+import Dropzone from '../../../components/Dropzone';
 
 const useStyles = makeStyles(theme => ({
     clearButton: {

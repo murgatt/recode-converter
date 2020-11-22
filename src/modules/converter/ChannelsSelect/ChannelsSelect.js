@@ -2,11 +2,11 @@ import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import _ from 'lodash-es';
-import Select from '../Select';
-import channelsSetting from '../../config/conversion/audio/channels';
-import { getSingleConversionSetting } from '../../store/conversionSettings/conversionSettings.selectors';
-import { setConversionSetting } from '../../store/conversionSettings/conversionSettings.actions';
-import { CONVERSION_SETTINGS } from '../../store/conversionSettings/conversionSettings.constants';
+import Select from '../../../components/Select';
+import channelsSetting from '../../../config/conversion/audio/channels';
+import { getSingleConversionSetting } from '../../../store/conversionSettings/conversionSettings.selectors';
+import { setConversionSetting } from '../../../store/conversionSettings/conversionSettings.actions';
+import { CONVERSION_SETTINGS } from '../../../store/conversionSettings/conversionSettings.constants';
 
 const ChannelsSelect = ({ codec, disabled }) => {
     const dispatch = useDispatch();
