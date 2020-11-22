@@ -42,6 +42,12 @@
         },
         "video": "Vidéo",
         "videoComparator": "Comparateur vidéo",
+        "videoComparison": {
+            "addFirstVideo": "Ajouter une première vidéo",
+            "addSecondVideo": "Ajouter une seconde vidéo",
+            "changeFirstVideo": "Changer la première vidéo",
+            "changeSecondVideo": "Changer la seconde vidéo"
+        },
         "conversionSettings": {
             "aac": "AAC",
             "ac3": "AC3",
