@@ -14,6 +14,7 @@ export default [
     {
         component: VideoComparisonPage,
         exact: true,
+        featureFlip: 'videoComparison',
         Icon: CompareIcon,
         name: 'videoComparator',
         path: '/video-comparator',

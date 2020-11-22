@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core';
 import routes from './routes';
 import AppMenu from './components/AppMenu';
+import FeatureFlipContext from './featureFlipContext';
 
 const useStyles = makeStyles({
     main: {
@@ -12,10 +13,11 @@ const useStyles = makeStyles({
 
 export default () => {
     const classes = useStyles();
+    const { appMenu } = useContext(FeatureFlipContext);
 
     return (
         <Router>
-            <AppMenu />
+            {appMenu && <AppMenu />}
             <main className={classes.main}>
                 <Switch>
                     {routes.map(route => (

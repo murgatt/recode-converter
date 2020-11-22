@@ -9,6 +9,7 @@ import './registerElectronEvents';
 import Snackbar from './components/Snackbar';
 import FfmpegAlert from './components/FfmpegAlert';
 import VersionAlert from './components/VersionAlert';
+import FeatureFlipContext, { useFeatureFlip } from './featureFlipContext';
 
 const useStyles = makeStyles({
     root: {
@@ -26,16 +27,21 @@ function App() {
     const themeType = prefersDarkMode ? THEME_TYPES.dark : THEME_TYPES.light;
     const theme = useMemo(() => getTheme(themeType), [themeType]);
 
+    const [featureFlip, setFeatureFlip] = useFeatureFlip();
+    window.setFeatureFlip = setFeatureFlip;
+
     return (
         <Provider store={store}>
             <ThemeProvider theme={theme}>
-                <CssBaseline />
-                <div className={className}>
-                    <Router />
-                </div>
-                <FfmpegAlert />
-                <VersionAlert />
-                <Snackbar />
+                <FeatureFlipContext.Provider value={featureFlip}>
+                    <CssBaseline />
+                    <div className={className}>
+                        <Router />
+                    </div>
+                    <FfmpegAlert />
+                    <VersionAlert />
+                    <Snackbar />
+                </FeatureFlipContext.Provider>
             </ThemeProvider>
         </Provider>
     );
