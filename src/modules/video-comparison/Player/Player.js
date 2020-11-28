@@ -5,6 +5,8 @@ import classNames from 'classnames';
 import { Slider, makeStyles } from '@material-ui/core';
 import PlayIcon from '@material-ui/icons/PlayArrowOutlined';
 import PauseIcon from '@material-ui/icons/Pause';
+import FullscreenIcon from '@material-ui/icons/Fullscreen';
+import FullscreenExitIcon from '@material-ui/icons/FullscreenExit';
 import IconButton from '../../../components/IconButton';
 
 const useStyles = makeStyles(theme => ({
@@ -12,14 +14,18 @@ const useStyles = makeStyles(theme => ({
         alignItems: 'center',
         bottom: 0,
         display: 'flex',
-        padding: theme.spacing(2),
+        padding: theme.spacing(),
         position: 'absolute',
         width: '100%',
         zIndex: 2,
     },
     player: {
+        background: 'black',
         position: 'relative',
         width: '100%',
+    },
+    progressBar: {
+        margin: theme.spacing(0, 1),
     },
     video: {
         height: '100%',
@@ -45,6 +51,7 @@ const Player = ({ src, secondarySrc }) => {
     const [sliderPosition, setSliderPosition] = useState(50);
     const [isPlaying, setIsPlaying] = useState(true);
     const [progress, setProgress] = useState(0);
+    const isFullscreen = document.fullscreenElement;
 
     const play = () => {
         if (mainVideoRef.current) {
@@ -114,6 +121,14 @@ const Player = ({ src, secondarySrc }) => {
         setProgress(newProgress);
     }, []);
 
+    const handleFullscreenButtonClick = useCallback(() => {
+        if (isFullscreen) {
+            document.exitFullscreen();
+        } else {
+            playerRef.current.requestFullscreen();
+        }
+    }, [isFullscreen]);
+
     let sliderStyle = null;
     let videoStyle = null;
 
@@ -150,7 +165,10 @@ const Player = ({ src, secondarySrc }) => {
             )}
             <div className={classes.controls}>
                 <IconButton onClick={handlePlayPauseButtonClick}>{isPlaying ? <PauseIcon /> : <PlayIcon />}</IconButton>
-                <Slider onChange={handleProgressChange} value={progress} />
+                <Slider className={classes.progressBar} onChange={handleProgressChange} value={progress} />
+                <IconButton onClick={handleFullscreenButtonClick}>
+                    {isFullscreen ? <FullscreenExitIcon /> : <FullscreenIcon />}
+                </IconButton>
             </div>
         </div>
     );
