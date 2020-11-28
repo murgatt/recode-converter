@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/murgatt/recode-converter/compare/v1.1.0...v1.2.0) (2020-11-28)
+
+
+### Features
+
+* add front side console error when conversion fails ([#65](https://github.com/murgatt/recode-converter/issues/65)) ([ce1647e](https://github.com/murgatt/recode-converter/commit/ce1647e87a415b89296f0b674c6b155d498d9179))
+* **player:** add fullscreen mode ([#62](https://github.com/murgatt/recode-converter/issues/62)) ([d479e65](https://github.com/murgatt/recode-converter/commit/d479e65e1c1ab7438f83106468dac09b8076cc44))
+* [beta] video comparison slider ([#59](https://github.com/murgatt/recode-converter/issues/59)) ([f8dc476](https://github.com/murgatt/recode-converter/commit/f8dc476ded21996e974fd127354babafdcc4dced))
+* add an app menu ([#58](https://github.com/murgatt/recode-converter/issues/58)) ([214fe21](https://github.com/murgatt/recode-converter/commit/214fe21a3308b2d60d59818d5186ecba31622f11))
+
+
+### Bug Fixes
+
+* conversion error when destination is 'Same as source' ([#64](https://github.com/murgatt/recode-converter/issues/64)) ([ec1dd6b](https://github.com/murgatt/recode-converter/commit/ec1dd6bdab0514423cf570927e80f3785623c5fa))
+
 ## [1.1.0](https://github.com/murgatt/recode-converter/compare/v1.0.0...v1.1.0) (2020-08-08)
 
 
