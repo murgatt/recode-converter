@@ -8,6 +8,7 @@ import { getFileIds, getFilesById } from '../../../store/file/file.selectors';
 import { addFiles, clearFiles, deleteFiles } from '../../../store/file/file.actions';
 import IconButton from '../../../components/IconButton';
 import Dropzone from '../../../components/Dropzone';
+import { getIsConversionRunning } from '../../../store/conversion/conversion.selectors';
 
 const useStyles = makeStyles(theme => ({
     clearButton: {
@@ -43,7 +44,8 @@ const FileList = () => {
     const fileIds = useSelector(getFileIds);
     const filesById = useSelector(getFilesById);
     const [isHover, setIsHover] = useState(false);
-    const shouldDisplayClearButton = fileIds.length && isHover;
+    const isConversionRunning = useSelector(getIsConversionRunning);
+    const shouldDisplayClearButton = fileIds.length && isHover && !isConversionRunning;
 
     const handleClearFiles = useCallback(() => dispatch(clearFiles), [dispatch]);
     const handleDeleteFile = useCallback(fileId => () => dispatch(deleteFiles([fileId])), [dispatch]);
