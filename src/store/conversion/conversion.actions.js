@@ -38,7 +38,8 @@ export const pauseConversion = dispatch => {
 
 export const startConversion = (dispatch, getState) => {
     const conversionSettings = getConversionSettings(getState());
-    const destination = getDestination(getState());
+    const selectedDestination = getDestination(getState());
+    const destination = selectedDestination === i18n.t('global.sameAsSource') ? '' : selectedDestination;
     const fileList = getFilesToConvert(getState());
 
     if (fileList.length) {
