@@ -92,7 +92,7 @@ const convert = ({ file, options = {}, callbacks = {}, destination }) => {
             })
             .on('error', (err, stdout, stderr) => {
                 console.log(err, stdout, stderr);
-                onConversionError(inputPath);
+                onConversionError(inputPath, err, stdout, stderr);
                 reject(err);
             })
             .on('end', (stdout, stderr) => {

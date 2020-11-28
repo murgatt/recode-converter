@@ -18,8 +18,10 @@ ipcRenderer.on('file-conversion-end', (event, data) => {
 });
 
 ipcRenderer.on('file-conversion-error', (event, data) => {
-    const { filePath } = data;
+    const { filePath, err, stderr, stdout } = data;
     store.dispatch(setFileConversionError(filePath));
+    // eslint-disable-next-line no-console
+    console.error(`Conversion error for file ${filePath}`, err, stderr, stdout);
 });
 
 ipcRenderer.on('file-conversion-progress', (event, data) => {

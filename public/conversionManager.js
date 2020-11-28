@@ -10,7 +10,7 @@ class ConversionManager {
         this.conversionIsInterrupted = false;
         this.callbacks = {
             onConversionEnd: file => this.fileConversionEnd(file),
-            onConversionError: file => this.fileConversionError(file),
+            onConversionError: (file, err, stdout, stderr) => this.fileConversionError(file, err, stdout, stderr),
             onConversionProgress: (file, progress) => this.fileConversionProgress(file, progress),
             onConversionStart: file => this.fileConversionStart(file),
         };
@@ -38,8 +38,8 @@ class ConversionManager {
         this.window.send('file-conversion-end', { filePath });
     }
 
-    fileConversionError(filePath) {
-        this.window.send('file-conversion-error', { filePath });
+    fileConversionError(filePath, err, stdout, stderr) {
+        this.window.send('file-conversion-error', { filePath, err, stderr, stdout });
     }
 
     fileConversionProgress(filePath, progress) {
