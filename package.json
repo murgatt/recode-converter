@@ -41,7 +41,7 @@
         "fix-path": "^3.0.0",
         "fluent-ffmpeg": "^2.1.2",
         "i18next": "^19.0.3",
-        "lodash-es": "^4.17.15",
+        "lodash-es": "^4.17.21",
         "node-ffprobe": "^3.0.0",
         "prop-types": "^15.7.2",
         "react": "^16.12.0",
