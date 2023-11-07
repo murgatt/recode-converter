@@ -1,113 +1,39 @@
 {
-    "name": "recode-converter",
-    "version": "1.2.0",
-    "description": "A modern & simple audio converter for video files",
-    "main": "public/electron.js",
-    "private": false,
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/murgatt/recode-converter.git"
-    },
-    "author": "murgatt",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/murgatt/recode-converter/issues"
-    },
-    "scripts": {
-        "build": "react-scripts build",
-        "deploy": "yarn electron-pack:all --publish always",
-        "dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && yarn electron-dev\"",
-        "eject": "react-scripts eject",
-        "electron-dev": "nodemon --watch public --exec \"electron .\"",
-        "electron-pack": "electron-builder -c.extraMetadata.main=build/electron.js",
-        "electron-pack:all": "yarn electron-pack -mw",
-        "electron-pack:linux": "yarn electron-pack --linux",
-        "electron-pack:mac": "yarn electron-pack --mac",
-        "electron-pack:win": "yarn electron-pack --win",
-        "preelectron-pack": "yarn build",
-        "publish-release": "git push --follow-tags && conventional-github-releaser -p angular --draft",
-        "release": "standard-version",
-        "release:as": "yarn release -- --release-as",
-        "release:prerelease": "yarn release -- --prerelease",
-        "start": "react-scripts start",
-        "test": "react-scripts test"
-    },
-    "homepage": "./",
-    "dependencies": {
-        "@material-ui/core": "^4.9.13",
-        "@material-ui/icons": "^4.9.1",
-        "classnames": "^2.2.6",
-        "electron-is-dev": "^1.2.0",
-        "fix-path": "^3.0.0",
-        "fluent-ffmpeg": "^2.1.2",
-        "i18next": "^19.0.3",
-        "lodash-es": "^4.17.15",
-        "node-ffprobe": "^3.0.0",
-        "prop-types": "^15.7.2",
-        "react": "^16.12.0",
-        "react-dom": "^16.12.0",
-        "react-dropzone": "^10.2.2",
-        "react-i18next": "^11.2.7",
-        "react-redux": "^7.1.3",
-        "react-router-dom": "^5.1.2",
-        "react-scripts": "3.3.0",
-        "redux": "^4.0.5",
-        "redux-thunk": "^2.3.0",
-        "typeface-roboto": "^0.0.75"
-    },
-    "devDependencies": {
-        "@testing-library/jest-dom": "^4.2.4",
-        "@testing-library/react": "^9.3.2",
-        "@testing-library/user-event": "^7.1.2",
-        "concurrently": "^5.1.0",
-        "conventional-github-releaser": "^3.1.3",
-        "electron": "^11.5.0",
-        "electron-builder": "^22.9.1",
-        "eslint": "^6.7.2",
-        "eslint-config-airbnb": "^18.0.1",
-        "eslint-config-prettier": "^6.10.1",
-        "eslint-plugin-import": "^2.19.1",
-        "eslint-plugin-jsx-a11y": "^6.2.3",
-        "eslint-plugin-prettier": "^3.1.2",
-        "eslint-plugin-react": "^7.17.0",
-        "eslint-plugin-react-hooks": "^3.0.0",
-        "nodemon": "^2.0.2",
-        "prettier": "^1.19.1",
-        "standard-version": "^8.0.1",
-        "wait-on": "^4.0.1"
-    },
-    "build": {
-        "appId": "com.murgatt.recode-converter",
-        "productName": "Recode Converter",
-        "files": [
-            "build/**/*",
-            "node_modules/**/*"
-        ],
-        "directories": {
-            "buildResources": "assets"
-        },
-        "nsis": {
-            "allowToChangeInstallationDirectory": true,
-            "createDesktopShortcut": false,
-            "deleteAppDataOnUninstall": true,
-            "menuCategory": true,
-            "oneClick": false,
-            "perMachine": true
-        }
-    },
-    "eslintConfig": {
-        "extends": "react-app"
-    },
-    "browserslist": {
-        "production": [
-            ">0.2%",
-            "not dead",
-            "not op_mini all"
-        ],
-        "development": [
-            "last 1 chrome version",
-            "last 1 firefox version",
-            "last 1 safari version"
-        ]
-    }
+  "name": "recode-converter-v2",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build && electron-builder",
+    "lint": "eslint src electron",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "18.2.31",
+    "@types/react-dom": "18.2.14",
+    "@typescript-eslint/eslint-plugin": "6.8.0",
+    "@typescript-eslint/parser": "6.8.0",
+    "@vitejs/plugin-react": "4.1.0",
+    "electron": "27.0.2",
+    "electron-builder": "24.6.4",
+    "eslint": "8.52.0",
+    "eslint-config-prettier": "9.0.0",
+    "eslint-plugin-import": "2.29.0",
+    "eslint-plugin-jsx-a11y": "6.7.1",
+    "eslint-plugin-prettier": "5.0.1",
+    "eslint-plugin-react": "7.33.2",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "eslint-plugin-unicorn": "48.0.1",
+    "prettier": "3.0.3",
+    "typescript": "5.2.2",
+    "vite": "4.5.0",
+    "vite-plugin-electron": "0.14.1",
+    "vite-plugin-electron-renderer": "0.14.5"
+  },
+  "main": "dist-electron/main.js"
 }
