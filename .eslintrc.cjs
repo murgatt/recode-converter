@@ -1,0 +1,42 @@
+module.exports = {
+  root: true,
+  env: { browser: true, es2021: true, node: true },
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended-type-checked',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:jsx-a11y/recommended',
+    'plugin:prettier/recommended',
+    'plugin:import/recommended',
+    'plugin:unicorn/recommended',
+  ],
+  ignorePatterns: ['dist'],
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    project: './tsconfig.json',
+  },
+  plugins: ['import'],
+  rules: {
+    'import/newline-after-import': 'error',
+    'import/no-duplicates': 'error',
+    'import/order': [
+      'error',
+      {
+        alphabetize: { order: 'asc', caseInsensitive: true },
+        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object', 'type'],
+      },
+    ],
+    'import/first': 'error',
+    'newline-before-return': 'error',
+    'no-console': 'error',
+    'no-shadow': 'error',
+    'react/jsx-filename-extension': ['error', { extensions: ['.tsx', '.test.tsx'] }],
+    'react/jsx-sort-props': ['error', { ignoreCase: true }],
+    'react/react-in-jsx-scope': 'off',
+    'unicorn/filename-case': 'off',
+    'unicorn/prevent-abbreviations': 'off',
+    'unicorn/prefer-module': 'off',
+  },
+};
