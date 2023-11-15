@@ -1,6 +1,9 @@
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+      - master
+      - feat/v2
   pull_request:
     types:
       - opened
@@ -34,7 +37,7 @@ jobs:
         run: pnpm run lint
 
       - name: Prettier
-        run: pnpm run prettier:check
+        run: pnpm run prettier
 
       - name: Tests
         run: pnpm run test
