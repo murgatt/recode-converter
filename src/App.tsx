@@ -1,31 +1,40 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/electron-vite.animate.svg';
-import './App.css';
+import { HomeIcon, SettingsIcon } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  navigationMenuTriggerStyle,
+} from './components/ui/NavigationMenu';
 
-function App() {
-  const [count, setCount] = useState(0);
+export const App = () => {
+  const { t } = useTranslation();
 
   return (
-    <>
-      <div>
-        <a href="https://electron-vite.github.io" rel="noreferrer" target="_blank">
-          <img alt="Vite logo" className="logo" src={viteLogo} />
-        </a>
-        <a href="https://react.dev" rel="noreferrer" target="_blank">
-          <img alt="React logo" className="logo react" src={reactLogo} />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount(count => count + 1)}>count is {count}</button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
-    </>
+    <div className="flex h-screen">
+      <NavigationMenu className="border-r border-border p-2">
+        <NavigationMenuList className="flex-col">
+          <NavigationMenuItem>
+            <NavigationMenuLink active asChild className={navigationMenuTriggerStyle()}>
+              <Link to="/">
+                <HomeIcon size="16" />
+              </Link>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+              <Link to="/settings">
+                <SettingsIcon size="16" />
+              </Link>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+        </NavigationMenuList>
+      </NavigationMenu>
+      <main>
+        <h1>{t('helloWorld')}</h1>
+      </main>
+    </div>
   );
-}
-
-export default App;
+};
