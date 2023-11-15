@@ -15,7 +15,10 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build && electron-builder",
-    "lint": "eslint src electron",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prettier": "prettier . --check --config .prettierrc",
+    "prettier:fix": "prettier . --write --config .prettierrc",
     "preview": "vite preview",
     "test": "vitest"
   },
