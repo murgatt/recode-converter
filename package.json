@@ -1,23 +1,49 @@
 {
-  "name": "recode-converter-v2",
-  "private": true,
-  "version": "0.0.0",
+  "name": "recode-converter",
+  "version": "2.0.0",
+  "description": "A modern & simple audio converter for video files",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/murgatt/recode-converter.git"
+  },
+  "author": "murgatt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/murgatt/recode-converter/issues"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build && electron-builder",
     "lint": "eslint src electron",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest"
   },
   "dependencies": {
+    "@radix-ui/react-navigation-menu": "1.1.4",
+    "@radix-ui/react-slot": "1.0.2",
+    "class-variance-authority": "0.7.0",
+    "clsx": "2.0.0",
+    "i18next": "23.6.0",
+    "lucide-react": "0.292.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-i18next": "13.3.1",
+    "react-router-dom": "6.18.0",
+    "tailwind-merge": "2.0.0",
+    "tailwindcss-animate": "1.0.7"
   },
   "devDependencies": {
+    "@testing-library/dom": "9.3.3",
+    "@testing-library/jest-dom": "6.1.4",
+    "@testing-library/react": "14.1.0",
+    "@testing-library/user-event": "14.5.1",
     "@types/react": "18.2.31",
     "@types/react-dom": "18.2.14",
     "@typescript-eslint/eslint-plugin": "6.8.0",
     "@typescript-eslint/parser": "6.8.0",
     "@vitejs/plugin-react": "4.1.0",
+    "autoprefixer": "10.4.16",
     "electron": "27.0.2",
     "electron-builder": "24.6.4",
     "eslint": "8.52.0",
@@ -28,12 +54,17 @@
     "eslint-plugin-react": "7.33.2",
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
-    "eslint-plugin-unicorn": "48.0.1",
+    "eslint-plugin-unused-imports": "3.0.0",
+    "jsdom": "22.1.0",
+    "postcss": "8.4.31",
     "prettier": "3.0.3",
+    "prettier-plugin-tailwindcss": "0.5.7",
+    "tailwindcss": "3.3.5",
     "typescript": "5.2.2",
     "vite": "4.5.0",
     "vite-plugin-electron": "0.14.1",
-    "vite-plugin-electron-renderer": "0.14.5"
+    "vite-plugin-electron-renderer": "0.14.5",
+    "vitest": "0.34.6"
   },
   "main": "dist-electron/main.js"
 }
