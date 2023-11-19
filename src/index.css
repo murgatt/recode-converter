@@ -113,6 +113,6 @@
   }
 
   .code {
-    @apply rounded relative bg-muted p-1 font-mono text-sm font-semibold;
+    @apply relative rounded bg-muted p-1 font-mono text-sm font-semibold;
   }
 }
