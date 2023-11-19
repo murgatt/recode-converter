@@ -74,3 +74,45 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .title-xl {
+    @apply text-4xl font-extrabold tracking-tight;
+  }
+
+  .title-lg {
+    @apply border-b pb-2 text-3xl font-semibold tracking-tight;
+  }
+
+  .title-md {
+    @apply text-2xl font-semibold tracking-tight;
+  }
+
+  .title-sm {
+    @apply text-xl font-semibold tracking-tight;
+  }
+
+  .paragraph-lg {
+    @apply text-lg font-semibold;
+  }
+
+  .paragraph {
+    @apply leading-7;
+  }
+
+  .paragraph-sm {
+    @apply text-sm font-medium leading-none;
+  }
+
+  .caption-xl {
+    @apply text-xl text-muted-foreground;
+  }
+
+  .caption-sm {
+    @apply text-sm text-muted-foreground;
+  }
+
+  .code {
+    @apply relative rounded bg-muted p-1 font-mono text-sm font-semibold;
+  }
+}

@@ -1,5 +1,7 @@
 {
   "translation": {
-    "helloWorld": "Hello World!"
+    "settings": {
+      "title": "Settings"
+    }
   }
 }
