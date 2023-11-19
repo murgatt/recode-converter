@@ -1,5 +1,7 @@
 {
   "translation": {
-    "helloWorld": "Bonjour le monde !"
+    "settings": {
+      "title": "Paramètres"
+    }
   }
 }
