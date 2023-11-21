@@ -1,5 +1,19 @@
 {
   "translation": {
+    "appMenu": {
+      "home": "Convertisseur",
+      "settings": "Paramètres"
+    },
+    "fileImport": {
+      "button": "Ajouter des fichiers",
+      "description": "Ajouter des fichiers vidéo à convertir.\nVous pouvez glisser-déposer vos fichiers ici."
+    },
+    "fileList": {
+      "clear": "Retirer tous les fichiers",
+      "file": {
+        "remove": "Retirer le fichier"
+      }
+    },
     "settings": {
       "title": "Paramètres"
     }

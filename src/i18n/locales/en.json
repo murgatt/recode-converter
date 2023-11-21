@@ -1,5 +1,19 @@
 {
   "translation": {
+    "appMenu": {
+      "home": "Converter",
+      "settings": "Settings"
+    },
+    "fileImport": {
+      "button": "Add files",
+      "description": "Add video files for conversion.\nYou can drag & drop your files here."
+    },
+    "fileList": {
+      "clear": "Remove all files",
+      "file": {
+        "remove": "Remove file"
+      }
+    },
     "settings": {
       "title": "Settings"
     }
