@@ -1,5 +1,5 @@
-import { FileImport } from '../components/FileImport';
-import { FileList } from '../components/FileList';
+import { FileImport } from 'src/components/FileImport';
+import { FileList } from 'src/components/FileList';
 
 export const Converter = () => {
   return (

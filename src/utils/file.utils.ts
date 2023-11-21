@@ -1,8 +1,8 @@
-export function formatFileSize(sizeInBytes: number): string {
+export function formatFileSize(fileSize: number): string {
   const base = 1024;
-  const units = ['B', 'KB', 'MB', 'GB', 'TB'];
+  const units = ['octets', 'Ko', 'Mo', 'Go', 'To'];
 
-  let size = sizeInBytes;
+  let size = fileSize;
   let unitIndex = 0;
 
   while (size >= base && unitIndex < units.length - 1) {

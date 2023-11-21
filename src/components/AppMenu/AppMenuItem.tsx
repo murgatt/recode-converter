@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { cn } from '../../lib/utils';
+import { cn } from 'src/lib/utils';
 import { NavigationMenuItem, NavigationMenuLink, navigationMenuTriggerStyle } from '../ui/NavigationMenu';
 import { Tooltip } from '../ui/Tooltip';
 

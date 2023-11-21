@@ -1,3 +1,4 @@
+import { FileVideoIcon } from 'lucide-react';
 import React from 'react';
 import { useDropzone } from 'react-dropzone';
 import { useTranslation } from 'react-i18next';
@@ -27,7 +28,7 @@ export const FileImport = ({ children }: FileImportProps) => {
   });
 
   return (
-    <div {...getRootProps()} className="h-full w-full">
+    <div {...getRootProps()} className="relative h-full w-full">
       <input {...getInputProps()} id="fileInput" value="" />
       {displayFileList ? (
         children
@@ -37,6 +38,11 @@ export const FileImport = ({ children }: FileImportProps) => {
             <label htmlFor="fileInput">{t('fileImport.button')}</label>
           </Button>
           <p className="caption-sm whitespace-pre-line text-center">{t('fileImport.description')}</p>
+        </div>
+      )}
+      {isDragActive && (
+        <div className="absolute inset-0 flex items-center justify-center bg-background/80 backdrop-blur-sm">
+          <FileVideoIcon className="animate-bounce" size="32" />
         </div>
       )}
     </div>
