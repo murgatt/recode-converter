@@ -14,7 +14,8 @@ on:
       - ready_for_review
 
 jobs:
-  build:
+  lint-test:
+    name: Lint & Tests
     if: github.event.pull_request.draft == false
     runs-on: ubuntu-latest
     steps:
@@ -30,7 +31,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: 'pnpm'
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
