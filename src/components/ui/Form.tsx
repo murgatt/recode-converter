@@ -1,10 +1,11 @@
-import * as LabelPrimitive from '@radix-ui/react-label';
 import { Slot } from '@radix-ui/react-slot';
 import * as React from 'react';
-import { Controller, ControllerProps, FieldPath, FieldValues, FormProvider, useFormContext } from 'react-hook-form';
+import { Controller, FormProvider, useFormContext } from 'react-hook-form';
 import { Label } from 'src/components/ui/Label';
 import { cn } from 'src/lib/utils';
-import { PropsWithClassName } from './shadcn.types';
+import type { PropsWithClassName } from './ui.types';
+import type * as LabelPrimitive from '@radix-ui/react-label';
+import type { ControllerProps, FieldPath, FieldValues } from 'react-hook-form';
 
 const Form = FormProvider;
 
@@ -65,7 +66,7 @@ const FormItem = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivEl
 
     return (
       <FormItemContext.Provider value={{ id }}>
-        <div className={cn('space-y-2', className)} ref={ref} {...props} />
+        <div className={cn('flex flex-col gap-2', className)} ref={ref} {...props} />
       </FormItemContext.Provider>
     );
   },
