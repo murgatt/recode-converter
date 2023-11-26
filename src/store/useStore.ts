@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { immer } from 'zustand/middleware/immer';
-import { Store } from './store.types';
+import type { Store } from './store.types';
 
 export const useStore = create<Store>()(
   immer(set => ({
