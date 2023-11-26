@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { cn } from 'src/lib/utils';
-import { PropsWithClassName } from './shadcn.types';
+import type { PropsWithClassName } from './ui.types';
 
 const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement> & PropsWithClassName>(
   ({ className, ...props }, ref) => (
