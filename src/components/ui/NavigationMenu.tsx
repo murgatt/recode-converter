@@ -3,7 +3,7 @@ import { cva } from 'class-variance-authority';
 import { ChevronDown } from 'lucide-react';
 import * as React from 'react';
 import { cn } from 'src/lib/utils';
-import { PropsWithClassName } from './shadcn.types';
+import type { PropsWithClassName } from './ui.types';
 
 const NavigationMenu = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Root>,

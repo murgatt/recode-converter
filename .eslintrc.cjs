@@ -18,6 +18,15 @@ module.exports = {
   },
   plugins: ['import', 'prettier', 'unused-imports'],
   rules: {
+    '@typescript-eslint/consistent-type-imports': 'error',
+    '@typescript-eslint/consistent-type-exports': 'error',
+    '@typescript-eslint/member-ordering': [
+      'error',
+      {
+        interfaces: { order: 'alphabetically-case-insensitive' },
+        typeLiterals: { order: 'alphabetically-case-insensitive' },
+      },
+    ],
     'import/first': 'error',
     'import/newline-after-import': 'error',
     'import/no-duplicates': 'error',
