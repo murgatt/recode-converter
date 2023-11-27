@@ -4,7 +4,6 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/eslint-recommended',
-    'plugin:@typescript-eslint/recommended-type-checked',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'plugin:jsx-a11y/recommended',
@@ -16,7 +15,7 @@ module.exports = {
   parserOptions: {
     project: './tsconfig.json',
   },
-  plugins: ['import', 'prettier', 'unused-imports'],
+  plugins: ['@typescript-eslint', 'import', 'prettier', 'unused-imports'],
   rules: {
     '@typescript-eslint/consistent-type-imports': 'error',
     '@typescript-eslint/consistent-type-exports': 'error',
