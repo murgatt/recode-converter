@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-floating-promises */
 import path from 'node:path';
 import { app, BrowserWindow, ipcMain } from 'electron';
 import { handleOpenDirectory } from './electron-api';
