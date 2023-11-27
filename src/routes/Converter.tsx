@@ -1,6 +1,7 @@
 import { ConversionSettings } from 'src/components/ConversionSettings';
 import { FileImport } from 'src/components/FileImport';
 import { FileList } from 'src/components/FileList';
+import { Footer } from 'src/components/Footer';
 
 export const Converter = () => {
   return (
@@ -15,7 +16,7 @@ export const Converter = () => {
           <ConversionSettings />
         </section>
       </div>
-      <footer className="shrink-0 border-t">Footer</footer>
+      <Footer />
     </div>
   );
 };

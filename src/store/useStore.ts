@@ -4,6 +4,7 @@ import type { Store } from './store.types';
 
 export const useStore = create<Store>()(
   immer(set => ({
+    destinationPath: '',
     files: {},
     addFiles: (files: File[]) => {
       set(state => files.forEach(file => (state.files[file.path] = file)));
@@ -16,6 +17,11 @@ export const useStore = create<Store>()(
     clearFiles: () => {
       set(state => {
         state.files = {};
+      });
+    },
+    setDestinationPath: (destinationPath: string) => {
+      set(state => {
+        state.destinationPath = destinationPath;
       });
     },
   })),

@@ -12,3 +12,13 @@ export function formatFileSize(fileSize: number): string {
 
   return `${size.toFixed(2)} ${units[unitIndex]}`;
 }
+
+export function getDirectoryPathFromFile(file: File) {
+  return file.path.split('/').slice(0, -1).join('/');
+}
+
+export function areFilesFromSameDirectory(files: File[]) {
+  return files.every(file => {
+    return getDirectoryPathFromFile(file) === getDirectoryPathFromFile(files[0]);
+  });
+}

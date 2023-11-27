@@ -1,17 +1,7 @@
 import path from 'node:path';
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, ipcMain } from 'electron';
+import { handleOpenDirectory } from './electron-api';
 
-/* eslint-disable @typescript-eslint/no-floating-promises */
-
-// The built directory structure
-//
-// ├─┬─┬ dist
-// │ │ └── index.html
-// │ │
-// │ ├─┬ dist-electron
-// │ │ ├── main.js
-// │ │ └── preload.js
-// │
 process.env.DIST = path.join(__dirname, '../dist');
 process.env.VITE_PUBLIC = app.isPackaged ? process.env.DIST : path.join(process.env.DIST, '../public');
 
@@ -26,15 +16,9 @@ function createWindow() {
     },
   });
 
-  // Test active push message to Renderer-process.
-  // win.webContents.on('did-finish-load', () => {
-  //   win?.webContents.send('main-process-message', new Date().toLocaleString());
-  // });
-
   if (VITE_DEV_SERVER_URL) {
     win.loadURL(VITE_DEV_SERVER_URL);
   } else {
-    // win.loadFile('dist/index.html')
     win.loadFile(path.join(process.env.DIST, 'index.html'));
   }
 
@@ -53,4 +37,7 @@ app.on('activate', () => {
   }
 });
 
-app.whenReady().then(createWindow);
+app.whenReady().then(() => {
+  ipcMain.handle('dialog:openDirectory', handleOpenDirectory);
+  createWindow();
+});
