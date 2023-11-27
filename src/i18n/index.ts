@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-floating-promises */
 /* eslint-disable import/no-named-as-default-member */
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';

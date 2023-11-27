@@ -72,6 +72,12 @@
         "remove": "Retirer le fichier"
       }
     },
+    "footer": {
+      "destination": "Destination",
+      "destinationSameAsSource": "Destination identique à la source",
+      "selectDestination": "Sélectionner la destination",
+      "startConversion": "Démarrer la conversion"
+    },
     "settings": {
       "title": "Paramètres"
     }
