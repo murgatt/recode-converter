@@ -13,7 +13,7 @@ export const FileCardIcon = ({ status }: FileCardIconProps) => {
     case fileStatusSchema.enum.converting:
       return <Loader2Icon className="shrink-0 animate-spin" data-testid="FileCardIcon_loaderIcon" size="24" />;
     case fileStatusSchema.enum.conversionSuccess:
-      return <CheckCircleIcon className="text-success shrink-0" data-testid="FileCardIcon_checkIcon" size="24" />;
+      return <CheckCircleIcon className="shrink-0 text-success" data-testid="FileCardIcon_checkIcon" size="24" />;
     case fileStatusSchema.enum.conversionError:
       return <AlertOctagonIcon className="shrink-0 text-destructive" data-testid="FileCardIcon_alertIcon" size="24" />;
   }
