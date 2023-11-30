@@ -5,7 +5,7 @@ import type {
   FileConversionProgressCallback,
   FileConversionStartCallback,
 } from './conversion-events.types';
-import type { VideoFile } from '../src/types/file.types';
+import type { VideoFile } from './file.types';
 
 contextBridge.exposeInMainWorld('dialog', {
   openDirectory: () => ipcRenderer.invoke('dialog:openDirectory'),

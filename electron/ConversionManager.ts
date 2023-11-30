@@ -1,5 +1,5 @@
 import { ipcMain } from 'electron';
-import type { VideoFile } from '../src/types/file.types';
+import type { VideoFile } from './file.types';
 import type { BrowserWindow } from 'electron';
 
 export class ConversionManager {

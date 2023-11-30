@@ -6,5 +6,5 @@
     "moduleResolution": "bundler",
     "allowSyntheticDefaultImports": true
   },
-  "include": ["electron", "vite.config.ts", "src/types"]
+  "include": ["electron", "vite.config.ts"]
 }
