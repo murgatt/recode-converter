@@ -4,10 +4,10 @@ import type {
   FileConversionErrorCallback,
   FileConversionProgressCallback,
   FileConversionStartCallback,
-} from './conversion.types';
+} from './conversion-events.types';
 import type { VideoFile } from '../src/types/file.types';
 
-contextBridge.exposeInMainWorld('electronAPI', {
+contextBridge.exposeInMainWorld('dialog', {
   openDirectory: () => ipcRenderer.invoke('dialog:openDirectory'),
 });
 

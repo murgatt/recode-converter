@@ -3,7 +3,7 @@ import type {
   FileConversionErrorCallback,
   FileConversionProgressCallback,
   FileConversionStartCallback,
-} from './conversion.types';
+} from './conversion-events.types';
 import type { VideoFile } from '../src/types/file.types';
 
 declare namespace NodeJS {
@@ -13,7 +13,7 @@ declare namespace NodeJS {
   }
 }
 
-export interface IElectronAPI {
+export interface IDialog {
   openDirectory: () => Promise<string>;
 }
 
@@ -28,6 +28,6 @@ export interface IConversion {
 declare global {
   interface Window {
     conversion: IConversion;
-    electronAPI: IElectronAPI;
+    dialog: IDialog;
   }
 }

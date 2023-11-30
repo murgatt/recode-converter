@@ -8,7 +8,6 @@ export const useConversionEvents = () => {
 
   useEffect(() => {
     window.conversion.onFileConversionStart((_event, { filePath }) => {
-      console.log(filePath);
       setFileStatus(filePath, fileStatusSchema.enum.converting);
     });
     window.conversion.onFileConversionProgress((_event, { filePath, progress }) => setFileProgress(filePath, progress));
