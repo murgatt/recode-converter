@@ -1,6 +1,8 @@
+import type { FileStatus, VideoFile } from 'src/types/file.types';
+
 export type State = {
   destinationPath: string;
-  files: Record<string, File>;
+  files: Record<string, VideoFile>;
 };
 
 export type Actions = {
@@ -8,6 +10,8 @@ export type Actions = {
   clearFiles: () => void;
   removeFile: (filePath: string) => void;
   setDestinationPath: (destinationPath: string) => void;
+  setFileProgress: (filePath: string, progress: number) => void;
+  setFileStatus: (filePath: string, status: FileStatus) => void;
 };
 
 export type Store = State & Actions;
