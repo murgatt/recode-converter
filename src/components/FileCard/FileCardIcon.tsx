@@ -9,12 +9,12 @@ type FileCardIconProps = {
 export const FileCardIcon = ({ status }: FileCardIconProps) => {
   switch (status) {
     case fileStatusSchema.enum.imported:
-      return <FileVideoIcon className="shrink-0" size="24" />;
+      return <FileVideoIcon className="shrink-0" data-testid="FileCardIcon_fileIcon" size="24" />;
     case fileStatusSchema.enum.converting:
-      return <Loader2Icon className="shrink-0 animate-spin" size="24" />;
+      return <Loader2Icon className="shrink-0 animate-spin" data-testid="FileCardIcon_loaderIcon" size="24" />;
     case fileStatusSchema.enum.conversionSuccess:
-      return <CheckCircleIcon className="text-success shrink-0" size="24" />;
+      return <CheckCircleIcon className="text-success shrink-0" data-testid="FileCardIcon_checkIcon" size="24" />;
     case fileStatusSchema.enum.conversionError:
-      return <AlertOctagonIcon className="shrink-0 text-destructive" size="24" />;
+      return <AlertOctagonIcon className="shrink-0 text-destructive" data-testid="FileCardIcon_alertIcon" size="24" />;
   }
 };
