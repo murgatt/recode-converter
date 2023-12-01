@@ -1,7 +1,7 @@
 import path from 'node:path';
 import { app, BrowserWindow, ipcMain } from 'electron';
 import { ConversionManager } from './ConversionManager';
-import { handleOpenDirectory } from './electron-api';
+import { handleOpenDirectory } from './dialog';
 
 process.env.DIST = path.join(__dirname, '../dist');
 process.env.VITE_PUBLIC = app.isPackaged ? process.env.DIST : path.join(process.env.DIST, '../public');
