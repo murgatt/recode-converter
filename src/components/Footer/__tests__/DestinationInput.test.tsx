@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { getDestinationPath, getFiles } from 'src/store';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { DestinationInput } from '../DestinationInput';
+import type { VideoFile } from 'src/types/file.types';
 
 vi.mock('src/store/selectors', () => ({
   getFiles: vi.fn(),
@@ -28,8 +29,8 @@ describe('DestinationInput', () => {
   });
 
   it('should display files directory path if files are from the same directory', () => {
-    const file1 = { path: '/movies/matrix.mkv' } as File;
-    const file2 = { path: '/movies/shining.mkv' } as File;
+    const file1 = { path: '/movies/matrix.mkv' } as VideoFile;
+    const file2 = { path: '/movies/shining.mkv' } as VideoFile;
     vi.mocked(getFiles).mockReturnValue([file1, file2]);
     render(<DestinationInput />);
 
@@ -37,8 +38,8 @@ describe('DestinationInput', () => {
   });
 
   it('should display same as source if files are from different directories', () => {
-    const file1 = { path: '/medias/matrix.mkv' } as File;
-    const file2 = { path: '/movies/shining.mkv' } as File;
+    const file1 = { path: '/medias/matrix.mkv' } as VideoFile;
+    const file2 = { path: '/movies/shining.mkv' } as VideoFile;
     vi.mocked(getFiles).mockReturnValue([file1, file2]);
     render(<DestinationInput />);
 

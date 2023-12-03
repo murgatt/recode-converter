@@ -1,6 +1,7 @@
 import path from 'node:path';
 import { app, BrowserWindow, ipcMain } from 'electron';
-import { handleOpenDirectory } from './electron-api';
+import { ConversionManager } from './ConversionManager';
+import { handleOpenDirectory } from './dialog';
 
 process.env.DIST = path.join(__dirname, '../dist');
 process.env.VITE_PUBLIC = app.isPackaged ? process.env.DIST : path.join(process.env.DIST, '../public');
@@ -8,8 +9,10 @@ process.env.VITE_PUBLIC = app.isPackaged ? process.env.DIST : path.join(process.
 // 🚧 Use ['ENV_NAME'] avoid vite:define plugin - Vite@2.x
 const VITE_DEV_SERVER_URL = process.env['VITE_DEV_SERVER_URL'];
 
+let conversionManager: ConversionManager;
+
 function createWindow() {
-  const win = new BrowserWindow({
+  const mainWindow = new BrowserWindow({
     icon: path.join(process.env.VITE_PUBLIC, 'electron-vite.svg'),
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
@@ -17,12 +20,18 @@ function createWindow() {
   });
 
   if (VITE_DEV_SERVER_URL) {
-    win.loadURL(VITE_DEV_SERVER_URL);
+    mainWindow.loadURL(VITE_DEV_SERVER_URL);
   } else {
-    win.loadFile(path.join(process.env.DIST, 'index.html'));
+    mainWindow.loadFile(path.join(process.env.DIST, 'index.html'));
   }
 
-  win.maximize();
+  if (conversionManager) {
+    conversionManager.mainWindow = mainWindow;
+  } else {
+    conversionManager = new ConversionManager(mainWindow);
+  }
+
+  mainWindow.maximize();
 }
 
 app.on('window-all-closed', () => {
