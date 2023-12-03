@@ -1,3 +1,4 @@
+import { useAutoAnimate } from '@formkit/auto-animate/react';
 import { ListXIcon } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { getFiles, useStore } from 'src/store';
@@ -9,10 +10,11 @@ export const FileList = () => {
   const { t } = useTranslation();
   const files = useStore(getFiles);
   const clearFiles = useStore(state => state.clearFiles);
+  const [listRef] = useAutoAnimate();
 
   return (
     <div className="relative h-full">
-      <ul className="flex h-full flex-col gap-3 overflow-y-auto px-4 pb-14 pt-4">
+      <ul className="flex h-full flex-col gap-3 overflow-y-auto px-4 pb-14 pt-4" ref={listRef}>
         {files.map(file => (
           <li key={file.path}>
             <FileCard file={file} />
