@@ -28,7 +28,7 @@ export const FileImport = ({ children }: FileImportProps) => {
   });
 
   return (
-    <div {...getRootProps()} className="relative h-full w-full">
+    <div {...getRootProps()} className="relative h-full w-full focus:outline-none">
       <input {...getInputProps()} id="fileInput" value="" />
       {displayFileList ? (
         children

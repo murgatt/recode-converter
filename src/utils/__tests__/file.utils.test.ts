@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { areFilesFromSameDirectory, formatFileSize, getDirectoryPathFromFile } from '../file.utils';
+import type { VideoFile } from 'src/types/file.types';
 
 describe('file.utils', () => {
   describe('formatFileSize', () => {
@@ -16,21 +17,21 @@ describe('file.utils', () => {
 
   describe('getDirectoryPathFromFile', () => {
     it('should return the directory path of the file', () => {
-      const file = { path: '/movies/matrix.mkv' } as File;
+      const file = { path: '/movies/matrix.mkv' } as VideoFile;
       expect(getDirectoryPathFromFile(file)).toBe('/movies');
     });
   });
 
   describe('areFilesFromSameDirectory', () => {
     it('should return true if all files are from the same directory', () => {
-      const file1 = { path: '/movies/matrix.mkv' } as File;
-      const file2 = { path: '/movies/shining.mkv' } as File;
+      const file1 = { path: '/movies/matrix.mkv' } as VideoFile;
+      const file2 = { path: '/movies/shining.mkv' } as VideoFile;
       expect(areFilesFromSameDirectory([file1, file2])).toBe(true);
     });
 
     it('should return false if files are from the different directories', () => {
-      const file1 = { path: '/movies/matrix.mkv' } as File;
-      const file2 = { path: '/medias/shining.mkv' } as File;
+      const file1 = { path: '/movies/matrix.mkv' } as VideoFile;
+      const file2 = { path: '/medias/shining.mkv' } as VideoFile;
       expect(areFilesFromSameDirectory([file1, file2])).toBe(false);
     });
   });

@@ -26,7 +26,7 @@ export const DestinationInput = () => {
   }, [destinationPath, files, t]);
 
   const handleOpenDirectory = async () => {
-    const newDestinationPath = await window.electronAPI.openDirectory();
+    const newDestinationPath = await window.dialog.openDirectory();
     setDestinationPath(newDestinationPath);
   };
 
