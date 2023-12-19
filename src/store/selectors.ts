@@ -1,4 +1,4 @@
-import { fileStatusSchema } from '../types/file.types';
+import { fileStatusSchema } from '../../schema/file.types';
 import type { State } from './store.types';
 
 export const getFiles = (state: State) => Object.values(state.files);

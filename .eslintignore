@@ -1,4 +1,5 @@
 dist-electron
 
-# TODO temp fix for eslint/ts error in electron/file.types.ts
-electron/file.types.ts
+# TODO temp fix for eslint/ts error
+electron/convert.ts
+schema

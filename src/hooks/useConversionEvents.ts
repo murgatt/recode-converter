@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
+import { fileStatusSchema } from 'schema';
 import { useStore } from 'src/store';
-import { fileStatusSchema } from 'src/types/file.types';
 
 export const useConversionEvents = () => {
   const setFileStatus = useStore(state => state.setFileStatus);

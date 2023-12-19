@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react';
+import { fileStatusSchema } from 'schema';
 import { getFilesToConvert } from 'src/store';
-import { fileStatusSchema } from 'src/types/file.types';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { Footer } from '../Footer';
-import type { VideoFile } from 'src/types/file.types';
+import type { VideoFile } from 'schema';
 
 vi.mock('src/store/selectors', () => ({
   getFilesToConvert: vi.fn(),

@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import { fileStatusSchema } from 'src/types/file.types';
+import { fileStatusSchema } from 'schema';
 import { describe, expect, it } from 'vitest';
 import { FileCard } from '../FileCard';
-import type { VideoFile } from 'src/types/file.types';
+import type { VideoFile } from 'schema';
 
 describe('FileCard', () => {
   it('should not display a progress bar if file is not converting', () => {

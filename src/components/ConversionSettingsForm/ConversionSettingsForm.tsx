@@ -1,14 +1,19 @@
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { bitrateSchema, channelsSchema, codecSchema, sampleRateSchema } from 'schema';
 import { useConversionSettingsForm } from 'src/hooks/useConversionSettingsForm';
-import { bitrateSchema, channelsSchema, codecSchema, sampleRateSchema } from 'src/schemas/conversionSettings.schema';
 import { Form, FormField } from '../ui/Form';
 import { BitrateSelect } from './BitrateSelect';
 import { ChannelsSelect } from './ChannelsSelect';
 import { CodecSelect } from './CodecSelect';
 import { SampleRateSelect } from './SampleRateSelect';
+import type { ConversionSettings } from 'schema';
 
-export const ConversionSettings = () => {
+type ConversionSettingsProps = {
+  onStartConversion: (conversionSettings: ConversionSettings) => void;
+};
+
+export const ConversionSettingsForm = ({ onStartConversion }: ConversionSettingsProps) => {
   const { t } = useTranslation();
   const form = useConversionSettingsForm({
     defaultValues: {
@@ -18,7 +23,7 @@ export const ConversionSettings = () => {
       channels: channelsSchema.enum.default,
     },
   });
-  const { control, setValue, watch } = form;
+  const { control, handleSubmit, setValue, watch } = form;
   const codec = watch('codec');
 
   useEffect(() => {
@@ -29,7 +34,7 @@ export const ConversionSettings = () => {
 
   return (
     <Form {...form}>
-      <form className="flex flex-col gap-4">
+      <form className="flex flex-col gap-4" id="conversionSettingsForm" onSubmit={handleSubmit(onStartConversion)}>
         <h2 className="title-sm mb-2">{t('conversionSettings.title')}</h2>
         <FormField
           control={control}

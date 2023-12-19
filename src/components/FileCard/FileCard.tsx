@@ -1,14 +1,14 @@
 import { TrashIcon } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { fileStatusSchema } from 'schema';
 import { useStore } from 'src/store';
-import { fileStatusSchema } from 'src/types/file.types';
 import { formatFileSize } from 'src/utils';
 import { Button } from '../ui/Button';
 import { Card, CardDescription, CardHeader } from '../ui/Card';
 import { Progress } from '../ui/Progress';
 import { Tooltip } from '../ui/Tooltip';
 import { FileCardIcon } from './FileCardIcon';
-import type { VideoFile } from 'src/types/file.types';
+import type { VideoFile } from 'schema';
 
 type FileCardProps = {
   file: VideoFile;
@@ -19,7 +19,7 @@ export const FileCard = ({ file }: FileCardProps) => {
   const { name, path, progress, size, status } = file;
   const formattedFileSize = formatFileSize(size);
   const removeFile = useStore(state => state.removeFile);
-  const isConverting = status === fileStatusSchema.enum.converting;
+  const isProgressDisplayed = status === fileStatusSchema.enum.converting && progress > 0;
 
   return (
     <Card>
@@ -41,7 +41,7 @@ export const FileCard = ({ file }: FileCardProps) => {
           </Button>
         </Tooltip>
       </div>
-      <div className="h-1">{isConverting && <Progress className="h-1 rounded-t-none" value={progress} />}</div>
+      <div className="h-1">{isProgressDisplayed && <Progress className="h-1 rounded-t-none" value={progress} />}</div>
     </Card>
   );
 };

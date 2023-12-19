@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { fileStatusSchema } from 'src/types/file.types';
+import { fileStatusSchema } from 'schema';
 import { describe, expect, it } from 'vitest';
 import { FileCardIcon } from '../FileCardIcon';
 

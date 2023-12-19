@@ -4,7 +4,7 @@ import type {
   FileConversionProgressCallback,
   FileConversionStartCallback,
 } from './conversion-events.types';
-import type { VideoFile } from './file.types';
+import type { ConversionSettings, VideoFile } from '../schema';
 
 declare namespace NodeJS {
   interface ProcessEnv {
@@ -22,7 +22,15 @@ export interface IConversion {
   onFileConversionError: (callback: FileConversionErrorCallback) => void;
   onFileConversionProgress: (callback: FileConversionProgressCallback) => void;
   onFileConversionStart: (callback: FileConversionStartCallback) => void;
-  startConversion: ({ files }: { files: VideoFile[] }) => void;
+  startConversion: ({
+    conversionSettings,
+    destination,
+    files,
+  }: {
+    conversionSettings: ConversionSettings;
+    destination: string;
+    files: VideoFile[];
+  }) => void;
 }
 
 declare global {
