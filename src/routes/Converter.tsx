@@ -3,7 +3,7 @@ import { FileImport } from 'src/components/FileImport';
 import { FileList } from 'src/components/FileList';
 import { Footer } from 'src/components/Footer';
 import { getDestinationPath, getFilesToConvert, useStore } from 'src/store';
-import type { ConversionSettings } from 'src/hooks/useConversionSettingsForm';
+import type { ConversionSettings } from 'schema';
 
 export const Converter = () => {
   const files = useStore(getFilesToConvert);
