@@ -7,10 +7,10 @@ import type { ConversionSettings } from 'schema';
 
 export const Converter = () => {
   const files = useStore(getFilesToConvert);
-  const destination = useStore(getDestinationPath);
+  const destinationPath = useStore(getDestinationPath);
 
   const handleStartConversion = (conversionSettings: ConversionSettings) => {
-    window.conversion.startConversion({ conversionSettings, destination, files });
+    window.conversion.startConversion({ conversionSettings, destinationPath, files });
   };
 
   return (

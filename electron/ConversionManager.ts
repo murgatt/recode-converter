@@ -17,9 +17,9 @@ export class ConversionManager {
         _event,
         {
           conversionSettings,
-          destination,
+          destinationPath,
           files,
-        }: { conversionSettings: ConversionSettings; destination: string; files: VideoFile[] },
+        }: { conversionSettings: ConversionSettings; destinationPath: string; files: VideoFile[] },
       ) => {
         this.isConversionInterrupted = false;
 
@@ -31,7 +31,7 @@ export class ConversionManager {
           try {
             const file = files[i];
             await convert(
-              { conversionSettings, file, destination },
+              { conversionSettings, file, destinationPath },
               {
                 onFileConversionEnd: filePath => this.handleFileConversionEnd(filePath),
                 onFileConversionProgress: (filePath, progress) => this.handleFileConversionProgress(filePath, progress),

@@ -19,11 +19,11 @@ contextBridge.exposeInMainWorld('conversion', {
   onFileConversionStart: (callback: FileConversionStartCallback) => ipcRenderer.on('file-conversion-start', callback),
   startConversion: ({
     conversionSettings,
-    destination,
+    destinationPath,
     files,
   }: {
     conversionSettings: ConversionSettings;
-    destination: string;
+    destinationPath: string;
     files: VideoFile[];
-  }) => ipcRenderer.invoke('start-conversion', { conversionSettings, destination, files }),
+  }) => ipcRenderer.invoke('start-conversion', { conversionSettings, destinationPath, files }),
 });

@@ -1,4 +1,6 @@
 /// <reference types="fluent-ffmpeg" />
+import fs from 'node:fs';
+import path from 'node:path';
 import { bitrateSchema, channelsSchema, codecSchema, sampleRateSchema } from '../schema';
 import type { ConversionSettings, VideoFile } from '../schema';
 
@@ -34,9 +36,24 @@ function getOutputOptions({ bitrate, channels, codec, sampleRate }: ConversionSe
   return options;
 }
 
+function getOutputPath(inputPath: string, destinationPath: string) {
+  const { base, dir, ext, name } = path.parse(inputPath);
+  const outputDirectory = destinationPath || dir;
+
+  let index = 1;
+  let outputPath = path.join(outputDirectory, base);
+
+  while (fs.existsSync(outputPath)) {
+    outputPath = path.join(outputDirectory, `${name} (${index})${ext}`);
+    index++;
+  }
+
+  return outputPath;
+}
+
 type ConvertParams = {
   conversionSettings: ConversionSettings;
-  destination: string;
+  destinationPath: string;
   file: VideoFile;
 };
 
@@ -48,11 +65,11 @@ type ConvertCallbacks = {
 };
 
 export function convert(
-  { conversionSettings, file, destination }: ConvertParams,
+  { conversionSettings, file, destinationPath }: ConvertParams,
   { onFileConversionEnd, onFileConversionError, onFileConversionProgress, onFileConversionStart }: ConvertCallbacks,
 ) {
   const inputPath = file.path;
-  const outputPath = '/Users/theo/Downloads/test.mkv';
+  const outputPath = getOutputPath(inputPath, destinationPath);
   const outputOptions = getOutputOptions(conversionSettings);
 
   const command = ffmpeg().input(inputPath).output(outputPath).outputOptions(outputOptions);

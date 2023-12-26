@@ -24,11 +24,11 @@ export interface IConversion {
   onFileConversionStart: (callback: FileConversionStartCallback) => void;
   startConversion: ({
     conversionSettings,
-    destination,
+    destinationPath,
     files,
   }: {
     conversionSettings: ConversionSettings;
-    destination: string;
+    destinationPath: string;
     files: VideoFile[];
   }) => void;
 }
