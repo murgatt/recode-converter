@@ -9,11 +9,11 @@ import { CodecSelect } from './CodecSelect';
 import { SampleRateSelect } from './SampleRateSelect';
 import type { ConversionSettings } from 'schema';
 
-type ConversionSettingsProps = {
+type ConversionSettingsFormProps = {
   onStartConversion: (conversionSettings: ConversionSettings) => void;
 };
 
-export const ConversionSettingsForm = ({ onStartConversion }: ConversionSettingsProps) => {
+export const ConversionSettingsForm = ({ onStartConversion }: ConversionSettingsFormProps) => {
   const { t } = useTranslation();
   const form = useConversionSettingsForm({
     defaultValues: {
