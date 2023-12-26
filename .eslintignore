@@ -2,4 +2,3 @@ dist-electron
 
 # TODO temp fix for eslint/ts error
 electron/convert.ts
-schema
