@@ -2,7 +2,7 @@ import { formatFileObject } from 'src/utils';
 import { create } from 'zustand';
 import { immer } from 'zustand/middleware/immer';
 import type { Store } from './store.types';
-import type { FileStatus } from 'src/types/file.types';
+import type { FileStatus } from 'schema';
 
 export const useStore = create<Store>()(
   immer(set => ({

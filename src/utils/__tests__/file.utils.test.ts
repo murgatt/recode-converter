@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { areFilesFromSameDirectory, formatFileSize, getDirectoryPathFromFile } from '../file.utils';
-import type { VideoFile } from 'src/types/file.types';
+import type { VideoFile } from 'schema';
 
 describe('file.utils', () => {
   describe('formatFileSize', () => {

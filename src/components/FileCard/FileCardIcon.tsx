@@ -1,6 +1,6 @@
 import { AlertOctagonIcon, CheckCircleIcon, FileVideoIcon, Loader2Icon } from 'lucide-react';
-import { fileStatusSchema } from 'src/types/file.types';
-import type { FileStatus } from 'src/types/file.types';
+import { fileStatusSchema } from 'schema';
+import type { FileStatus } from 'schema';
 
 type FileCardIconProps = {
   status: FileStatus;

@@ -27,3 +27,11 @@ export type SampleRate = z.infer<typeof sampleRateSchema>;
 
 export const channelsSchema = z.enum(['default', '1', '2', '3', '4', '5', '6', '7', '8']);
 export type Channels = z.infer<typeof channelsSchema>;
+
+export const conversionSettingsSchema = z.object({
+  codec: codecSchema,
+  bitrate: bitrateSchema,
+  sampleRate: sampleRateSchema,
+  channels: channelsSchema,
+});
+export type ConversionSettings = z.infer<typeof conversionSettingsSchema>;

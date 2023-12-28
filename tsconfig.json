@@ -26,6 +26,7 @@
   "include": [
     "src",
     "electron",
+    "schema",
     ".eslintrc.cjs",
     "prettier.config.js",
     "vite.config.ts",

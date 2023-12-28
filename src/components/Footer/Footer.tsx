@@ -6,17 +6,13 @@ import { DestinationInput } from './DestinationInput';
 
 export const Footer = () => {
   const { t } = useTranslation();
-  const files = useStore(getFilesToConvert);
-  const isButtonDisabled = files.length === 0;
-
-  const handleConversionStart = () => {
-    window.conversion.startConversion({ files });
-  };
+  const filesToConvert = useStore(getFilesToConvert);
+  const isButtonDisabled = filesToConvert.length === 0;
 
   return (
     <footer className="flex shrink-0 justify-between border-t p-4">
       <DestinationInput />
-      <Button className="flex gap-2" disabled={isButtonDisabled} onClick={handleConversionStart} size="default">
+      <Button className="flex gap-2" disabled={isButtonDisabled} form="conversionSettingsForm" type="submit">
         <PlayIcon size="16" />
         {t('footer.startConversion')}
       </Button>
