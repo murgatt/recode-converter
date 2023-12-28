@@ -1,4 +1,4 @@
-import type { FileStatus, VideoFile } from 'src/types/file.types';
+import type { FileStatus, VideoFile } from 'schema';
 
 export type State = {
   destinationPath: string;

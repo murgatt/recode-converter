@@ -26,6 +26,7 @@ export default defineConfig({
   resolve: {
     alias: {
       src: path.resolve(__dirname, './src'),
+      schema: path.resolve(__dirname, './schema'),
     },
   },
   test: {

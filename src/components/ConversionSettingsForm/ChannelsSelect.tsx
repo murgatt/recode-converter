@@ -1,30 +1,30 @@
 import { useTranslation } from 'react-i18next';
-import { codecSchema } from 'src/schemas/conversionSettings.schema';
+import { codecSchema } from 'schema';
 import { FormControl, FormItem, FormLabel } from '../ui/Form';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/Select';
-import type { Bitrate, Codec } from 'src/schemas/conversionSettings.schema';
+import type { Channels, Codec } from 'schema';
 
-type BitrateSelectProps = {
+type ChannelsSelectProps = {
   codec: Codec;
-  onChange: (value: Bitrate) => void;
-  value: Bitrate;
+  onChange: (value: Channels) => void;
+  value: Channels;
 };
 
-const bitrateByCodec: Record<Codec, Bitrate[]> = {
+const channelsByCodec: Record<Codec, Channels[]> = {
   default: ['default'],
-  aac: ['default', '32k', '64k', '96k', '128k', '192k', '256k', '320k'],
-  ac3: ['default', '128k', '192k', '256k', '320k', '384k', '448k', '512k', '640k'],
-  eac3: ['default', '192k', '320k', '448k', '640k', '1024k', '2048k', '4096k'],
+  aac: ['default', '1', '2', '3', '4', '5', '6', '7', '8'],
+  ac3: ['default', '1', '2', '3', '4', '5', '6'],
+  eac3: ['default', '1', '2', '3', '4', '5', '6'],
 };
 
-export const BitrateSelect = ({ codec, value, onChange }: BitrateSelectProps) => {
+export const ChannelsSelect = ({ codec, onChange, value }: ChannelsSelectProps) => {
   const { t } = useTranslation();
-  const options = bitrateByCodec[codec];
+  const options = channelsByCodec[codec];
   const isDisabled = codec === codecSchema.enum.default;
 
   return (
     <FormItem>
-      <FormLabel>{t('conversionSettings.bitrate.label')}</FormLabel>
+      <FormLabel>{t('conversionSettings.channels.label')}</FormLabel>
       <Select disabled={isDisabled} onValueChange={onChange} value={value}>
         <FormControl>
           <SelectTrigger>
@@ -34,7 +34,7 @@ export const BitrateSelect = ({ codec, value, onChange }: BitrateSelectProps) =>
         <SelectContent>
           {options.map(option => (
             <SelectItem key={option} value={option}>
-              {t(`conversionSettings.bitrate.values.${option}`)}
+              {t(`conversionSettings.channels.values.${option}`)}
             </SelectItem>
           ))}
         </SelectContent>

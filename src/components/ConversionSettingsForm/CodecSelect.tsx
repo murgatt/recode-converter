@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next';
-import { codecSchema } from 'src/schemas/conversionSettings.schema';
+import { codecSchema } from 'schema';
 import { FormControl, FormItem, FormLabel } from '../ui/Form';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/Select';
-import type { Codec } from 'src/schemas/conversionSettings.schema';
+import type { Codec } from 'schema';
 
 type CodecSelectProps = {
   onChange: (value: Codec) => void;

@@ -1,4 +1,4 @@
-import type { VideoFile } from 'src/types/file.types';
+import type { VideoFile } from 'schema';
 
 export function formatFileSize(fileSize: number): string {
   const base = 1024;
