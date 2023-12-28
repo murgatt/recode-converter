@@ -12,13 +12,7 @@ export const Footer = () => {
   return (
     <footer className="flex shrink-0 justify-between border-t p-4">
       <DestinationInput />
-      <Button
-        className="flex gap-2"
-        disabled={isButtonDisabled}
-        form="conversionSettingsForm"
-        size="default"
-        type="submit"
-      >
+      <Button className="flex gap-2" disabled={isButtonDisabled} form="conversionSettingsForm" type="submit">
         <PlayIcon size="16" />
         {t('footer.startConversion')}
       </Button>
