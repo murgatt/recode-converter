@@ -6,11 +6,11 @@ import { getDestinationPath, getFilesToConvert, useStore } from 'src/store';
 import type { ConversionSettings } from 'schema';
 
 export const Converter = () => {
-  const files = useStore(getFilesToConvert);
+  const filesToConvert = useStore(getFilesToConvert);
   const destinationPath = useStore(getDestinationPath);
 
   const handleStartConversion = (conversionSettings: ConversionSettings) => {
-    window.conversion.startConversion({ conversionSettings, destinationPath, files });
+    window.conversion.startConversion({ conversionSettings, destinationPath, files: filesToConvert });
   };
 
   return (
