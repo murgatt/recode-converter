@@ -5,7 +5,7 @@ import type {
   FileConversionProgressCallback,
   FileConversionStartCallback,
 } from './conversion-events.types';
-import type { VideoFile } from './file.types';
+import type { ConversionSettings, VideoFile } from '../schema';
 
 contextBridge.exposeInMainWorld('dialog', {
   openDirectory: () => ipcRenderer.invoke('dialog:openDirectory'),
@@ -17,5 +17,13 @@ contextBridge.exposeInMainWorld('conversion', {
   onFileConversionProgress: (callback: FileConversionProgressCallback) =>
     ipcRenderer.on('file-conversion-progress', callback),
   onFileConversionStart: (callback: FileConversionStartCallback) => ipcRenderer.on('file-conversion-start', callback),
-  startConversion: ({ files }: { files: VideoFile[] }) => ipcRenderer.invoke('start-conversion', { files }),
+  startConversion: ({
+    conversionSettings,
+    destinationPath,
+    files,
+  }: {
+    conversionSettings: ConversionSettings;
+    destinationPath: string;
+    files: VideoFile[];
+  }) => ipcRenderer.invoke('start-conversion', { conversionSettings, destinationPath, files }),
 });

@@ -1,21 +1,12 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
-import { bitrateSchema, channelsSchema, codecSchema, sampleRateSchema } from 'src/schemas/conversionSettings.schema';
-import { z } from 'zod';
+import { conversionSettingsSchema } from 'schema';
 import type { UseFormProps } from 'react-hook-form';
+import type { ConversionSettings } from 'schema';
 
-const formSchema = z.object({
-  codec: codecSchema,
-  bitrate: bitrateSchema,
-  sampleRate: sampleRateSchema,
-  channels: channelsSchema,
-});
-
-type FormData = z.infer<typeof formSchema>;
-
-export const useConversionSettingsForm = (props?: UseFormProps<FormData>) => {
-  return useForm<FormData>({
+export const useConversionSettingsForm = (props?: UseFormProps<ConversionSettings>) => {
+  return useForm<ConversionSettings>({
     ...props,
-    resolver: zodResolver(formSchema),
+    resolver: zodResolver(conversionSettingsSchema),
   });
 };

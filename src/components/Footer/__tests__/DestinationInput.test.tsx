@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { getDestinationPath, getFiles } from 'src/store';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { DestinationInput } from '../DestinationInput';
-import type { VideoFile } from 'src/types/file.types';
+import type { VideoFile } from 'schema';
 
 vi.mock('src/store/selectors', () => ({
   getFiles: vi.fn(),

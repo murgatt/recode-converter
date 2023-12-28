@@ -1,5 +1,6 @@
 import { ipcMain } from 'electron';
-import type { VideoFile } from './file.types';
+import { convert } from './convert';
+import type { ConversionSettings, VideoFile } from '../schema';
 import type { BrowserWindow } from 'electron';
 
 export class ConversionManager {
@@ -10,10 +11,41 @@ export class ConversionManager {
     this.mainWindow = mainWindow;
     this.isConversionInterrupted = false;
 
-    ipcMain.handle('start-conversion', (_event, { files }: { files: VideoFile[] }) => {
-      this.isConversionInterrupted = false;
-      this.handleFileConversionStart(files[0].path);
-    });
+    ipcMain.handle(
+      'start-conversion',
+      async (
+        _event,
+        {
+          conversionSettings,
+          destinationPath,
+          files,
+        }: { conversionSettings: ConversionSettings; destinationPath: string; files: VideoFile[] },
+      ) => {
+        this.isConversionInterrupted = false;
+
+        for (let i = 0; i < files.length; i++) {
+          if (this.isConversionInterrupted) {
+            break;
+          }
+
+          try {
+            const file = files[i];
+            await convert(
+              { conversionSettings, file, destinationPath },
+              {
+                onFileConversionEnd: filePath => this.handleFileConversionEnd(filePath),
+                onFileConversionProgress: (filePath, progress) => this.handleFileConversionProgress(filePath, progress),
+                onFileConversionStart: filePath => this.handleFileConversionStart(filePath),
+                onFileConversionError: (filePath, error) => this.handleFileConversionError(filePath, error),
+              },
+            );
+          } catch (error) {
+            // eslint-disable-next-line no-console
+            console.error(error);
+          }
+        }
+      },
+    );
 
     ipcMain.handle('stop-conversion', () => {
       this.isConversionInterrupted = true;
@@ -24,15 +56,15 @@ export class ConversionManager {
     this.mainWindow.webContents.send('file-conversion-start', { filePath });
   }
 
-  handleFileConversionProgress() {
-    this.mainWindow.webContents.send('file-conversion-progress');
+  handleFileConversionProgress(filePath: string, progress: number) {
+    this.mainWindow.webContents.send('file-conversion-progress', { filePath, progress });
   }
 
-  handleFileConversionEnd() {
-    this.mainWindow.webContents.send('file-conversion-end');
+  handleFileConversionEnd(filePath: string) {
+    this.mainWindow.webContents.send('file-conversion-end', { filePath });
   }
 
-  handleFileConversionError() {
-    this.mainWindow.webContents.send('file-conversion-error');
+  handleFileConversionError(filePath: string, error: string) {
+    this.mainWindow.webContents.send('file-conversion-error', { filePath, error });
   }
 }
