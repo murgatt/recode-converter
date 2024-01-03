@@ -1,6 +1,1 @@
 dist-electron
-
-# TODO temp fix for eslint/ts error
-electron/convert/index.ts
-electron/convert/convert.utils.ts
-schema/index.ts
