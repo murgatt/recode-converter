@@ -44,6 +44,9 @@ jobs:
       - name: Tests
         run: pnpm run test
 
+      - name: Types
+        run: pnpm run types
+
       - name: Pull Request title
         if: github.event_name == 'pull_request'
         uses: amannn/action-semantic-pull-request@v5

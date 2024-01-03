@@ -20,7 +20,8 @@
     "prettier": "prettier . --check --config .prettierrc",
     "prettier:fix": "prettier . --write --config .prettierrc",
     "preview": "vite preview",
-    "test": "vitest"
+    "test": "vitest",
+    "types": "tsc"
   },
   "dependencies": {
     "@ffmpeg-installer/ffmpeg": "1.1.0",
