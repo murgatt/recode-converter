@@ -33,5 +33,5 @@
     "postcss.config.js",
     "tailwind.config.js"
   ],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "extends": "./tsconfig.node.json"
 }

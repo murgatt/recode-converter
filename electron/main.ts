@@ -3,8 +3,8 @@ import { app, BrowserWindow, ipcMain } from 'electron';
 import { ConversionManager } from './ConversionManager';
 import { handleOpenDirectory } from './dialog';
 
-process.env.DIST = path.join(__dirname, '../dist');
-process.env.VITE_PUBLIC = app.isPackaged ? process.env.DIST : path.join(process.env.DIST, '../public');
+const DIST = path.join(__dirname, '../dist');
+const VITE_PUBLIC = app.isPackaged ? DIST : path.join(DIST, '../public');
 
 // 🚧 Use ['ENV_NAME'] avoid vite:define plugin - Vite@2.x
 const VITE_DEV_SERVER_URL = process.env['VITE_DEV_SERVER_URL'];
@@ -13,7 +13,7 @@ let conversionManager: ConversionManager;
 
 function createWindow() {
   const mainWindow = new BrowserWindow({
-    icon: path.join(process.env.VITE_PUBLIC, 'electron-vite.svg'),
+    icon: path.join(VITE_PUBLIC, 'electron-vite.svg'),
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },
@@ -22,7 +22,7 @@ function createWindow() {
   if (VITE_DEV_SERVER_URL) {
     mainWindow.loadURL(VITE_DEV_SERVER_URL);
   } else {
-    mainWindow.loadFile(path.join(process.env.DIST, 'index.html'));
+    mainWindow.loadFile(path.join(DIST, 'index.html'));
   }
 
   if (conversionManager) {

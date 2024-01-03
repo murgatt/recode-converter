@@ -6,13 +6,6 @@ import type {
 } from './conversion-events.types';
 import type { ConversionSettings, VideoFile } from '../schema';
 
-declare namespace NodeJS {
-  interface ProcessEnv {
-    DIST: string;
-    VITE_PUBLIC: string;
-  }
-}
-
 export interface IDialog {
   openDirectory: () => Promise<string>;
 }
