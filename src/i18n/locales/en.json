@@ -76,7 +76,8 @@
       "destination": "Destination",
       "destinationSameAsSource": "Destination same as source",
       "selectDestination": "Select destination",
-      "startConversion": "Start conversion"
+      "startConversion": "Start conversion",
+      "stopConversion": "Stop conversion"
     },
     "settings": {
       "title": "Settings"
