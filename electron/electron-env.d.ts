@@ -24,6 +24,7 @@ export interface IConversion {
     destinationPath: string;
     files: VideoFile[];
   }) => void;
+  stopConversion: () => void;
 }
 
 declare global {
