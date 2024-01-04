@@ -2,17 +2,16 @@ import { FileVideoIcon } from 'lucide-react';
 import React from 'react';
 import { useDropzone } from 'react-dropzone';
 import { useTranslation } from 'react-i18next';
-import { getFiles, useStore } from 'src/store';
+import { useStore } from 'src/store';
 import { Button } from './ui/Button';
 
 type FileImportProps = {
-  children?: React.ReactNode;
+  children: React.ReactNode;
+  isFileListDisplayed: boolean;
 };
 
-export const FileImport = ({ children }: FileImportProps) => {
+export const FileImport = ({ children, isFileListDisplayed }: FileImportProps) => {
   const { t } = useTranslation();
-  const files = useStore(getFiles);
-  const displayFileList = files.length > 0;
   const addFiles = useStore(state => state.addFiles);
 
   const handleFilesDrop = (newFiles: File[]) => {
@@ -30,7 +29,7 @@ export const FileImport = ({ children }: FileImportProps) => {
   return (
     <div {...getRootProps()} className="relative h-full w-full focus:outline-none">
       <input {...getInputProps()} id="fileInput" value="" />
-      {displayFileList ? (
+      {isFileListDisplayed ? (
         children
       ) : (
         <div className="flex h-full w-full flex-col items-center justify-center gap-3">

@@ -1,14 +1,18 @@
 import { useAutoAnimate } from '@formkit/auto-animate/react';
 import { ListXIcon } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { getFiles, useStore } from 'src/store';
+import { useStore } from 'src/store';
 import { FileCard } from './FileCard';
 import { Button } from './ui/Button';
 import { Tooltip } from './ui/Tooltip';
+import type { VideoFile } from 'schema';
 
-export const FileList = () => {
+type FileListProps = {
+  files: VideoFile[];
+};
+
+export const FileList = ({ files }: FileListProps) => {
   const { t } = useTranslation();
-  const files = useStore(getFiles);
   const clearFiles = useStore(state => state.clearFiles);
   const [listRef] = useAutoAnimate();
 
