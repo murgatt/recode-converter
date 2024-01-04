@@ -26,4 +26,5 @@ contextBridge.exposeInMainWorld('conversion', {
     destinationPath: string;
     files: VideoFile[];
   }) => ipcRenderer.invoke('start-conversion', { conversionSettings, destinationPath, files }),
+  stopConversion: () => ipcRenderer.invoke('stop-conversion'),
 });

@@ -1,21 +1,31 @@
-import { PlayIcon } from 'lucide-react';
+import { PlayIcon, StopCircleIcon } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { getFilesToConvert, useStore } from 'src/store';
 import { Button } from '../ui/Button';
 import { DestinationInput } from './DestinationInput';
 
-export const Footer = () => {
+type FooterProps = {
+  isConversionRunning: boolean;
+  isStartButtonDisabled: boolean;
+  onStopConversion: () => void;
+};
+
+export const Footer = ({ isConversionRunning, isStartButtonDisabled, onStopConversion }: FooterProps) => {
   const { t } = useTranslation();
-  const filesToConvert = useStore(getFilesToConvert);
-  const isButtonDisabled = filesToConvert.length === 0;
 
   return (
     <footer className="flex shrink-0 justify-between border-t p-4">
       <DestinationInput />
-      <Button className="flex gap-2" disabled={isButtonDisabled} form="conversionSettingsForm" type="submit">
-        <PlayIcon size="16" />
-        {t('footer.startConversion')}
-      </Button>
+      {isConversionRunning ? (
+        <Button onClick={onStopConversion}>
+          <StopCircleIcon size="16" />
+          {t('footer.stopConversion')}
+        </Button>
+      ) : (
+        <Button disabled={isStartButtonDisabled} form="conversionSettingsForm" type="submit">
+          <PlayIcon size="16" />
+          {t('footer.startConversion')}
+        </Button>
+      )}
     </footer>
   );
 };
