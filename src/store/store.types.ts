@@ -1,3 +1,4 @@
+import type { FfprobeData } from 'fluent-ffmpeg';
 import type { FileStatus, VideoFile } from 'schema';
 
 export type State = {
@@ -10,6 +11,7 @@ export type Actions = {
   clearFiles: () => void;
   removeFile: (filePath: string) => void;
   setDestinationPath: (destinationPath: string) => void;
+  setFileMetadata: (filePath: string, metadata: FfprobeData) => void;
   setFileProgress: (filePath: string, progress: number) => void;
   setFileStatus: (filePath: string, status: FileStatus) => void;
 };

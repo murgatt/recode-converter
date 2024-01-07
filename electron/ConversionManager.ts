@@ -1,5 +1,6 @@
 import { ipcMain } from 'electron';
 import { convert } from './convert';
+import { getMetadata } from './get-metadata';
 import type { ConversionSettings, VideoFile } from '../schema';
 import type { BrowserWindow } from 'electron';
 
@@ -49,6 +50,16 @@ export class ConversionManager {
 
     ipcMain.handle('stop-conversion', () => {
       this.isConversionInterrupted = true;
+    });
+
+    ipcMain.handle('get-metadata', async (_event, { filePath }: { filePath: string }) => {
+      try {
+        const metadata = await getMetadata(filePath);
+        this.mainWindow.webContents.send('file-metadata', { filePath, metadata });
+      } catch (error) {
+        // eslint-disable-next-line no-console
+        console.error(error);
+      }
     });
   }
 
