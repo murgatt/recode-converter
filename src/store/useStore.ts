@@ -2,16 +2,20 @@ import { formatFileObject } from 'src/utils';
 import { create } from 'zustand';
 import { immer } from 'zustand/middleware/immer';
 import type { Store } from './store.types';
-import type { FileStatus } from 'schema';
 
 export const useStore = create<Store>()(
   immer(set => ({
     destinationPath: '',
     files: {},
-    addFiles: (files: File[]) => {
-      set(state => files.forEach(file => (state.files[file.path] = formatFileObject(file))));
+    addFiles: files => {
+      set(state => {
+        files.forEach(file => {
+          state.files[file.path] = formatFileObject(file);
+          window.conversion.getMetadata({ filePath: file.path });
+        });
+      });
     },
-    removeFile: (filePath: string) => {
+    removeFile: filePath => {
       set(state => {
         delete state.files[filePath];
       });
@@ -21,17 +25,22 @@ export const useStore = create<Store>()(
         state.files = {};
       });
     },
-    setFileStatus: (filePath: string, status: FileStatus) => {
+    setFileStatus: (filePath, status) => {
       set(state => {
         state.files[filePath].status = status;
       });
     },
-    setFileProgress: (filePath: string, progress: number) => {
+    setFileProgress: (filePath, progress) => {
       set(state => {
         state.files[filePath].progress = progress;
       });
     },
-    setDestinationPath: (destinationPath: string) => {
+    setFileMetadata: (filePath, metadata) => {
+      set(state => {
+        state.files[filePath].metadata = metadata;
+      });
+    },
+    setDestinationPath: destinationPath => {
       set(state => {
         state.destinationPath = destinationPath;
       });
