@@ -3,6 +3,7 @@ import type {
   FileConversionErrorCallback,
   FileConversionProgressCallback,
   FileConversionStartCallback,
+  FileMetadataCallback,
 } from './conversion-events.types';
 import type { ConversionSettings, VideoFile } from '../schema';
 
@@ -11,10 +12,12 @@ export interface IDialog {
 }
 
 export interface IConversion {
+  getMetadata: ({ filePath }: { filePath: string }) => void;
   onFileConversionEnd: (callback: FileConversionEndCallback) => void;
   onFileConversionError: (callback: FileConversionErrorCallback) => void;
   onFileConversionProgress: (callback: FileConversionProgressCallback) => void;
   onFileConversionStart: (callback: FileConversionStartCallback) => void;
+  onFileMetadata: (callback: FileMetadataCallback) => void;
   startConversion: ({
     conversionSettings,
     destinationPath,
