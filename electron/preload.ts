@@ -1,30 +1,18 @@
 import { contextBridge, ipcRenderer } from 'electron';
-import type {
-  FileConversionEndCallback,
-  FileConversionErrorCallback,
-  FileConversionProgressCallback,
-  FileConversionStartCallback,
-} from './conversion-events.types';
-import type { ConversionSettings, VideoFile } from '../schema';
+import type { IConversion } from './electron-env';
 
 contextBridge.exposeInMainWorld('dialog', {
   openDirectory: () => ipcRenderer.invoke('dialog:openDirectory'),
 });
 
 contextBridge.exposeInMainWorld('conversion', {
-  onFileConversionEnd: (callback: FileConversionEndCallback) => ipcRenderer.on('file-conversion-end', callback),
-  onFileConversionError: (callback: FileConversionErrorCallback) => ipcRenderer.on('file-conversion-error', callback),
-  onFileConversionProgress: (callback: FileConversionProgressCallback) =>
-    ipcRenderer.on('file-conversion-progress', callback),
-  onFileConversionStart: (callback: FileConversionStartCallback) => ipcRenderer.on('file-conversion-start', callback),
-  startConversion: ({
-    conversionSettings,
-    destinationPath,
-    files,
-  }: {
-    conversionSettings: ConversionSettings;
-    destinationPath: string;
-    files: VideoFile[];
-  }) => ipcRenderer.invoke('start-conversion', { conversionSettings, destinationPath, files }),
+  getMetadata: ({ filePath }) => ipcRenderer.invoke('get-metadata', { filePath }),
+  onFileConversionEnd: callback => ipcRenderer.on('file-conversion-end', callback),
+  onFileConversionError: callback => ipcRenderer.on('file-conversion-error', callback),
+  onFileConversionProgress: callback => ipcRenderer.on('file-conversion-progress', callback),
+  onFileConversionStart: callback => ipcRenderer.on('file-conversion-start', callback),
+  onFileMetadata: callback => ipcRenderer.on('file-metadata', callback),
+  startConversion: ({ conversionSettings, destinationPath, files }) =>
+    ipcRenderer.invoke('start-conversion', { conversionSettings, destinationPath, files }),
   stopConversion: () => ipcRenderer.invoke('stop-conversion'),
-});
+} as IConversion);
