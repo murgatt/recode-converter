@@ -78,6 +78,8 @@ export const FileCard = ({ file }: FileCardProps) => {
               onStreamCheckedChange={handleStreamCheckedChange}
               onStreamTitleChange={handleStreamTitleChange}
               streams={metadata.streams}
+              streamsTitle={streamsTitle}
+              streamsToCopy={streamsToCopy}
             />
           )}
         </CollapsibleContent>

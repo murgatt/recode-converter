@@ -1,32 +1,33 @@
 import { useTranslation } from 'react-i18next';
-import { Checkbox } from '../ui/Checkbox';
-import { Input } from '../ui/Input';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../ui/Table';
-import { Tooltip } from '../ui/Tooltip';
-import { StreamTablePropertiesCell } from './StreamTablePropertiesCell';
-import { StreamTableTypeCell } from './StreamTableTypeCell';
+import { Table, TableBody, TableHead, TableHeader, TableRow } from '../ui/Table';
+import { StreamTableRow } from './StreamTableRow';
 import type { FfprobeStream } from 'fluent-ffmpeg';
-import type { ChangeEvent } from 'react';
+import type { StreamsTitle, StreamsToCopy } from 'schema';
 
 type StreamTableProps = {
   onStreamCheckedChange: (streamIndex: number, checked: boolean) => void;
   onStreamTitleChange: (streamIndex: number, title: string) => void;
   streams: FfprobeStream[];
+  streamsTitle: StreamsTitle;
+  streamsToCopy: StreamsToCopy;
 };
 
-export const StreamTable = ({ onStreamCheckedChange, onStreamTitleChange, streams }: StreamTableProps) => {
+export const StreamTable = ({
+  onStreamCheckedChange,
+  onStreamTitleChange,
+  streams,
+  streamsTitle,
+  streamsToCopy,
+}: StreamTableProps) => {
   const { t } = useTranslation();
 
   const handleStreamCheckedChange = (streamIndex: number) => (checked: boolean) => {
     onStreamCheckedChange(streamIndex, checked);
   };
 
-  const handleStreamTitleChange = (streamIndex: number) => (event: ChangeEvent<HTMLInputElement>) => {
-    const title = event.currentTarget.value;
+  const handleStreamTitleChange = (streamIndex: number) => (title: string) => {
     onStreamTitleChange(streamIndex, title);
   };
-
-  // TODO: change defaultValue & defaultChecked to controlled value
 
   return (
     <Table>
@@ -42,26 +43,14 @@ export const StreamTable = ({ onStreamCheckedChange, onStreamTitleChange, stream
       </TableHeader>
       <TableBody>
         {streams.map(stream => (
-          <TableRow key={stream.index}>
-            <TableCell className="font-medium">
-              <Tooltip content={t('streams.checkboxTooltip')}>
-                <div>
-                  <Checkbox defaultChecked onCheckedChange={handleStreamCheckedChange(stream.index)} />
-                </div>
-              </Tooltip>
-            </TableCell>
-            <TableCell className="uppercase">{stream.codec_name}</TableCell>
-            <TableCell>
-              <StreamTableTypeCell type={stream.codec_type} />
-            </TableCell>
-            <TableCell>{stream.tags.language}</TableCell>
-            <TableCell>
-              <Input defaultValue={stream.tags.title} onChange={handleStreamTitleChange(stream.index)} />
-            </TableCell>
-            <TableCell>
-              <StreamTablePropertiesCell stream={stream} />
-            </TableCell>
-          </TableRow>
+          <StreamTableRow
+            checked={streamsToCopy[stream.index]}
+            key={stream.index}
+            onCheckedChange={handleStreamCheckedChange(stream.index)}
+            onTitleChange={handleStreamTitleChange(stream.index)}
+            stream={stream}
+            title={streamsTitle[stream.index]}
+          />
         ))}
       </TableBody>
     </Table>
