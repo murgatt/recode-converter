@@ -17,6 +17,12 @@ dependencies:
   '@hookform/resolvers':
     specifier: 3.3.2
     version: 3.3.2(react-hook-form@7.48.2)
+  '@radix-ui/react-checkbox':
+    specifier: 1.0.4
+    version: 1.0.4(@types/react-dom@18.2.14)(@types/react@18.2.31)(react-dom@18.2.0)(react@18.2.0)
+  '@radix-ui/react-collapsible':
+    specifier: 1.0.3
+    version: 1.0.3(@types/react-dom@18.2.14)(@types/react@18.2.31)(react-dom@18.2.0)(react@18.2.0)
   '@radix-ui/react-label':
     specifier: 2.0.2
     version: 2.0.2(@types/react-dom@18.2.14)(@types/react@18.2.31)(react-dom@18.2.0)(react@18.2.0)
@@ -54,8 +60,8 @@ dependencies:
     specifier: 10.0.3
     version: 10.0.3
   lucide-react:
-    specifier: 0.292.0
-    version: 0.292.0(react@18.2.0)
+    specifier: 0.307.0
+    version: 0.307.0(react@18.2.0)
   react:
     specifier: 18.2.0
     version: 18.2.0
@@ -1068,6 +1074,62 @@ packages:
     dependencies:
       '@babel/runtime': 7.23.2
       '@radix-ui/react-primitive': 1.0.3(@types/react-dom@18.2.14)(@types/react@18.2.31)(react-dom@18.2.0)(react@18.2.0)
+      '@types/react': 18.2.31
+      '@types/react-dom': 18.2.14
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /@radix-ui/react-checkbox@1.0.4(@types/react-dom@18.2.14)(@types/react@18.2.31)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-CBuGQa52aAYnADZVt/KBQzXrwx6TqnlwtcIPGtVt5JkkzQwMOLJjPukimhfKEr4GQNd43C+djUh5Ikopj8pSLg==}
+    peerDependencies:
+      '@types/react': '*'
+      '@types/react-dom': '*'
+      react: ^16.8 || ^17.0 || ^18.0
+      react-dom: ^16.8 || ^17.0 || ^18.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-dom':
+        optional: true
+    dependencies:
+      '@babel/runtime': 7.23.2
+      '@radix-ui/primitive': 1.0.1
+      '@radix-ui/react-compose-refs': 1.0.1(@types/react@18.2.31)(react@18.2.0)
+      '@radix-ui/react-context': 1.0.1(@types/react@18.2.31)(react@18.2.0)
+      '@radix-ui/react-presence': 1.0.1(@types/react-dom@18.2.14)(@types/react@18.2.31)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-primitive': 1.0.3(@types/react-dom@18.2.14)(@types/react@18.2.31)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-use-controllable-state': 1.0.1(@types/react@18.2.31)(react@18.2.0)
+      '@radix-ui/react-use-previous': 1.0.1(@types/react@18.2.31)(react@18.2.0)
+      '@radix-ui/react-use-size': 1.0.1(@types/react@18.2.31)(react@18.2.0)
+      '@types/react': 18.2.31
+      '@types/react-dom': 18.2.14
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /@radix-ui/react-collapsible@1.0.3(@types/react-dom@18.2.14)(@types/react@18.2.31)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-UBmVDkmR6IvDsloHVN+3rtx4Mi5TFvylYXpluuv0f37dtaz3H99bp8No0LGXRigVpl3UAT4l9j6bIchh42S/Gg==}
+    peerDependencies:
+      '@types/react': '*'
+      '@types/react-dom': '*'
+      react: ^16.8 || ^17.0 || ^18.0
+      react-dom: ^16.8 || ^17.0 || ^18.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-dom':
+        optional: true
+    dependencies:
+      '@babel/runtime': 7.23.2
+      '@radix-ui/primitive': 1.0.1
+      '@radix-ui/react-compose-refs': 1.0.1(@types/react@18.2.31)(react@18.2.0)
+      '@radix-ui/react-context': 1.0.1(@types/react@18.2.31)(react@18.2.0)
+      '@radix-ui/react-id': 1.0.1(@types/react@18.2.31)(react@18.2.0)
+      '@radix-ui/react-presence': 1.0.1(@types/react-dom@18.2.14)(@types/react@18.2.31)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-primitive': 1.0.3(@types/react-dom@18.2.14)(@types/react@18.2.31)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-use-controllable-state': 1.0.1(@types/react@18.2.31)(react@18.2.0)
+      '@radix-ui/react-use-layout-effect': 1.0.1(@types/react@18.2.31)(react@18.2.0)
       '@types/react': 18.2.31
       '@types/react-dom': 18.2.14
       react: 18.2.0
@@ -4532,8 +4594,8 @@ packages:
       yallist: 4.0.0
     dev: true
 
-  /lucide-react@0.292.0(react@18.2.0):
-    resolution: {integrity: sha512-rRgUkpEHWpa5VCT66YscInCQmQuPCB1RFRzkkxMxg4b+jaL0V12E3riWWR2Sh5OIiUhCwGW/ZExuEO4Az32E6Q==}
+  /lucide-react@0.307.0(react@18.2.0):
+    resolution: {integrity: sha512-+vZ+vUiWPZTMnLHURg4aoIaz6NHOWXVVcVd8iLROu1k4LbyjcnHIKmbjXHCmulz7XAYLWRVXzhJJgIr+Aq3vOg==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0
     dependencies:

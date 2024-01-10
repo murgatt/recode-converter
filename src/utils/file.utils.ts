@@ -33,5 +33,7 @@ export function formatFileObject(file: File): VideoFile {
     size: file.size,
     status: 'imported',
     type: file.type,
+    streamsTitle: {},
+    streamsToCopy: {},
   };
 }

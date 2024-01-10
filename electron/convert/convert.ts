@@ -1,5 +1,5 @@
 /// <reference types="fluent-ffmpeg" />
-import { getOutputOptions, getOutputPath } from './convert.utils';
+import { getIgnoredStreamsOptions, getOutputOptions, getOutputPath, getStreamsTitleOptions } from './convert.utils';
 import type { ConversionSettings, VideoFile } from '../../schema';
 
 const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
@@ -27,8 +27,15 @@ export function convert(
   const inputPath = file.path;
   const outputPath = getOutputPath(inputPath, destinationPath);
   const outputOptions = getOutputOptions(conversionSettings);
+  const ignoredStreamsOptions = getIgnoredStreamsOptions(file.streamsToCopy);
+  const streamsTitleOptions = getStreamsTitleOptions(file.streamsTitle);
 
-  const command = ffmpeg().input(inputPath).output(outputPath).outputOptions(outputOptions);
+  const command = ffmpeg()
+    .input(inputPath)
+    .output(outputPath)
+    .outputOptions(outputOptions)
+    .outputOptions(ignoredStreamsOptions)
+    .outputOptions(streamsTitleOptions);
 
   return new Promise<void>((resolve, reject) => {
     command
