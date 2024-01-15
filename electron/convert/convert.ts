@@ -1,6 +1,7 @@
 /// <reference types="fluent-ffmpeg" />
 import { getIgnoredStreamsOptions, getOutputOptions, getOutputPath, getStreamsTitleOptions } from './convert.utils';
 import type { ConversionSettings, VideoFile } from '../../schema';
+import type { ProgressInfo } from 'electron-builder';
 
 const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
 const ffmpeg = require('fluent-ffmpeg');
@@ -44,7 +45,7 @@ export function convert(
         console.log(commandLine);
         onFileConversionStart(inputPath, commandLine);
       })
-      .on('progress', ({ percent }: { percent?: number }) => {
+      .on('progress', ({ percent }: ProgressInfo) => {
         onFileConversionProgress(inputPath, percent ?? 0);
       })
       .on('end', () => {
