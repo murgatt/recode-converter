@@ -79,7 +79,8 @@
       "destinationSameAsSource": "Destination same as source",
       "selectDestination": "Select destination",
       "startConversion": "Start conversion",
-      "stopConversion": "Stop conversion"
+      "stopConversion": "Stop conversion",
+      "stopConversionTooltip": "Conversion will stop at the end of the file being converted"
     },
     "settings": {
       "title": "Settings"

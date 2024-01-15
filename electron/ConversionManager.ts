@@ -45,6 +45,7 @@ export class ConversionManager {
             console.error(error);
           }
         }
+        this.mainWindow.webContents.send('conversion-end');
       },
     );
 

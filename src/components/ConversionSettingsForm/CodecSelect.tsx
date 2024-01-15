@@ -5,18 +5,19 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import type { Codec } from 'schema';
 
 type CodecSelectProps = {
+  isDisabled: boolean;
   onChange: (value: Codec) => void;
   value: Codec;
 };
 
-export const CodecSelect = ({ onChange, value }: CodecSelectProps) => {
+export const CodecSelect = ({ isDisabled, onChange, value }: CodecSelectProps) => {
   const { t } = useTranslation();
   const options = codecSchema.options.map(option => option);
 
   return (
     <FormItem>
       <FormLabel>{t('conversionSettings.codec.label')}</FormLabel>
-      <Select onValueChange={onChange} value={value}>
+      <Select disabled={isDisabled} onValueChange={onChange} value={value}>
         <FormControl>
           <SelectTrigger>
             <SelectValue />

@@ -6,8 +6,10 @@ export const useConversionEvents = () => {
   const setFileStatus = useStore(state => state.setFileStatus);
   const setFileProgress = useStore(state => state.setFileProgress);
   const setFileMetadata = useStore(state => state.setFileMetadata);
+  const setIsConversionRunning = useStore(state => state.setIsConversionRunning);
 
   useEffect(() => {
+    window.conversion.onConversionEnd(() => setIsConversionRunning(false));
     window.conversion.onFileConversionStart((_event, { filePath }) => {
       setFileStatus(filePath, fileStatusSchema.enum.converting);
     });

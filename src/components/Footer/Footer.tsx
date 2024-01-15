@@ -1,6 +1,7 @@
-import { PlayIcon, StopCircleIcon } from 'lucide-react';
+import { PauseIcon, PlayIcon } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '../ui/Button';
+import { Tooltip } from '../ui/Tooltip';
 import { DestinationInput } from './DestinationInput';
 
 type FooterProps = {
@@ -14,12 +15,14 @@ export const Footer = ({ isConversionRunning, isStartButtonDisabled, onStopConve
 
   return (
     <footer className="flex shrink-0 justify-between border-t p-4">
-      <DestinationInput />
+      <DestinationInput isDisabled={isConversionRunning} />
       {isConversionRunning ? (
-        <Button onClick={onStopConversion}>
-          <StopCircleIcon size="16" />
-          {t('footer.stopConversion')}
-        </Button>
+        <Tooltip content={t('footer.stopConversionTooltip')} delayDuration={0}>
+          <Button onClick={onStopConversion}>
+            <PauseIcon size="16" />
+            {t('footer.stopConversion')}
+          </Button>
+        </Tooltip>
       ) : (
         <Button disabled={isStartButtonDisabled} form="conversionSettingsForm" type="submit">
           <PlayIcon size="16" />

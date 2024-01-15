@@ -10,10 +10,11 @@ import { SampleRateSelect } from './SampleRateSelect';
 import type { ConversionSettings } from 'schema';
 
 type ConversionSettingsFormProps = {
+  isDisabled: boolean;
   onStartConversion: (conversionSettings: ConversionSettings) => void;
 };
 
-export const ConversionSettingsForm = ({ onStartConversion }: ConversionSettingsFormProps) => {
+export const ConversionSettingsForm = ({ isDisabled, onStartConversion }: ConversionSettingsFormProps) => {
   const { t } = useTranslation();
   const form = useConversionSettingsForm({
     defaultValues: {
@@ -39,22 +40,28 @@ export const ConversionSettingsForm = ({ onStartConversion }: ConversionSettings
         <FormField
           control={control}
           name="codec"
-          render={({ field }) => <CodecSelect onChange={field.onChange} value={field.value} />}
+          render={({ field }) => <CodecSelect isDisabled={isDisabled} onChange={field.onChange} value={field.value} />}
         />
         <FormField
           control={control}
           name="bitrate"
-          render={({ field }) => <BitrateSelect codec={codec} onChange={field.onChange} value={field.value} />}
+          render={({ field }) => (
+            <BitrateSelect codec={codec} isDisabled={isDisabled} onChange={field.onChange} value={field.value} />
+          )}
         />
         <FormField
           control={control}
           name="sampleRate"
-          render={({ field }) => <SampleRateSelect codec={codec} onChange={field.onChange} value={field.value} />}
+          render={({ field }) => (
+            <SampleRateSelect codec={codec} isDisabled={isDisabled} onChange={field.onChange} value={field.value} />
+          )}
         />
         <FormField
           control={control}
           name="channels"
-          render={({ field }) => <ChannelsSelect codec={codec} onChange={field.onChange} value={field.value} />}
+          render={({ field }) => (
+            <ChannelsSelect codec={codec} isDisabled={isDisabled} onChange={field.onChange} value={field.value} />
+          )}
         />
       </form>
     </Form>

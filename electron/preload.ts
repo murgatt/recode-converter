@@ -7,6 +7,7 @@ contextBridge.exposeInMainWorld('dialog', {
 
 contextBridge.exposeInMainWorld('conversion', {
   getMetadata: ({ filePath }) => ipcRenderer.invoke('get-metadata', { filePath }),
+  onConversionEnd: callback => ipcRenderer.on('conversion-end', callback),
   onFileConversionEnd: callback => ipcRenderer.on('file-conversion-end', callback),
   onFileConversionError: callback => ipcRenderer.on('file-conversion-error', callback),
   onFileConversionProgress: callback => ipcRenderer.on('file-conversion-progress', callback),

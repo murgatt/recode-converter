@@ -10,13 +10,21 @@ import type { ChangeEvent } from 'react';
 
 type StreamTableRowProps = {
   checked?: boolean;
+  isDisabled: boolean;
   onCheckedChange: (checked: boolean) => void;
   onTitleChange: (title: string) => void;
   stream: FfprobeStream;
   title?: string;
 };
 
-export const StreamTableRow = ({ checked, onCheckedChange, onTitleChange, stream, title }: StreamTableRowProps) => {
+export const StreamTableRow = ({
+  checked,
+  isDisabled,
+  onCheckedChange,
+  onTitleChange,
+  stream,
+  title,
+}: StreamTableRowProps) => {
   const { t } = useTranslation();
   const { codec_name, codec_type, tags } = stream;
   const isChecked = checked ?? true;
@@ -32,7 +40,7 @@ export const StreamTableRow = ({ checked, onCheckedChange, onTitleChange, stream
       <TableCell className="font-medium">
         <Tooltip content={t('streams.checkboxTooltip')}>
           <div>
-            <Checkbox checked={isChecked} onCheckedChange={onCheckedChange} />
+            <Checkbox checked={isChecked} disabled={isDisabled} onCheckedChange={onCheckedChange} />
           </div>
         </Tooltip>
       </TableCell>
@@ -42,7 +50,7 @@ export const StreamTableRow = ({ checked, onCheckedChange, onTitleChange, stream
       </TableCell>
       <TableCell>{tags.language}</TableCell>
       <TableCell>
-        <Input onChange={handleTitleChange} value={displayedTitle} />
+        <Input disabled={isDisabled} onChange={handleTitleChange} value={displayedTitle} />
       </TableCell>
       <TableCell>
         <StreamTablePropertiesCell stream={stream} />
