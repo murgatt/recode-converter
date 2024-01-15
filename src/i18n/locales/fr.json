@@ -69,6 +69,8 @@
     "fileList": {
       "clear": "Retirer tous les fichiers",
       "file": {
+        "displayStreams": "Afficher la liste de flux",
+        "hideStreams": "Cacher la liste de flux",
         "remove": "Retirer le fichier"
       }
     },
@@ -81,6 +83,25 @@
     },
     "settings": {
       "title": "Paramètres"
+    },
+    "streams": {
+      "checkboxTooltip": "Décocher pour supprimer le flux du fichier de sortie",
+      "columns": {
+        "codec": "Codec",
+        "language": "Langue",
+        "properties": "Propriétés",
+        "title": "Titre",
+        "type": "Type"
+      },
+      "properties": {
+        "channels_one": "{{count}} canal, {{layout}}",
+        "channels_other": "{{count}} canaux, {{layout}}"
+      },
+      "type": {
+        "audio": "Audio",
+        "subtitle": "Sous-titre",
+        "video": "Vidéo"
+      }
     }
   }
 }
