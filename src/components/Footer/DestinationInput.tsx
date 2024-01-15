@@ -7,7 +7,11 @@ import { Button } from '../ui/Button';
 import { Input } from '../ui/Input';
 import { Tooltip } from '../ui/Tooltip';
 
-export const DestinationInput = () => {
+type DestinationInputProps = {
+  isDisabled: boolean;
+};
+
+export const DestinationInput = ({ isDisabled }: DestinationInputProps) => {
   const { t } = useTranslation();
   const files = useStore(getFiles);
   const destinationPath = useStore(getDestinationPath);
@@ -34,7 +38,13 @@ export const DestinationInput = () => {
     <div className="flex w-1/2 gap-2">
       <Input disabled placeholder={t('footer.destination')} value={displayedDestinationPath} />
       <Tooltip content={t('footer.selectDestination')}>
-        <Button aria-label={t('footer.selectDestination')} onClick={handleOpenDirectory} size="icon" variant="ghost">
+        <Button
+          aria-label={t('footer.selectDestination')}
+          disabled={isDisabled}
+          onClick={handleOpenDirectory}
+          size="icon"
+          variant="ghost"
+        >
           <FolderIcon size="16" />
         </Button>
       </Tooltip>

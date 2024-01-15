@@ -6,6 +6,7 @@ import type { Bitrate, Codec } from 'schema';
 
 type BitrateSelectProps = {
   codec: Codec;
+  isDisabled: boolean;
   onChange: (value: Bitrate) => void;
   value: Bitrate;
 };
@@ -17,15 +18,15 @@ const bitrateByCodec: Record<Codec, Bitrate[]> = {
   eac3: ['default', '192k', '320k', '448k', '640k', '1024k', '2048k', '4096k'],
 };
 
-export const BitrateSelect = ({ codec, value, onChange }: BitrateSelectProps) => {
+export const BitrateSelect = ({ codec, isDisabled, value, onChange }: BitrateSelectProps) => {
   const { t } = useTranslation();
   const options = bitrateByCodec[codec];
-  const isDisabled = codec === codecSchema.enum.default;
+  const disabled = codec === codecSchema.enum.default || isDisabled;
 
   return (
     <FormItem>
       <FormLabel>{t('conversionSettings.bitrate.label')}</FormLabel>
-      <Select disabled={isDisabled} onValueChange={onChange} value={value}>
+      <Select disabled={disabled} onValueChange={onChange} value={value}>
         <FormControl>
           <SelectTrigger>
             <SelectValue />

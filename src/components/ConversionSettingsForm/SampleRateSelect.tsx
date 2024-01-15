@@ -6,6 +6,7 @@ import type { Codec, SampleRate } from 'schema';
 
 type SampleRateSelectProps = {
   codec: Codec;
+  isDisabled: boolean;
   onChange: (value: SampleRate) => void;
   value: SampleRate;
 };
@@ -17,15 +18,15 @@ const sampleRateByCodec: Record<Codec, SampleRate[]> = {
   eac3: ['default', '32000', '44100', '48000'],
 };
 
-export const SampleRateSelect = ({ codec, onChange, value }: SampleRateSelectProps) => {
+export const SampleRateSelect = ({ codec, isDisabled, onChange, value }: SampleRateSelectProps) => {
   const { t } = useTranslation();
   const options = sampleRateByCodec[codec];
-  const isDisabled = codec === codecSchema.enum.default;
+  const disabled = codec === codecSchema.enum.default || isDisabled;
 
   return (
     <FormItem>
       <FormLabel>{t('conversionSettings.sampleRate.label')}</FormLabel>
-      <Select disabled={isDisabled} onValueChange={onChange} value={value}>
+      <Select disabled={disabled} onValueChange={onChange} value={value}>
         <FormControl>
           <SelectTrigger>
             <SelectValue />

@@ -28,12 +28,13 @@ TooltipContent.displayName = TooltipPrimitive.Content.displayName;
 type TooltipProps = {
   children?: React.ReactNode;
   content?: React.ReactNode;
+  delayDuration?: number;
   position?: 'top' | 'right' | 'bottom' | 'left';
 };
 
-export const Tooltip = ({ children, content, position }: TooltipProps) => {
+export const Tooltip = ({ children, content, delayDuration, position }: TooltipProps) => {
   return (
-    <TooltipProvider>
+    <TooltipProvider delayDuration={delayDuration}>
       <TooltipRoot>
         <TooltipTrigger asChild>{children}</TooltipTrigger>
         <TooltipContent side={position}>{content}</TooltipContent>

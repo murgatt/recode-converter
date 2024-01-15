@@ -1,6 +1,8 @@
 import type { IpcRendererEvent } from 'electron';
 import type { FfprobeData } from 'fluent-ffmpeg';
 
+export type ConversionEndCallback = (event: IpcRendererEvent) => void;
+
 export type FileConversionStartCallback = (event: IpcRendererEvent, { filePath }: { filePath: string }) => void;
 
 export type FileConversionProgressCallback = (
