@@ -4,14 +4,22 @@ import { FileImport } from '../FileImport';
 
 describe('FileImport', () => {
   it('should display an import button by default', () => {
-    render(<FileImport isFileListDisplayed={false}>FileList</FileImport>);
+    render(
+      <FileImport isDisabled={false} isFileListDisplayed={false}>
+        FileList
+      </FileImport>,
+    );
 
     expect(screen.getByText('Add files')).toBeVisible();
     expect(screen.queryByText('FileList')).not.toBeInTheDocument();
   });
 
   it('should display file list instead of import button if files have been added', () => {
-    render(<FileImport isFileListDisplayed>FileList</FileImport>);
+    render(
+      <FileImport isDisabled={false} isFileListDisplayed>
+        FileList
+      </FileImport>,
+    );
 
     expect(screen.getByText('FileList')).toBeVisible();
     expect(screen.queryByText('Add files')).not.toBeInTheDocument();

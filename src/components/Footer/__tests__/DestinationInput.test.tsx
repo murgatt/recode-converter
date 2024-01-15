@@ -16,14 +16,14 @@ describe('DestinationInput', () => {
   });
 
   it('should display placeholder by default', () => {
-    render(<DestinationInput />);
+    render(<DestinationInput isDisabled={false} />);
 
     expect(screen.getByPlaceholderText('Destination')).toHaveValue('');
   });
 
   it('should display destination if defined', () => {
     vi.mocked(getDestinationPath).mockReturnValue('/movies');
-    render(<DestinationInput />);
+    render(<DestinationInput isDisabled={false} />);
 
     expect(screen.getByPlaceholderText('Destination')).toHaveValue('/movies');
   });
@@ -32,7 +32,7 @@ describe('DestinationInput', () => {
     const file1 = { path: '/movies/matrix.mkv' } as VideoFile;
     const file2 = { path: '/movies/shining.mkv' } as VideoFile;
     vi.mocked(getFiles).mockReturnValue([file1, file2]);
-    render(<DestinationInput />);
+    render(<DestinationInput isDisabled={false} />);
 
     expect(screen.getByPlaceholderText('Destination')).toHaveValue('/movies');
   });
@@ -41,8 +41,14 @@ describe('DestinationInput', () => {
     const file1 = { path: '/medias/matrix.mkv' } as VideoFile;
     const file2 = { path: '/movies/shining.mkv' } as VideoFile;
     vi.mocked(getFiles).mockReturnValue([file1, file2]);
-    render(<DestinationInput />);
+    render(<DestinationInput isDisabled={false} />);
 
     expect(screen.getByPlaceholderText('Destination')).toHaveValue('Destination same as source');
+  });
+
+  it('should display a disabled button', () => {
+    render(<DestinationInput isDisabled />);
+
+    expect(screen.getByRole('button', { name: 'Select destination' })).toBeDisabled();
   });
 });

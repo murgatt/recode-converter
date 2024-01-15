@@ -1,4 +1,5 @@
 import type {
+  ConversionEndCallback,
   FileConversionEndCallback,
   FileConversionErrorCallback,
   FileConversionProgressCallback,
@@ -13,6 +14,7 @@ export interface IDialog {
 
 export interface IConversion {
   getMetadata: ({ filePath }: { filePath: string }) => void;
+  onConversionEnd: (callback: ConversionEndCallback) => void;
   onFileConversionEnd: (callback: FileConversionEndCallback) => void;
   onFileConversionError: (callback: FileConversionErrorCallback) => void;
   onFileConversionProgress: (callback: FileConversionProgressCallback) => void;
