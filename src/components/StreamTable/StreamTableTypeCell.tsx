@@ -13,19 +13,19 @@ export const StreamTableTypeCell = ({ type = '' }: StreamTableTypeCellProps) => 
     case 'audio':
       return (
         <Tooltip content={t('streams.type.audio')}>
-          <AudioLinesIcon size="20" />
+          <AudioLinesIcon aria-label={t('streams.type.audio')} role="img" size="20" />
         </Tooltip>
       );
     case 'subtitle':
       return (
         <Tooltip content={t('streams.type.subtitle')}>
-          <SubtitlesIcon size="20" />
+          <SubtitlesIcon aria-label={t('streams.type.subtitle')} role="img" size="20" />
         </Tooltip>
       );
     case 'video':
       return (
         <Tooltip content={t('streams.type.video')}>
-          <VideoIcon size="20" />
+          <VideoIcon aria-label={t('streams.type.video')} role="img" size="20" />
         </Tooltip>
       );
     default:

@@ -20,9 +20,7 @@ type FileCardProps = {
 export const FileCard = ({ file }: FileCardProps) => {
   const { t } = useTranslation();
   const [isStreamTableOpen, setIsStreamTableOpen] = useState(false);
-  const toggleStreamTableTooltip = isStreamTableOpen
-    ? t('fileList.file.hideStreams')
-    : t('fileList.file.displayStreams');
+  const toggleStreamTableLabel = isStreamTableOpen ? t('fileList.file.hideStreams') : t('fileList.file.displayStreams');
 
   const { metadata, name, path, progress, size, status, streamsTitle, streamsToCopy } = file;
   const formattedFileSize = formatFileSize(size);
@@ -64,9 +62,9 @@ export const FileCard = ({ file }: FileCardProps) => {
       </div>
       <Collapsible className="mb-1" onOpenChange={setIsStreamTableOpen} open={isStreamTableOpen}>
         <div className="flex justify-center">
-          <Tooltip content={toggleStreamTableTooltip}>
+          <Tooltip content={toggleStreamTableLabel}>
             <CollapsibleTrigger asChild className="flex justify-center">
-              <Button disabled={!metadata} size="icon" variant="ghost">
+              <Button aria-label={toggleStreamTableLabel} disabled={!metadata} size="icon" variant="ghost">
                 {isStreamTableOpen ? <ChevronUpIcon size="16" /> : <ChevronDownIcon size="16" />}
               </Button>
             </CollapsibleTrigger>
