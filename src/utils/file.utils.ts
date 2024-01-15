@@ -32,6 +32,8 @@ export function formatFileObject(file: File): VideoFile {
     progress: 0,
     size: file.size,
     status: 'imported',
+    streamsTitle: {},
+    streamsToCopy: {},
     type: file.type,
   };
 }

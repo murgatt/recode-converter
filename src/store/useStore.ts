@@ -40,6 +40,16 @@ export const useStore = create<Store>()(
         state.files[filePath].metadata = metadata;
       });
     },
+    setStreamsTitle: (filePath, streamsTitle) => {
+      set(state => {
+        state.files[filePath].streamsTitle = streamsTitle;
+      });
+    },
+    setStreamsToCopy: (filePath, streamsToCopy) => {
+      set(state => {
+        state.files[filePath].streamsToCopy = streamsToCopy;
+      });
+    },
     setDestinationPath: destinationPath => {
       set(state => {
         state.destinationPath = destinationPath;
