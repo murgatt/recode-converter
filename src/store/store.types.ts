@@ -1,5 +1,5 @@
 import type { FfprobeData } from 'fluent-ffmpeg';
-import type { FileStatus, VideoFile } from 'schema';
+import type { FileStatus, StreamsTitle, StreamsToCopy, VideoFile } from 'schema';
 
 export type State = {
   destinationPath: string;
@@ -14,6 +14,8 @@ export type Actions = {
   setFileMetadata: (filePath: string, metadata: FfprobeData) => void;
   setFileProgress: (filePath: string, progress: number) => void;
   setFileStatus: (filePath: string, status: FileStatus) => void;
+  setStreamsTitle: (filePath: string, streamsTitle: StreamsTitle) => void;
+  setStreamsToCopy: (filePath: string, streamsToCopy: StreamsToCopy) => void;
 };
 
 export type Store = State & Actions;

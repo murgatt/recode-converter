@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { bitrateSchema, channelsSchema, codecSchema, sampleRateSchema } from '../../schema';
-import type { ConversionSettings } from '../../schema';
+import type { ConversionSettings, StreamsTitle, StreamsToCopy } from '../../schema';
 
 const baseOutputOptions = ['-map 0', '-codec copy'];
 const audioCodecFlag = '-c:a';
@@ -44,4 +44,22 @@ export function getOutputPath(inputPath: string, destinationPath: string) {
   }
 
   return outputPath;
+}
+
+export function getIgnoredStreamsOptions(streamsToCopy: StreamsToCopy) {
+  return Object.entries(streamsToCopy)
+    .filter(([, shouldCopy]) => !shouldCopy)
+    .map(([streamIndex]) => `-map -0:${streamIndex}`);
+}
+
+export function getStreamsTitleOptions(streamsTitle: StreamsTitle) {
+  const options: string[] = [];
+
+  Object.entries(streamsTitle).forEach(([streamIndex, streamTitle]) => {
+    // We need 2 entries (1 for flag, 1 for value) for each stream to ignore otherwise ffmpeg command throws an error
+    // This why we don't use a map and we need to push 2 entries even if the final command is identical
+    options.push(`-metadata:s:${streamIndex}`, `title=${streamTitle}`);
+  });
+
+  return options;
 }

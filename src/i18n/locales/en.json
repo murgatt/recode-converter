@@ -69,6 +69,8 @@
     "fileList": {
       "clear": "Remove all files",
       "file": {
+        "displayStreams": "Display stream list",
+        "hideStreams": "Hide stream list",
         "remove": "Remove file"
       }
     },
@@ -81,6 +83,25 @@
     },
     "settings": {
       "title": "Settings"
+    },
+    "streams": {
+      "checkboxTooltip": "Uncheck to remove stream from the output file",
+      "columns": {
+        "codec": "Codec",
+        "language": "Language",
+        "properties": "Properties",
+        "title": "Title",
+        "type": "Type"
+      },
+      "properties": {
+        "channels_one": "{{count}} channel, {{layout}}",
+        "channels_other": "{{count}} channels, {{layout}}"
+      },
+      "type": {
+        "audio": "Audio",
+        "subtitle": "Subtitle",
+        "video": "Video"
+      }
     }
   }
 }
