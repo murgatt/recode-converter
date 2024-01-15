@@ -15,16 +15,20 @@ import type { VideoFile } from 'schema';
 
 type FileCardProps = {
   file: VideoFile;
+  isConversionRunning: boolean;
 };
 
-export const FileCard = ({ file }: FileCardProps) => {
+export const FileCard = ({ file, isConversionRunning }: FileCardProps) => {
   const { t } = useTranslation();
   const [isStreamTableOpen, setIsStreamTableOpen] = useState(false);
   const toggleStreamTableLabel = isStreamTableOpen ? t('fileList.file.hideStreams') : t('fileList.file.displayStreams');
 
   const { metadata, name, path, progress, size, status, streamsTitle, streamsToCopy } = file;
   const formattedFileSize = formatFileSize(size);
+
   const isProgressDisplayed = status === fileStatusSchema.enum.converting && progress > 0;
+  const isRemoveButtonDisabled = isConversionRunning || status === fileStatusSchema.enum.converting;
+  const isStreamEditDisabled = isConversionRunning || status !== fileStatusSchema.enum.imported;
 
   const removeFile = useStore(state => state.removeFile);
   const setStreamsToCopy = useStore(state => state.setStreamsToCopy);
@@ -52,6 +56,7 @@ export const FileCard = ({ file }: FileCardProps) => {
           <Button
             aria-label={t('fileList.file.remove')}
             className="shrink-0"
+            disabled={isRemoveButtonDisabled}
             onClick={() => removeFile(path)}
             size="icon"
             variant="outline"
@@ -73,6 +78,7 @@ export const FileCard = ({ file }: FileCardProps) => {
         <CollapsibleContent>
           {metadata && (
             <StreamTable
+              isStreamEditDisabled={isStreamEditDisabled}
               onStreamCheckedChange={handleStreamCheckedChange}
               onStreamTitleChange={handleStreamTitleChange}
               streams={metadata.streams}

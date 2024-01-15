@@ -7,10 +7,11 @@ import { Button } from './ui/Button';
 
 type FileImportProps = {
   children: React.ReactNode;
+  isDisabled: boolean;
   isFileListDisplayed: boolean;
 };
 
-export const FileImport = ({ children, isFileListDisplayed }: FileImportProps) => {
+export const FileImport = ({ children, isDisabled, isFileListDisplayed }: FileImportProps) => {
   const { t } = useTranslation();
   const addFiles = useStore(state => state.addFiles);
 
@@ -22,6 +23,7 @@ export const FileImport = ({ children, isFileListDisplayed }: FileImportProps) =
     accept: {
       'video/*': ['.mkv'],
     },
+    disabled: isDisabled,
     noClick: true,
     onDropAccepted: handleFilesDrop,
   });

@@ -16,7 +16,7 @@ const stream = {
 
 describe('StreamTableRow', () => {
   it('should display default title and checked checkbox by default', () => {
-    render(<StreamTableRow onCheckedChange={vi.fn()} onTitleChange={vi.fn()} stream={stream} />);
+    render(<StreamTableRow isDisabled={false} onCheckedChange={vi.fn()} onTitleChange={vi.fn()} stream={stream} />);
 
     expect(screen.getByRole('checkbox')).toBeChecked();
     expect(screen.getByRole('textbox')).toHaveValue('English');
@@ -24,7 +24,14 @@ describe('StreamTableRow', () => {
 
   it('should display custom title and checked if defined', () => {
     render(
-      <StreamTableRow checked={false} onCheckedChange={vi.fn()} onTitleChange={vi.fn()} stream={stream} title="ENG" />,
+      <StreamTableRow
+        checked={false}
+        isDisabled={false}
+        onCheckedChange={vi.fn()}
+        onTitleChange={vi.fn()}
+        stream={stream}
+        title="ENG"
+      />,
     );
 
     expect(screen.getByRole('checkbox')).not.toBeChecked();
@@ -33,7 +40,9 @@ describe('StreamTableRow', () => {
 
   it('should call onCheckedChange when checkbox is clicked', async () => {
     const onCheckedChange = vi.fn();
-    render(<StreamTableRow onCheckedChange={onCheckedChange} onTitleChange={vi.fn()} stream={stream} />);
+    render(
+      <StreamTableRow isDisabled={false} onCheckedChange={onCheckedChange} onTitleChange={vi.fn()} stream={stream} />,
+    );
 
     await userEvent.click(screen.getByRole('checkbox'));
 
@@ -42,10 +51,19 @@ describe('StreamTableRow', () => {
 
   it('should call onTitleChange when title input change', async () => {
     const onTitleChange = vi.fn();
-    render(<StreamTableRow onCheckedChange={vi.fn()} onTitleChange={onTitleChange} stream={stream} />);
+    render(
+      <StreamTableRow isDisabled={false} onCheckedChange={vi.fn()} onTitleChange={onTitleChange} stream={stream} />,
+    );
 
     await userEvent.type(screen.getByRole('textbox'), '_');
 
     expect(onTitleChange).toHaveBeenCalledWith('English_');
+  });
+
+  it('should display a disabled checkbox and a disable title input', () => {
+    render(<StreamTableRow isDisabled onCheckedChange={vi.fn()} onTitleChange={vi.fn()} stream={stream} />);
+
+    expect(screen.getByRole('checkbox')).toBeDisabled();
+    expect(screen.getByRole('textbox')).toBeDisabled();
   });
 });

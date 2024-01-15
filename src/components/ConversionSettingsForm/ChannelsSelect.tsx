@@ -6,6 +6,7 @@ import type { Channels, Codec } from 'schema';
 
 type ChannelsSelectProps = {
   codec: Codec;
+  isDisabled: boolean;
   onChange: (value: Channels) => void;
   value: Channels;
 };
@@ -17,15 +18,15 @@ const channelsByCodec: Record<Codec, Channels[]> = {
   eac3: ['default', '1', '2', '3', '4', '5', '6'],
 };
 
-export const ChannelsSelect = ({ codec, onChange, value }: ChannelsSelectProps) => {
+export const ChannelsSelect = ({ isDisabled, codec, onChange, value }: ChannelsSelectProps) => {
   const { t } = useTranslation();
   const options = channelsByCodec[codec];
-  const isDisabled = codec === codecSchema.enum.default;
+  const disabled = codec === codecSchema.enum.default || isDisabled;
 
   return (
     <FormItem>
       <FormLabel>{t('conversionSettings.channels.label')}</FormLabel>
-      <Select disabled={isDisabled} onValueChange={onChange} value={value}>
+      <Select disabled={disabled} onValueChange={onChange} value={value}>
         <FormControl>
           <SelectTrigger>
             <SelectValue />

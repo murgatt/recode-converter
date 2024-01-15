@@ -5,6 +5,7 @@ import type { FfprobeStream } from 'fluent-ffmpeg';
 import type { StreamsTitle, StreamsToCopy } from 'schema';
 
 type StreamTableProps = {
+  isStreamEditDisabled: boolean;
   onStreamCheckedChange: (streamIndex: number, checked: boolean) => void;
   onStreamTitleChange: (streamIndex: number, title: string) => void;
   streams: FfprobeStream[];
@@ -13,6 +14,7 @@ type StreamTableProps = {
 };
 
 export const StreamTable = ({
+  isStreamEditDisabled,
   onStreamCheckedChange,
   onStreamTitleChange,
   streams,
@@ -45,6 +47,7 @@ export const StreamTable = ({
         {streams.map(stream => (
           <StreamTableRow
             checked={streamsToCopy[stream.index]}
+            isDisabled={isStreamEditDisabled}
             key={stream.index}
             onCheckedChange={handleStreamCheckedChange(stream.index)}
             onTitleChange={handleStreamTitleChange(stream.index)}

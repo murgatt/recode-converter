@@ -7,6 +7,7 @@ export const useStore = create<Store>()(
   immer(set => ({
     destinationPath: '',
     files: {},
+    isConversionRunning: false,
     addFiles: files => {
       set(state => {
         files.forEach(file => {
@@ -53,6 +54,11 @@ export const useStore = create<Store>()(
     setDestinationPath: destinationPath => {
       set(state => {
         state.destinationPath = destinationPath;
+      });
+    },
+    setIsConversionRunning: isConversionRunning => {
+      set(state => {
+        state.isConversionRunning = isConversionRunning;
       });
     },
   })),
