@@ -1,4 +1,6 @@
 import { useEffect } from 'react';
+import { themeSettingSchema } from 'src/schema/settings.schema';
+import { getTheme, useStore } from '../store';
 
 function switchTheme(isDark: boolean) {
   if (isDark) {
@@ -9,10 +11,12 @@ function switchTheme(isDark: boolean) {
 }
 
 export const useTheme = () => {
+  const theme = useStore(getTheme);
   const darkModePreference = window.matchMedia('(prefers-color-scheme: dark)');
 
   useEffect(() => {
-    const isDark = darkModePreference.matches;
+    const isDark =
+      theme === themeSettingSchema.enum.system ? darkModePreference.matches : theme === themeSettingSchema.enum.dark;
 
     const handleChange = (event: MediaQueryListEvent) => {
       switchTheme(event.matches);
@@ -24,5 +28,5 @@ export const useTheme = () => {
     return () => {
       darkModePreference.removeEventListener('change', handleChange);
     };
-  }, [darkModePreference]);
+  }, [darkModePreference, theme]);
 };

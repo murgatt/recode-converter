@@ -1,10 +1,12 @@
 import type { FfprobeData } from 'fluent-ffmpeg';
 import type { FileStatus, StreamsTitle, StreamsToCopy, VideoFile } from 'schema';
+import type { ThemeSetting } from 'src/schema/settings.schema';
 
 export type State = {
   destinationPath: string;
   files: Record<string, VideoFile>;
   isConversionRunning: boolean;
+  theme: ThemeSetting;
 };
 
 export type Actions = {
@@ -18,6 +20,7 @@ export type Actions = {
   setIsConversionRunning: (isConversionRunning: boolean) => void;
   setStreamsTitle: (filePath: string, streamsTitle: StreamsTitle) => void;
   setStreamsToCopy: (filePath: string, streamsToCopy: StreamsToCopy) => void;
+  setTheme: (theme: ThemeSetting) => void;
 };
 
 export type Store = State & Actions;

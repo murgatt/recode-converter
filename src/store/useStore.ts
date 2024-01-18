@@ -1,13 +1,17 @@
 import { formatFileObject } from 'src/utils';
+import { getSettingsFromStorage } from 'src/utils/settings.utils';
 import { create } from 'zustand';
 import { immer } from 'zustand/middleware/immer';
 import type { Store } from './store.types';
+
+const { theme } = getSettingsFromStorage();
 
 export const useStore = create<Store>()(
   immer(set => ({
     destinationPath: '',
     files: {},
     isConversionRunning: false,
+    theme,
     addFiles: files => {
       set(state => {
         files.forEach(file => {
@@ -59,6 +63,11 @@ export const useStore = create<Store>()(
     setIsConversionRunning: isConversionRunning => {
       set(state => {
         state.isConversionRunning = isConversionRunning;
+      });
+    },
+    setTheme: theme => {
+      set(state => {
+        state.theme = theme;
       });
     },
   })),

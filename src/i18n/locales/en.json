@@ -83,6 +83,30 @@
       "stopConversionTooltip": "Conversion will stop at the end of the file being converted"
     },
     "settings": {
+      "language": {
+        "label": "Language",
+        "values": {
+          "auto": "Automatic",
+          "en": "English",
+          "fr": "Français"
+        }
+      },
+      "notifications": {
+        "label": "Notifications",
+        "values": {
+          "disabled": "Disabled",
+          "onConversionEnd": "When all conversions are complete",
+          "onFileConversionEnd": "When file conversion is complete"
+        }
+      },
+      "theme": {
+        "label": "Theme",
+        "values": {
+          "dark": "Dark",
+          "light": "Light",
+          "system": "System"
+        }
+      },
       "title": "Settings"
     },
     "streams": {
