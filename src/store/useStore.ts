@@ -65,9 +65,9 @@ export const useStore = create<Store>()(
         state.isConversionRunning = isConversionRunning;
       });
     },
-    setTheme: theme => {
+    setTheme: themeSetting => {
       set(state => {
-        state.theme = theme;
+        state.theme = themeSetting;
       });
     },
   })),
