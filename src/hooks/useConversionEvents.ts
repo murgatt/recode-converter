@@ -23,5 +23,5 @@ export const useConversionEvents = () => {
     window.conversion.onFileMetadata((_event, { filePath, metadata }) => {
       setFileMetadata(filePath, metadata);
     });
-  }, [setFileMetadata, setFileProgress, setFileStatus]);
+  }, [setIsConversionRunning, setFileMetadata, setFileProgress, setFileStatus]);
 };
