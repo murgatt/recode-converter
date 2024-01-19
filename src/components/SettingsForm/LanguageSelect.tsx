@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import i18n from 'src/i18n';
 import { languageSettingSchema } from 'src/schema/settings.schema';
-import { getLanguageFromLanguageSetting } from 'src/utils/settings.utils';
+import { getLanguageFromLanguageSetting } from 'src/utils';
 import { FormControl, FormLabel } from '../ui/Form';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/Select';
 import type { LanguageSetting } from 'src/schema/settings.schema';

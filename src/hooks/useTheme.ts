@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { themeSettingSchema } from 'src/schema/settings.schema';
-import { getTheme, useStore } from '../store';
+import { getTheme, useStore } from 'src/store';
 
 function switchTheme(isDark: boolean) {
   if (isDark) {

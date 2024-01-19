@@ -1,5 +1,5 @@
 import { useSettingsForm } from 'src/hooks/useSettingsForm';
-import { getSettingsFromStorage, saveSettingsToStorage } from 'src/utils/settings.utils';
+import { getSettingsFromStorage, saveSettingsToStorage } from 'src/utils';
 import { Form, FormField } from '../ui/Form';
 import { LanguageSelect } from './LanguageSelect';
 import { NotificationsSelect } from './NotificationsSelect';

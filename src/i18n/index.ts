@@ -1,7 +1,7 @@
 /* eslint-disable import/no-named-as-default-member */
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import { getLanguageFromLanguageSetting, getSettingsFromStorage } from 'src/utils/settings.utils';
+import { getLanguageFromLanguageSetting, getSettingsFromStorage } from 'src/utils';
 import { en, fr } from './locales';
 
 const resources = { en, fr };

@@ -1,5 +1,4 @@
-import { formatFileObject } from 'src/utils';
-import { getSettingsFromStorage } from 'src/utils/settings.utils';
+import { formatFileObject, getSettingsFromStorage } from 'src/utils';
 import { create } from 'zustand';
 import { immer } from 'zustand/middleware/immer';
 import type { Store } from './store.types';
