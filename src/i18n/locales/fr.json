@@ -83,6 +83,30 @@
       "stopConversionTooltip": "La conversion s'arrêtera à la fin du fichier en cours de conversion"
     },
     "settings": {
+      "language": {
+        "label": "Langue",
+        "values": {
+          "auto": "Automatique",
+          "en": "English",
+          "fr": "Français"
+        }
+      },
+      "notifications": {
+        "label": "Notifications",
+        "values": {
+          "disabled": "Désactivées",
+          "onConversionEnd": "Quand toutes les conversions sont terminées",
+          "onFileConversionEnd": "Quand la conversion d'un fichier est terminée"
+        }
+      },
+      "theme": {
+        "label": "Thème",
+        "values": {
+          "dark": "Sombre",
+          "light": "Clair",
+          "system": "Système"
+        }
+      },
       "title": "Paramètres"
     },
     "streams": {
