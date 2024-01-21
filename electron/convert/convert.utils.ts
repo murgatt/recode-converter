@@ -1,15 +1,16 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { bitrateSchema, channelsSchema, codecSchema, sampleRateSchema } from '../../schema';
+import { bitrateSchema, channelsSchema, codecSchema, sampleRateSchema, subtitleSchema } from '../../schema';
 import type { ConversionSettings, StreamsTitle, StreamsToCopy } from '../../schema';
 
 const baseOutputOptions = ['-map 0', '-codec copy'];
 const audioCodecFlag = '-c:a';
-const audioBitrateFlag = '-c:a';
+const audioBitrateFlag = '-b:a';
 const audioChannelsFlag = '-ac';
-const audioSampleReteFlag = '-ar';
+const audioSampleRateFlag = '-ar';
+const subtitleCodecFlag = '-c:s';
 
-export function getOutputOptions({ bitrate, channels, codec, sampleRate }: ConversionSettings) {
+export function getOutputOptions({ bitrate, channels, codec, sampleRate, subtitle }: ConversionSettings) {
   const options = [...baseOutputOptions];
 
   if (codec && codec !== codecSchema.enum.default) {
@@ -25,7 +26,11 @@ export function getOutputOptions({ bitrate, channels, codec, sampleRate }: Conve
   }
 
   if (sampleRate && sampleRate !== sampleRateSchema.enum.default) {
-    options.push(`${audioSampleReteFlag} ${sampleRate}`);
+    options.push(`${audioSampleRateFlag} ${sampleRate}`);
+  }
+
+  if (subtitle && subtitle !== subtitleSchema.enum.default) {
+    options.push(`${subtitleCodecFlag} ${subtitle}`);
   }
 
   return options;

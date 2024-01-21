@@ -1,4 +1,4 @@
-import { bitrateSchema, channelsSchema, codecSchema, sampleRateSchema } from 'schema';
+import { bitrateSchema, channelsSchema, codecSchema, sampleRateSchema, subtitleSchema } from 'schema';
 import { formatFileObject, getSettingsFromStorage } from 'src/utils';
 import { create } from 'zustand';
 import { immer } from 'zustand/middleware/immer';
@@ -13,6 +13,7 @@ export const useStore = create<Store>()(
       bitrate: bitrateSchema.enum.default,
       sampleRate: sampleRateSchema.enum.default,
       channels: channelsSchema.enum.default,
+      subtitle: subtitleSchema.enum.default,
     },
     destinationPath: '',
     files: {},
