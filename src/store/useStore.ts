@@ -44,6 +44,11 @@ export const useStore = create<Store>()(
         state.files[filePath].metadata = metadata;
       });
     },
+    setFileError: (filePath, error) => {
+      set(state => {
+        state.files[filePath].error = error;
+      });
+    },
     setStreamsTitle: (filePath, streamsTitle) => {
       set(state => {
         state.files[filePath].streamsTitle = streamsTitle;
