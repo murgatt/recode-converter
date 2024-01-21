@@ -60,6 +60,15 @@
           "96000": "96000 Hz"
         }
       },
+      "subtitle": {
+        "helpText": "Seuls les sous-titres au format texte peuvent être convertis. La conversion de sous-titres au format image (comme PGS) échouera.",
+        "label": "Format des sous-titres",
+        "values": {
+          "default": "Identique à la source",
+          "ass": "ASS",
+          "srt": "SRT"
+        }
+      },
       "title": "Paramètres de conversion"
     },
     "fileImport": {

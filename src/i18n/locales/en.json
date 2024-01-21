@@ -60,6 +60,15 @@
           "96000": "96000 Hz"
         }
       },
+      "subtitle": {
+        "helpText": "Only text based subtitle can be converted. Conversion of image based subtitle (like PGS) will fail.",
+        "label": "Subtitle format",
+        "values": {
+          "default": "Same as source",
+          "ass": "ASS",
+          "srt": "SRT"
+        }
+      },
       "title": "Conversion settings"
     },
     "fileImport": {

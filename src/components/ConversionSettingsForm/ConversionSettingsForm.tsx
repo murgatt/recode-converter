@@ -3,10 +3,12 @@ import { bitrateSchema, channelsSchema, sampleRateSchema } from 'schema';
 import { useConversionSettingsForm } from 'src/hooks/useConversionSettingsForm';
 import { getConversionSettings, useStore } from 'src/store';
 import { Form, FormField } from '../ui/Form';
+import { Separator } from '../ui/Separator';
 import { BitrateSelect } from './BitrateSelect';
 import { ChannelsSelect } from './ChannelsSelect';
 import { CodecSelect } from './CodecSelect';
 import { SampleRateSelect } from './SampleRateSelect';
+import { SubtitleSelect } from './SubtitleSelect';
 import type { Codec, ConversionSettings } from 'schema';
 
 type ConversionSettingsFormProps = {
@@ -19,14 +21,7 @@ export const ConversionSettingsForm = ({ isDisabled, onStartConversion }: Conver
   const conversionSettings = useStore(getConversionSettings);
   const setConversionSettings = useStore(state => state.setConversionSettings);
 
-  const form = useConversionSettingsForm({
-    defaultValues: {
-      codec: conversionSettings.codec,
-      bitrate: conversionSettings.bitrate,
-      sampleRate: conversionSettings.sampleRate,
-      channels: conversionSettings.channels,
-    },
-  });
+  const form = useConversionSettingsForm({ defaultValues: conversionSettings });
   const { control, getValues, handleSubmit, setValue, watch } = form;
   const codec = watch('codec');
 
@@ -77,6 +72,14 @@ export const ConversionSettingsForm = ({ isDisabled, onStartConversion }: Conver
           name="channels"
           render={({ field }) => (
             <ChannelsSelect codec={codec} isDisabled={isDisabled} onChange={field.onChange} value={field.value} />
+          )}
+        />
+        <Separator className="my-2" />
+        <FormField
+          control={control}
+          name="subtitle"
+          render={({ field }) => (
+            <SubtitleSelect isDisabled={isDisabled} onChange={field.onChange} value={field.value} />
           )}
         />
       </form>
