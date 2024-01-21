@@ -42,7 +42,7 @@
       "codec": {
         "label": "Codec",
         "values": {
-          "default": "Sans réencodage - Copier l'audio",
+          "default": "Pas de réencodage",
           "aac": "AAC",
           "ac3": "AC3",
           "eac3": "EAC3"
