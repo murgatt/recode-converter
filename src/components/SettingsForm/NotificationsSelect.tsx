@@ -13,10 +13,23 @@ export const NotificationsSelect = ({ onChange, value }: NotificationsSelectProp
   const { t } = useTranslation();
   const options = notificationsSettingSchema.options.map(option => option);
 
+  const handleChange = async (notificationsSetting: NotificationsSetting) => {
+    if (notificationsSetting === notificationsSettingSchema.enum.disabled) {
+      onChange(notificationsSetting);
+
+      return;
+    }
+
+    const permission = await Notification.requestPermission();
+    if (permission === 'granted') {
+      onChange(notificationsSetting);
+    }
+  };
+
   return (
     <div className="flex items-center gap-2">
       <FormLabel className="w-60">{t('settings.notifications.label')}</FormLabel>
-      <Select onValueChange={onChange} value={value}>
+      <Select onValueChange={handleChange} value={value}>
         <FormControl>
           <SelectTrigger>
             <SelectValue />
