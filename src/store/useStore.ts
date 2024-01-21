@@ -1,3 +1,4 @@
+import { bitrateSchema, channelsSchema, codecSchema, sampleRateSchema } from 'schema';
 import { formatFileObject, getSettingsFromStorage } from 'src/utils';
 import { create } from 'zustand';
 import { immer } from 'zustand/middleware/immer';
@@ -7,6 +8,12 @@ const { theme } = getSettingsFromStorage();
 
 export const useStore = create<Store>()(
   immer(set => ({
+    conversionSettings: {
+      codec: codecSchema.enum.default,
+      bitrate: bitrateSchema.enum.default,
+      sampleRate: sampleRateSchema.enum.default,
+      channels: channelsSchema.enum.default,
+    },
     destinationPath: '',
     files: {},
     isConversionRunning: false,
@@ -72,6 +79,11 @@ export const useStore = create<Store>()(
     setTheme: themeSetting => {
       set(state => {
         state.theme = themeSetting;
+      });
+    },
+    setConversionSettings: conversionSettings => {
+      set(state => {
+        state.conversionSettings = conversionSettings;
       });
     },
   })),
