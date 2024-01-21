@@ -82,6 +82,15 @@
       "stopConversion": "Stop conversion",
       "stopConversionTooltip": "Conversion will stop at the end of the file being converted"
     },
+    "notifications": {
+      "onConversionEnd": {
+        "body": "All files have been converted",
+        "title": "Conversion complete"
+      },
+      "onFileConversionEnd": {
+        "title": "File conversion is complete"
+      }
+    },
     "settings": {
       "language": {
         "label": "Language",
