@@ -7,3 +7,4 @@ export const getFilesToConvert = (state: State) =>
 export const getDestinationPath = (state: State) => state.destinationPath;
 export const getIsConversionRunning = (state: State) => state.isConversionRunning;
 export const getTheme = (state: State) => state.theme;
+export const getConversionSettings = (state: State) => state.conversionSettings;

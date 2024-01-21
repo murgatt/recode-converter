@@ -1,8 +1,9 @@
 import type { FfprobeData } from 'fluent-ffmpeg';
-import type { FileStatus, StreamsTitle, StreamsToCopy, VideoFile } from 'schema';
+import type { ConversionSettings, FileStatus, StreamsTitle, StreamsToCopy, VideoFile } from 'schema';
 import type { ThemeSetting } from 'src/schema/settings.schema';
 
 export type State = {
+  conversionSettings: ConversionSettings;
   destinationPath: string;
   files: Record<string, VideoFile>;
   isConversionRunning: boolean;
@@ -13,6 +14,7 @@ export type Actions = {
   addFiles: (files: File[]) => void;
   clearFiles: () => void;
   removeFile: (filePath: string) => void;
+  setConversionSettings: (conversionSettings: ConversionSettings) => void;
   setDestinationPath: (destinationPath: string) => void;
   setFileError: (filePath: string, error: string) => void;
   setFileMetadata: (filePath: string, metadata: FfprobeData) => void;
