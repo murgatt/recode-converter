@@ -8,6 +8,7 @@ export type StreamsToCopy = Record<number, boolean>;
 export type StreamsTitle = Record<number, string>;
 
 export type VideoFile = {
+  error?: string;
   metadata?: FfprobeData;
   name: string;
   path: string;

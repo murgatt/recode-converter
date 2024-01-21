@@ -10,6 +10,7 @@ export const useConversionEvents = () => {
   const setFileProgress = useStore(state => state.setFileProgress);
   const setFileMetadata = useStore(state => state.setFileMetadata);
   const setIsConversionRunning = useStore(state => state.setIsConversionRunning);
+  const setFileError = useStore(state => state.setFileError);
 
   useEffect(() => {
     window.conversion.onConversionEnd(() => {
@@ -27,11 +28,14 @@ export const useConversionEvents = () => {
       setFileStatus(filePath, fileStatusSchema.enum.conversionSuccess);
       showFileConversionEndNotification({ filePath, title: t('notifications.onFileConversionEnd.title') });
     });
-    window.conversion.onFileConversionError((_event, { filePath }) => {
+    window.conversion.onFileConversionError((_event, { filePath, error }) => {
       setFileStatus(filePath, fileStatusSchema.enum.conversionError);
+      setFileError(filePath, error);
+      // eslint-disable-next-line no-console
+      console.error(error);
     });
     window.conversion.onFileMetadata((_event, { filePath, metadata }) => {
       setFileMetadata(filePath, metadata);
     });
-  }, [setIsConversionRunning, setFileMetadata, setFileProgress, setFileStatus, t]);
+  }, [setIsConversionRunning, setFileError, setFileMetadata, setFileProgress, setFileStatus, t]);
 };

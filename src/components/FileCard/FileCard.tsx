@@ -23,7 +23,7 @@ export const FileCard = ({ file, isConversionRunning }: FileCardProps) => {
   const [isStreamTableOpen, setIsStreamTableOpen] = useState(false);
   const toggleStreamTableLabel = isStreamTableOpen ? t('fileList.file.hideStreams') : t('fileList.file.displayStreams');
 
-  const { metadata, name, path, progress, size, status, streamsTitle, streamsToCopy } = file;
+  const { error, metadata, name, path, progress, size, status, streamsTitle, streamsToCopy } = file;
   const formattedFileSize = formatFileSize(size);
 
   const isProgressDisplayed = status === fileStatusSchema.enum.converting && progress > 0;
@@ -47,7 +47,7 @@ export const FileCard = ({ file, isConversionRunning }: FileCardProps) => {
   return (
     <Card className="relative">
       <div className="flex items-center px-6">
-        <FileCardIcon status={status} />
+        <FileCardIcon error={error} status={status} />
         <CardHeader className="grow pb-0">
           <h3 className="title-sm">{name}</h3>
           <CardDescription>{formattedFileSize}</CardDescription>
