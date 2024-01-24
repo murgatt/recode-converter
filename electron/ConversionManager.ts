@@ -36,7 +36,7 @@ export class ConversionManager {
               {
                 onFileConversionEnd: filePath => this.handleFileConversionEnd(filePath),
                 onFileConversionProgress: (filePath, progress) => this.handleFileConversionProgress(filePath, progress),
-                onFileConversionStart: filePath => this.handleFileConversionStart(filePath),
+                onFileConversionStart: (filePath, commandLine) => this.handleFileConversionStart(filePath, commandLine),
                 onFileConversionError: (filePath, error) => this.handleFileConversionError(filePath, error),
               },
             );
@@ -64,8 +64,8 @@ export class ConversionManager {
     });
   }
 
-  handleFileConversionStart(filePath: string) {
-    this.mainWindow.webContents.send('file-conversion-start', { filePath });
+  handleFileConversionStart(filePath: string, ffmpegCommand: string) {
+    this.mainWindow.webContents.send('file-conversion-start', { filePath, ffmpegCommand });
   }
 
   handleFileConversionProgress(filePath: string, progress: number) {

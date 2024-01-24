@@ -57,6 +57,11 @@ export const useStore = create<Store>()(
         state.files[filePath].error = error;
       });
     },
+    setFileFfmpegCommand: (filePath, ffmpegCommand) => {
+      set(state => {
+        state.files[filePath].ffmpegCommand = ffmpegCommand;
+      });
+    },
     setStreamsTitle: (filePath, streamsTitle) => {
       set(state => {
         state.files[filePath].streamsTitle = streamsTitle;

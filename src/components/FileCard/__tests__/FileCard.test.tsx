@@ -1,8 +1,12 @@
 import { render, screen } from '@testing-library/react';
 import { fileStatusSchema } from 'schema';
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { FileCard } from '../FileCard';
 import type { VideoFile } from 'schema';
+
+vi.mock('@formkit/auto-animate/react', () => ({
+  useAutoAnimate: vi.fn().mockReturnValue([]),
+}));
 
 const defaultFile = {
   name: 'matrix.mkv',

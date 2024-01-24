@@ -13,6 +13,7 @@ describe('settings.utils', () => {
         language: languageSettingSchema.enum.auto,
         notifications: notificationsSettingSchema.enum.disabled,
         theme: themeSettingSchema.enum.system,
+        ffmpegCommand: false,
       });
     });
 
@@ -21,6 +22,7 @@ describe('settings.utils', () => {
         language: languageSettingSchema.enum.fr,
         notifications: notificationsSettingSchema.enum.onConversionEnd,
         theme: themeSettingSchema.enum.dark,
+        ffmpegCommand: true,
       };
       localStorage.setItem('recode-converter.settings', JSON.stringify(settings));
 
@@ -28,6 +30,19 @@ describe('settings.utils', () => {
         language: languageSettingSchema.enum.fr,
         notifications: notificationsSettingSchema.enum.onConversionEnd,
         theme: themeSettingSchema.enum.dark,
+        ffmpegCommand: true,
+      });
+    });
+
+    it('should return all settings even if all settings are not defined in local storage', () => {
+      const settings = { language: languageSettingSchema.enum.fr };
+      localStorage.setItem('recode-converter.settings', JSON.stringify(settings));
+
+      expect(getSettingsFromStorage()).toEqual({
+        language: languageSettingSchema.enum.fr,
+        notifications: notificationsSettingSchema.enum.disabled,
+        theme: themeSettingSchema.enum.system,
+        ffmpegCommand: false,
       });
     });
   });

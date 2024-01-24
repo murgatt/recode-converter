@@ -101,6 +101,9 @@
       }
     },
     "settings": {
+      "ffmpegCommand": {
+        "label": "Display spawned FFmpeg command"
+      },
       "language": {
         "label": "Language",
         "values": {
