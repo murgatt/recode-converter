@@ -7,12 +7,13 @@ const defaultSettings: Settings = {
   language: languageSettingSchema.enum.auto,
   notifications: notificationsSettingSchema.enum.disabled,
   theme: themeSettingSchema.enum.system,
+  ffmpegCommand: false,
 };
 
 export function getSettingsFromStorage() {
   const settings = localStorage.getItem(STORAGE_KEY);
 
-  return settings ? (JSON.parse(settings) as Settings) : defaultSettings;
+  return settings ? { ...defaultSettings, ...(JSON.parse(settings) as Settings) } : defaultSettings;
 }
 
 export function saveSettingsToStorage(settings: Settings) {

@@ -11,6 +11,7 @@ export const useConversionEvents = () => {
   const setFileMetadata = useStore(state => state.setFileMetadata);
   const setIsConversionRunning = useStore(state => state.setIsConversionRunning);
   const setFileError = useStore(state => state.setFileError);
+  const setFileFfmpegCommand = useStore(state => state.setFileFfmpegCommand);
 
   useEffect(() => {
     window.conversion.onConversionEnd(() => {
@@ -20,8 +21,9 @@ export const useConversionEvents = () => {
         title: t('notifications.onConversionEnd.title'),
       });
     });
-    window.conversion.onFileConversionStart((_event, { filePath }) => {
+    window.conversion.onFileConversionStart((_event, { ffmpegCommand, filePath }) => {
       setFileStatus(filePath, fileStatusSchema.enum.converting);
+      setFileFfmpegCommand(filePath, ffmpegCommand);
     });
     window.conversion.onFileConversionProgress((_event, { filePath, progress }) => setFileProgress(filePath, progress));
     window.conversion.onFileConversionEnd((_event, { filePath }) => {

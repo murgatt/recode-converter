@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { notificationsSettingSchema } from 'src/schema/settings.schema';
-import { FormControl, FormLabel } from '../ui/Form';
+import { FormControl, FormItem, FormLabel } from '../ui/Form';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/Select';
 import type { NotificationsSetting } from 'src/schema/settings.schema';
 
@@ -27,8 +27,8 @@ export const NotificationsSelect = ({ onChange, value }: NotificationsSelectProp
   };
 
   return (
-    <div className="flex items-center gap-2">
-      <FormLabel className="w-60">{t('settings.notifications.label')}</FormLabel>
+    <FormItem className="flex flex-row items-center gap-2">
+      <FormLabel className="w-72 shrink-0">{t('settings.notifications.label')}</FormLabel>
       <Select onValueChange={handleChange} value={value}>
         <FormControl>
           <SelectTrigger>
@@ -43,6 +43,6 @@ export const NotificationsSelect = ({ onChange, value }: NotificationsSelectProp
           ))}
         </SelectContent>
       </Select>
-    </div>
+    </FormItem>
   );
 };

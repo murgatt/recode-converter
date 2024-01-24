@@ -13,5 +13,6 @@ export const settingsSchema = z.object({
   language: languageSettingSchema,
   notifications: notificationsSettingSchema,
   theme: themeSettingSchema,
+  ffmpegCommand: z.boolean(),
 });
 export type Settings = z.infer<typeof settingsSchema>;
