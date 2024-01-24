@@ -1,12 +1,13 @@
+import { useAutoAnimate } from '@formkit/auto-animate/react';
 import { ChevronDownIcon, ChevronUpIcon, TrashIcon } from 'lucide-react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { fileStatusSchema } from 'schema';
 import { useStore } from 'src/store';
-import { formatFileSize } from 'src/utils';
+import { formatFileSize, getSettingsFromStorage } from 'src/utils';
 import { StreamTable } from '../StreamTable';
 import { Button } from '../ui/Button';
-import { Card, CardDescription, CardHeader } from '../ui/Card';
+import { Card, CardContent, CardDescription, CardHeader } from '../ui/Card';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '../ui/Collapsible';
 import { Progress } from '../ui/Progress';
 import { Tooltip } from '../ui/Tooltip';
@@ -20,15 +21,19 @@ type FileCardProps = {
 
 export const FileCard = ({ file, isConversionRunning }: FileCardProps) => {
   const { t } = useTranslation();
+  const [cardRef] = useAutoAnimate();
+  const settings = getSettingsFromStorage();
+
   const [isStreamTableOpen, setIsStreamTableOpen] = useState(false);
   const toggleStreamTableLabel = isStreamTableOpen ? t('fileList.file.hideStreams') : t('fileList.file.displayStreams');
 
-  const { error, metadata, name, path, progress, size, status, streamsTitle, streamsToCopy } = file;
+  const { error, ffmpegCommand, metadata, name, path, progress, size, status, streamsTitle, streamsToCopy } = file;
   const formattedFileSize = formatFileSize(size);
 
   const isProgressDisplayed = status === fileStatusSchema.enum.converting && progress > 0;
   const isRemoveButtonDisabled = isConversionRunning || status === fileStatusSchema.enum.converting;
   const isStreamEditDisabled = isConversionRunning || status !== fileStatusSchema.enum.imported;
+  const isFfmpegCommandDisplayed = settings.ffmpegCommand && Boolean(ffmpegCommand);
 
   const removeFile = useStore(state => state.removeFile);
   const setStreamsToCopy = useStore(state => state.setStreamsToCopy);
@@ -45,7 +50,7 @@ export const FileCard = ({ file, isConversionRunning }: FileCardProps) => {
   };
 
   return (
-    <Card className="relative">
+    <Card className="relative" ref={cardRef}>
       <div className="flex items-center px-6">
         <FileCardIcon error={error} status={status} />
         <CardHeader className="grow pb-0">
@@ -65,7 +70,12 @@ export const FileCard = ({ file, isConversionRunning }: FileCardProps) => {
           </Button>
         </Tooltip>
       </div>
-      <Collapsible className="mb-1" onOpenChange={setIsStreamTableOpen} open={isStreamTableOpen}>
+      {isFfmpegCommandDisplayed && (
+        <CardContent className="mt-2 pb-0">
+          <div className="code">{ffmpegCommand}</div>
+        </CardContent>
+      )}
+      <Collapsible className="my-1" onOpenChange={setIsStreamTableOpen} open={isStreamTableOpen}>
         <div className="flex justify-center">
           <Tooltip content={toggleStreamTableLabel}>
             <CollapsibleTrigger asChild className="flex justify-center">

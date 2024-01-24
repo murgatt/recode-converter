@@ -101,6 +101,9 @@
       }
     },
     "settings": {
+      "ffmpegCommand": {
+        "label": "Afficher la commande FFmpeg générée"
+      },
       "language": {
         "label": "Langue",
         "values": {
