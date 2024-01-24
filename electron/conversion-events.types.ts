@@ -3,7 +3,10 @@ import type { FfprobeData } from 'fluent-ffmpeg';
 
 export type ConversionEndCallback = (event: IpcRendererEvent) => void;
 
-export type FileConversionStartCallback = (event: IpcRendererEvent, { filePath }: { filePath: string }) => void;
+export type FileConversionStartCallback = (
+  event: IpcRendererEvent,
+  { ffmpegCommand, filePath }: { ffmpegCommand: string; filePath: string },
+) => void;
 
 export type FileConversionProgressCallback = (
   event: IpcRendererEvent,

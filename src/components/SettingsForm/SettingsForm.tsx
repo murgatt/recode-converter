@@ -1,16 +1,15 @@
 import { useSettingsForm } from 'src/hooks/useSettingsForm';
 import { getSettingsFromStorage, saveSettingsToStorage } from 'src/utils';
 import { Form, FormField } from '../ui/Form';
+import { FfmpegCommandSwitch } from './FfmpegCommandSwitch';
 import { LanguageSelect } from './LanguageSelect';
 import { NotificationsSelect } from './NotificationsSelect';
 import { ThemeSelect } from './ThemeSelect';
 import type { Settings } from 'src/schema/settings.schema';
 
 export const SettingsForm = () => {
-  const { language, notifications, theme } = getSettingsFromStorage();
-  const form = useSettingsForm({
-    defaultValues: { language, notifications, theme },
-  });
+  const settings = getSettingsFromStorage();
+  const form = useSettingsForm({ defaultValues: settings });
   const { control, handleSubmit } = form;
 
   const onSubmit = (data: Settings) => {
@@ -34,6 +33,11 @@ export const SettingsForm = () => {
           control={control}
           name="theme"
           render={({ field }) => <ThemeSelect onChange={field.onChange} value={field.value} />}
+        />
+        <FormField
+          control={control}
+          name="ffmpegCommand"
+          render={({ field }) => <FfmpegCommandSwitch checked={field.value} onChange={field.onChange} />}
         />
       </form>
     </Form>

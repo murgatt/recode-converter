@@ -17,6 +17,7 @@ export type Actions = {
   setConversionSettings: (conversionSettings: ConversionSettings) => void;
   setDestinationPath: (destinationPath: string) => void;
   setFileError: (filePath: string, error: string) => void;
+  setFileFfmpegCommand: (filePath: string, ffmpegCommand: string) => void;
   setFileMetadata: (filePath: string, metadata: FfprobeData) => void;
   setFileProgress: (filePath: string, progress: number) => void;
   setFileStatus: (filePath: string, status: FileStatus) => void;
