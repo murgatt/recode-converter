@@ -39,5 +39,5 @@ export const useConversionEvents = () => {
     window.conversion.onFileMetadata((_event, { filePath, metadata }) => {
       setFileMetadata(filePath, metadata);
     });
-  }, [setIsConversionRunning, setFileError, setFileMetadata, setFileProgress, setFileStatus, t]);
+  }, [setFileFfmpegCommand, setIsConversionRunning, setFileError, setFileMetadata, setFileProgress, setFileStatus, t]);
 };
