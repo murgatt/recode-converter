@@ -1,8 +1,8 @@
 /// <reference types="fluent-ffmpeg" />
+import ffmpeg from 'fluent-ffmpeg';
 import type { FfprobeData } from 'fluent-ffmpeg';
 
 const ffprobePath = require('@ffprobe-installer/ffprobe').path;
-const ffmpeg = require('fluent-ffmpeg');
 
 ffmpeg.setFfprobePath(ffprobePath);
 
