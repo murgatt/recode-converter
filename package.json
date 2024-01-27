@@ -8,7 +8,7 @@
     "url": "git+https://github.com/murgatt/recode-converter.git"
   },
   "author": "murgatt",
-  "license": "MIT",
+  "license": "GPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/murgatt/recode-converter/issues"
   },
