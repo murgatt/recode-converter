@@ -4,6 +4,12 @@
       "home": "Convertisseur",
       "settings": "Paramètres"
     },
+    "appVersionModal": {
+      "cancel": "Annuler",
+      "description": "Une nouvelle version de Recode Converter est disponible. Voulez-vous la télécharger ?",
+      "submit": "Télécharger",
+      "title": "Mise à jour disponible"
+    },
     "conversionSettings": {
       "bitrate": {
         "label": "Débit",
