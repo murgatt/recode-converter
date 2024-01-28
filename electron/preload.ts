@@ -1,9 +1,10 @@
 import { contextBridge, ipcRenderer } from 'electron';
-import type { IConversion } from './electron-env';
+import type { IConversion, IElectron } from './electron-env';
 
-contextBridge.exposeInMainWorld('dialog', {
+contextBridge.exposeInMainWorld('electron', {
   openDirectory: () => ipcRenderer.invoke('dialog:openDirectory'),
-});
+  openExternalLink: url => ipcRenderer.invoke('shell:openExternalLink', url),
+} as IElectron);
 
 contextBridge.exposeInMainWorld('conversion', {
   getMetadata: ({ filePath }) => ipcRenderer.invoke('get-metadata', { filePath }),

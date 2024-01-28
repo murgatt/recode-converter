@@ -8,8 +8,9 @@ import type {
 } from './conversion-events.types';
 import type { ConversionSettings, VideoFile } from '../schema';
 
-export interface IDialog {
+export interface IElectron {
   openDirectory: () => Promise<string>;
+  openExternalLink: (url: string) => Promise<void>;
 }
 
 export interface IConversion {
@@ -35,6 +36,6 @@ export interface IConversion {
 declare global {
   interface Window {
     conversion: IConversion;
-    dialog: IDialog;
+    electron: IElectron;
   }
 }

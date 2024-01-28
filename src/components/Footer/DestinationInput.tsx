@@ -30,7 +30,7 @@ export const DestinationInput = ({ isDisabled }: DestinationInputProps) => {
   }, [destinationPath, files, t]);
 
   const handleOpenDirectory = async () => {
-    const newDestinationPath = await window.dialog.openDirectory();
+    const newDestinationPath = await window.electron.openDirectory();
     setDestinationPath(newDestinationPath);
   };
 
