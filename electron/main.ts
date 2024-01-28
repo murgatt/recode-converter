@@ -1,7 +1,7 @@
 import path from 'node:path';
 import { app, BrowserWindow, ipcMain } from 'electron';
 import { ConversionManager } from './ConversionManager';
-import { handleOpenDirectory } from './dialog';
+import { handleOpenDirectory, handleOpenExternalLink } from './electron';
 
 const DIST = path.join(__dirname, '../dist');
 const VITE_PUBLIC = app.isPackaged ? DIST : path.join(DIST, '../public');
@@ -48,5 +48,6 @@ app.on('activate', () => {
 
 app.whenReady().then(() => {
   ipcMain.handle('dialog:openDirectory', handleOpenDirectory);
+  ipcMain.handle('shell:openExternalLink', (_event, url: string) => handleOpenExternalLink(url));
   createWindow();
 });

@@ -1,5 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import { AppMenu } from './components/AppMenu';
+import { UpdateAvailableModal } from './components/UpdateAvailableModal';
 import { useConversionEvents } from './hooks/useConversionEvents';
 import { useTheme } from './hooks/useTheme';
 
@@ -13,6 +14,7 @@ export const App = () => {
       <main className="grow">
         <Outlet />
       </main>
+      <UpdateAvailableModal />
     </div>
   );
 };

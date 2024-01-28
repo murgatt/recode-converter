@@ -1,4 +1,4 @@
-import { dialog } from 'electron';
+import { dialog, shell } from 'electron';
 
 export async function handleOpenDirectory() {
   const { canceled, filePaths } = await dialog.showOpenDialog({ properties: ['openDirectory'] });
@@ -8,4 +8,8 @@ export async function handleOpenDirectory() {
   }
 
   return filePaths[0];
+}
+
+export async function handleOpenExternalLink(url: string) {
+  return shell.openExternal(url);
 }
