@@ -13,7 +13,7 @@ let conversionManager: ConversionManager;
 
 function createWindow() {
   const mainWindow = new BrowserWindow({
-    icon: path.join(VITE_PUBLIC, 'electron-vite.svg'),
+    icon: path.join(VITE_PUBLIC, 'icon.png'),
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },
