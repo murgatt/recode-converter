@@ -51,20 +51,30 @@ export function getOutputPath(inputPath: string, destinationPath: string) {
   return outputPath;
 }
 
-export function getIgnoredStreamsOptions(streamsToCopy: StreamsToCopy) {
+export function getIgnoredStreamsIndex(streamsToCopy: StreamsToCopy) {
   return Object.entries(streamsToCopy)
     .filter(([, shouldCopy]) => !shouldCopy)
-    .map(([streamIndex]) => `-map -0:${streamIndex}`);
+    .map(([streamIndex]) => streamIndex);
 }
 
-export function getStreamsTitleOptions(streamsTitle: StreamsTitle) {
+export function getIgnoredStreamsOptions(ignoredStreamsIndex: string[]) {
+  return ignoredStreamsIndex.map(([streamIndex]) => `-map -0:${streamIndex}`);
+}
+
+export function getStreamsTitleOptions(streamsTitle: StreamsTitle, ignoredStreamsIndex: string[]) {
   const options: string[] = [];
 
+  const getNumberOfIgnoredStreamsBefore = (streamIndex: string) => {
+    return ignoredStreamsIndex.filter(ignoredStreamIndex => ignoredStreamIndex < streamIndex).length;
+  };
+
   Object.entries(streamsTitle).forEach(([streamIndex, streamTitle]) => {
+    const numberOfIgnoredStreamsBefore = getNumberOfIgnoredStreamsBefore(streamIndex);
+    const outputStreamIndex = Number(streamIndex) - numberOfIgnoredStreamsBefore;
     // We need 2 entries (1 for flag, 1 for value) for each stream to ignore otherwise ffmpeg command throws an error
     // This why we don't use a map and we need to push 2 entries even if the final command is identical
-    options.push(`-metadata:s:${streamIndex}`, `title=${streamTitle}`);
+    options.push(`-metadata:s:${outputStreamIndex}`, `title=${streamTitle}`);
   });
 
-  return options;
+  return options.length > 0 ? options : [[]]; // Workaround to avoid error when there is spaces in stream title
 }
