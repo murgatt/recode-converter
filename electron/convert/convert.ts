@@ -4,7 +4,7 @@ import { getIgnoredStreamsOptions, getOutputOptions, getOutputPath, getStreamsTi
 import type { ConversionSettings, VideoFile } from '../../schema';
 import type { ProgressInfo } from 'electron-builder';
 
-const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
+const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path.replace('app.asar', 'app.asar.unpacked');
 
 ffmpeg.setFfmpegPath(ffmpegPath);
 
