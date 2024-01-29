@@ -6,6 +6,10 @@
   "appId": "YourAppID",
   "asar": true,
   "productName": "YourAppName",
+  "publish": {
+    provider: "github",
+    releaseType: "release"
+  },
   "directories": {
     "output": "release/${version}"
   },
