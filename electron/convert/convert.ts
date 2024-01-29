@@ -1,6 +1,12 @@
 /// <reference types="fluent-ffmpeg" />
 import ffmpeg from 'fluent-ffmpeg';
-import { getIgnoredStreamsOptions, getOutputOptions, getOutputPath, getStreamsTitleOptions } from './convert.utils';
+import {
+  getIgnoredStreamsIndex,
+  getIgnoredStreamsOptions,
+  getOutputOptions,
+  getOutputPath,
+  getStreamsTitleOptions,
+} from './convert.utils';
 import type { ConversionSettings, VideoFile } from '../../schema';
 import type { ProgressInfo } from 'electron-builder';
 
@@ -28,15 +34,17 @@ export function convert(
   const inputPath = file.path;
   const outputPath = getOutputPath(inputPath, destinationPath);
   const outputOptions = getOutputOptions(conversionSettings);
-  const ignoredStreamsOptions = getIgnoredStreamsOptions(file.streamsToCopy);
-  const streamsTitleOptions = getStreamsTitleOptions(file.streamsTitle);
+  const ignoredStreamsIndex = getIgnoredStreamsIndex(file.streamsToCopy);
+  const ignoredStreamsOptions = getIgnoredStreamsOptions(ignoredStreamsIndex);
+  const streamsTitleOptions = getStreamsTitleOptions(file.streamsTitle, ignoredStreamsIndex);
 
   const command = ffmpeg()
     .input(inputPath)
     .output(outputPath)
     .outputOptions(outputOptions)
     .outputOptions(ignoredStreamsOptions)
-    .outputOptions(streamsTitleOptions);
+    // @ts-ignore - Workaround to avoid error when there is spaces in stream title
+    .outputOptions(...streamsTitleOptions);
 
   return new Promise<void>((resolve, reject) => {
     command
