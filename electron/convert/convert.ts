@@ -1,10 +1,10 @@
 /// <reference types="fluent-ffmpeg" />
+import ffmpeg from 'fluent-ffmpeg';
 import { getIgnoredStreamsOptions, getOutputOptions, getOutputPath, getStreamsTitleOptions } from './convert.utils';
 import type { ConversionSettings, VideoFile } from '../../schema';
 import type { ProgressInfo } from 'electron-builder';
 
-const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
-const ffmpeg = require('fluent-ffmpeg');
+const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path.replace('app.asar', 'app.asar.unpacked');
 
 ffmpeg.setFfmpegPath(ffmpegPath);
 
