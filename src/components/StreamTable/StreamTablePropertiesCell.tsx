@@ -8,12 +8,13 @@ type StreamTablePropertiesCellProps = {
 export const StreamTablePropertiesCell = ({ stream }: StreamTablePropertiesCellProps) => {
   const { t } = useTranslation();
   const { bit_rate, channels, channel_layout, codec_type, height, sample_rate, width } = stream;
+  const isBitrateDisplayed = Boolean(bit_rate) && bit_rate !== 'N/A'; // TODO: test
 
   if (codec_type === 'audio') {
     return (
       <div>
         <p>{t('streams.properties.channels', { count: channels, layout: channel_layout })}</p>
-        {bit_rate && <p>{Number(bit_rate) / 1000} kbps</p>}
+        {isBitrateDisplayed && <p>{Number(bit_rate) / 1000} kbps</p>}
         <p>{sample_rate} Hz</p>
       </div>
     );
