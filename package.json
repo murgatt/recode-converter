@@ -39,6 +39,7 @@
     "@radix-ui/react-slot": "1.0.2",
     "@radix-ui/react-switch": "1.0.3",
     "@radix-ui/react-tooltip": "1.0.7",
+    "@rollup/plugin-alias": "5.1.0",
     "class-variance-authority": "0.7.0",
     "clsx": "2.0.0",
     "fluent-ffmpeg": "2.1.2",
