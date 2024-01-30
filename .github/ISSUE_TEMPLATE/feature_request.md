@@ -1,7 +1,6 @@
 ---
 name: Feature request
 about: Request a new feature or suggest changes
-title: ''
 labels: enhancement
 assignees: murgatt
 
