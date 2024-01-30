@@ -35,7 +35,7 @@ The application is built with Electron and React and is using FFmpeg.
 
 ### Requirements
 
-Make sure to have [Node.js](https://nodejs.org/en) or later & [pnpm](https://pnpm.io/fr/) 8.x installed.
+Make sure to have [Node.js](https://nodejs.org/en) 18 or later & [pnpm](https://pnpm.io/fr/) 8.x installed.
 
 ### Installation
 
