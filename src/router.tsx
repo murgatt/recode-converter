@@ -1,5 +1,6 @@
 import { createHashRouter } from 'react-router-dom';
 import { App } from './App';
+import { About } from './routes/About';
 import { Converter } from './routes/Converter';
 import { Settings } from './routes/Settings';
 
@@ -14,6 +15,10 @@ export const router = createHashRouter([
       {
         path: '/settings',
         element: <Settings />,
+      },
+      {
+        path: '/about',
+        element: <About />,
       },
     ],
   },

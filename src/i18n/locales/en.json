@@ -1,6 +1,13 @@
 {
   "translation": {
+    "about": {
+      "appIconAlt": "Recode Converter icon",
+      "developedBy": "Developed by",
+      "githubLabel": "GitHub repository",
+      "websiteLabel": "Website"
+    },
     "appMenu": {
+      "about": "About",
       "home": "Converter",
       "settings": "Settings"
     },

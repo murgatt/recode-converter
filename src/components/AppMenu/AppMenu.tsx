@@ -1,4 +1,4 @@
-import { HomeIcon, SettingsIcon } from 'lucide-react';
+import { HelpCircleIcon, HomeIcon, SettingsIcon } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { NavigationMenu, NavigationMenuList } from '../ui/NavigationMenu';
 import { AppMenuItem } from './AppMenuItem';
@@ -14,6 +14,9 @@ export const AppMenu = () => {
         </AppMenuItem>
       </NavigationMenuList>
       <NavigationMenuList className="flex-col">
+        <AppMenuItem label={t('appMenu.about')} to="/about">
+          <HelpCircleIcon size="16" />
+        </AppMenuItem>
         <AppMenuItem label={t('appMenu.settings')} to="/settings">
           <SettingsIcon size="16" />
         </AppMenuItem>
