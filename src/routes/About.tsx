@@ -11,7 +11,7 @@ export const About = () => {
 
   return (
     <section className="flex h-screen flex-col items-center overflow-y-auto p-6">
-      <img alt={t('about.appIconAlt')} className="w-48 max-w-full" src="/icon.png" />
+      <img alt={t('about.appIconAlt')} className="w-48 max-w-full" src="./icon.png" />
       <div className="flex w-full flex-col items-center gap-3">
         <h1 className="title-lg w-full text-center">Recode Converter</h1>
         <p className="caption-sm">v{version}</p>
