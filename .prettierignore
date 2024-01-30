@@ -1,3 +1,4 @@
 .github
 electron-builder.json5
 pnpm-lock.yaml
+docs
