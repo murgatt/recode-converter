@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { APP_WEBSITE_URL } from 'src/constants';
 import { version } from '../../package.json';
 import {
   AlertDialog,
@@ -13,7 +14,6 @@ import {
 } from './ui/AlertDialog';
 
 const GITHUB_API_URL = 'https://api.github.com/repos/murgatt/recode-converter/releases/latest';
-const APP_WEBSITE_URL = 'https://murgatt.github.io/recode-converter/';
 
 export const UpdateAvailableModal = () => {
   const { t } = useTranslation();

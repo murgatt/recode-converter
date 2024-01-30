@@ -1,6 +1,13 @@
 {
   "translation": {
+    "about": {
+      "appIconAlt": "Icône de Recode Converter",
+      "developedBy": "Développé par",
+      "githubLabel": "Dépôt GitHub",
+      "websiteLabel": "Site web-"
+    },
     "appMenu": {
+      "about": "A propos",
       "home": "Convertisseur",
       "settings": "Paramètres"
     },
