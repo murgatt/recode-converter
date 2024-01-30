@@ -14,6 +14,8 @@ let conversionManager: ConversionManager;
 function createWindow() {
   const mainWindow = new BrowserWindow({
     icon: path.join(VITE_PUBLIC, 'icon.png'),
+    minWidth: 768,
+    minHeight: 500,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },
