@@ -1,3 +1,4 @@
+import { trackEvent } from '@aptabase/electron/renderer';
 import { FolderIcon } from 'lucide-react';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -32,6 +33,9 @@ export const DestinationInput = ({ isDisabled }: DestinationInputProps) => {
   const handleOpenDirectory = async () => {
     const newDestinationPath = await window.electron.openDirectory();
     setDestinationPath(newDestinationPath);
+    if (newDestinationPath) {
+      trackEvent('set_destination_path');
+    }
   };
 
   return (

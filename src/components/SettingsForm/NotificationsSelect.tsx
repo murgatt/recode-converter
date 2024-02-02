@@ -1,3 +1,4 @@
+import { trackEvent } from '@aptabase/electron/renderer';
 import { useTranslation } from 'react-i18next';
 import { notificationsSettingSchema } from 'src/schema/settings.schema';
 import { FormControl, FormItem, FormLabel } from '../ui/Form';
@@ -14,16 +15,18 @@ export const NotificationsSelect = ({ onChange, value }: NotificationsSelectProp
   const options = notificationsSettingSchema.options.map(option => option);
 
   const handleChange = async (notificationsSetting: NotificationsSetting) => {
-    if (notificationsSetting === notificationsSettingSchema.enum.disabled) {
-      onChange(notificationsSetting);
+    if (notificationsSetting !== notificationsSettingSchema.enum.disabled) {
+      const permission = await Notification.requestPermission();
 
-      return;
+      if (permission !== 'granted') {
+        trackEvent('notification_not_granted', { permission });
+
+        return;
+      }
     }
 
-    const permission = await Notification.requestPermission();
-    if (permission === 'granted') {
-      onChange(notificationsSetting);
-    }
+    onChange(notificationsSetting);
+    trackEvent('setting_change', { notifications: notificationsSetting });
   };
 
   return (

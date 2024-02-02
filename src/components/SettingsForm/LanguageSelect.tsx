@@ -1,3 +1,4 @@
+import { trackEvent } from '@aptabase/electron/renderer';
 import { useTranslation } from 'react-i18next';
 import i18n from 'src/i18n';
 import { languageSettingSchema } from 'src/schema/settings.schema';
@@ -19,6 +20,7 @@ export const LanguageSelect = ({ onChange, value }: LanguageSelectProps) => {
     onChange(languageSetting);
     const language = getLanguageFromLanguageSetting(languageSetting);
     await i18n.changeLanguage(language);
+    trackEvent('setting_change', { language: languageSetting });
   };
 
   return (

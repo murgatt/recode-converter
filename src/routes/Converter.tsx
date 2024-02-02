@@ -1,3 +1,4 @@
+import { trackEvent } from '@aptabase/electron/renderer';
 import { ConversionSettingsForm } from 'src/components/ConversionSettingsForm';
 import { FileImport } from 'src/components/FileImport';
 import { FileList } from 'src/components/FileList';
@@ -18,9 +19,13 @@ export const Converter = () => {
   const handleStartConversion = (conversionSettings: ConversionSettings) => {
     setIsConversionRunning(true);
     window.conversion.startConversion({ conversionSettings, destinationPath, files: filesToConvert });
+    trackEvent('conversion_start', { files: files.length, ...conversionSettings });
   };
 
-  const handleStopConversion = () => window.conversion.stopConversion();
+  const handleStopConversion = () => {
+    window.conversion.stopConversion();
+    trackEvent('conversion_stop');
+  };
 
   return (
     <div className="flex h-full flex-col">

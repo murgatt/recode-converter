@@ -1,4 +1,7 @@
+import { trackEvent } from '@aptabase/electron/renderer';
+import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { debounce } from 'src/utils';
 import { Table, TableBody, TableHead, TableHeader, TableRow } from '../ui/Table';
 import { StreamTableRow } from './StreamTableRow';
 import type { FfprobeStream } from 'fluent-ffmpeg';
@@ -22,13 +25,16 @@ export const StreamTable = ({
   streamsToCopy,
 }: StreamTableProps) => {
   const { t } = useTranslation();
+  const trackEventDebounced = useMemo(() => debounce(trackEvent, 1000), []);
 
   const handleStreamCheckedChange = (streamIndex: number) => (checked: boolean) => {
     onStreamCheckedChange(streamIndex, checked);
+    trackEvent('stream_toggle', { checked });
   };
 
   const handleStreamTitleChange = (streamIndex: number) => (title: string) => {
     onStreamTitleChange(streamIndex, title);
+    trackEventDebounced('stream_title_change');
   };
 
   return (
