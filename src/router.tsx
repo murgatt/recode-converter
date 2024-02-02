@@ -1,3 +1,4 @@
+import { trackEvent } from '@aptabase/electron/renderer';
 import { createHashRouter } from 'react-router-dom';
 import { App } from './App';
 import { About } from './routes/About';
@@ -23,3 +24,5 @@ export const router = createHashRouter([
     ],
   },
 ]);
+
+router.subscribe(state => trackEvent('page_view', { path: state.location.pathname }));

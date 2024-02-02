@@ -1,3 +1,4 @@
+import { trackEvent } from '@aptabase/electron/renderer';
 import { useAutoAnimate } from '@formkit/auto-animate/react';
 import { ChevronDownIcon, ChevronUpIcon, TrashIcon } from 'lucide-react';
 import { useState } from 'react';
@@ -39,6 +40,11 @@ export const FileCard = ({ file, isConversionRunning }: FileCardProps) => {
   const setStreamsToCopy = useStore(state => state.setStreamsToCopy);
   const setStreamsTitle = useStore(state => state.setStreamsTitle);
 
+  const handleStreamTableToggle = (open: boolean) => {
+    setIsStreamTableOpen(open);
+    trackEvent('stream_table_toggle', { open });
+  };
+
   const handleStreamCheckedChange = (streamIndex: number, checked: boolean) => {
     const newStreamsToCopy = { ...streamsToCopy, [streamIndex]: checked };
     setStreamsToCopy(path, newStreamsToCopy);
@@ -75,7 +81,7 @@ export const FileCard = ({ file, isConversionRunning }: FileCardProps) => {
           <div className="code">{ffmpegCommand}</div>
         </CardContent>
       )}
-      <Collapsible className="my-1" onOpenChange={setIsStreamTableOpen} open={isStreamTableOpen}>
+      <Collapsible className="my-1" onOpenChange={handleStreamTableToggle} open={isStreamTableOpen}>
         <div className="flex justify-center">
           <Tooltip content={toggleStreamTableLabel}>
             <CollapsibleTrigger asChild className="flex justify-center">

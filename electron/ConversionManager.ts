@@ -1,3 +1,4 @@
+import { trackEvent } from '@aptabase/electron/main';
 import { ipcMain } from 'electron';
 import { convert } from './convert';
 import { getMetadata } from './get-metadata';
@@ -74,9 +75,11 @@ export class ConversionManager {
 
   handleFileConversionEnd(filePath: string) {
     this.mainWindow.webContents.send('file-conversion-end', { filePath });
+    trackEvent('file_conversion_end');
   }
 
   handleFileConversionError(filePath: string, error: string) {
     this.mainWindow.webContents.send('file-conversion-error', { filePath, error });
+    trackEvent('file_conversion_error', { error });
   }
 }
