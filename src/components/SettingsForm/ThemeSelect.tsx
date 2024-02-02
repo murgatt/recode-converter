@@ -1,3 +1,4 @@
+import { trackEvent } from '@aptabase/electron/renderer';
 import { useTranslation } from 'react-i18next';
 import { themeSettingSchema } from 'src/schema/settings.schema';
 import { useStore } from 'src/store';
@@ -18,6 +19,7 @@ export const ThemeSelect = ({ onChange, value }: ThemeSelectProps) => {
   const handleChange = (theme: ThemeSetting) => {
     onChange(theme);
     setTheme(theme);
+    trackEvent('setting_change', { theme });
   };
 
   return (

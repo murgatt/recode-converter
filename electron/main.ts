@@ -1,4 +1,5 @@
 import path from 'node:path';
+import { initialize, trackEvent } from '@aptabase/electron/main';
 import { app, BrowserWindow, ipcMain } from 'electron';
 import { ConversionManager } from './ConversionManager';
 import { handleOpenDirectory, handleOpenExternalLink } from './electron';
@@ -10,6 +11,8 @@ const VITE_PUBLIC = app.isPackaged ? DIST : path.join(DIST, '../public');
 const VITE_DEV_SERVER_URL = process.env['VITE_DEV_SERVER_URL'];
 
 let conversionManager: ConversionManager;
+
+initialize('A-EU-7747122999');
 
 function createWindow() {
   const mainWindow = new BrowserWindow({
@@ -49,6 +52,8 @@ app.on('activate', () => {
 });
 
 app.whenReady().then(() => {
+  trackEvent('app_started');
+  trackEvent('page_view', { path: '/' });
   ipcMain.handle('dialog:openDirectory', handleOpenDirectory);
   ipcMain.handle('shell:openExternalLink', (_event, url: string) => handleOpenExternalLink(url));
   createWindow();
