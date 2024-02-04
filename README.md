@@ -16,18 +16,19 @@
 
 **You can download the app on the website:**
 
-[**https://murgatt.github.io/recode-converter/**](https://murgatt.github.io/recode-converter/)
+[**recode-converter.app**](https://www.recode-converter.app/)
 
 ## Features
 
 - Convert audio codecs
 - Convert subtitle
-- Convert multiple files
+- Convert multiple files at the same time
 - Conversion settings
 - View, edit & remove streams
 - Light & dark themes
 - Conversion notification
 - Application settings
+- Display spawned FFmpeg command
 
 ## Development
 
