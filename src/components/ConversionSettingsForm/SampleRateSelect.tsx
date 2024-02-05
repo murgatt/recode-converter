@@ -16,6 +16,7 @@ const sampleRateByCodec: Record<Codec, SampleRate[]> = {
   aac: ['default', '8000', '22050', '32000', '44100', '48000', '96000'],
   ac3: ['default', '8000', '22050', '32000', '44100', '48000'],
   eac3: ['default', '32000', '44100', '48000'],
+  libopus: ['default', '8000', '12000', '16000', '24000', '48000'],
 };
 
 export const SampleRateSelect = ({ codec, isDisabled, onChange, value }: SampleRateSelectProps) => {

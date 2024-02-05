@@ -59,7 +59,8 @@
           "default": "No re-encoding",
           "aac": "AAC",
           "ac3": "AC3",
-          "eac3": "EAC3"
+          "eac3": "EAC3",
+          "libopus": "Opus"
         }
       },
       "sampleRate": {
@@ -67,7 +68,10 @@
         "values": {
           "default": "Same as source",
           "8000": "8000 Hz",
+          "12000": "12000 Hz",
+          "16000": "16000 Hz",
           "22050": "22050 Hz",
+          "24000": "24000 Hz",
           "32000": "32000 Hz",
           "44100": "44100 Hz",
           "48000": "48000 Hz",

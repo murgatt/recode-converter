@@ -16,6 +16,7 @@ const bitrateByCodec: Record<Codec, Bitrate[]> = {
   aac: ['default', '32k', '64k', '96k', '128k', '192k', '256k', '320k'],
   ac3: ['default', '128k', '192k', '256k', '320k', '384k', '448k', '512k', '640k'],
   eac3: ['default', '192k', '320k', '448k', '640k', '1024k', '2048k', '4096k'],
+  libopus: ['default', '32k', '64k', '96k', '128k', '192k', '256k', '320k', '448k'],
 };
 
 export const BitrateSelect = ({ codec, isDisabled, value, onChange }: BitrateSelectProps) => {

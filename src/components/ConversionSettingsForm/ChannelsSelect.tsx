@@ -16,6 +16,7 @@ const channelsByCodec: Record<Codec, Channels[]> = {
   aac: ['default', '1', '2', '3', '4', '5', '6', '7', '8'],
   ac3: ['default', '1', '2', '3', '4', '5', '6'],
   eac3: ['default', '1', '2', '3', '4', '5', '6'],
+  libopus: ['default', '1', '2', '3', '4', '5', '6', '7', '8'],
 };
 
 export const ChannelsSelect = ({ isDisabled, codec, onChange, value }: ChannelsSelectProps) => {

@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const codecSchema = z.enum(['default', 'aac', 'ac3', 'eac3']);
+export const codecSchema = z.enum(['default', 'aac', 'ac3', 'eac3', 'libopus']);
 export type Codec = z.infer<typeof codecSchema>;
 
 export const bitrateSchema = z.enum([
@@ -22,7 +22,18 @@ export const bitrateSchema = z.enum([
 ]);
 export type Bitrate = z.infer<typeof bitrateSchema>;
 
-export const sampleRateSchema = z.enum(['default', '8000', '22050', '32000', '44100', '48000', '96000']);
+export const sampleRateSchema = z.enum([
+  'default',
+  '8000',
+  '12000',
+  '16000',
+  '22050',
+  '24000',
+  '32000',
+  '44100',
+  '48000',
+  '96000',
+]);
 export type SampleRate = z.infer<typeof sampleRateSchema>;
 
 export const channelsSchema = z.enum(['default', '1', '2', '3', '4', '5', '6', '7', '8']);
