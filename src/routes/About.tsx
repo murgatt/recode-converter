@@ -1,9 +1,9 @@
-import { GithubIcon, LinkIcon } from 'lucide-react';
+import { CoffeeIcon, GithubIcon, LinkIcon } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { ExternalLink } from 'src/components/ExternalLink';
 import { Button } from 'src/components/ui/Button';
 import { Tooltip } from 'src/components/ui/Tooltip';
-import { APP_WEBSITE_URL, AUTHOR_GITHUB_URL, GITHUB_REPOSITORY_URL } from 'src/constants';
+import { APP_WEBSITE_URL, AUTHOR_GITHUB_URL, COFFEE_URL, GITHUB_REPOSITORY_URL } from 'src/constants';
 import { version } from '../../package.json';
 
 export const About = () => {
@@ -33,6 +33,13 @@ export const About = () => {
             <Button aria-label={t('about.websiteLabel')} asChild size="icon" variant="ghost">
               <ExternalLink href={APP_WEBSITE_URL}>
                 <LinkIcon size="16" />
+              </ExternalLink>
+            </Button>
+          </Tooltip>
+          <Tooltip content={t('about.buyMeACoffee')} position="bottom">
+            <Button aria-label={t('about.buyMeACoffee')} asChild size="icon" variant="ghost">
+              <ExternalLink href={COFFEE_URL}>
+                <CoffeeIcon size="16" />
               </ExternalLink>
             </Button>
           </Tooltip>
