@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/murgatt/recode-converter/compare/v2.0.0...v2.0.1) (2024-02-06)
+
+
+### Bug Fixes
+
+* **v2:** fix default destination path on Windows ([#134](https://github.com/murgatt/recode-converter/issues/134)) ([4fa414f](https://github.com/murgatt/recode-converter/commit/4fa414f4510ef1efb04adb8710a0f52327365f1f))
+
 ## [2.0.0](https://github.com/murgatt/recode-converter/compare/v1.2.0...v2.0.0) (2024-02-06)
 
 
