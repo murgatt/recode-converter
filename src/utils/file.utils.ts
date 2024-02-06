@@ -16,7 +16,10 @@ export function formatFileSize(fileSize: number): string {
 }
 
 export function getDirectoryPathFromFile(file: VideoFile) {
-  return file.path.split('/').slice(0, -1).join('/');
+  // @ts-ignore userAgentData is experimental, TypeScript does not have the type declarations
+  const pathSeparator = navigator.userAgentData.platform === 'Windows' ? '\\' : '/';
+
+  return file.path.split(pathSeparator).slice(0, -1).join(pathSeparator);
 }
 
 export function areFilesFromSameDirectory(files: VideoFile[]) {
