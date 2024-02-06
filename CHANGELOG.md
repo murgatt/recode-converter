@@ -1,5 +1,45 @@
 # Changelog
 
+## [2.0.0](https://github.com/murgatt/recode-converter/compare/v1.2.0...v2.0.0) (2024-02-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* **v2:** init new app from scratch
+
+### Features
+
+* **v2:** add about page ([#128](https://github.com/murgatt/recode-converter/issues/128)) ([5bcfc35](https://github.com/murgatt/recode-converter/commit/5bcfc35a43da3a224137aecd565c9b1a41b10698))
+* **v2:** add opus codec support ([#133](https://github.com/murgatt/recode-converter/issues/133)) ([ae27507](https://github.com/murgatt/recode-converter/commit/ae275077a45a6b2f917ad7783f5d5cbf36504479))
+* **v2:** analytics with Aptabase ([#129](https://github.com/murgatt/recode-converter/issues/129)) ([2a74fec](https://github.com/murgatt/recode-converter/commit/2a74fec156b4379aeda023e5e627b51b8798c2ef))
+* **v2:** animate file list ([#109](https://github.com/murgatt/recode-converter/issues/109)) ([435f6f7](https://github.com/murgatt/recode-converter/commit/435f6f7b31ac684ba5d6ae05a72ea157feb1a6a1))
+* **v2:** coffee ([dd4767d](https://github.com/murgatt/recode-converter/commit/dd4767d011ce3ae9e162e8d2a950c55010c6ed88))
+* **v2:** conversion settings form ([#105](https://github.com/murgatt/recode-converter/issues/105)) ([6f1423f](https://github.com/murgatt/recode-converter/commit/6f1423f92b40e1d9fb8e003c2de12c92a5c6395a))
+* **v2:** convert with ffmpeg ([#110](https://github.com/murgatt/recode-converter/issues/110)) ([e498fbc](https://github.com/murgatt/recode-converter/commit/e498fbc0b810cd1b06381aebac1b085e6196d877))
+* **v2:** destination input ([#107](https://github.com/murgatt/recode-converter/issues/107)) ([d8b8286](https://github.com/murgatt/recode-converter/commit/d8b82868c70469c3aa5bc3b174a9d7ddf11fad64))
+* **v2:** disable states during conversion ([#115](https://github.com/murgatt/recode-converter/issues/115)) ([13e636d](https://github.com/murgatt/recode-converter/commit/13e636d52cf631462f3a27adcf637ede7673af51))
+* **v2:** display conversion error ([#118](https://github.com/murgatt/recode-converter/issues/118)) ([64d0763](https://github.com/murgatt/recode-converter/commit/64d0763c6cc5b73ab3db2fe82e2bd64b7184a691))
+* **v2:** display ffmpeg command ([#121](https://github.com/murgatt/recode-converter/issues/121)) ([9935dc5](https://github.com/murgatt/recode-converter/commit/9935dc5c238ae0673e247c152f98df2007caa25c))
+* **v2:** edit streams ([#114](https://github.com/murgatt/recode-converter/issues/114)) ([a179311](https://github.com/murgatt/recode-converter/commit/a179311eaa6abcedc9e076bffae311950a46ff87))
+* **v2:** file list ([#103](https://github.com/murgatt/recode-converter/issues/103)) ([22f6fc6](https://github.com/murgatt/recode-converter/commit/22f6fc6403a619180216c978b6e101e28750bb8d))
+* **v2:** get file metadata ([#113](https://github.com/murgatt/recode-converter/issues/113)) ([c730294](https://github.com/murgatt/recode-converter/commit/c7302942a15a42de2d597ccd7c50478d256556ad))
+* **v2:** init v2 ([69e6a7a](https://github.com/murgatt/recode-converter/commit/69e6a7a3cba6e19e0d7e36d81614ea1408010aed))
+* **v2:** main layout ([#102](https://github.com/murgatt/recode-converter/issues/102)) ([fe1b031](https://github.com/murgatt/recode-converter/commit/fe1b031a8f9145ca943bd85ac0c42ffcc61d8c1a))
+* **v2:** notifications ([#117](https://github.com/murgatt/recode-converter/issues/117)) ([34ca96d](https://github.com/murgatt/recode-converter/commit/34ca96d7d1b2ef7299d5b1b9632b7e88247e199d))
+* **v2:** persist form data ([#119](https://github.com/murgatt/recode-converter/issues/119)) ([59e3088](https://github.com/murgatt/recode-converter/commit/59e30889014676ca4747f7d5e3ea10199d818c5c))
+* **v2:** settings ([#116](https://github.com/murgatt/recode-converter/issues/116)) ([3604a93](https://github.com/murgatt/recode-converter/commit/3604a93b9fcb9348073adb6aa618c6d69d396d3c))
+* **v2:** start conversion & manage conversion progress ([#108](https://github.com/murgatt/recode-converter/issues/108)) ([f0de396](https://github.com/murgatt/recode-converter/commit/f0de3966d5c0197a23aecbd8e1baee94406e31d0))
+* **v2:** stop conversion ([#112](https://github.com/murgatt/recode-converter/issues/112)) ([9e731c1](https://github.com/murgatt/recode-converter/commit/9e731c10b7f5532a21b1871bbd5529fe87e45f7e))
+* **v2:** subtitle conversion ([#120](https://github.com/murgatt/recode-converter/issues/120)) ([f051b9e](https://github.com/murgatt/recode-converter/commit/f051b9e8a5f198847c846c42e45280eaced40afb))
+* **v2:** update available modal ([#123](https://github.com/murgatt/recode-converter/issues/123)) ([3843889](https://github.com/murgatt/recode-converter/commit/384388989f634275a44162090d4190cb905b2b30))
+
+
+### Bug Fixes
+
+* clear file list during conversion ([afc62d4](https://github.com/murgatt/recode-converter/commit/afc62d44134e4237765637e095f3ce28f745b8c7))
+* **v2:** minor fixes ([#125](https://github.com/murgatt/recode-converter/issues/125)) ([fa587b1](https://github.com/murgatt/recode-converter/commit/fa587b127eda0a2e81b11f9422d651929bec8d95))
+* **v2:** typescript errors when importing shared files ([#111](https://github.com/murgatt/recode-converter/issues/111)) ([67144ae](https://github.com/murgatt/recode-converter/commit/67144aec0b239ab5c736d0f46a96baab20a46a94))
+
 ## [1.2.0](https://github.com/murgatt/recode-converter/compare/v1.1.0...v1.2.0) (2020-11-28)
 
 ### Features
