@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.2](https://github.com/murgatt/recode-converter/compare/v2.0.1...v2.0.2) (2024-02-13)
+
+
+### Bug Fixes
+
+* improve some translation ([f7cdb29](https://github.com/murgatt/recode-converter/commit/f7cdb2972cc403b9683ece10bcc1517e8dcf1dd9))
+
 ## [2.0.1](https://github.com/murgatt/recode-converter/compare/v2.0.0...v2.0.1) (2024-02-06)
 
 
