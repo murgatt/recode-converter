@@ -28,7 +28,6 @@
     "electron",
     "schema",
     ".eslintrc.cjs",
-    "prettier.config.js",
     "vite.config.ts",
     "postcss.config.js",
     "tailwind.config.js"
