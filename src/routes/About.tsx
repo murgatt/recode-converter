@@ -16,7 +16,7 @@ export const About = () => {
         <h1 className="title-lg w-full text-center">Recode Converter</h1>
         <p className="caption-sm">v{version}</p>
         <p className="paragraph-sm">
-          {t('about.developedBy')}{' '}
+          {t('about.builtBy')}{' '}
           <ExternalLink className="underline underline-offset-4" href={AUTHOR_GITHUB_URL}>
             @murgatt
           </ExternalLink>

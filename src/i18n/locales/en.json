@@ -1,9 +1,9 @@
 {
   "translation": {
     "about": {
-      "appIconAlt": "Recode Converter icon",
+      "appIconAlt": "Recode Converter's icon",
       "buyMeACoffee": "Buy me a coffee",
-      "developedBy": "Developed by",
+      "builtBy": "Built by",
       "githubLabel": "GitHub repository",
       "websiteLabel": "Website"
     },
@@ -15,7 +15,7 @@
     "appVersionModal": {
       "cancel": "Cancel",
       "description": "A new version of Recode Converter is now available. Would you like to download it?",
-      "submit": "Download",
+      "submit": "Download now",
       "title": "Update available"
     },
     "conversionSettings": {
