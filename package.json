@@ -85,7 +85,7 @@
     "postcss": "8.4.31",
     "prettier": "3.0.3",
     "prettier-plugin-tailwindcss": "0.5.7",
-    "tailwindcss": "3.3.5",
+    "tailwindcss": "3.4.1",
     "typescript": "5.2.2",
     "vite": "5.0.12",
     "vite-plugin-electron": "0.28.0",
