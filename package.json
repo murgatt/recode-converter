@@ -46,7 +46,7 @@
     "fluent-ffmpeg": "2.1.2",
     "i18next": "23.8.2",
     "immer": "10.0.3",
-    "lucide-react": "0.321.0",
+    "lucide-react": "0.335.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-dropzone": "14.2.3",
