@@ -14,8 +14,8 @@ updates:
       - dependency-name: "*"
         update-types: ["version-update:semver-patch"]
     commit-message:
-      prefix: "fix(deps)"
-      prefix-development: "chore(deps-dev)"
+      prefix: "fix"
+      prefix-development: "chore"
       include: "scope"
     assignees:
       - "murgatt"
@@ -24,8 +24,8 @@ updates:
     schedule:
       interval: "weekly"
     commit-message:
-      prefix: "ci(deps)"
-      prefix-development: "ci(deps-dev)"
+      prefix: "ci"
+      prefix-development: "ci"
       include: "scope"
     assignees:
       - "murgatt"
