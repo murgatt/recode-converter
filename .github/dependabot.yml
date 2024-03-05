@@ -13,11 +13,19 @@ updates:
     ignore:
       - dependency-name: "*"
         update-types: ["version-update:semver-patch"]
+    commit-message:
+      prefix: "fix(deps)"
+      prefix-development: "chore(deps-dev)"
+      include: "scope"
     assignees:
       - "murgatt"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
+    commit-message:
+      prefix: "ci(deps)"
+      prefix-development: "ci(deps-dev)"
+      include: "scope"
     assignees:
       - "murgatt"
