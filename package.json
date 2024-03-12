@@ -68,7 +68,7 @@
     "@types/react-dom": "18.2.19",
     "@typescript-eslint/eslint-plugin": "6.21.0",
     "@typescript-eslint/parser": "6.21.0",
-    "@vitejs/plugin-react": "4.1.0",
+    "@vitejs/plugin-react": "4.2.1",
     "autoprefixer": "10.4.16",
     "electron": "29.1.0",
     "electron-builder": "24.13.3",
