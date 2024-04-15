@@ -7,7 +7,7 @@ settings:
 dependencies:
   '@aptabase/electron':
     specifier: 0.3.1
-    version: 0.3.1(electron@29.2.0)
+    version: 0.3.1(electron@29.3.0)
   '@ffmpeg-installer/ffmpeg':
     specifier: 1.1.0
     version: 1.1.0
@@ -140,8 +140,8 @@ devDependencies:
     specifier: 10.4.16
     version: 10.4.16(postcss@8.4.31)
   electron:
-    specifier: 29.2.0
-    version: 29.2.0
+    specifier: 29.3.0
+    version: 29.3.0
   electron-builder:
     specifier: 24.13.3
     version: 24.13.3(electron-builder-squirrel-windows@24.13.3)
@@ -195,7 +195,7 @@ devDependencies:
     version: 5.2.6
   vite-plugin-electron:
     specifier: 0.28.0
-    version: 0.28.0(electron@29.2.0)(vite-plugin-electron-renderer@0.14.5)
+    version: 0.28.0(electron@29.3.0)(vite-plugin-electron-renderer@0.14.5)
   vite-plugin-electron-renderer:
     specifier: 0.14.5
     version: 0.14.5
@@ -230,12 +230,12 @@ packages:
       '@jridgewell/trace-mapping': 0.3.20
     dev: true
 
-  /@aptabase/electron@0.3.1(electron@29.2.0):
+  /@aptabase/electron@0.3.1(electron@29.3.0):
     resolution: {integrity: sha512-FECaGsjuoQu70F+M6V1evdgLP7yaq/sne9fC60AZZ6B9RsCDlxFBnJzdq3+xevHlUx6AB5o9ygUhQ+ONT9EqiA==}
     peerDependencies:
       electron: '>= 3.x'
     dependencies:
-      electron: 29.2.0
+      electron: 29.3.0
     dev: false
 
   /@babel/code-frame@7.23.5:
@@ -3487,8 +3487,8 @@ packages:
     resolution: {integrity: sha512-40dqKQ3F7C8fbBEmjSeJ+qEHCKzPyrP9SkeIBZ3wSCUH9nhWStrDz030XlDzlhNhlul1Z0fz7TpDFnsIzo4Jtg==}
     dev: true
 
-  /electron@29.2.0:
-    resolution: {integrity: sha512-ALKrCN52RG4g9prx4DriXSPnY5WoiyRUCNp7zEVQuoiNOpHTNqMMpRidQAHzntV4hajF1LMWHVoBkwqIs1jHhg==}
+  /electron@29.3.0:
+    resolution: {integrity: sha512-ZxFKm0/v48GSoBuO3DdnMlCYXefEUKUHLMsKxyXY4nZGgzbBKpF/X8haZa2paNj23CLfsCKBOtfc2vsEQiOOsA==}
     engines: {node: '>= 12.20.55'}
     hasBin: true
     requiresBuild: true
@@ -6911,7 +6911,7 @@ packages:
     resolution: {integrity: sha512-EQ7ORuPp8vFPCqfuGnVo7d36fXS0IFH4/RUlKb1drseix3TQEPcgwEuFADdXBxRgqMp70njz/1m0kdf5lEsm8w==}
     dev: true
 
-  /vite-plugin-electron@0.28.0(electron@29.2.0)(vite-plugin-electron-renderer@0.14.5):
+  /vite-plugin-electron@0.28.0(electron@29.3.0)(vite-plugin-electron-renderer@0.14.5):
     resolution: {integrity: sha512-0sAgFKQnMHR1o8iTM/rs1D6VUmeUiyc/RNUFhN5uq13LONv6Ss3grX3PwJztczxMWVSr6rp2gpAhfKQQJM3Kvg==}
     peerDependencies:
       electron: ^28.0.0
@@ -6925,7 +6925,7 @@ packages:
       vite-plugin-electron-renderer:
         optional: true
     dependencies:
-      electron: 29.2.0
+      electron: 29.3.0
       vite-plugin-electron-renderer: 0.14.5
     dev: true
 
