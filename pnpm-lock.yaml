@@ -62,6 +62,9 @@ dependencies:
   clsx:
     specifier: 2.1.0
     version: 2.1.0
+  electron:
+    specifier: 30.0.0
+    version: 30.0.0
   fluent-ffmpeg:
     specifier: 2.1.2
     version: 2.1.2
@@ -139,9 +142,6 @@ devDependencies:
   autoprefixer:
     specifier: 10.4.16
     version: 10.4.16(postcss@8.4.31)
-  electron:
-    specifier: 30.0.0
-    version: 30.0.0
   electron-builder:
     specifier: 24.13.3
     version: 24.13.3(electron-builder-squirrel-windows@24.13.3)
