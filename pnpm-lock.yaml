@@ -72,8 +72,8 @@ dependencies:
     specifier: 23.11.1
     version: 23.11.1
   immer:
-    specifier: 10.0.3
-    version: 10.0.3
+    specifier: 10.1.1
+    version: 10.1.1
   lucide-react:
     specifier: 0.376.0
     version: 0.376.0(react@18.2.0)
@@ -106,7 +106,7 @@ dependencies:
     version: 3.23.3
   zustand:
     specifier: 4.5.0
-    version: 4.5.0(@types/react@18.2.31)(immer@10.0.3)(react@18.2.0)
+    version: 4.5.0(@types/react@18.2.31)(immer@10.1.1)(react@18.2.0)
 
 devDependencies:
   '@testing-library/dom':
@@ -4598,8 +4598,8 @@ packages:
     engines: {node: '>= 4'}
     dev: true
 
-  /immer@10.0.3:
-    resolution: {integrity: sha512-pwupu3eWfouuaowscykeckFmVTpqbzW+rXFCX8rQLkZzM9ftBmU/++Ra+o+L27mz03zJTlyV4UUr+fdKNffo4A==}
+  /immer@10.1.1:
+    resolution: {integrity: sha512-s2MPrmjovJcoMaHtx6K11Ra7oD05NT97w1IC5zpMkT6Atjr7H8LjaDd81iIxUYpMKSRRNMJE703M1Fhr/TctHw==}
     dev: false
 
   /import-fresh@3.3.0:
@@ -7250,7 +7250,7 @@ packages:
     resolution: {integrity: sha512-tPvq1B/2Yu/dh2uAIH2/BhUlUeLIUvAjr6dpL/75I0pCYefHgjhXk1o1Kob3kTU8C7yU1j396jFHlsVWFi9ogg==}
     dev: false
 
-  /zustand@4.5.0(@types/react@18.2.31)(immer@10.0.3)(react@18.2.0):
+  /zustand@4.5.0(@types/react@18.2.31)(immer@10.1.1)(react@18.2.0):
     resolution: {integrity: sha512-zlVFqS5TQ21nwijjhJlx4f9iGrXSL0o/+Dpy4txAP22miJ8Ti6c1Ol1RLNN98BMib83lmDH/2KmLwaNXpjrO1A==}
     engines: {node: '>=12.7.0'}
     peerDependencies:
@@ -7266,7 +7266,7 @@ packages:
         optional: true
     dependencies:
       '@types/react': 18.2.31
-      immer: 10.0.3
+      immer: 10.1.1
       react: 18.2.0
       use-sync-external-store: 1.2.0(react@18.2.0)
     dev: false
