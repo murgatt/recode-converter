@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.5](https://github.com/murgatt/recode-converter/compare/v2.0.4...v2.0.5) (2024-05-02)
+
+
+### Miscellaneous Chores
+
+* **main:** release 2.0.5 ([2745c3d](https://github.com/murgatt/recode-converter/commit/2745c3d38f516dbeceea255c48432baab30038db))
+
 ## [2.0.4](https://github.com/murgatt/recode-converter/compare/v2.0.3...v2.0.4) (2024-05-02)
 
 
