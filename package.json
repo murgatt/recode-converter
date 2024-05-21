@@ -28,7 +28,7 @@
     "@ffmpeg-installer/ffmpeg": "1.1.0",
     "@ffprobe-installer/ffprobe": "2.1.2",
     "@formkit/auto-animate": "0.8.1",
-    "@hookform/resolvers": "3.3.4",
+    "@hookform/resolvers": "3.4.2",
     "@radix-ui/react-alert-dialog": "1.0.5",
     "@radix-ui/react-checkbox": "1.0.4",
     "@radix-ui/react-collapsible": "1.0.3",
