@@ -19,6 +19,7 @@ updates:
       include: "scope"
     assignees:
       - "murgatt"
+    open-pull-requests-limit: 10
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
