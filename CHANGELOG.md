@@ -1,5 +1,36 @@
 # Changelog
 
+## [2.0.6](https://github.com/murgatt/recode-converter/compare/v2.0.5...v2.0.6) (2024-07-02)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump electron from 31.0.0 to 31.1.0 ([#240](https://github.com/murgatt/recode-converter/issues/240)) ([7e9567c](https://github.com/murgatt/recode-converter/commit/7e9567c9745f0c5c4ea8ecc64bd957b0cf2eee44))
+* **deps:** bump @hookform/resolvers from 3.3.4 to 3.4.2 ([#208](https://github.com/murgatt/recode-converter/issues/208)) ([ad9d164](https://github.com/murgatt/recode-converter/commit/ad9d16437013d7307c78c81e8d6cc59a74e1f490))
+* **deps:** bump @hookform/resolvers from 3.4.2 to 3.6.0 ([#218](https://github.com/murgatt/recode-converter/issues/218)) ([c815ca5](https://github.com/murgatt/recode-converter/commit/c815ca5f0679ae144ee07a91fabb2ccee8b10ae1))
+* **deps:** bump @radix-ui/react-alert-dialog from 1.0.5 to 1.1.1 ([#241](https://github.com/murgatt/recode-converter/issues/241)) ([433b773](https://github.com/murgatt/recode-converter/commit/433b7734bf73a488681a984204d73acafb4da932))
+* **deps:** bump @radix-ui/react-checkbox from 1.0.4 to 1.1.0 ([#235](https://github.com/murgatt/recode-converter/issues/235)) ([d547121](https://github.com/murgatt/recode-converter/commit/d5471213815a34e205c6fcb4ff2f92f738887ce1))
+* **deps:** bump @radix-ui/react-collapsible from 1.0.3 to 1.1.0 ([#238](https://github.com/murgatt/recode-converter/issues/238)) ([76bb654](https://github.com/murgatt/recode-converter/commit/76bb65490cb710585e8eb4f85558df93341039c2))
+* **deps:** bump @radix-ui/react-label from 2.0.2 to 2.1.0 ([#227](https://github.com/murgatt/recode-converter/issues/227)) ([9a2305f](https://github.com/murgatt/recode-converter/commit/9a2305f7065733162b839bc5c480bb250fb79344))
+* **deps:** bump @radix-ui/react-navigation-menu from 1.1.4 to 1.2.0 ([#228](https://github.com/murgatt/recode-converter/issues/228)) ([cbff764](https://github.com/murgatt/recode-converter/commit/cbff76400e8b98e58977af6023e168dfed866935))
+* **deps:** bump @radix-ui/react-progress from 1.0.3 to 1.1.0 ([#224](https://github.com/murgatt/recode-converter/issues/224)) ([f5bc982](https://github.com/murgatt/recode-converter/commit/f5bc9823dd587a2123f185924fc6d3525f446d06))
+* **deps:** bump @radix-ui/react-select from 2.0.0 to 2.1.1 ([#239](https://github.com/murgatt/recode-converter/issues/239)) ([5c61f01](https://github.com/murgatt/recode-converter/commit/5c61f016b4a4b51a6476edb25ce7a9ddbaa1c034))
+* **deps:** bump @radix-ui/react-separator from 1.0.3 to 1.1.0 ([#232](https://github.com/murgatt/recode-converter/issues/232)) ([ec591f1](https://github.com/murgatt/recode-converter/commit/ec591f156f70c0da455ce50dfc36623e907d354e))
+* **deps:** bump @radix-ui/react-slot from 1.0.2 to 1.1.0 ([#231](https://github.com/murgatt/recode-converter/issues/231)) ([6960482](https://github.com/murgatt/recode-converter/commit/696048263fd2b9ed5b2440af668ecd2682a3c05b))
+* **deps:** bump @radix-ui/react-switch from 1.0.3 to 1.1.0 ([#225](https://github.com/murgatt/recode-converter/issues/225)) ([940c0a2](https://github.com/murgatt/recode-converter/commit/940c0a20253e8b0297cd9b2c7e2b12094b211d2f))
+* **deps:** bump @radix-ui/react-tooltip from 1.0.7 to 1.1.1 ([#233](https://github.com/murgatt/recode-converter/issues/233)) ([bbfa262](https://github.com/murgatt/recode-converter/commit/bbfa26275a1bc5b43bab6c6390fb3a8778c03bf0))
+* **deps:** bump braces from 3.0.2 to 3.0.3 ([#219](https://github.com/murgatt/recode-converter/issues/219)) ([5416986](https://github.com/murgatt/recode-converter/commit/5416986cd1f8207b0019514d577b3f749f736a65))
+* **deps:** bump lucide-react from 0.376.0 to 0.378.0 ([#202](https://github.com/murgatt/recode-converter/issues/202)) ([9d312c4](https://github.com/murgatt/recode-converter/commit/9d312c4686f69a2fe7a0b60ae4e4e8ef17a7f145))
+* **deps:** bump lucide-react from 0.378.0 to 0.379.0 ([#211](https://github.com/murgatt/recode-converter/issues/211)) ([93e4f5f](https://github.com/murgatt/recode-converter/commit/93e4f5fb49cd822e8bd7009044b868d00d9c21d1))
+* **deps:** bump lucide-react from 0.379.0 to 0.383.0 ([#212](https://github.com/murgatt/recode-converter/issues/212)) ([a7d568f](https://github.com/murgatt/recode-converter/commit/a7d568fe5a286158172bf06d87990746b60d7c97))
+* **deps:** bump lucide-react from 0.383.0 to 0.394.0 ([#217](https://github.com/murgatt/recode-converter/issues/217)) ([e46f3d4](https://github.com/murgatt/recode-converter/commit/e46f3d43cc3776784aedfb19f1ae6d9cf59890d4))
+* **deps:** bump lucide-react from 0.394.0 to 0.395.0 ([#221](https://github.com/murgatt/recode-converter/issues/221)) ([c2e23e2](https://github.com/murgatt/recode-converter/commit/c2e23e2da4e46eadd5ce325c3b1380f0942e8749))
+* **deps:** bump lucide-react from 0.395.0 to 0.396.0 ([#226](https://github.com/murgatt/recode-converter/issues/226)) ([22c74b9](https://github.com/murgatt/recode-converter/commit/22c74b95e498b5d887ab32e4a4f643a8a91368cf))
+* **deps:** bump lucide-react from 0.396.0 to 0.400.0 ([#237](https://github.com/murgatt/recode-converter/issues/237)) ([369ddd1](https://github.com/murgatt/recode-converter/commit/369ddd1af44601b528c64bf4c25588ee2737cf7d))
+* **deps:** bump react-dom and @types/react-dom ([#203](https://github.com/murgatt/recode-converter/issues/203)) ([9adfdbf](https://github.com/murgatt/recode-converter/commit/9adfdbf27d5506dcb189d5d845cffb21bfa50fbe))
+* **deps:** bump react-hook-form from 7.51.0 to 7.52.0 ([#222](https://github.com/murgatt/recode-converter/issues/222)) ([0804a5f](https://github.com/murgatt/recode-converter/commit/0804a5ff66e52f9c050d36fa99bddefbd70ab5ae))
+* **deps:** bump react-router-dom from 6.23.0 to 6.24.0 ([#236](https://github.com/murgatt/recode-converter/issues/236)) ([6c85d29](https://github.com/murgatt/recode-converter/commit/6c85d2932ad329313c2a15a120ac017d2a79fe07))
+
 ## [2.0.5](https://github.com/murgatt/recode-converter/compare/v2.0.4...v2.0.5) (2024-05-02)
 
 
