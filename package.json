@@ -90,7 +90,7 @@
     "vite": "5.3.1",
     "vite-plugin-electron": "0.28.0",
     "vite-plugin-electron-renderer": "0.14.5",
-    "vitest": "1.6.0"
+    "vitest": "2.0.1"
   },
   "main": "dist-electron/main.js"
 }
