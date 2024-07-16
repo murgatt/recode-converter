@@ -69,8 +69,8 @@ importers:
         specifier: 2.1.2
         version: 2.1.2
       i18next:
-        specifier: 23.11.1
-        version: 23.11.1
+        specifier: 23.12.1
+        version: 23.12.1
       immer:
         specifier: 10.1.1
         version: 10.1.1
@@ -91,7 +91,7 @@ importers:
         version: 7.52.0(react@18.3.1)
       react-i18next:
         specifier: 14.1.0
-        version: 14.1.0(i18next@23.11.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 14.1.0(i18next@23.12.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-router-dom:
         specifier: 6.24.0
         version: 6.24.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -2479,8 +2479,8 @@ packages:
     resolution: {integrity: sha512-AXcZb6vzzrFAUE61HnN4mpLqd/cSIwNQjtNWR0euPm6y0iqx3G4gOXaIDdtdDwZmhwe82LA6+zinmW4UBWVePQ==}
     engines: {node: '>=16.17.0'}
 
-  i18next@23.11.1:
-    resolution: {integrity: sha512-mXw4A24BiPZKRsbb9ewgSvjYd6fxFCNwJyfK6nYfSTIAX2GkCWcb598m3DFkDZmqADatvuASrKo6qwORz3VwTQ==}
+  i18next@23.12.1:
+    resolution: {integrity: sha512-l4y291ZGRgUhKuqVSiqyuU2DDzxKStlIWSaoNBR4grYmh0X+pRYbFpTMs3CnJ5ECKbOI8sQcJ3PbTUfLgPRaMA==}
 
   iconv-corefoundation@1.1.7:
     resolution: {integrity: sha512-T10qvkw0zz4wnm560lOEg0PovVqUXuOFhhHAkixw8/sycy7TJt7v/RrkEKEQnAw2viPSJu6iAkErxnzR0g8PpQ==}
@@ -6676,9 +6676,9 @@ snapshots:
 
   human-signals@5.0.0: {}
 
-  i18next@23.11.1:
+  i18next@23.12.1:
     dependencies:
-      '@babel/runtime': 7.23.9
+      '@babel/runtime': 7.24.4
 
   iconv-corefoundation@1.1.7:
     dependencies:
@@ -7331,11 +7331,11 @@ snapshots:
     dependencies:
       react: 18.3.1
 
-  react-i18next@14.1.0(i18next@23.11.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  react-i18next@14.1.0(i18next@23.12.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@babel/runtime': 7.23.9
       html-parse-stringify: 3.0.1
-      i18next: 23.11.1
+      i18next: 23.12.1
       react: 18.3.1
     optionalDependencies:
       react-dom: 18.3.1(react@18.3.1)
