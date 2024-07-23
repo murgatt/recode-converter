@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.0.7](https://github.com/murgatt/recode-converter/compare/v2.0.6...v2.0.7) (2024-07-23)
+
+
+### Bug Fixes
+
+* **build:** Mac app cannot be opened ([#254](https://github.com/murgatt/recode-converter/issues/254)) ([5bdd674](https://github.com/murgatt/recode-converter/commit/5bdd6749bf3d9c5e21392e34cd03ddd6d2e7b358))
+* **deps-dev:** bump electron from 31.1.0 to 31.2.1 ([#251](https://github.com/murgatt/recode-converter/issues/251)) ([bb69b33](https://github.com/murgatt/recode-converter/commit/bb69b3341a8352af58b8d15ec3e9c900b1b2f236))
+* **deps:** bump @hookform/resolvers from 3.6.0 to 3.9.0 ([#247](https://github.com/murgatt/recode-converter/issues/247)) ([3589364](https://github.com/murgatt/recode-converter/commit/3589364fcf35681c4dd8a43526a7a7ced5089774))
+* **deps:** bump i18next from 23.11.1 to 23.12.1 ([#253](https://github.com/murgatt/recode-converter/issues/253)) ([8e0d21f](https://github.com/murgatt/recode-converter/commit/8e0d21f7d2f685231f84f6533aa7901fee260a5b))
+* **deps:** bump lucide-react from 0.400.0 to 0.404.0 ([#249](https://github.com/murgatt/recode-converter/issues/249)) ([90c657d](https://github.com/murgatt/recode-converter/commit/90c657d943c64a0d63bc88a5bc841d0d8cb8a89d))
+* **deps:** bump lucide-react from 0.404.0 to 0.408.0 ([#252](https://github.com/murgatt/recode-converter/issues/252)) ([58fa05d](https://github.com/murgatt/recode-converter/commit/58fa05dcd617220b57fa671bca10b413338c8d33))
+* **deps:** bump lucide-react from 0.408.0 to 0.414.0 ([#257](https://github.com/murgatt/recode-converter/issues/257)) ([585264b](https://github.com/murgatt/recode-converter/commit/585264bc135677fb3ffa44aa69ce6abf25ececa7))
+* **deps:** bump react-i18next from 14.1.0 to 15.0.0 ([#256](https://github.com/murgatt/recode-converter/issues/256)) ([ab1c669](https://github.com/murgatt/recode-converter/commit/ab1c6697c750e654389f93ce8324d28e3c3498ef))
+* **deps:** bump react-router-dom from 6.24.0 to 6.25.1 ([#258](https://github.com/murgatt/recode-converter/issues/258)) ([1bc9ba2](https://github.com/murgatt/recode-converter/commit/1bc9ba23181cba586cdb71465150d66b2b636452))
+* **deps:** bump tailwind-merge from 2.3.0 to 2.4.0 ([#244](https://github.com/murgatt/recode-converter/issues/244)) ([db63b34](https://github.com/murgatt/recode-converter/commit/db63b34ac112df9a8055ba1c6339e6cb7f334f99))
+
 ## [2.0.6](https://github.com/murgatt/recode-converter/compare/v2.0.5...v2.0.6) (2024-07-02)
 
 
