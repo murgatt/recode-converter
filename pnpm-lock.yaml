@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@aptabase/electron':
         specifier: 0.3.1
-        version: 0.3.1(electron@31.2.1)
+        version: 0.3.1(electron@31.3.1)
       '@ffmpeg-installer/ffmpeg':
         specifier: 1.1.0
         version: 1.1.0
@@ -142,8 +142,8 @@ importers:
         specifier: 10.4.16
         version: 10.4.16(postcss@8.4.31)
       electron:
-        specifier: 31.2.1
-        version: 31.2.1
+        specifier: 31.3.1
+        version: 31.3.1
       electron-builder:
         specifier: 24.13.3
         version: 24.13.3(electron-builder-squirrel-windows@24.13.3(dmg-builder@24.13.3))
@@ -197,7 +197,7 @@ importers:
         version: 5.3.1(@types/node@20.11.24)
       vite-plugin-electron:
         specifier: 0.28.0
-        version: 0.28.0(electron@31.2.1)(vite-plugin-electron-renderer@0.14.5)
+        version: 0.28.0(electron@31.3.1)(vite-plugin-electron-renderer@0.14.5)
       vite-plugin-electron-renderer:
         specifier: 0.14.5
         version: 0.14.5
@@ -1996,8 +1996,8 @@ packages:
   electron-to-chromium@1.4.700:
     resolution: {integrity: sha512-40dqKQ3F7C8fbBEmjSeJ+qEHCKzPyrP9SkeIBZ3wSCUH9nhWStrDz030XlDzlhNhlul1Z0fz7TpDFnsIzo4Jtg==}
 
-  electron@31.2.1:
-    resolution: {integrity: sha512-g3CLKjl4yuXt6VWm/KpgEjYYhFiCl19RgUn8lOC8zV/56ZXAS3+mqV4wWzicE/7vSYXs6GRO7vkYRwrwhX3Gaw==}
+  electron@31.3.1:
+    resolution: {integrity: sha512-9fiuWlRhBfygtcT+auRd/WdBK/f8LZZcrpx0RjpXhH2DPTP/PfnkC4JB1PW55qCbGbh4wAgkYbf4ExIag8oGCA==}
     engines: {node: '>= 12.20.55'}
     hasBin: true
 
@@ -4041,9 +4041,9 @@ snapshots:
       '@jridgewell/gen-mapping': 0.3.5
       '@jridgewell/trace-mapping': 0.3.25
 
-  '@aptabase/electron@0.3.1(electron@31.2.1)':
+  '@aptabase/electron@0.3.1(electron@31.3.1)':
     dependencies:
-      electron: 31.2.1
+      electron: 31.3.1
 
   '@babel/code-frame@7.24.6':
     dependencies:
@@ -5937,7 +5937,7 @@ snapshots:
 
   electron-to-chromium@1.4.700: {}
 
-  electron@31.2.1:
+  electron@31.3.1:
     dependencies:
       '@electron/get': 2.0.3
       '@types/node': 20.11.24
@@ -8007,9 +8007,9 @@ snapshots:
 
   vite-plugin-electron-renderer@0.14.5: {}
 
-  vite-plugin-electron@0.28.0(electron@31.2.1)(vite-plugin-electron-renderer@0.14.5):
+  vite-plugin-electron@0.28.0(electron@31.3.1)(vite-plugin-electron-renderer@0.14.5):
     optionalDependencies:
-      electron: 31.2.1
+      electron: 31.3.1
       vite-plugin-electron-renderer: 0.14.5
 
   vite@5.3.1(@types/node@20.11.24):
