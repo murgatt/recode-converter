@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.0.8](https://github.com/murgatt/recode-converter/compare/v2.0.7...v2.0.8) (2024-08-06)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump electron from 31.2.1 to 31.3.1 ([#262](https://github.com/murgatt/recode-converter/issues/262)) ([e2113f5](https://github.com/murgatt/recode-converter/commit/e2113f523b6dfa06991a721dbc3b427784f72c3b))
+* **deps:** bump lucide-react from 0.414.0 to 0.417.0 ([#261](https://github.com/murgatt/recode-converter/issues/261)) ([63373e0](https://github.com/murgatt/recode-converter/commit/63373e05c0c17fe911dd96a646bd604ca706569d))
+* **deps:** bump lucide-react from 0.417.0 to 0.424.0 ([#264](https://github.com/murgatt/recode-converter/issues/264)) ([e34cf59](https://github.com/murgatt/recode-converter/commit/e34cf59380be4367c1acecde68791f8144570381))
+* **deps:** bump react-router-dom from 6.25.1 to 6.26.0 ([#265](https://github.com/murgatt/recode-converter/issues/265)) ([bf9a7ad](https://github.com/murgatt/recode-converter/commit/bf9a7adb2b4dfafed4d8dbaceb1654db6dcb2e69))
+
 ## [2.0.7](https://github.com/murgatt/recode-converter/compare/v2.0.6...v2.0.7) (2024-07-23)
 
 
