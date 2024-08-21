@@ -1,7 +1,8 @@
-import { contextBridge, ipcRenderer } from 'electron';
+import { contextBridge, ipcRenderer, webUtils } from 'electron';
 import type { IConversion, IElectron } from './electron-env';
 
 contextBridge.exposeInMainWorld('electron', {
+  getFilePath: file => webUtils.getPathForFile(file),
   openDirectory: () => ipcRenderer.invoke('dialog:openDirectory'),
   openExternalLink: url => ipcRenderer.invoke('shell:openExternalLink', url),
 } as IElectron);
