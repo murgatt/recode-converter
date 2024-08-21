@@ -22,8 +22,9 @@ export const useStore = create<Store>()(
     addFiles: files => {
       set(state => {
         files.forEach(file => {
-          state.files[file.path] = formatFileObject(file);
-          window.conversion.getMetadata({ filePath: file.path });
+          const filePath = window.electron.getFilePath(file);
+          state.files[filePath] = formatFileObject(file, filePath);
+          window.conversion.getMetadata({ filePath });
         });
       });
     },

@@ -28,10 +28,10 @@ export function areFilesFromSameDirectory(files: VideoFile[]) {
   });
 }
 
-export function formatFileObject(file: File): VideoFile {
+export function formatFileObject(file: File, path: string): VideoFile {
   return {
     name: file.name,
-    path: file.path,
+    path,
     progress: 0,
     size: file.size,
     status: 'imported',
