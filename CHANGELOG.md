@@ -1,5 +1,27 @@
 # Changelog
 
+## [2.0.8](https://github.com/murgatt/recode-converter/compare/v2.0.7...v2.0.8) (2024-09-19)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump electron from 31.2.1 to 31.3.1 ([#262](https://github.com/murgatt/recode-converter/issues/262)) ([e2113f5](https://github.com/murgatt/recode-converter/commit/e2113f523b6dfa06991a721dbc3b427784f72c3b))
+* **deps-dev:** bump electron from 31.3.1 to 32.0.0 ([#273](https://github.com/murgatt/recode-converter/issues/273)) ([34690e2](https://github.com/murgatt/recode-converter/commit/34690e2cb6df48d072fc8e8bef4ccb27ac65227d))
+* **deps-dev:** bump electron from 32.0.0 to 32.1.1 ([#292](https://github.com/murgatt/recode-converter/issues/292)) ([6b7295b](https://github.com/murgatt/recode-converter/commit/6b7295b5ccd0362f7f211e8d8462a7a0c30a46e3))
+* **deps:** bump i18next from 23.12.1 to 23.14.0 ([#270](https://github.com/murgatt/recode-converter/issues/270)) ([9371ebc](https://github.com/murgatt/recode-converter/commit/9371ebc256ef8e2b2770118fb89279e2d5814290))
+* **deps:** bump i18next from 23.14.0 to 23.15.0 ([#281](https://github.com/murgatt/recode-converter/issues/281)) ([5dbb74e](https://github.com/murgatt/recode-converter/commit/5dbb74ee06a5a0480e46b40b27a86cdb887b4dff))
+* **deps:** bump lucide-react from 0.414.0 to 0.417.0 ([#261](https://github.com/murgatt/recode-converter/issues/261)) ([63373e0](https://github.com/murgatt/recode-converter/commit/63373e05c0c17fe911dd96a646bd604ca706569d))
+* **deps:** bump lucide-react from 0.417.0 to 0.424.0 ([#264](https://github.com/murgatt/recode-converter/issues/264)) ([e34cf59](https://github.com/murgatt/recode-converter/commit/e34cf59380be4367c1acecde68791f8144570381))
+* **deps:** bump lucide-react from 0.424.0 to 0.427.0 ([#268](https://github.com/murgatt/recode-converter/issues/268)) ([705d6c4](https://github.com/murgatt/recode-converter/commit/705d6c4828778f0c35c33f10b888e5e818157ff0))
+* **deps:** bump lucide-react from 0.427.0 to 0.428.0 ([#272](https://github.com/murgatt/recode-converter/issues/272)) ([ece1ee1](https://github.com/murgatt/recode-converter/commit/ece1ee160b683e3d77288ffe723d43027d2747c4))
+* **deps:** bump lucide-react from 0.428.0 to 0.436.0 ([#277](https://github.com/murgatt/recode-converter/issues/277)) ([441375e](https://github.com/murgatt/recode-converter/commit/441375e3154547cccea8a5afdafd613a57c98a53))
+* **deps:** bump lucide-react from 0.436.0 to 0.438.0 ([#279](https://github.com/murgatt/recode-converter/issues/279)) ([a4e58dc](https://github.com/murgatt/recode-converter/commit/a4e58dc78fb1266ac2cc4a05afcc05f18f64487a))
+* **deps:** bump lucide-react from 0.438.0 to 0.439.0 ([#282](https://github.com/murgatt/recode-converter/issues/282)) ([5e3607e](https://github.com/murgatt/recode-converter/commit/5e3607eb64ea736d97f326f3f7ac86a375fc0b1d))
+* **deps:** bump lucide-react from 0.439.0 to 0.441.0 ([#289](https://github.com/murgatt/recode-converter/issues/289)) ([9087ee5](https://github.com/murgatt/recode-converter/commit/9087ee5f0021a4e30c5dbbef84c4342a9af14bf1))
+* **deps:** bump react-hook-form from 7.52.0 to 7.53.0 ([#275](https://github.com/murgatt/recode-converter/issues/275)) ([7621d85](https://github.com/murgatt/recode-converter/commit/7621d855ddd0b59d401b9a2b9814f4b4e6ac29f2))
+* **deps:** bump react-router-dom from 6.25.1 to 6.26.0 ([#265](https://github.com/murgatt/recode-converter/issues/265)) ([bf9a7ad](https://github.com/murgatt/recode-converter/commit/bf9a7adb2b4dfafed4d8dbaceb1654db6dcb2e69))
+* **deps:** bump tailwind-merge from 2.4.0 to 2.5.2 ([#266](https://github.com/murgatt/recode-converter/issues/266)) ([77e6a4a](https://github.com/murgatt/recode-converter/commit/77e6a4ab805b3e10beb7f219fdec4fb19dadae3f))
+
 ## [2.0.7](https://github.com/murgatt/recode-converter/compare/v2.0.6...v2.0.7) (2024-07-23)
 
 
