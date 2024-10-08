@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.0.9](https://github.com/murgatt/recode-converter/compare/v2.0.8...v2.0.9) (2024-10-08)
+
+
+### Bug Fixes
+
+* **deps:** bump lucide-react from 0.441.0 to 0.445.0 ([#293](https://github.com/murgatt/recode-converter/issues/293)) ([7483217](https://github.com/murgatt/recode-converter/commit/7483217bee1c07c01e0a5b5f0ded270891986fbd))
+* **deps:** bump lucide-react from 0.445.0 to 0.446.0 ([#296](https://github.com/murgatt/recode-converter/issues/296)) ([c0d28f8](https://github.com/murgatt/recode-converter/commit/c0d28f8908c4eabc26fb4303c9bc32cd739dea42))
+* **deps:** bump lucide-react from 0.446.0 to 0.447.0 ([#298](https://github.com/murgatt/recode-converter/issues/298)) ([a1fe1a5](https://github.com/murgatt/recode-converter/commit/a1fe1a50059232b03f065ad5580449829d78d2af))
+* **deps:** bump micromatch from 4.0.5 to 4.0.8 ([#302](https://github.com/murgatt/recode-converter/issues/302)) ([51f3c9b](https://github.com/murgatt/recode-converter/commit/51f3c9bbe664b7f68613b8db612ea69c64fb2e3f))
+* **deps:** bump rollup from 4.22.0 to 4.24.0 ([#303](https://github.com/murgatt/recode-converter/issues/303)) ([58b98b8](https://github.com/murgatt/recode-converter/commit/58b98b88c239472182d063b3d3cfc5cb869fbca5))
+* **deps:** bump tar from 6.2.0 to 6.2.1 ([#301](https://github.com/murgatt/recode-converter/issues/301)) ([316a9fa](https://github.com/murgatt/recode-converter/commit/316a9fa0b034f07734cc971d61d746ae5d8e0aa1))
+
 ## [2.0.8](https://github.com/murgatt/recode-converter/compare/v2.0.7...v2.0.8) (2024-09-19)
 
 
