@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.0.9](https://github.com/murgatt/recode-converter/compare/v2.0.8...v2.0.9) (2024-10-15)
+
+
+### Bug Fixes
+
+* app crash on Intel Macs ([#304](https://github.com/murgatt/recode-converter/issues/304)) ([d7daee5](https://github.com/murgatt/recode-converter/commit/d7daee5e065d90325c6fa9aa03c5b09c85f941f2))
+* **deps:** bump i18next from 23.15.0 to 23.16.0 ([#308](https://github.com/murgatt/recode-converter/issues/308)) ([bde7d73](https://github.com/murgatt/recode-converter/commit/bde7d7338fbb9d06ebf81901b6e8a0338b98183b))
+* **deps:** bump lucide-react from 0.441.0 to 0.445.0 ([#293](https://github.com/murgatt/recode-converter/issues/293)) ([7483217](https://github.com/murgatt/recode-converter/commit/7483217bee1c07c01e0a5b5f0ded270891986fbd))
+* **deps:** bump lucide-react from 0.445.0 to 0.446.0 ([#296](https://github.com/murgatt/recode-converter/issues/296)) ([c0d28f8](https://github.com/murgatt/recode-converter/commit/c0d28f8908c4eabc26fb4303c9bc32cd739dea42))
+* **deps:** bump lucide-react from 0.446.0 to 0.447.0 ([#298](https://github.com/murgatt/recode-converter/issues/298)) ([a1fe1a5](https://github.com/murgatt/recode-converter/commit/a1fe1a50059232b03f065ad5580449829d78d2af))
+* **deps:** bump lucide-react from 0.447.0 to 0.452.0 ([#309](https://github.com/murgatt/recode-converter/issues/309)) ([12917ee](https://github.com/murgatt/recode-converter/commit/12917ee140ee227e8e853e45e5e06b72694b17cb))
+* **deps:** bump micromatch from 4.0.5 to 4.0.8 ([#302](https://github.com/murgatt/recode-converter/issues/302)) ([51f3c9b](https://github.com/murgatt/recode-converter/commit/51f3c9bbe664b7f68613b8db612ea69c64fb2e3f))
+* **deps:** bump react-router-dom from 6.26.0 to 6.27.0 ([#306](https://github.com/murgatt/recode-converter/issues/306)) ([199deab](https://github.com/murgatt/recode-converter/commit/199deab49a3159088ae316953b83569111730171))
+* **deps:** bump rollup from 4.22.0 to 4.24.0 ([#303](https://github.com/murgatt/recode-converter/issues/303)) ([58b98b8](https://github.com/murgatt/recode-converter/commit/58b98b88c239472182d063b3d3cfc5cb869fbca5))
+* **deps:** bump tar from 6.2.0 to 6.2.1 ([#301](https://github.com/murgatt/recode-converter/issues/301)) ([316a9fa](https://github.com/murgatt/recode-converter/commit/316a9fa0b034f07734cc971d61d746ae5d8e0aa1))
+
 ## [2.0.8](https://github.com/murgatt/recode-converter/compare/v2.0.7...v2.0.8) (2024-09-19)
 
 
