@@ -21,13 +21,11 @@
   "mac": {
     "target": [
       {
-        "target": "dmg",
-        "arch": [
-          "universal"
-        ]
+        "target": "dmg"
       }
     ],
-    "artifactName": "${productName}-Mac-${version}-Installer.${ext}"
+    "artifactName": "${productName}-Mac-${arch}-${version}-Installer.${ext}",
+    "category": "public.app-category.utilities"
   },
   "win": {
     "target": [
