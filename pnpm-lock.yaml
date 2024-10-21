@@ -105,8 +105,8 @@ importers:
         specifier: 3.23.3
         version: 3.23.3
       zustand:
-        specifier: 4.5.0
-        version: 4.5.0(@types/react@18.3.1)(immer@10.1.1)(react@18.3.1)
+        specifier: 5.0.0
+        version: 5.0.0(@types/react@18.3.1)(immer@10.1.1)(react@18.3.1)(use-sync-external-store@1.2.0(react@18.3.1))
     devDependencies:
       '@testing-library/dom':
         specifier: 10.4.0
@@ -4298,19 +4298,22 @@ packages:
   zod@3.23.3:
     resolution: {integrity: sha512-tPvq1B/2Yu/dh2uAIH2/BhUlUeLIUvAjr6dpL/75I0pCYefHgjhXk1o1Kob3kTU8C7yU1j396jFHlsVWFi9ogg==}
 
-  zustand@4.5.0:
-    resolution: {integrity: sha512-zlVFqS5TQ21nwijjhJlx4f9iGrXSL0o/+Dpy4txAP22miJ8Ti6c1Ol1RLNN98BMib83lmDH/2KmLwaNXpjrO1A==}
-    engines: {node: '>=12.7.0'}
+  zustand@5.0.0:
+    resolution: {integrity: sha512-LE+VcmbartOPM+auOjCCLQOsQ05zUTp8RkgwRzefUk+2jISdMMFnxvyTjA4YNWr5ZGXYbVsEMZosttuxUBkojQ==}
+    engines: {node: '>=12.20.0'}
     peerDependencies:
-      '@types/react': '>=16.8'
+      '@types/react': '>=18.0.0'
       immer: '>=9.0.6'
-      react: '>=16.8'
+      react: '>=18.0.0'
+      use-sync-external-store: '>=1.2.0'
     peerDependenciesMeta:
       '@types/react':
         optional: true
       immer:
         optional: true
       react:
+        optional: true
+      use-sync-external-store:
         optional: true
 
 snapshots:
@@ -8642,6 +8645,7 @@ snapshots:
   use-sync-external-store@1.2.0(react@18.3.1):
     dependencies:
       react: 18.3.1
+    optional: true
 
   utf8-byte-length@1.0.4: {}
 
@@ -8857,10 +8861,9 @@ snapshots:
 
   zod@3.23.3: {}
 
-  zustand@4.5.0(@types/react@18.3.1)(immer@10.1.1)(react@18.3.1):
-    dependencies:
-      use-sync-external-store: 1.2.0(react@18.3.1)
+  zustand@5.0.0(@types/react@18.3.1)(immer@10.1.1)(react@18.3.1)(use-sync-external-store@1.2.0(react@18.3.1)):
     optionalDependencies:
       '@types/react': 18.3.1
       immer: 10.1.1
       react: 18.3.1
+      use-sync-external-store: 1.2.0(react@18.3.1)

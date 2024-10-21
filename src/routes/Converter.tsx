@@ -4,11 +4,12 @@ import { FileImport } from 'src/components/FileImport';
 import { FileList } from 'src/components/FileList';
 import { Footer } from 'src/components/Footer';
 import { getDestinationPath, getFiles, getFilesToConvert, getIsConversionRunning, useStore } from 'src/store';
+import { useShallow } from 'zustand/shallow';
 import type { ConversionSettings } from 'schema';
 
 export const Converter = () => {
-  const files = useStore(getFiles);
-  const filesToConvert = useStore(getFilesToConvert);
+  const files = useStore(useShallow(getFiles));
+  const filesToConvert = useStore(useShallow(getFilesToConvert));
   const destinationPath = useStore(getDestinationPath);
   const isConversionRunning = useStore(getIsConversionRunning);
   const setIsConversionRunning = useStore(state => state.setIsConversionRunning);
