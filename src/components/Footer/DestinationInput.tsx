@@ -4,6 +4,7 @@ import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { getDestinationPath, getFiles, useStore } from 'src/store';
 import { areFilesFromSameDirectory, getDirectoryPathFromFile } from 'src/utils';
+import { useShallow } from 'zustand/shallow';
 import { Button } from '../ui/Button';
 import { Input } from '../ui/Input';
 import { Tooltip } from '../ui/Tooltip';
@@ -14,7 +15,7 @@ type DestinationInputProps = {
 
 export const DestinationInput = ({ isDisabled }: DestinationInputProps) => {
   const { t } = useTranslation();
-  const files = useStore(getFiles);
+  const files = useStore(useShallow(getFiles));
   const destinationPath = useStore(getDestinationPath);
   const setDestinationPath = useStore(state => state.setDestinationPath);
 
