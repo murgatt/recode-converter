@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.0.10](https://github.com/murgatt/recode-converter/compare/v2.0.9...v2.0.10) (2024-10-22)
+
+
+### Bug Fixes
+
+* **deps:** bump lucide-react from 0.452.0 to 0.453.0 ([#315](https://github.com/murgatt/recode-converter/issues/315)) ([5a9e777](https://github.com/murgatt/recode-converter/commit/5a9e7770909db3d00b4fc707c2bdaf8ad42bf5e7))
+* **deps:** bump react-i18next from 15.0.0 to 15.1.0 ([#316](https://github.com/murgatt/recode-converter/issues/316)) ([e2a29d4](https://github.com/murgatt/recode-converter/commit/e2a29d41f08d62d183d52ebf174505f737129370))
+* **deps:** bump zustand from 4.5.0 to 5.0.0 ([#310](https://github.com/murgatt/recode-converter/issues/310)) ([df05e9e](https://github.com/murgatt/recode-converter/commit/df05e9e7398012bffa306e4e3b0787ad7d5dff29))
+
 ## [2.0.9](https://github.com/murgatt/recode-converter/compare/v2.0.8...v2.0.9) (2024-10-15)
 
 
