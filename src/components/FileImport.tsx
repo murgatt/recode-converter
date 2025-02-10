@@ -1,9 +1,9 @@
 import { FileVideoIcon } from 'lucide-react';
-import React from 'react';
-import { useDropzone } from 'react-dropzone';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useStore } from 'src/store';
 import { Button } from './ui/Button';
+import type { ChangeEvent, DragEvent } from 'react';
 
 type FileImportProps = {
   children: React.ReactNode;
@@ -14,23 +14,50 @@ type FileImportProps = {
 export const FileImport = ({ children, isDisabled, isFileListDisplayed }: FileImportProps) => {
   const { t } = useTranslation();
   const addFiles = useStore(state => state.addFiles);
+  const [isDragActive, setIsDragActive] = useState(false);
 
-  const handleFilesDrop = (newFiles: File[]) => {
-    addFiles(newFiles);
+  const handleDragOver = (event: DragEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    if (!isDisabled) {
+      setIsDragActive(true);
+    }
   };
 
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({
-    accept: {
-      'video/*': ['.mkv'],
-    },
-    disabled: isDisabled,
-    noClick: true,
-    onDropAccepted: handleFilesDrop,
-  });
+  const handleDragLeave = (event: DragEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    setIsDragActive(false);
+  };
+
+  const handleDrop = (event: DragEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    setIsDragActive(false);
+    if (!isDisabled) {
+      const files = Array.from(event.dataTransfer.files);
+      addFiles(files);
+    }
+  };
+
+  const handleFileInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const files = Array.from(event.target.files ?? []);
+    addFiles(files);
+  };
 
   return (
-    <div {...getRootProps()} className="relative h-full w-full focus:outline-none">
-      <input {...getInputProps()} id="fileInput" value="" />
+    <div
+      className="relative h-full w-full focus:outline-none"
+      onDragLeave={handleDragLeave}
+      onDragOver={handleDragOver}
+      onDrop={handleDrop}
+    >
+      <input
+        accept="video/*,.mkv"
+        className="hidden"
+        disabled={isDisabled}
+        id="fileInput"
+        multiple
+        onChange={handleFileInputChange}
+        type="file"
+      />
       {isFileListDisplayed ? (
         children
       ) : (
