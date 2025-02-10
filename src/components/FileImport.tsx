@@ -52,6 +52,7 @@ export const FileImport = ({ children, isDisabled, isFileListDisplayed }: FileIm
       <input
         accept="video/*,.mkv"
         className="hidden"
+        disabled={isDisabled}
         id="fileInput"
         multiple
         onChange={handleFileInputChange}
