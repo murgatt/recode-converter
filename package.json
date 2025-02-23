@@ -51,13 +51,14 @@
     "react-hook-form": "7.54.1",
     "react-i18next": "15.4.0",
     "react-router-dom": "7.1.1",
-    "tailwind-merge": "2.6.0",
+    "tailwind-merge": "3.0.2",
     "tailwindcss-animate": "1.0.7",
     "zod": "3.24.1",
     "zustand": "5.0.0"
   },
   "devDependencies": {
     "@rollup/plugin-alias": "5.1.0",
+    "@tailwindcss/vite": "4.0.8",
     "@testing-library/dom": "10.4.0",
     "@testing-library/jest-dom": "6.6.2",
     "@testing-library/react": "16.2.0",
@@ -68,7 +69,6 @@
     "@typescript-eslint/eslint-plugin": "8.24.0",
     "@typescript-eslint/parser": "8.24.0",
     "@vitejs/plugin-react": "4.3.4",
-    "autoprefixer": "10.4.16",
     "electron": "34.2.0",
     "electron-builder": "26.0.2",
     "eslint": "8.57.0",
@@ -82,13 +82,18 @@
     "jsdom": "26.0.0",
     "postcss": "8.5.1",
     "prettier": "3.5.0",
-    "prettier-plugin-tailwindcss": "0.6.1",
-    "tailwindcss": "3.4.1",
+    "prettier-plugin-tailwindcss": "0.6.11",
+    "tailwindcss": "4.0.8",
     "typescript": "5.7.2",
     "vite": "6.1.0",
     "vite-plugin-electron": "0.29.0",
     "vite-plugin-electron-renderer": "0.14.5",
     "vitest": "3.0.5"
   },
-  "main": "dist-electron/main.js"
+  "main": "dist-electron/main.js",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "electron"
+    ]
+  }
 }

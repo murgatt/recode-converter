@@ -7,7 +7,7 @@ export const AppMenu = () => {
   const { t } = useTranslation();
 
   return (
-    <NavigationMenu className="flex flex-col justify-between border-r border-border px-2 py-3">
+    <NavigationMenu className="border-border flex flex-col justify-between border-r px-2 py-3">
       <NavigationMenuList className="flex-col">
         <AppMenuItem label={t('appMenu.home')} to="/">
           <HomeIcon size="16" />
