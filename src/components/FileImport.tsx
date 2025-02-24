@@ -44,7 +44,7 @@ export const FileImport = ({ children, isDisabled, isFileListDisplayed }: FileIm
 
   return (
     <div
-      className="relative h-full w-full focus:outline-none"
+      className="relative h-full w-full focus:outline-hidden"
       onDragLeave={handleDragLeave}
       onDragOver={handleDragOver}
       onDrop={handleDrop}
@@ -65,11 +65,11 @@ export const FileImport = ({ children, isDisabled, isFileListDisplayed }: FileIm
           <Button asChild className="cursor-pointer">
             <label htmlFor="fileInput">{t('fileImport.button')}</label>
           </Button>
-          <p className="caption-sm whitespace-pre-line text-center">{t('fileImport.description')}</p>
+          <p className="text-center caption-sm whitespace-pre-line">{t('fileImport.description')}</p>
         </div>
       )}
       {isDragActive && (
-        <div className="absolute inset-0 flex items-center justify-center bg-background/80 backdrop-blur-sm">
+        <div className="absolute inset-0 flex items-center justify-center bg-background/80 backdrop-blur-xs">
           <FileVideoIcon className="animate-bounce" size="32" />
         </div>
       )}

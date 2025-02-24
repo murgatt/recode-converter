@@ -22,7 +22,7 @@ export const FileList = ({ files, isConversionRunning }: FileListProps) => {
 
   return (
     <div className="relative h-full">
-      <ul className="flex h-full flex-col gap-3 overflow-y-auto px-4 pb-14 pt-4" ref={listRef}>
+      <ul className="flex h-full flex-col gap-3 overflow-y-auto px-4 pt-4 pb-14" ref={listRef}>
         {files.map(file => (
           <li key={file.path}>
             <FileCard file={file} isConversionRunning={isConversionRunning} />

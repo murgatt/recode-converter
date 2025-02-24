@@ -4,7 +4,7 @@ import type { PropsWithClassName } from './ui.types';
 
 const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement> & PropsWithClassName>(
   ({ className, ...props }, ref) => (
-    <div className={cn('rounded-lg border bg-card text-card-foreground shadow-sm', className)} ref={ref} {...props} />
+    <div className={cn('rounded-lg border bg-card text-card-foreground shadow-xs', className)} ref={ref} {...props} />
   ),
 );
 Card.displayName = 'Card';
@@ -18,7 +18,7 @@ CardHeader.displayName = 'CardHeader';
 
 const CardTitle = React.forwardRef<HTMLParagraphElement, React.HTMLAttributes<HTMLHeadingElement> & PropsWithClassName>(
   ({ className, children, ...props }, ref) => (
-    <h3 className={cn('text-2xl font-semibold leading-none tracking-tight', className)} ref={ref} {...props}>
+    <h3 className={cn('text-2xl leading-none font-semibold tracking-tight', className)} ref={ref} {...props}>
       {children}
     </h3>
   ),

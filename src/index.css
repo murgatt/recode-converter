@@ -1,73 +1,68 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@plugin 'tailwindcss-animate';
 
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+@theme {
+  --color-background: hsl(0 0% 100%);
+  --color-foreground: hsl(240 10% 3.9%);
 
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+  --color-card: hsl(0 0% 100%);
+  --color-card-foreground: hsl(240 10% 3.9%);
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
+  --color-popover: hsl(0 0% 100%);
+  --color-popover-foreground: hsl(240 10% 3.9%);
 
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
+  --color-primary: hsl(240 5.9% 10%);
+  --color-primary-foreground: hsl(0 0% 98%);
 
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
+  --color-secondary: hsl(240 4.8% 95.9%);
+  --color-secondary-foreground: hsl(240 5.9% 10%);
 
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
+  --color-muted: hsl(240 4.8% 95.9%);
+  --color-muted-foreground: hsl(240 3.8% 46.1%);
 
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
+  --color-accent: hsl(240 4.8% 95.9%);
+  --color-accent-foreground: hsl(240 5.9% 10%);
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+  --color-destructive: hsl(0 84.2% 60.2%);
+  --color-destructive-foreground: hsl(0 0% 98%);
 
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 10% 3.9%;
+  --color-border: hsl(240 5.9% 90%);
+  --color-input: hsl(240 5.9% 90%);
+  --color-ring: hsl(240 10% 3.9%);
 
-    --radius: 0.5rem;
+  --color-success: hsl(142.1 76.2% 36.3%);
+}
 
-    --success: 142.1 76.2% 36.3%;
-  }
+.dark {
+  --color-background: hsl(240 10% 3.9%);
+  --color-foreground: hsl(0 0% 98%);
 
-  .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
+  --color-card: hsl(240 10% 3.9%);
+  --color-card-foreground: hsl(0 0% 98%);
 
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
+  --color-popover: hsl(240 10% 3.9%);
+  --color-popover-foreground: hsl(0 0% 98%);
 
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
+  --color-primary: hsl(0 0% 98%);
+  --color-primary-foreground: hsl(240 5.9% 10%);
 
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
+  --color-secondary: hsl(240 3.7% 15.9%);
+  --color-secondary-foreground: hsl(0 0% 98%);
 
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
+  --color-muted: hsl(240 3.7% 15.9%);
+  --color-muted-foreground: hsl(240 5% 64.9%);
 
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
+  --color-accent: hsl(240 3.7% 15.9%);
+  --color-accent-foreground: hsl(0 0% 98%);
 
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
+  --color-destructive: hsl(0 62.8% 30.6%);
+  --color-destructive-foreground: hsl(0 0% 98%);
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
+  --color-border: hsl(240 3.7% 15.9%);
+  --color-input: hsl(240 3.7% 15.9%);
+  --color-ring: hsl(240 4.9% 83.9%);
 
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
-
-    --success: 142.1 70.6% 45.3%;
-  }
+  --color-success: 142.1 70.6% 45.3%;
 }
 
 @layer base {
@@ -79,44 +74,42 @@
   }
 }
 
-@layer components {
-  .title-xl {
-    @apply text-4xl font-extrabold tracking-tight;
-  }
+@utility title-xl {
+  @apply text-4xl font-extrabold tracking-tight;
+}
 
-  .title-lg {
-    @apply border-b pb-2 text-3xl font-semibold tracking-tight;
-  }
+@utility title-lg {
+  @apply border-b pb-2 text-3xl font-semibold tracking-tight;
+}
 
-  .title-md {
-    @apply text-2xl font-semibold tracking-tight;
-  }
+@utility title-md {
+  @apply text-2xl font-semibold tracking-tight;
+}
 
-  .title-sm {
-    @apply text-xl font-semibold tracking-tight;
-  }
+@utility title-sm {
+  @apply text-xl font-semibold tracking-tight;
+}
 
-  .paragraph-lg {
-    @apply text-lg font-semibold;
-  }
+@utility paragraph-lg {
+  @apply text-lg font-semibold;
+}
 
-  .paragraph {
-    @apply leading-7;
-  }
+@utility paragraph {
+  @apply leading-7;
+}
 
-  .paragraph-sm {
-    @apply text-sm font-medium leading-none;
-  }
+@utility paragraph-sm {
+  @apply text-sm leading-none font-medium;
+}
 
-  .caption-xl {
-    @apply text-xl text-muted-foreground;
-  }
+@utility caption-xl {
+  @apply text-xl text-muted-foreground;
+}
 
-  .caption-sm {
-    @apply text-sm text-muted-foreground;
-  }
+@utility caption-sm {
+  @apply text-sm text-muted-foreground;
+}
 
-  .code {
-    @apply relative rounded bg-muted p-1 font-mono text-sm font-semibold;
-  }
+@utility code {
+  @apply relative rounded-sm bg-muted p-1 font-mono text-sm font-semibold;
 }
