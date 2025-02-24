@@ -45,7 +45,7 @@ export const ConversionSettingsForm = ({ isDisabled, onStartConversion }: Conver
         onChange={handleChange}
         onSubmit={handleSubmit(onStartConversion)}
       >
-        <h2 className="title-sm mb-2">{t('conversionSettings.title')}</h2>
+        <h2 className="mb-2 title-sm">{t('conversionSettings.title')}</h2>
         <FormField
           control={control}
           name="codec"

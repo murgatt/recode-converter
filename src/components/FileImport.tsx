@@ -65,7 +65,7 @@ export const FileImport = ({ children, isDisabled, isFileListDisplayed }: FileIm
           <Button asChild className="cursor-pointer">
             <label htmlFor="fileInput">{t('fileImport.button')}</label>
           </Button>
-          <p className="caption-sm whitespace-pre-line text-center">{t('fileImport.description')}</p>
+          <p className="text-center caption-sm whitespace-pre-line">{t('fileImport.description')}</p>
         </div>
       )}
       {isDragActive && (

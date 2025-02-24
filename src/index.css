@@ -103,13 +103,13 @@
 }
 
 @utility caption-xl {
-  @apply text-muted-foreground text-xl;
+  @apply text-xl text-muted-foreground;
 }
 
 @utility caption-sm {
-  @apply text-muted-foreground text-sm;
+  @apply text-sm text-muted-foreground;
 }
 
 @utility code {
-  @apply bg-muted relative rounded-sm p-1 font-mono text-sm font-semibold;
+  @apply relative rounded-sm bg-muted p-1 font-mono text-sm font-semibold;
 }
