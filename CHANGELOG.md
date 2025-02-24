@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.0.11](https://github.com/murgatt/recode-converter/compare/v2.0.10...v2.0.11) (2025-02-24)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump electron from 34.1.1 to 34.2.0 ([#382](https://github.com/murgatt/recode-converter/issues/382)) ([b569893](https://github.com/murgatt/recode-converter/commit/b569893d3e8b9e1c060e1103258702101327ec83))
+* **deps:** bump @hookform/resolvers from 4.0.0 to 4.1.0 ([#383](https://github.com/murgatt/recode-converter/issues/383)) ([36085ba](https://github.com/murgatt/recode-converter/commit/36085ba9ee56fc4989da36afeb0237fadae6342d))
+
 ## [2.0.10](https://github.com/murgatt/recode-converter/compare/v2.0.9...v2.0.10) (2025-02-11)
 
 
