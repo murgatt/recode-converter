@@ -17,6 +17,10 @@ updates:
       prefix: "fix"
       prefix-development: "chore"
       include: "scope"
+    groups:
+      typescript-eslint:
+        patterns:
+          - '@typescript-eslint/*'
     assignees:
       - "murgatt"
     open-pull-requests-limit: 10
