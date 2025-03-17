@@ -1,5 +1,5 @@
 import { FileVideoIcon } from 'lucide-react';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useStore } from 'src/store';
 import { Button } from './ui/Button';
@@ -15,6 +15,7 @@ export const FileImport = ({ children, isDisabled, isFileListDisplayed }: FileIm
   const { t } = useTranslation();
   const addFiles = useStore(state => state.addFiles);
   const [isDragActive, setIsDragActive] = useState(false);
+  const dropzoneRef = useRef<HTMLDivElement>(null);
 
   const handleDragOver = (event: DragEvent<HTMLDivElement>) => {
     event.preventDefault();
@@ -25,7 +26,9 @@ export const FileImport = ({ children, isDisabled, isFileListDisplayed }: FileIm
 
   const handleDragLeave = (event: DragEvent<HTMLDivElement>) => {
     event.preventDefault();
-    setIsDragActive(false);
+    if (!dropzoneRef.current?.contains(event.relatedTarget as Node)) {
+      setIsDragActive(false);
+    }
   };
 
   const handleDrop = (event: DragEvent<HTMLDivElement>) => {
@@ -48,6 +51,7 @@ export const FileImport = ({ children, isDisabled, isFileListDisplayed }: FileIm
       onDragLeave={handleDragLeave}
       onDragOver={handleDragOver}
       onDrop={handleDrop}
+      ref={dropzoneRef}
     >
       <input
         accept="video/*,.mkv"
