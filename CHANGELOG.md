@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.0.11](https://github.com/murgatt/recode-converter/compare/v2.0.10...v2.0.11) (2025-03-18)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump electron from 34.1.1 to 34.2.0 ([#382](https://github.com/murgatt/recode-converter/issues/382)) ([b569893](https://github.com/murgatt/recode-converter/commit/b569893d3e8b9e1c060e1103258702101327ec83))
+* **deps-dev:** bump electron from 34.2.0 to 35.0.1 ([#403](https://github.com/murgatt/recode-converter/issues/403)) ([12b83de](https://github.com/murgatt/recode-converter/commit/12b83de35638a24c608944b01627d7f2d2a7eae6))
+* **deps:** bump @hookform/resolvers from 4.0.0 to 4.1.0 ([#383](https://github.com/murgatt/recode-converter/issues/383)) ([36085ba](https://github.com/murgatt/recode-converter/commit/36085ba9ee56fc4989da36afeb0237fadae6342d))
+* **deps:** bump lucide-react from 0.475.0 to 0.482.0 ([#410](https://github.com/murgatt/recode-converter/issues/410)) ([986fe16](https://github.com/murgatt/recode-converter/commit/986fe167eb191c367b9aba97c08c0e26328c302b))
+* **deps:** bump react-router-dom from 7.1.1 to 7.2.0 ([#391](https://github.com/murgatt/recode-converter/issues/391)) ([189c72b](https://github.com/murgatt/recode-converter/commit/189c72bd7b962773e8bb6a8975d9f053eb804ca3))
+* **deps:** bump react-router-dom from 7.2.0 to 7.3.0 ([#407](https://github.com/murgatt/recode-converter/issues/407)) ([8a74690](https://github.com/murgatt/recode-converter/commit/8a746908acd0a2277bbe29385b72fb6b5c389cc2))
+* file drag & drop on Windows ([#409](https://github.com/murgatt/recode-converter/issues/409)) ([d1cfc2a](https://github.com/murgatt/recode-converter/commit/d1cfc2aec284dfe3b9e51526ee29779336de6edc))
+
 ## [2.0.10](https://github.com/murgatt/recode-converter/compare/v2.0.9...v2.0.10) (2025-02-11)
 
 
