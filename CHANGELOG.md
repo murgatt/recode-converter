@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.12](https://github.com/murgatt/recode-converter/compare/v2.0.11...v2.0.12) (2025-03-25)
+
+
+### Bug Fixes
+
+* **deps:** bump react-router-dom from 7.3.0 to 7.4.0 ([#413](https://github.com/murgatt/recode-converter/issues/413)) ([7c8c518](https://github.com/murgatt/recode-converter/commit/7c8c51800898a91674fe8fdfa2469e2e6b939878))
+
 ## [2.0.11](https://github.com/murgatt/recode-converter/compare/v2.0.10...v2.0.11) (2025-03-18)
 
 
