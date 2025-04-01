@@ -59,7 +59,7 @@
   "devDependencies": {
     "@eslint/js": "9.23.0",
     "@rollup/plugin-alias": "5.1.0",
-    "@tailwindcss/vite": "4.0.8",
+    "@tailwindcss/vite": "4.1.0",
     "@testing-library/dom": "10.4.0",
     "@testing-library/jest-dom": "6.6.2",
     "@testing-library/react": "16.2.0",
@@ -81,7 +81,7 @@
     "postcss": "8.5.1",
     "prettier": "3.5.0",
     "prettier-plugin-tailwindcss": "0.6.11",
-    "tailwindcss": "4.0.8",
+    "tailwindcss": "4.1.0",
     "typescript": "5.8.2",
     "typescript-eslint": "8.29.0",
     "vite": "6.2.4",
