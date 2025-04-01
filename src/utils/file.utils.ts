@@ -16,7 +16,7 @@ export function formatFileSize(fileSize: number): string {
 }
 
 export function getDirectoryPathFromFile(file: VideoFile) {
-  // @ts-ignore userAgentData is experimental, TypeScript does not have the type declarations
+  // @ts-expect-error userAgentData is experimental, TypeScript does not have the type declarations
   const pathSeparator = navigator.userAgentData.platform === 'Windows' ? '\\' : '/';
 
   return file.path.split(pathSeparator).slice(0, -1).join(pathSeparator);

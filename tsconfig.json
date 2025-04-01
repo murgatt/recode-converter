@@ -23,6 +23,6 @@
 
     "baseUrl": "."
   },
-  "include": ["src", "electron", "schema", ".eslintrc.cjs", "vite.config.mts"],
+  "include": ["src", "electron", "schema", "eslint.config.mjs", "vite.config.mts"],
   "extends": "./tsconfig.node.json"
 }

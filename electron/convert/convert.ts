@@ -1,4 +1,3 @@
-/// <reference types="fluent-ffmpeg" />
 import ffmpeg from 'fluent-ffmpeg';
 import {
   getIgnoredStreamsIndex,
@@ -10,6 +9,7 @@ import {
 import type { ConversionSettings, VideoFile } from '../../schema';
 import type { ProgressInfo } from 'electron-builder';
 
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path.replace('app.asar', 'app.asar.unpacked');
 
 ffmpeg.setFfmpegPath(ffmpegPath);
@@ -43,7 +43,7 @@ export function convert(
     .output(outputPath)
     .outputOptions(outputOptions)
     .outputOptions(ignoredStreamsOptions)
-    // @ts-ignore - Workaround to avoid error when there is spaces in stream title
+    // @ts-expect-error - Workaround to avoid error when there is spaces in stream title
     .outputOptions(...streamsTitleOptions);
 
   return new Promise<void>((resolve, reject) => {

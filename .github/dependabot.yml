@@ -18,13 +18,18 @@ updates:
       prefix-development: "chore"
       include: "scope"
     groups:
+      eslint:
+        patterns:
+          - '@eslint/js'
+          - 'eslint'
       react:
         patterns:
           - 'react'
           - 'react-dom'
-      typescript-eslint:
+      tailwindcss:
         patterns:
-          - '@typescript-eslint/*'
+          - '@tailwindcss/vite'
+          - 'tailwindcss'
     assignees:
       - "murgatt"
     open-pull-requests-limit: 10
