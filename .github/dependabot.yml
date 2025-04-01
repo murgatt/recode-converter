@@ -18,6 +18,10 @@ updates:
       prefix-development: "chore"
       include: "scope"
     groups:
+      react:
+        patterns:
+          - 'react'
+          - 'react-dom'
       typescript-eslint:
         patterns:
           - '@typescript-eslint/*'
