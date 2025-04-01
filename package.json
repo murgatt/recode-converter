@@ -48,7 +48,7 @@
     "lucide-react": "0.482.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "react-hook-form": "7.54.1",
+    "react-hook-form": "7.55.0",
     "react-i18next": "15.4.0",
     "react-router-dom": "7.4.0",
     "tailwind-merge": "3.0.2",

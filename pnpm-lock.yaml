@@ -22,7 +22,7 @@ importers:
         version: 0.8.1
       '@hookform/resolvers':
         specifier: 4.1.0
-        version: 4.1.0(react-hook-form@7.54.1(react@19.1.0))
+        version: 4.1.0(react-hook-form@7.55.0(react@19.1.0))
       '@radix-ui/react-alert-dialog':
         specifier: 1.1.6
         version: 1.1.6(@types/react-dom@19.0.4(@types/react@19.0.12))(@types/react@19.0.12)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -81,8 +81,8 @@ importers:
         specifier: 19.1.0
         version: 19.1.0(react@19.1.0)
       react-hook-form:
-        specifier: 7.54.1
-        version: 7.54.1(react@19.1.0)
+        specifier: 7.55.0
+        version: 7.55.0(react@19.1.0)
       react-i18next:
         specifier: 15.4.0
         version: 15.4.0(i18next@24.2.0(typescript@5.8.2))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -3469,8 +3469,8 @@ packages:
     peerDependencies:
       react: ^19.1.0
 
-  react-hook-form@7.54.1:
-    resolution: {integrity: sha512-PUNzFwQeQ5oHiiTUO7GO/EJXGEtuun2Y1A59rLnZBBj+vNEOWt/3ERTiG1/zt7dVeJEM+4vDX/7XQ/qanuvPMg==}
+  react-hook-form@7.55.0:
+    resolution: {integrity: sha512-XRnjsH3GVMQz1moZTW53MxfoWN7aDpUg/GpVNc4A3eXRVNdGXfbzJ4vM4aLQ8g6XCUh1nIbx70aaNCl7kxnjog==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18 || ^19
@@ -4787,10 +4787,10 @@ snapshots:
 
   '@gar/promisify@1.1.3': {}
 
-  '@hookform/resolvers@4.1.0(react-hook-form@7.54.1(react@19.1.0))':
+  '@hookform/resolvers@4.1.0(react-hook-form@7.55.0(react@19.1.0))':
     dependencies:
       caniuse-lite: 1.0.30001700
-      react-hook-form: 7.54.1(react@19.1.0)
+      react-hook-form: 7.55.0(react@19.1.0)
 
   '@humanwhocodes/config-array@0.11.14':
     dependencies:
@@ -7869,7 +7869,7 @@ snapshots:
       react: 19.1.0
       scheduler: 0.26.0
 
-  react-hook-form@7.54.1(react@19.1.0):
+  react-hook-form@7.55.0(react@19.1.0):
     dependencies:
       react: 19.1.0
 
