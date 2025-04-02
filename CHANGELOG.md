@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.0.12](https://github.com/murgatt/recode-converter/compare/v2.0.11...v2.0.12) (2025-04-02)
+
+
+### Bug Fixes
+
+* **deps:** bump react-hook-form from 7.54.1 to 7.55.0 ([#423](https://github.com/murgatt/recode-converter/issues/423)) ([e239b2e](https://github.com/murgatt/recode-converter/commit/e239b2e92a75490df2061989b8a338d39fa8e8b6))
+* **deps:** bump react-router-dom from 7.3.0 to 7.4.0 ([#413](https://github.com/murgatt/recode-converter/issues/413)) ([7c8c518](https://github.com/murgatt/recode-converter/commit/7c8c51800898a91674fe8fdfa2469e2e6b939878))
+* **deps:** bump tailwind-merge from 3.0.2 to 3.1.0 ([#424](https://github.com/murgatt/recode-converter/issues/424)) ([c805a50](https://github.com/murgatt/recode-converter/commit/c805a50e341573112af4a1b3444a6e8d118cdd2b))
+* **deps:** bump the react group with 4 updates ([#426](https://github.com/murgatt/recode-converter/issues/426)) ([cf53082](https://github.com/murgatt/recode-converter/commit/cf5308251f00d52263c3316c0dbaf0122561c3e2))
+
 ## [2.0.11](https://github.com/murgatt/recode-converter/compare/v2.0.10...v2.0.11) (2025-03-18)
 
 
