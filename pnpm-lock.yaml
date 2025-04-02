@@ -72,8 +72,8 @@ importers:
         specifier: 10.1.1
         version: 10.1.1
       lucide-react:
-        specifier: 0.482.0
-        version: 0.482.0(react@19.1.0)
+        specifier: 0.487.0
+        version: 0.487.0(react@19.1.0)
       react:
         specifier: 19.1.0
         version: 19.1.0
@@ -360,8 +360,8 @@ packages:
     engines: {node: '>=10.12.0'}
     hasBin: true
 
-  '@electron/asar@3.3.1':
-    resolution: {integrity: sha512-WtpC/+34p0skWZiarRjLAyqaAX78DofhDxnREy/V5XHfu1XEXbFCSSMcDQ6hNCPJFaPy8/NnUgYuf9uiCkvKPg==}
+  '@electron/asar@3.4.0':
+    resolution: {integrity: sha512-8ZAmXjsQ17wJxdv4755hZ1Xiw85dwETlWYQwl+imww18CaEK4bxPvAotJEfIZGbRMrNEJOTMyuVQD+yDY03N5Q==}
     engines: {node: '>=10.12.0'}
     hasBin: true
 
@@ -3036,8 +3036,8 @@ packages:
     resolution: {integrity: sha512-jumlc0BIUrS3qJGgIkWZsyfAM7NCWiBcCDhnd+3NNM5KbBmLTgHVfWBcg6W+rLUsIpzpERPsvwUP7CckAQSOoA==}
     engines: {node: '>=12'}
 
-  lucide-react@0.482.0:
-    resolution: {integrity: sha512-XM8PzHzSrg8ATmmO+fzf+JyYlVVdQnJjuyLDj2p4V2zEtcKeBNAqAoJIGFv1x2HSBa7kT8gpYUxwdQ0g7nypfw==}
+  lucide-react@0.487.0:
+    resolution: {integrity: sha512-aKqhOQ+YmFnwq8dWgGjOuLc8V1R9/c/yOd+zDY4+ohsR2Jo05lSGc3WsstYPIzcTpeosN7LoCkLReUUITvaIvw==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
@@ -4451,7 +4451,7 @@ snapshots:
       glob: 7.2.3
       minimatch: 3.1.2
 
-  '@electron/asar@3.3.1':
+  '@electron/asar@3.4.0':
     dependencies:
       commander: 5.1.0
       glob: 7.2.3
@@ -4553,7 +4553,7 @@ snapshots:
 
   '@electron/universal@1.5.1':
     dependencies:
-      '@electron/asar': 3.3.1
+      '@electron/asar': 3.4.0
       '@malept/cross-spawn-promise': 1.1.1
       debug: 4.4.0
       dir-compare: 3.3.0
@@ -7500,7 +7500,7 @@ snapshots:
 
   lru-cache@7.18.3: {}
 
-  lucide-react@0.482.0(react@19.1.0):
+  lucide-react@0.487.0(react@19.1.0):
     dependencies:
       react: 19.1.0
 
