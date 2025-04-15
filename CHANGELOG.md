@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.0.12](https://github.com/murgatt/recode-converter/compare/v2.0.11...v2.0.12) (2025-04-15)
+
+
+### Bug Fixes
+
+* **deps:** bump @hookform/resolvers from 4.1.0 to 5.0.1 ([#432](https://github.com/murgatt/recode-converter/issues/432)) ([436e0be](https://github.com/murgatt/recode-converter/commit/436e0be6c2440bc33d7d8f577c9c71db28a88383))
+* **deps:** bump @radix-ui/react-slot from 1.1.2 to 1.2.0 ([#445](https://github.com/murgatt/recode-converter/issues/445)) ([8d16175](https://github.com/murgatt/recode-converter/commit/8d16175c7307b14811fae56e7b9a429503f1da66))
+* **deps:** bump @radix-ui/react-tooltip from 1.1.8 to 1.2.0 ([#443](https://github.com/murgatt/recode-converter/issues/443)) ([1f162a9](https://github.com/murgatt/recode-converter/commit/1f162a911fdc9b36c14b92590b0981ddcc14a267))
+* **deps:** bump react-hook-form from 7.54.1 to 7.55.0 ([#423](https://github.com/murgatt/recode-converter/issues/423)) ([e239b2e](https://github.com/murgatt/recode-converter/commit/e239b2e92a75490df2061989b8a338d39fa8e8b6))
+* **deps:** bump react-router-dom from 7.3.0 to 7.4.0 ([#413](https://github.com/murgatt/recode-converter/issues/413)) ([7c8c518](https://github.com/murgatt/recode-converter/commit/7c8c51800898a91674fe8fdfa2469e2e6b939878))
+* **deps:** bump react-router-dom from 7.4.0 to 7.5.0 ([#434](https://github.com/murgatt/recode-converter/issues/434)) ([e968708](https://github.com/murgatt/recode-converter/commit/e968708b7aaaab2eb6ac90d8c7efca351bc3a491))
+* **deps:** bump tailwind-merge from 3.0.2 to 3.1.0 ([#424](https://github.com/murgatt/recode-converter/issues/424)) ([c805a50](https://github.com/murgatt/recode-converter/commit/c805a50e341573112af4a1b3444a6e8d118cdd2b))
+* **deps:** bump tailwind-merge from 3.1.0 to 3.2.0 ([#436](https://github.com/murgatt/recode-converter/issues/436)) ([5467f6a](https://github.com/murgatt/recode-converter/commit/5467f6a4e15b117a65f866b7b98eb994de8a164d))
+* **deps:** bump the react group with 4 updates ([#426](https://github.com/murgatt/recode-converter/issues/426)) ([cf53082](https://github.com/murgatt/recode-converter/commit/cf5308251f00d52263c3316c0dbaf0122561c3e2))
+
 ## [2.0.11](https://github.com/murgatt/recode-converter/compare/v2.0.10...v2.0.11) (2025-03-18)
 
 
