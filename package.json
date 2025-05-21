@@ -68,7 +68,7 @@
     "@types/react": "19.1.0",
     "@types/react-dom": "19.1.1",
     "@vitejs/plugin-react": "4.4.1",
-    "electron": "35.2.0",
+    "electron": "36.2.1",
     "electron-builder": "26.0.2",
     "eslint": "9.27.0",
     "eslint-config-prettier": "10.1.1",
