@@ -53,7 +53,7 @@
     "react-router-dom": "7.7.1",
     "tailwind-merge": "3.3.0",
     "tailwindcss-animate": "1.0.7",
-    "zod": "3.25.7",
+    "zod": "4.0.14",
     "zustand": "5.0.0"
   },
   "devDependencies": {
