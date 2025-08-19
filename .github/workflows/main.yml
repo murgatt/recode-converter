@@ -47,6 +47,6 @@ jobs:
 
       - name: Pull Request title
         if: github.event_name == 'pull_request'
-        uses: amannn/action-semantic-pull-request@v5
+        uses: amannn/action-semantic-pull-request@v6
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
