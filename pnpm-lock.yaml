@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@aptabase/electron':
         specifier: 0.3.1
-        version: 0.3.1(electron@37.3.1)
+        version: 0.3.1(electron@37.4.0)
       '@ffmpeg-installer/ffmpeg':
         specifier: 1.1.0
         version: 1.1.0
@@ -136,8 +136,8 @@ importers:
         specifier: 5.0.0
         version: 5.0.0(vite@7.1.2(@types/node@24.3.0)(jiti@2.4.2)(lightningcss@1.30.1))
       electron:
-        specifier: 37.3.1
-        version: 37.3.1
+        specifier: 37.4.0
+        version: 37.4.0
       electron-builder:
         specifier: 26.0.12
         version: 26.0.12(electron-builder-squirrel-windows@24.13.3)
@@ -1803,8 +1803,8 @@ packages:
   '@types/node@20.8.7':
     resolution: {integrity: sha512-21TKHHh3eUHIi2MloeptJWALuCu5H7HQTdTrWIFReA8ad+aggoX+lRes3ex7/FtpC+sVUpFMQ+QTfYr74mruiQ==}
 
-  '@types/node@22.17.2':
-    resolution: {integrity: sha512-gL6z5N9Jm9mhY+U2KXZpteb+09zyffliRkZyZOHODGATyC5B1Jt/7TzuuiLkFsSUMLbS1OLmlj/E+/3KF4Q/4w==}
+  '@types/node@22.18.0':
+    resolution: {integrity: sha512-m5ObIqwsUp6BZzyiy4RdZpzWGub9bqLJMvZDD0QMXhxjqMHMENlj+SqF5QxoUwaQNFe+8kz8XM8ZQhqkQPTgMQ==}
 
   '@types/node@24.3.0':
     resolution: {integrity: sha512-aPTXCrfwnDLj4VvXrm+UUCQjNEvJgNA8s5F1cvwQU+3KNltTOkBm1j30uNLyqqPNe7gE3KFzImYoZEfLhp4Yow==}
@@ -2533,8 +2533,8 @@ packages:
   electron-to-chromium@1.5.200:
     resolution: {integrity: sha512-rFCxROw7aOe4uPTfIAx+rXv9cEcGx+buAF4npnhtTqCJk5KDFRnh3+KYj7rdVh6lsFt5/aPs+Irj9rZ33WMA7w==}
 
-  electron@37.3.1:
-    resolution: {integrity: sha512-7DhktRLqhe6OJh/Bo75bTI0puUYEmIwSzMinocgO63mx3MVjtIn2tYMzLmAleNIlud2htkjpsMG2zT4PiTCloA==}
+  electron@37.4.0:
+    resolution: {integrity: sha512-HhsSdWowE5ODOeWNc/323Ug2C52mq/TqNBG+4uMeOA3G2dMXNc/nfyi0RYu1rJEgiaJLEjtHveeZZaYRYFsFCQ==}
     engines: {node: '>= 12.20.55'}
     hasBin: true
 
@@ -3318,6 +3318,10 @@ packages:
 
   isbinaryfile@5.0.4:
     resolution: {integrity: sha512-YKBKVkKhty7s8rxddb40oOkuP0NbaeXrQvLin6QMHL7Ypiy2RW9LwOVrVgZRyOrhQlayMd9t+D8yDy8MKFTSDQ==}
+    engines: {node: '>= 18.0.0'}
+
+  isbinaryfile@5.0.6:
+    resolution: {integrity: sha512-I+NmIfBHUl+r2wcDd6JwE9yWje/PIVY/R5/CmV8dXLZd5K+L9X2klAOwfAHNnondLXkbHyTAleQAWonpTJBTtw==}
     engines: {node: '>= 18.0.0'}
 
   isexe@2.0.0:
@@ -4901,9 +4905,9 @@ snapshots:
       '@jridgewell/gen-mapping': 0.3.13
       '@jridgewell/trace-mapping': 0.3.30
 
-  '@aptabase/electron@0.3.1(electron@37.3.1)':
+  '@aptabase/electron@0.3.1(electron@37.4.0)':
     dependencies:
-      electron: 37.3.1
+      electron: 37.4.0
 
   '@asamuzakjp/css-color@3.1.1':
     dependencies:
@@ -6373,7 +6377,7 @@ snapshots:
     dependencies:
       undici-types: 5.25.3
 
-  '@types/node@22.17.2':
+  '@types/node@22.18.0':
     dependencies:
       undici-types: 6.21.0
 
@@ -6629,7 +6633,7 @@ snapshots:
       fs-extra: 10.1.0
       hosted-git-info: 4.1.0
       is-ci: 3.0.1
-      isbinaryfile: 5.0.4
+      isbinaryfile: 5.0.6
       js-yaml: 4.1.0
       lazy-val: 1.0.5
       minimatch: 5.1.6
@@ -7394,10 +7398,10 @@ snapshots:
 
   electron-to-chromium@1.5.200: {}
 
-  electron@37.3.1:
+  electron@37.4.0:
     dependencies:
       '@electron/get': 2.0.3
-      '@types/node': 22.17.2
+      '@types/node': 22.18.0
       extract-zip: 2.0.1
     transitivePeerDependencies:
       - supports-color
@@ -8441,6 +8445,8 @@ snapshots:
   isbinaryfile@4.0.10: {}
 
   isbinaryfile@5.0.4: {}
+
+  isbinaryfile@5.0.6: {}
 
   isexe@2.0.0: {}
 
