@@ -109,10 +109,6 @@
       "@ffprobe-installer/win32-ia32",
       "@ffprobe-installer/win32-x64",
       "electron"
-    ],
-    "ignoredBuiltDependencies": [
-      "@tailwindcss/oxide",
-      "esbuild"
     ]
   }
 }
