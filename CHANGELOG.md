@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.13](https://github.com/murgatt/recode-converter/compare/v2.0.12...v2.0.13) (2025-10-02)
+
+
+### Bug Fixes
+
+* check icon color in dark theme ([#564](https://github.com/murgatt/recode-converter/issues/564)) ([c12cbde](https://github.com/murgatt/recode-converter/commit/c12cbde52114674f09bfbb22d67ead7a0fbe2114))
+
 ## [2.0.12](https://github.com/murgatt/recode-converter/compare/v2.0.11...v2.0.12) (2025-10-02)
 
 
