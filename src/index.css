@@ -62,7 +62,7 @@
   --color-input: hsl(240 3.7% 15.9%);
   --color-ring: hsl(240 4.9% 83.9%);
 
-  --color-success: 142.1 70.6% 45.3%;
+  --color-success: hsl(142.1 76.2% 36.3%);
 }
 
 @layer base {
