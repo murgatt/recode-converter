@@ -13,6 +13,7 @@ export default defineConfig(
   tseslint.configs.recommended,
   importPlugin.flatConfigs.recommended,
   jsxA11yPlugin.flatConfigs.recommended,
+  reactHooksPlugin.configs.flat.recommended,
   {
     languageOptions: {
       parserOptions: {
@@ -38,7 +39,6 @@ export default defineConfig(
     rules: {
       ...reactPlugin.configs.recommended.rules,
       ...reactPlugin.configs['jsx-runtime'].rules,
-      ...reactHooksPlugin.configs.recommended.rules,
       '@typescript-eslint/consistent-type-imports': 'error',
       '@typescript-eslint/consistent-type-exports': 'error',
       '@typescript-eslint/member-ordering': [
