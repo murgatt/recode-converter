@@ -1,11 +1,11 @@
-import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from 'src/lib/utils';
 import { NavigationMenuItem, NavigationMenuLink, navigationMenuTriggerStyle } from '../ui/NavigationMenu';
 import { Tooltip } from '../ui/Tooltip';
+import type { ReactNode } from 'react';
 
 type AppMenuItemProps = {
-  children: React.ReactNode;
+  children: ReactNode;
   label: string;
   to: string;
 };
