@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.13](https://github.com/murgatt/recode-converter/compare/v2.0.12...v2.0.13) (2025-10-15)
+
+
+### Bug Fixes
+
+* check icon color in dark theme ([#564](https://github.com/murgatt/recode-converter/issues/564)) ([c12cbde](https://github.com/murgatt/recode-converter/commit/c12cbde52114674f09bfbb22d67ead7a0fbe2114))
+* **deps:** bump i18next from 25.5.2 to 25.6.0 ([#573](https://github.com/murgatt/recode-converter/issues/573)) ([8c6a916](https://github.com/murgatt/recode-converter/commit/8c6a91655243abe21e96d409dc112a8d8158e3c6))
+* **deps:** bump react-hook-form from 7.63.0 to 7.64.0 ([#571](https://github.com/murgatt/recode-converter/issues/571)) ([3d9f76c](https://github.com/murgatt/recode-converter/commit/3d9f76c06d695504c03edd82d03b9f28a8461ee4))
+* **deps:** bump react-hook-form from 7.64.0 to 7.65.0 ([#575](https://github.com/murgatt/recode-converter/issues/575)) ([baef424](https://github.com/murgatt/recode-converter/commit/baef424e06b7c83134e11504a5002dce42931275))
+* **deps:** bump the react group with 2 updates ([#567](https://github.com/murgatt/recode-converter/issues/567)) ([d917174](https://github.com/murgatt/recode-converter/commit/d91717467023b8c1478a79a5b0fbaadea304d914))
+
 ## [2.0.12](https://github.com/murgatt/recode-converter/compare/v2.0.11...v2.0.12) (2025-10-02)
 
 
