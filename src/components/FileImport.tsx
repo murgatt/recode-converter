@@ -1,12 +1,12 @@
 import { FileVideoIcon } from 'lucide-react';
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useStore } from 'src/store';
 import { Button } from './ui/Button';
-import type { ChangeEvent, DragEvent } from 'react';
+import type { ChangeEvent, DragEvent, ReactNode } from 'react';
 
 type FileImportProps = {
-  children: React.ReactNode;
+  children: ReactNode;
   isDisabled: boolean;
   isFileListDisplayed: boolean;
 };
