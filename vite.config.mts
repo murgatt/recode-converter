@@ -1,4 +1,4 @@
-/// <reference types="vitest" />
+/// <reference types="vitest/config" />
 import path from 'node:path';
 import alias from '@rollup/plugin-alias';
 import tailwindcss from '@tailwindcss/vite';
