@@ -71,11 +71,13 @@ export class ConversionManager {
 
   handleFileConversionProgress(filePath: string, progress: number) {
     this.mainWindow.webContents.send('file-conversion-progress', { filePath, progress });
+    this.mainWindow.setProgressBar(progress / 100);
   }
 
   handleFileConversionEnd(filePath: string) {
     this.mainWindow.webContents.send('file-conversion-end', { filePath });
     trackEvent('file_conversion_end');
+    this.mainWindow.setProgressBar(-1);
   }
 
   handleFileConversionError(filePath: string, error: string) {
