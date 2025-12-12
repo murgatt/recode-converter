@@ -1,10 +1,20 @@
 import { CoffeeIcon, GithubIcon, LinkIcon } from 'lucide-react';
+import { marked } from 'marked';
 import { useTranslation } from 'react-i18next';
 import { ExternalLink } from 'src/components/ExternalLink';
 import { Button } from 'src/components/ui/Button';
+import { Separator } from 'src/components/ui/Separator';
 import { Tooltip } from 'src/components/ui/Tooltip';
 import { APP_WEBSITE_URL, AUTHOR_GITHUB_URL, COFFEE_URL, GITHUB_REPOSITORY_URL } from 'src/constants';
+import changelog from '../../CHANGELOG.md?raw';
 import { version } from '../../package.json';
+
+marked.use({
+  renderer: {
+    link: ({ href, text }) => `<a href="${href}" target="_blank">${text}</a>`,
+  },
+});
+const parsedChangelog = marked.parse(changelog);
 
 export const About = () => {
   const { t } = useTranslation();
@@ -44,6 +54,11 @@ export const About = () => {
             </Button>
           </Tooltip>
         </div>
+        <Separator />
+        <div
+          className="[&_a]:underline [&>h1]:title-lg [&>h2]:mt-8 [&>h2]:mb-4 [&>h2]:border-b [&>h2]:pb-2 [&>h2]:title-md [&>h3]:mt-6 [&>h3]:mb-4 [&>h3]:title-sm [&>ul]:list-disc [&>ul]:pl-8"
+          dangerouslySetInnerHTML={{ __html: parsedChangelog }}
+        />
       </div>
     </section>
   );

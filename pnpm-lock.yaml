@@ -74,6 +74,9 @@ importers:
       lucide-react:
         specifier: 0.544.0
         version: 0.544.0(react@19.2.0)
+      marked:
+        specifier: 17.0.1
+        version: 17.0.1
       react:
         specifier: 19.2.0
         version: 19.2.0
@@ -3600,6 +3603,11 @@ packages:
   make-fetch-happen@10.2.1:
     resolution: {integrity: sha512-NgOPbRiaQM10DYXvN3/hhGVI2M5MtITFryzBGxHM5p4wnFxsVCbxkrBrDsk+EZ5OB4jEOT7AjDxtdF+KVEFT7w==}
     engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
+
+  marked@17.0.1:
+    resolution: {integrity: sha512-boeBdiS0ghpWcSwoNm/jJBwdpFaMnZWRzjA6SkUMYb40SVaN1x7mmfGKp0jvexGcx+7y2La5zRZsYFZI6Qpypg==}
+    engines: {node: '>= 20'}
+    hasBin: true
 
   matcher@3.0.0:
     resolution: {integrity: sha512-OkeDaAZ/bQCxeFAozM55PKcKU0yJMPGifLwV4Qgjitu+5MoAfSQN4lsLJeXZ1b8w0x+/Emda6MZgXS1jvsapng==}
@@ -8820,6 +8828,8 @@ snapshots:
     transitivePeerDependencies:
       - bluebird
       - supports-color
+
+  marked@17.0.1: {}
 
   matcher@3.0.0:
     dependencies:
