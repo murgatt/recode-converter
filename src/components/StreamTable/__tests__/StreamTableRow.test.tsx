@@ -67,7 +67,7 @@ describe('StreamTableRow', () => {
     expect(screen.getByRole('textbox')).toBeDisabled();
   });
 
-  it('should display undefined title if tags is undefined', () => {
+  it('should display an empty title if tags is undefined', () => {
     render(
       <StreamTableRow
         isDisabled={false}
