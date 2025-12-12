@@ -2,7 +2,7 @@ import path from 'node:path';
 import { initialize, trackEvent } from '@aptabase/electron/main';
 import { app, BrowserWindow, ipcMain, shell } from 'electron';
 import { ConversionManager } from './ConversionManager';
-import { handleOpenDirectory, handleOpenExternalLink } from './electron';
+import { handleOpenDirectory } from './electron';
 
 const DIST = path.join(__dirname, '../dist');
 const VITE_PUBLIC = app.isPackaged ? DIST : path.join(DIST, '../public');
@@ -61,6 +61,5 @@ app.whenReady().then(() => {
   trackEvent('app_started');
   trackEvent('page_view', { path: '/' });
   ipcMain.handle('dialog:openDirectory', handleOpenDirectory);
-  ipcMain.handle('shell:openExternalLink', (_event, url: string) => handleOpenExternalLink(url));
   createWindow();
 });

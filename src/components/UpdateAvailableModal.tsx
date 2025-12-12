@@ -35,10 +35,6 @@ export const UpdateAvailableModal = () => {
     checkVersion();
   }, []);
 
-  const handleUpdate = () => {
-    window.electron.openExternalLink(APP_WEBSITE_URL);
-  };
-
   return (
     <AlertDialog onOpenChange={setIsOpen} open={isOpen}>
       <AlertDialogContent>
@@ -48,7 +44,11 @@ export const UpdateAvailableModal = () => {
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel>{t('appVersionModal.cancel')}</AlertDialogCancel>
-          <AlertDialogAction onClick={handleUpdate}>{t('appVersionModal.submit')}</AlertDialogAction>
+          <AlertDialogAction asChild>
+            <a href={APP_WEBSITE_URL} rel="noreferrer" target="_blank">
+              {t('appVersionModal.submit')}
+            </a>
+          </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>

@@ -11,7 +11,6 @@ import type { ConversionSettings, VideoFile } from '../schema';
 export interface IElectron {
   getFilePath: (file: File) => string;
   openDirectory: () => Promise<string>;
-  openExternalLink: (url: string) => Promise<void>;
 }
 
 export interface IConversion {
