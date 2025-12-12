@@ -1,7 +1,6 @@
 import { CoffeeIcon, GithubIcon, LinkIcon } from 'lucide-react';
 import { marked } from 'marked';
 import { useTranslation } from 'react-i18next';
-import { ExternalLink } from 'src/components/ExternalLink';
 import { Button } from 'src/components/ui/Button';
 import { Separator } from 'src/components/ui/Separator';
 import { Tooltip } from 'src/components/ui/Tooltip';
@@ -27,30 +26,30 @@ export const About = () => {
         <p className="caption-sm">v{version}</p>
         <p className="paragraph-sm">
           {t('about.builtBy')}{' '}
-          <ExternalLink className="underline underline-offset-4" href={AUTHOR_GITHUB_URL}>
+          <a className="underline underline-offset-4" href={AUTHOR_GITHUB_URL} rel="noreferrer" target="_blank">
             @murgatt
-          </ExternalLink>
+          </a>
         </p>
         <div className="flex gap-1">
           <Tooltip content={t('about.githubLabel')} position="bottom">
             <Button aria-label={t('about.githubLabel')} asChild size="icon" variant="ghost">
-              <ExternalLink href={GITHUB_REPOSITORY_URL}>
+              <a href={GITHUB_REPOSITORY_URL} rel="noreferrer" target="_blank">
                 <GithubIcon size="16" />
-              </ExternalLink>
+              </a>
             </Button>
           </Tooltip>
           <Tooltip content={t('about.websiteLabel')} position="bottom">
             <Button aria-label={t('about.websiteLabel')} asChild size="icon" variant="ghost">
-              <ExternalLink href={APP_WEBSITE_URL}>
+              <a href={APP_WEBSITE_URL} rel="noreferrer" target="_blank">
                 <LinkIcon size="16" />
-              </ExternalLink>
+              </a>
             </Button>
           </Tooltip>
           <Tooltip content={t('about.buyMeACoffee')} position="bottom">
             <Button aria-label={t('about.buyMeACoffee')} asChild size="icon" variant="ghost">
-              <ExternalLink href={COFFEE_URL}>
+              <a href={COFFEE_URL} rel="noreferrer" target="_blank">
                 <CoffeeIcon size="16" />
-              </ExternalLink>
+              </a>
             </Button>
           </Tooltip>
         </div>
