@@ -13,7 +13,7 @@ type StreamTableRowProps = {
   isDisabled: boolean;
   onCheckedChange: (checked: boolean) => void;
   onTitleChange: (title: string) => void;
-  stream: FfprobeStream;
+  stream: FfprobeStream & { tags?: Record<string, string> };
   title?: string;
 };
 
@@ -28,7 +28,7 @@ export const StreamTableRow = ({
   const { t } = useTranslation();
   const { codec_name, codec_type, tags } = stream;
   const isChecked = checked ?? true;
-  const displayedTitle = title ?? tags.title;
+  const displayedTitle = title ?? tags?.title;
 
   const handleTitleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const newTitle = event.currentTarget.value;
@@ -48,7 +48,7 @@ export const StreamTableRow = ({
       <TableCell>
         <StreamTableTypeCell type={codec_type} />
       </TableCell>
-      <TableCell>{tags.language}</TableCell>
+      <TableCell>{tags?.language}</TableCell>
       <TableCell>
         <Input disabled={isDisabled} onChange={handleTitleChange} value={displayedTitle} />
       </TableCell>

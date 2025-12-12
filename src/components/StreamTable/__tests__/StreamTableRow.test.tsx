@@ -66,4 +66,17 @@ describe('StreamTableRow', () => {
     expect(screen.getByRole('checkbox')).toBeDisabled();
     expect(screen.getByRole('textbox')).toBeDisabled();
   });
+
+  it('should display an empty title if tags is undefined', () => {
+    render(
+      <StreamTableRow
+        isDisabled={false}
+        onCheckedChange={vi.fn()}
+        onTitleChange={vi.fn()}
+        stream={{ ...stream, tags: undefined }}
+      />,
+    );
+
+    expect(screen.getByRole('textbox')).toHaveValue('');
+  });
 });
