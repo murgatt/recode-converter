@@ -46,6 +46,7 @@
     "i18next": "25.7.1",
     "immer": "10.2.0",
     "lucide-react": "0.544.0",
+    "marked": "17.0.1",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "react-hook-form": "7.68.0",

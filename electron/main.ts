@@ -1,6 +1,6 @@
 import path from 'node:path';
 import { initialize, trackEvent } from '@aptabase/electron/main';
-import { app, BrowserWindow, ipcMain } from 'electron';
+import { app, BrowserWindow, ipcMain, shell } from 'electron';
 import { ConversionManager } from './ConversionManager';
 import { handleOpenDirectory, handleOpenExternalLink } from './electron';
 
@@ -37,6 +37,12 @@ function createWindow() {
   }
 
   mainWindow.maximize();
+
+  mainWindow.webContents.setWindowOpenHandler(({ url }) => {
+    shell.openExternal(url);
+
+    return { action: 'deny' };
+  });
 }
 
 app.on('window-all-closed', () => {
