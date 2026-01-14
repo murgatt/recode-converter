@@ -16,6 +16,7 @@ initialize('A-EU-7747122999');
 
 function createWindow() {
   const mainWindow = new BrowserWindow({
+    autoHideMenuBar: true,
     icon: path.join(VITE_PUBLIC, 'icon.png'),
     minWidth: 768,
     minHeight: 500,
