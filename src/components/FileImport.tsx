@@ -43,6 +43,7 @@ export const FileImport = ({ children, isDisabled, isFileListDisplayed }: FileIm
   const handleFileInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(event.target.files ?? []);
     addFiles(files);
+    event.target.value = '';
   };
 
   return (
