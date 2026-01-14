@@ -49,7 +49,7 @@
     "marked": "17.0.1",
     "react": "19.2.0",
     "react-dom": "19.2.0",
-    "react-hook-form": "7.70.0",
+    "react-hook-form": "7.71.1",
     "react-i18next": "16.5.0",
     "react-router-dom": "7.12.0",
     "tailwind-merge": "3.4.0",
