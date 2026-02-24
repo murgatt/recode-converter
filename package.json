@@ -51,7 +51,7 @@
     "react-dom": "19.2.0",
     "react-hook-form": "7.71.1",
     "react-i18next": "16.5.0",
-    "react-router-dom": "7.12.0",
+    "react-router-dom": "7.13.1",
     "tailwind-merge": "3.5.0",
     "tailwindcss-animate": "1.0.7",
     "zod": "4.3.5",
