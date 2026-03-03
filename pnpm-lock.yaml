@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@aptabase/electron':
         specifier: 0.3.1
-        version: 0.3.1(electron@40.4.1)
+        version: 0.3.1(electron@40.6.1)
       '@ffmpeg-installer/ffmpeg':
         specifier: 1.1.0
         version: 1.1.0
@@ -113,7 +113,7 @@ importers:
         version: 6.0.0(rollup@4.53.5)
       '@tailwindcss/vite':
         specifier: 4.2.1
-        version: 4.2.1(vite@7.3.0(@types/node@25.3.0)(jiti@2.6.1)(lightningcss@1.31.1))
+        version: 4.2.1(vite@7.3.0(@types/node@25.3.3)(jiti@2.6.1)(lightningcss@1.31.1))
       '@testing-library/dom':
         specifier: 10.4.1
         version: 10.4.1
@@ -137,10 +137,10 @@ importers:
         version: 19.2.1(@types/react@19.2.2)
       '@vitejs/plugin-react':
         specifier: 5.1.0
-        version: 5.1.0(vite@7.3.0(@types/node@25.3.0)(jiti@2.6.1)(lightningcss@1.31.1))
+        version: 5.1.0(vite@7.3.0(@types/node@25.3.3)(jiti@2.6.1)(lightningcss@1.31.1))
       electron:
-        specifier: 40.4.1
-        version: 40.4.1
+        specifier: 40.6.1
+        version: 40.6.1
       electron-builder:
         specifier: 26.8.1
         version: 26.8.1(electron-builder-squirrel-windows@24.13.3)
@@ -188,7 +188,7 @@ importers:
         version: 8.56.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.2)
       vite:
         specifier: 7.3.0
-        version: 7.3.0(@types/node@25.3.0)(jiti@2.6.1)(lightningcss@1.31.1)
+        version: 7.3.0(@types/node@25.3.3)(jiti@2.6.1)(lightningcss@1.31.1)
       vite-plugin-electron:
         specifier: 0.29.0
         version: 0.29.0(vite-plugin-electron-renderer@0.14.5)
@@ -197,7 +197,7 @@ importers:
         version: 0.14.5
       vitest:
         specifier: 4.0.8
-        version: 4.0.8(@types/debug@4.1.12)(@types/node@25.3.0)(jiti@2.6.1)(jsdom@28.1.0)(lightningcss@1.31.1)
+        version: 4.0.8(@types/debug@4.1.12)(@types/node@25.3.3)(jiti@2.6.1)(jsdom@28.1.0)(lightningcss@1.31.1)
 
 packages:
 
@@ -1844,14 +1844,11 @@ packages:
   '@types/node@20.8.7':
     resolution: {integrity: sha512-21TKHHh3eUHIi2MloeptJWALuCu5H7HQTdTrWIFReA8ad+aggoX+lRes3ex7/FtpC+sVUpFMQ+QTfYr74mruiQ==}
 
-  '@types/node@24.10.13':
-    resolution: {integrity: sha512-oH72nZRfDv9lADUBSo104Aq7gPHpQZc4BTx38r9xf9pg5LfP6EzSyH2n7qFmmxRQXh7YlUXODcYsg6PuTDSxGg==}
+  '@types/node@24.11.0':
+    resolution: {integrity: sha512-fPxQqz4VTgPI/IQ+lj9r0h+fDR66bzoeMGHp8ASee+32OSGIkeASsoZuJixsQoVef1QJbeubcPBxKk22QVoWdw==}
 
-  '@types/node@25.2.3':
-    resolution: {integrity: sha512-m0jEgYlYz+mDJZ2+F4v8D1AyQb+QzsNqRuI7xg1VQX/KlKS0qT9r1Mo16yo5F/MtifXFgaofIFsdFMox2SxIbQ==}
-
-  '@types/node@25.3.0':
-    resolution: {integrity: sha512-4K3bqJpXpqfg2XKGK9bpDTc6xO/xoUP/RBWS7AtRMug6zZFaRekiLzjVtAoZMquxoAbzBvy5nxQ7veS5eYzf8A==}
+  '@types/node@25.3.3':
+    resolution: {integrity: sha512-DpzbrH7wIcBaJibpKo9nnSQL0MTRdnWttGyE5haGwK86xgMOkFLp7vEyfQPGLOJh5wNYiJ3V9PmUMDhV9u8kkQ==}
 
   '@types/plist@3.0.5':
     resolution: {integrity: sha512-E6OCaRmAe4WDmWNsL/9RMqdkkzDCY1etutkflWk4c+AcjDU07Pcz1fQwTX0TQz+Pxqn9i4L1TU3UFpjnrcDgxA==}
@@ -2577,8 +2574,8 @@ packages:
   electron-to-chromium@1.5.241:
     resolution: {integrity: sha512-ILMvKX/ZV5WIJzzdtuHg8xquk2y0BOGlFOxBVwTpbiXqWIH0hamG45ddU4R3PQ0gYu+xgo0vdHXHli9sHIGb4w==}
 
-  electron@40.4.1:
-    resolution: {integrity: sha512-N1ZXybQZL8kYemO8vAeh9nrk4mSvqlAO8xs0QCHkXIvRnuB/7VGwEehjvQbsU5/f4bmTKpG+2GQERe/zmKpudQ==}
+  electron@40.6.1:
+    resolution: {integrity: sha512-u9YfoixttdauciHV9Ut9Zf3YipJoU093kR1GSYTTXTAXqhiXI0G1A0NnL/f0O2m2UULCXaXMf2W71PloR6V9pQ==}
     engines: {node: '>= 12.20.55'}
     hasBin: true
 
@@ -3644,8 +3641,11 @@ packages:
   minimatch@3.1.3:
     resolution: {integrity: sha512-M2GCs7Vk83NxkUyQV1bkABc4yxgz9kILhHImZiBPAZ9ybuvCb0/H7lEl5XvIg3g+9d4eNotkZA5IWwYl0tibaA==}
 
-  minimatch@5.1.7:
-    resolution: {integrity: sha512-FjiwU9HaHW6YB3H4a1sFudnv93lvydNjz2lmyUXR6IwKhGI+bgL3SOZrBGn6kvvX2pJvhEkGSGjyTHN47O4rqA==}
+  minimatch@3.1.5:
+    resolution: {integrity: sha512-VgjWUsnnT6n+NUk6eZq77zeFdpW2LWDzP6zFGrCbHXiYNul5Dzqk2HHQ5uFH2DNW5Xbp8+jVzaeNt94ssEEl4w==}
+
+  minimatch@5.1.9:
+    resolution: {integrity: sha512-7o1wEA2RyMP7Iu7GNba9vc0RWWGACJOCZBJX2GJWip0ikV+wcOsgVuY9uE8CPiyQhkGFSlhuSkZPavN7u1c2Fw==}
     engines: {node: '>=10'}
 
   minimatch@9.0.5:
@@ -3988,8 +3988,8 @@ packages:
   proper-lockfile@4.1.2:
     resolution: {integrity: sha512-TjNPblN4BwAWMXU8s9AEz4JmQxnD1NNL7bNOY/AKUzyamc379FWASUhc/K1pL2noVb+XmZKLL68cjzLsiOAMaA==}
 
-  pump@3.0.3:
-    resolution: {integrity: sha512-todwxLMY7/heScKmntwQG8CXVkWUOdYxIvY2s0VWAAMh/nd8SoYiRaKjlr7+iCs984f2P8zvrfWcDDYVb73NfA==}
+  pump@3.0.4:
+    resolution: {integrity: sha512-VS7sjc6KR7e1ukRFhQSY5LM2uBWAUPiOPa/A3mkKmiMwSmRFUITt0xuj+/lesgnCv+dPIEYlkzrcyXgquIHMcA==}
 
   punycode@2.3.1:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
@@ -4210,6 +4210,10 @@ packages:
 
   sax@1.4.4:
     resolution: {integrity: sha512-1n3r/tGXO6b6VXMdFT54SHzT9ytu9yr7TaELowdYpMqY/Ao7EnlQGmAQ1+RatX7Tkkdm6hONI2owqNx2aZj5Sw==}
+    engines: {node: '>=11.0.0'}
+
+  sax@1.5.0:
+    resolution: {integrity: sha512-21IYA3Q5cQf089Z6tgaUTr7lDAyzoTPx5HRtbhsME8Udispad8dC/+sziTNugOEx54ilvatQ9YCzl4KQLPcRHA==}
     engines: {node: '>=11.0.0'}
 
   saxes@6.0.0:
@@ -4891,9 +4895,9 @@ snapshots:
 
   '@adobe/css-tools@4.4.4': {}
 
-  '@aptabase/electron@0.3.1(electron@40.4.1)':
+  '@aptabase/electron@0.3.1(electron@40.6.1)':
     dependencies:
-      electron: 40.4.1
+      electron: 40.6.1
 
   '@asamuzakjp/css-color@4.1.2':
     dependencies:
@@ -5229,7 +5233,7 @@ snapshots:
       debug: 4.4.3
       dir-compare: 3.3.0
       fs-extra: 9.1.0
-      minimatch: 3.1.3
+      minimatch: 3.1.5
       plist: 3.1.0
     transitivePeerDependencies:
       - supports-color
@@ -6321,12 +6325,12 @@ snapshots:
       '@tailwindcss/oxide-win32-arm64-msvc': 4.2.1
       '@tailwindcss/oxide-win32-x64-msvc': 4.2.1
 
-  '@tailwindcss/vite@4.2.1(vite@7.3.0(@types/node@25.3.0)(jiti@2.6.1)(lightningcss@1.31.1))':
+  '@tailwindcss/vite@4.2.1(vite@7.3.0(@types/node@25.3.3)(jiti@2.6.1)(lightningcss@1.31.1))':
     dependencies:
       '@tailwindcss/node': 4.2.1
       '@tailwindcss/oxide': 4.2.1
       tailwindcss: 4.2.1
-      vite: 7.3.0(@types/node@25.3.0)(jiti@2.6.1)(lightningcss@1.31.1)
+      vite: 7.3.0(@types/node@25.3.3)(jiti@2.6.1)(lightningcss@1.31.1)
 
   '@testing-library/dom@10.4.1':
     dependencies:
@@ -6391,7 +6395,7 @@ snapshots:
     dependencies:
       '@types/http-cache-semantics': 4.2.0
       '@types/keyv': 3.1.4
-      '@types/node': 25.3.0
+      '@types/node': 25.3.3
       '@types/responselike': 1.0.3
 
   '@types/chai@5.2.3':
@@ -6413,7 +6417,7 @@ snapshots:
 
   '@types/fs-extra@9.0.13':
     dependencies:
-      '@types/node': 25.3.0
+      '@types/node': 25.3.3
 
   '@types/http-cache-semantics@4.2.0': {}
 
@@ -6423,7 +6427,7 @@ snapshots:
 
   '@types/keyv@3.1.4':
     dependencies:
-      '@types/node': 25.3.0
+      '@types/node': 25.3.3
 
   '@types/ms@2.1.0': {}
 
@@ -6431,22 +6435,17 @@ snapshots:
     dependencies:
       undici-types: 5.25.3
 
-  '@types/node@24.10.13':
+  '@types/node@24.11.0':
     dependencies:
       undici-types: 7.16.0
 
-  '@types/node@25.2.3':
-    dependencies:
-      undici-types: 7.16.0
-    optional: true
-
-  '@types/node@25.3.0':
+  '@types/node@25.3.3':
     dependencies:
       undici-types: 7.18.2
 
   '@types/plist@3.0.5':
     dependencies:
-      '@types/node': 25.3.0
+      '@types/node': 25.3.3
       xmlbuilder: 15.1.1
     optional: true
 
@@ -6460,14 +6459,14 @@ snapshots:
 
   '@types/responselike@1.0.3':
     dependencies:
-      '@types/node': 25.3.0
+      '@types/node': 25.3.3
 
   '@types/verror@1.10.11':
     optional: true
 
   '@types/yauzl@2.10.3':
     dependencies:
-      '@types/node': 25.2.3
+      '@types/node': 25.3.3
     optional: true
 
   '@typescript-eslint/eslint-plugin@8.56.0(@typescript-eslint/parser@8.56.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.2))(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.2)':
@@ -6561,7 +6560,7 @@ snapshots:
       '@typescript-eslint/types': 8.56.0
       eslint-visitor-keys: 5.0.0
 
-  '@vitejs/plugin-react@5.1.0(vite@7.3.0(@types/node@25.3.0)(jiti@2.6.1)(lightningcss@1.31.1))':
+  '@vitejs/plugin-react@5.1.0(vite@7.3.0(@types/node@25.3.3)(jiti@2.6.1)(lightningcss@1.31.1))':
     dependencies:
       '@babel/core': 7.28.5
       '@babel/plugin-transform-react-jsx-self': 7.27.1(@babel/core@7.28.5)
@@ -6569,7 +6568,7 @@ snapshots:
       '@rolldown/pluginutils': 1.0.0-beta.43
       '@types/babel__core': 7.20.5
       react-refresh: 0.18.0
-      vite: 7.3.0(@types/node@25.3.0)(jiti@2.6.1)(lightningcss@1.31.1)
+      vite: 7.3.0(@types/node@25.3.3)(jiti@2.6.1)(lightningcss@1.31.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -6582,13 +6581,13 @@ snapshots:
       chai: 6.2.1
       tinyrainbow: 3.0.3
 
-  '@vitest/mocker@4.0.8(vite@7.3.0(@types/node@25.3.0)(jiti@2.6.1)(lightningcss@1.31.1))':
+  '@vitest/mocker@4.0.8(vite@7.3.0(@types/node@25.3.3)(jiti@2.6.1)(lightningcss@1.31.1))':
     dependencies:
       '@vitest/spy': 4.0.8
       estree-walker: 3.0.3
       magic-string: 0.30.21
     optionalDependencies:
-      vite: 7.3.0(@types/node@25.3.0)(jiti@2.6.1)(lightningcss@1.31.1)
+      vite: 7.3.0(@types/node@25.3.3)(jiti@2.6.1)(lightningcss@1.31.1)
 
   '@vitest/pretty-format@4.0.8':
     dependencies:
@@ -6689,7 +6688,7 @@ snapshots:
       isbinaryfile: 5.0.7
       js-yaml: 4.1.1
       lazy-val: 1.0.5
-      minimatch: 5.1.7
+      minimatch: 5.1.9
       read-config-file: 6.3.2
       sanitize-filename: 1.6.3
       semver: 7.7.4
@@ -6984,7 +6983,7 @@ snapshots:
   builder-util-runtime@9.2.4:
     dependencies:
       debug: 4.4.3
-      sax: 1.4.4
+      sax: 1.5.0
     transitivePeerDependencies:
       - supports-color
 
@@ -7329,7 +7328,7 @@ snapshots:
   dir-compare@3.3.0:
     dependencies:
       buffer-equal: 1.0.1
-      minimatch: 3.1.3
+      minimatch: 3.1.5
 
   dir-compare@4.2.0:
     dependencies:
@@ -7444,10 +7443,10 @@ snapshots:
 
   electron-to-chromium@1.5.241: {}
 
-  electron@40.4.1:
+  electron@40.6.1:
     dependencies:
       '@electron/get': 2.0.3
-      '@types/node': 24.10.13
+      '@types/node': 24.11.0
       extract-zip: 2.0.1
     transitivePeerDependencies:
       - supports-color
@@ -8072,7 +8071,7 @@ snapshots:
 
   get-stream@5.2.0:
     dependencies:
-      pump: 3.0.3
+      pump: 3.0.4
 
   get-symbol-description@1.0.2:
     dependencies:
@@ -8773,7 +8772,11 @@ snapshots:
     dependencies:
       brace-expansion: 1.1.12
 
-  minimatch@5.1.7:
+  minimatch@3.1.5:
+    dependencies:
+      brace-expansion: 1.1.12
+
+  minimatch@5.1.9:
     dependencies:
       brace-expansion: 2.0.2
 
@@ -9071,7 +9074,7 @@ snapshots:
       retry: 0.12.0
       signal-exit: 3.0.7
 
-  pump@3.0.3:
+  pump@3.0.4:
     dependencies:
       end-of-stream: 1.4.5
       once: 1.4.0
@@ -9182,7 +9185,7 @@ snapshots:
 
   readdir-glob@1.1.3:
     dependencies:
-      minimatch: 5.1.7
+      minimatch: 5.1.9
 
   redent@3.0.0:
     dependencies:
@@ -9343,6 +9346,8 @@ snapshots:
       truncate-utf8-bytes: 1.0.2
 
   sax@1.4.4: {}
+
+  sax@1.5.0: {}
 
   saxes@6.0.0:
     dependencies:
@@ -9860,7 +9865,7 @@ snapshots:
     optionalDependencies:
       vite-plugin-electron-renderer: 0.14.5
 
-  vite@7.3.0(@types/node@25.3.0)(jiti@2.6.1)(lightningcss@1.31.1):
+  vite@7.3.0(@types/node@25.3.3)(jiti@2.6.1)(lightningcss@1.31.1):
     dependencies:
       esbuild: 0.27.1
       fdir: 6.5.0(picomatch@4.0.3)
@@ -9869,15 +9874,15 @@ snapshots:
       rollup: 4.53.5
       tinyglobby: 0.2.15
     optionalDependencies:
-      '@types/node': 25.3.0
+      '@types/node': 25.3.3
       fsevents: 2.3.3
       jiti: 2.6.1
       lightningcss: 1.31.1
 
-  vitest@4.0.8(@types/debug@4.1.12)(@types/node@25.3.0)(jiti@2.6.1)(jsdom@28.1.0)(lightningcss@1.31.1):
+  vitest@4.0.8(@types/debug@4.1.12)(@types/node@25.3.3)(jiti@2.6.1)(jsdom@28.1.0)(lightningcss@1.31.1):
     dependencies:
       '@vitest/expect': 4.0.8
-      '@vitest/mocker': 4.0.8(vite@7.3.0(@types/node@25.3.0)(jiti@2.6.1)(lightningcss@1.31.1))
+      '@vitest/mocker': 4.0.8(vite@7.3.0(@types/node@25.3.3)(jiti@2.6.1)(lightningcss@1.31.1))
       '@vitest/pretty-format': 4.0.8
       '@vitest/runner': 4.0.8
       '@vitest/snapshot': 4.0.8
@@ -9894,11 +9899,11 @@ snapshots:
       tinyexec: 0.3.2
       tinyglobby: 0.2.15
       tinyrainbow: 3.0.3
-      vite: 7.3.0(@types/node@25.3.0)(jiti@2.6.1)(lightningcss@1.31.1)
+      vite: 7.3.0(@types/node@25.3.3)(jiti@2.6.1)(lightningcss@1.31.1)
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/debug': 4.1.12
-      '@types/node': 25.3.0
+      '@types/node': 25.3.3
       jsdom: 28.1.0
     transitivePeerDependencies:
       - jiti
