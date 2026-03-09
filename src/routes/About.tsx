@@ -15,7 +15,7 @@ marked.use({
 });
 
 const filteredChangelog = changelog.replace(
-  /(?:^.*\*\*deps(?:-dev)?:\*\*.*\n)+/gm,
+  /(?:^.*\*\*deps(?:-dev)?:\*\*.*\r?\n)+/gm,
   '* Performance & security updates\n',
 );
 const parsedChangelog = marked.parse(filteredChangelog);
