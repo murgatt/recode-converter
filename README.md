@@ -7,7 +7,8 @@
 
 [![GitHub package.json version](https://img.shields.io/github/package-json/v/murgatt/recode-converter)](https://github.com/murgatt/recode-converter/releases/latest)
 [![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/murgatt/recode-converter/total)](https://github.com/murgatt/recode-converter/releases)
-[![Validate main build](https://github.com/murgatt/recode-converter/actions/workflows/main.yml/badge.svg)](https://github.com/murgatt/recode-converter/actions/workflows/main.yml)
+[![Validate main CI](https://github.com/murgatt/recode-converter/actions/workflows/main.yml/badge.svg)](https://github.com/murgatt/recode-converter/actions/workflows/main.yml)
+[![Validate main build](https://github.com/murgatt/recode-converter/actions/workflows/build-main.yml/badge.svg)](https://github.com/murgatt/recode-converter/actions/workflows/build-main.yml)
 
 <img src="public/app-dark.png" alt="App screenshot">
 </div>
