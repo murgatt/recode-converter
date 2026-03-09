@@ -13,7 +13,12 @@ marked.use({
     link: ({ href, text }) => `<a href="${href}" target="_blank">${text}</a>`,
   },
 });
-const parsedChangelog = marked.parse(changelog);
+
+const filteredChangelog = changelog.replace(
+  /(?:^.*\*\*deps(?:-dev)?:\*\*.*\n)+/gm,
+  '* Performance & security updates\n',
+);
+const parsedChangelog = marked.parse(filteredChangelog);
 
 export const About = () => {
   const { t } = useTranslation();
