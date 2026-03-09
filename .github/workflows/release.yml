@@ -7,4 +7,3 @@ on:
 jobs:
   build-release:
     uses: ./.github/workflows/build.yml
-    
