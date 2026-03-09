@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.1](https://github.com/murgatt/recode-converter/compare/v2.1.0...v2.1.1) (2026-03-09)
+
+
+### Bug Fixes
+
+* **app:** changelog display on Windows ([#681](https://github.com/murgatt/recode-converter/issues/681)) ([6fc791a](https://github.com/murgatt/recode-converter/commit/6fc791a9ec4939ed5468315a2031399a45ce39c9))
+
 ## [2.1.0](https://github.com/murgatt/recode-converter/compare/v2.0.12...v2.1.0) (2026-03-09)
 
 
