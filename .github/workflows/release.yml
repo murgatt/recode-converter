@@ -1,0 +1,9 @@
+name: Build release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build-release:
+    uses: ./.github/workflows/build.yml

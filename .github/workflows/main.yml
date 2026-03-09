@@ -50,3 +50,6 @@ jobs:
         uses: amannn/action-semantic-pull-request@v6
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  build:
+    name: Build
+    uses: ./.github/workflows/build.yml
