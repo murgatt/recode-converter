@@ -88,7 +88,7 @@
     "vite": "7.3.0",
     "vite-plugin-electron": "0.29.0",
     "vite-plugin-electron-renderer": "0.14.5",
-    "vitest": "4.0.8"
+    "vitest": "4.1.1"
   },
   "main": "dist-electron/main.js",
   "pnpm": {
