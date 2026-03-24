@@ -1,7 +1,8 @@
-import { CoffeeIcon, GithubIcon, LinkIcon } from 'lucide-react';
+import { CoffeeIcon, LinkIcon } from 'lucide-react';
 import { marked } from 'marked';
 import { useTranslation } from 'react-i18next';
 import { Button } from 'src/components/ui/Button';
+import { GithubIcon } from 'src/components/ui/icons/GithubIcon';
 import { Separator } from 'src/components/ui/Separator';
 import { Tooltip } from 'src/components/ui/Tooltip';
 import { APP_WEBSITE_URL, AUTHOR_GITHUB_URL, COFFEE_URL, GITHUB_REPOSITORY_URL } from 'src/constants';
