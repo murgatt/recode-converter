@@ -79,7 +79,7 @@
     "eslint-plugin-react-hooks": "7.0.0",
     "eslint-plugin-unused-imports": "4.4.1",
     "jsdom": "29.0.1",
-    "postcss": "8.5.1",
+    "postcss": "8.5.10",
     "prettier": "3.8.0",
     "prettier-plugin-tailwindcss": "0.7.1",
     "tailwindcss": "4.2.1",
