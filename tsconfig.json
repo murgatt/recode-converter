@@ -21,7 +21,10 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
-    "baseUrl": "."
+    "paths": {
+      "src/*": ["./src/*"],
+      "schema": ["./schema/index.ts"]
+    }
   },
   "include": ["src", "electron", "schema", "eslint.config.mjs", "vite.config.mts"],
   "extends": "./tsconfig.node.json"
