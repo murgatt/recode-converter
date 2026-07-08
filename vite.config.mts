@@ -17,7 +17,8 @@ export default defineConfig({
         entry: 'electron/main.ts',
         vite: {
           build: {
-            rollupOptions: {
+            rolldownOptions: {
+              external: ['@ffmpeg-installer/ffmpeg', '@ffprobe-installer/ffprobe'],
               plugins: [
                 alias({
                   entries: [
