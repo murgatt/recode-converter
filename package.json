@@ -71,7 +71,7 @@
     "@types/react-dom": "19.2.1",
     "@vitejs/plugin-react": "6.0.3",
     "babel-plugin-react-compiler": "1.0.0",
-    "electron": "41.5.0",
+    "electron": "43.1.0",
     "electron-builder": "26.15.2",
     "eslint": "9.39.1",
     "eslint-config-prettier": "10.1.1",
