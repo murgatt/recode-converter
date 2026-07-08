@@ -1,3 +1,4 @@
+import { useWatch } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { bitrateSchema, channelsSchema, sampleRateSchema } from 'schema';
 import { useConversionSettingsForm } from 'src/hooks/useConversionSettingsForm';
@@ -22,8 +23,8 @@ export const ConversionSettingsForm = ({ isDisabled, onStartConversion }: Conver
   const setConversionSettings = useStore(state => state.setConversionSettings);
 
   const form = useConversionSettingsForm({ defaultValues: conversionSettings });
-  const { control, getValues, handleSubmit, setValue, watch } = form;
-  const codec = watch('codec');
+  const { control, getValues, handleSubmit, setValue } = form;
+  const codec = useWatch({ control, name: 'codec' });
 
   const handleCodecChange = (value: Codec) => {
     setValue('codec', value);
